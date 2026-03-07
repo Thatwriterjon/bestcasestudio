@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 02-core-content-02-PLAN.md
-last_updated: "2026-03-07T13:04:44.025Z"
+stopped_at: Completed 02-core-content-01-PLAN.md
+last_updated: "2026-03-07T13:15:00.000Z"
 last_activity: 2026-03-07 — Roadmap created, Phase 1 ready for planning
 progress:
   total_phases: 3
   completed_phases: 1
   total_plans: 6
-  completed_plans: 5
+  completed_plans: 6
   percent: 0
 ---
 
@@ -54,6 +54,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P02 | 3 | 2 tasks | 15 files |
 | Phase 01-foundation P03 | 8 | 2 tasks | 2 files |
 | Phase 02-core-content P02 | 3 | 2 tasks | 2 files |
+| Phase 02-core-content P01 | 12 | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Nav stripped to About/Blog only — Services/Pricing/Use Cases/Process removed (don't exist in Phase 1)
 - [Phase 01-foundation]: Hero CTA pair: Book Discovery Call (pink, same tab, Calendly) + Credibility Scorecard (yellow with border, new tab)
 - [Phase 02-core-content]: Kept Proposal.astro filename, rewrote as pricing section — Single $3,000 / Trio $7,500, Calendly CTAs, no launch discount
+- [Phase 02-core-content P01]: Used 9 real client logos (1, 3, 7, 8, 10, 11, 12, 13, 14.svg) — excluded 2, 4, 6 per Jon's instruction; grid md:grid-cols-9
+- [Phase 02-core-content P01]: Services section reduced from 6 template cards to 3 BCS value props (Build Trust, Improve SEO & GEO, Lower CAC); grid lg:grid-cols-3
 
 ### Pending Todos
 
@@ -84,6 +87,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T13:04:18.390Z
-Stopped at: Completed 02-core-content-02-PLAN.md
+Last session: 2026-03-07T13:15:00.000Z
+Stopped at: Completed 02-core-content-01-PLAN.md
 Resume file: None

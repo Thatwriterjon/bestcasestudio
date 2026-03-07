@@ -13,7 +13,7 @@ Three phases deliver a complete single-page marketing site on Astro/Positivus. P
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Astro project running locally with brand colours, nav, and hero in place (completed 2026-03-07)
-- [ ] **Phase 2: Core Content** - Sponsors, services, pricing, process, and team sections complete
+- [x] **Phase 2: Core Content** - Sponsors, services, pricing, process, and team sections complete (completed 2026-03-07)
 - [ ] **Phase 3: Conversion Close** - Testimonials, referral, FAQ, contact, and footer complete — site ready to launch
 
 ## Phase Details
@@ -71,5 +71,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-03-07 |
-| 2. Core Content | 2/3 | In Progress|  |
+| 2. Core Content | 3/3 | Complete   | 2026-03-07 |
 | 3. Conversion Close | 0/TBD | Not started | - |

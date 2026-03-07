@@ -22,20 +22,20 @@
 
 ### Sponsors
 
-- [ ] **SPONS-01**: Logo strip with Jon's copywriting client logos
-- [ ] **SPONS-02**: Framing copy that attributes logos to Jon's background, not explicit BCS client work (e.g. "Brands our founder has worked with")
+- [x] **SPONS-01**: Logo strip with Jon's copywriting client logos
+- [x] **SPONS-02**: Framing copy that attributes logos to Jon's background, not explicit BCS client work (e.g. "Brands our founder has worked with")
 
 ### Services
 
-- [ ] **SERV-01**: "Build Trust" value prop card
-- [ ] **SERV-02**: "Improve SEO & GEO" value prop card
-- [ ] **SERV-03**: "Lower CAC" value prop card
+- [x] **SERV-01**: "Build Trust" value prop card
+- [x] **SERV-02**: "Improve SEO & GEO" value prop card
+- [x] **SERV-03**: "Lower CAC" value prop card
 
 ### Pricing
 
-- [ ] **PRICE-01**: Single case study — $3,000, deliverables: 1 video case study, short testimonial video, 5 social videos, landing page copy, 2-3 week timeline
-- [ ] **PRICE-02**: Trio — $7,500 ($2,500 per case study), same deliverables x3, 3-6 week timeline
-- [ ] **PRICE-03**: Clear deliverables breakdown per tier with CTA to book discovery call
+- [x] **PRICE-01**: Single case study — $3,000, deliverables: 1 video case study, short testimonial video, 5 social videos, landing page copy, 2-3 week timeline
+- [x] **PRICE-02**: Trio — $7,500 ($2,500 per case study), same deliverables x3, 3-6 week timeline
+- [x] **PRICE-03**: Clear deliverables breakdown per tier with CTA to book discovery call
 
 ### Process
 
@@ -96,14 +96,14 @@
 | HERO-01 | Phase 1 | Complete |
 | HERO-02 | Phase 1 | Complete |
 | HERO-03 | Phase 1 | Complete |
-| SPONS-01 | Phase 2 | Pending |
-| SPONS-02 | Phase 2 | Pending |
-| SERV-01 | Phase 2 | Pending |
-| SERV-02 | Phase 2 | Pending |
-| SERV-03 | Phase 2 | Pending |
-| PRICE-01 | Phase 2 | Pending |
-| PRICE-02 | Phase 2 | Pending |
-| PRICE-03 | Phase 2 | Pending |
+| SPONS-01 | Phase 2 | Complete |
+| SPONS-02 | Phase 2 | Complete |
+| SERV-01 | Phase 2 | Complete |
+| SERV-02 | Phase 2 | Complete |
+| SERV-03 | Phase 2 | Complete |
+| PRICE-01 | Phase 2 | Complete |
+| PRICE-02 | Phase 2 | Complete |
+| PRICE-03 | Phase 2 | Complete |
 | PROC-01 | Phase 2 | Pending |
 | PROC-02 | Phase 2 | Pending |
 | PROC-03 | Phase 2 | Pending |
