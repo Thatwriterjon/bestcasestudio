@@ -1,15 +1,34 @@
 ---
-import Form from "../ui/Form.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
 ---
 
 <Section id="contact">
-  <div class="mb-[140px] relative">
+  <div class="mb-[140px] mt-[140px]">
     <SectionTitle
-      sectionTitle="Contact Us"
-      description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
+      sectionTitle="Book Your Discovery Call"
+      description="30 minutes. No hard sell. We'll find out if we're a good fit and answer any questions you have."
     />
-    <Form />
+
+    <!-- Calendly inline widget -->
+    <div
+      class="calendly-inline-widget rounded-[20px] overflow-hidden"
+      data-url="https://calendly.com/jon-bestcasestudio/30min"
+      style="min-width:320px;height:700px;"
+    ></div>
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
+
+    <p class="mt-6 text-sm text-zinc-500 text-center">
+      Can't see the calendar?
+      <a
+        href="https://calendly.com/jon-bestcasestudio/30min"
+        target="_blank"
+        class="text-pink underline"
+      >Book directly on Calendly</a>.
+    </p>
   </div>
 </Section>
