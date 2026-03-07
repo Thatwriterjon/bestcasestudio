@@ -7,7 +7,7 @@
 
 ### Setup
 
-- [ ] **SETUP-01**: Positivus template cloned and running locally with `npm run dev`
+- [x] **SETUP-01**: Positivus template cloned and running locally with `npm run dev`
 - [ ] **SETUP-02**: Global accent colours (#ff7ae7, #ffe56e) replace all green in Tailwind config and template components
 
 ### Navigation
@@ -90,7 +90,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SETUP-01 | Phase 1 | Pending |
+| SETUP-01 | Phase 1 | Complete |
 | SETUP-02 | Phase 1 | Pending |
 | NAV-01 | Phase 1 | Pending |
 | HERO-01 | Phase 1 | Pending |
