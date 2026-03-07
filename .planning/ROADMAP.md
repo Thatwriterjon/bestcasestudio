@@ -27,7 +27,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. All green accent colours (#B9FF66 or equivalent) are replaced site-wide by #ff7ae7 and #ffe56e — no green visible anywhere
   3. The nav bar contains a "Credibility Scorecard" link that opens scorecard.bestcasestud.io in a new tab
   4. The hero headline reads "Your current customers are your most effective salespeople" with correct subheading and two working CTAs
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Clone Positivus template and verify dev server runs
+- [ ] 01-02-PLAN.md — Global colour replacement (pink #ff7ae7 and yellow #ffe56e replace all green)
+- [ ] 01-03-PLAN.md — Nav Scorecard button and Hero copy with two CTAs
 
 ### Phase 2: Core Content
 **Goal**: Visitors can understand what BCS sells, what it costs, how it works, and who delivers it
@@ -60,6 +65,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/3 | Not started | - |
 | 2. Core Content | 0/TBD | Not started | - |
 | 3. Conversion Close | 0/TBD | Not started | - |
