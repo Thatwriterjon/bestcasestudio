@@ -53,7 +53,9 @@
       "Bash(git add src/components/sections/Contact.astro src/components/ui/Footer.astro)",
       "Bash(git add -A)",
       "Bash(git add src/components/sections/Testimonials.astro)",
-      "Bash(git add src/components/ui/Navbar.astro src/components/ui/Footer.astro)"
+      "Bash(git add src/components/ui/Navbar.astro src/components/ui/Footer.astro)",
+      "Bash(git add src/pages/index.astro)",
+      "Bash(git add src/components/sections/FAQ.astro)"
     ]
   }
 }
