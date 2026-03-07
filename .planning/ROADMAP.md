@@ -61,7 +61,12 @@ Plans:
   3. FAQ section answers 8-10 questions covering timeline, pricing, process, and what makes BCS different
   4. The final CTA section contains an embedded calendar for booking a 30-minute discovery call
   5. Footer displays social links (LinkedIn, Substack, Spotify, Apple Podcasts) and copyright
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Testimonials section: replace Swiper carousel with TestimonialTo iframe widget
+- [ ] 03-02-PLAN.md — Referral Bounty section ($500 offer) and FAQ section (10 questions) wired into index.astro
+- [ ] 03-03-PLAN.md — Contact section (Calendly embed, no-pressure CTA) and Footer (BCS social links + copyright)
 
 ## Progress
 
@@ -72,4 +77,4 @@ Phases execute in numeric order: 1 → 2 → 3
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-03-07 |
 | 2. Core Content | 3/3 | Complete   | 2026-03-07 |
-| 3. Conversion Close | 0/TBD | Not started | - |
+| 3. Conversion Close | 0/3 | Not started | - |
