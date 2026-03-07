@@ -1,17 +1,20 @@
 ---
 import SectionTitle from "../ui/SectionTitle.astro";
-import SwiperSlider from "../ui/SwiperSlider.astro";
 import Section from "./Section.astro";
 ---
 
 <Section id="testimonials">
-  <div class="mt-20">
+  <div class="mt-20 mb-[150px]">
     <SectionTitle
-      sectionTitle="Testimonials"
-      description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services"
+      sectionTitle="What Our Clients Say"
+      description="Real feedback from B2B SaaS companies who've worked with Best Case Studio."
     />
-    <div class="rounded-[45px] bg-dark mb-[150px] text-gray">
-      <SwiperSlider />
-    </div>
+    <div
+      id="testimonialto-a9a5cbcc-76b3-4896-99d9-f94ed6736bf2"
+      aria-label="Testimonials Wall of Love"
+    ></div>
+    <script type="text/javascript" src="https://testimonial.to/js/iframeResizer.contentWindow.min.js"></script>
+    <link rel="stylesheet" href="https://testimonial.to/css/iframeResizer.min.css" />
+    <script src="https://testimonial.to/js/widget.js" type="text/javascript" defer></script>
   </div>
 </Section>
