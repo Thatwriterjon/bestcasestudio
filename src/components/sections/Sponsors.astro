@@ -1,35 +1,42 @@
 ---
 import { Image } from "astro:assets";
-import s1 from "../../assets/company/company-logo1.svg";
-import s2 from "../../assets/company/company-logo2.svg";
-import s3 from "../../assets/company/company-logo3.svg";
-import s4 from "../../assets/company/company-logo4.svg";
-import s5 from "../../assets/company/company-logo5.svg";
-import s6 from "../../assets/company/company-logo6.svg";
+import s1 from "../../assets/company/1.svg";
+import s3 from "../../assets/company/3.svg";
+import s7 from "../../assets/company/7.svg";
+import s8 from "../../assets/company/8.svg";
+import s10 from "../../assets/company/10.svg";
+import s11 from "../../assets/company/11.svg";
+import s12 from "../../assets/company/12.svg";
+import s13 from "../../assets/company/13.svg";
+import s14 from "../../assets/company/14.svg";
 import Section from "./Section.astro";
 
 const sponsors = [
-  { logo: s6, alt: "Amazon logo" },
-  { logo: s5, alt: "Dribble logo" },
-  { logo: s4, alt: "HubSpot logo" },
-  { logo: s3, alt: "Notion logo" },
-  { logo: s2, alt: "Netflix logo" },
-  { logo: s1, alt: "Zoom logo" },
+  { logo: s1, alt: "Vivaldi logo" },
+  { logo: s3, alt: "MyCheckins logo" },
+  { logo: s7, alt: "Rally logo" },
+  { logo: s8, alt: "Engine Yard logo" },
+  { logo: s10, alt: "TagTeam AI logo" },
+  { logo: s11, alt: "Projul logo" },
+  { logo: s12, alt: "Scoro logo" },
+  { logo: s13, alt: "BabelForce logo" },
+  { logo: s14, alt: "Bullet logo" },
 ];
 ---
 
 <Section id="sponsors">
-  <div class="flex-row items-center">
-  <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
-    {
-      sponsors.map((sponsor) => {
-        return (
-          <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <Image src={sponsor.logo} class="h-12 w-auto mx-auto" alt={sponsor.alt} loading="lazy" />
-          </div>
-        );
-      })
-    }
+  <div class="flex flex-col items-center gap-6">
+    <p class="text-xs uppercase tracking-widest text-zinc-500">Brands our founder has worked with</p>
+    <div class="grid grid-cols-3 md:grid-cols-9 w-full">
+      {
+        sponsors.map((sponsor) => {
+          return (
+            <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+              <Image src={sponsor.logo} class="h-12 w-auto mx-auto" alt={sponsor.alt} loading="lazy" />
+            </div>
+          );
+        })
+      }
+    </div>
   </div>
-  </div> 
 </Section>
