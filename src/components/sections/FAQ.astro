@@ -1,65 +1,54 @@
 ---
 import Section from "./Section.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
-import AccordionItem from "../ui/AccordionItem.astro";
 
 const faq = [
   {
-    index: 1,
     title: "How long does a case study take?",
     description:
       "A Single takes 2–3 weeks from customer interview to delivery. The Trio takes 3–6 weeks. We work around your client's schedule for the interview.",
   },
   {
-    index: 2,
     title: "Do you work with clients outside the UK?",
     description:
       "Yes — we work with B2B SaaS companies globally. Interviews are remote, so location doesn't matter.",
   },
   {
-    index: 3,
     title: "Can I buy one case study now and add more later?",
     description:
       "Absolutely. You can start with a Single and commission a Trio later. The per-case-study price stays the same — the Trio just saves you money upfront.",
   },
   {
-    index: 4,
     title: "What makes Best Case Studio different from a freelance copywriter?",
     description:
       "We handle the full production stack: customer interview, video editing, landing page copy, and social assets. Most copywriters hand you a Word doc. We hand you a ready-to-publish content package.",
   },
   {
-    index: 5,
     title: "What types of B2B SaaS companies do you work with?",
     description:
       "We work best with companies that have at least a handful of happy customers and want to use their stories to close more deals. If you're pre-product-market-fit, case studies probably aren't your next move.",
   },
   {
-    index: 6,
     title: "How do case studies actually improve conversion rates?",
     description:
       "A case study removes the 'will this work for us?' objection by showing a real company with a real result. It shortens the buying decision for prospects at the bottom of the funnel.",
   },
   {
-    index: 7,
     title: "What if our customer can't point to a specific measurable result?",
     description:
       "That's fine. Not every great case study leads with a metric. Strong stories about reduced friction, improved confidence, or better team alignment are just as persuasive to the right buyer.",
   },
   {
-    index: 8,
     title: "Why is the Trio cheaper per case study?",
     description:
       "Three interviews scheduled in the same window, one editing sprint, one delivery round. The fixed overhead is shared, so we pass the saving on.",
   },
   {
-    index: 9,
     title: "Who actually runs Best Case Studio?",
     description:
       "Jon McGreevy leads every project — strategy, interviews, and copy. Alex handles all video production. Jessie keeps projects on track. There's no outsourcing or AI-generated content.",
   },
   {
-    index: 10,
     title: "How does the $500 referral bounty work?",
     description:
       "Refer a B2B SaaS company to us. When they make their first payment, we send you $500 cash — no cap on how many referrals you make.",
@@ -68,19 +57,21 @@ const faq = [
 ---
 
 <Section id="faq">
-  <div class="mt-[140px]">
+  <div class="mt-[140px] mb-[140px]">
     <SectionTitle
       sectionTitle="Frequently Asked Questions"
       description="Everything you need to know before booking a discovery call."
     />
-    {
-      faq.map((item) => (
-        <AccordionItem
-          index={item.index}
-          title={item.title}
-          description={item.description}
-        />
-      ))
-    }
+    <div class="max-w-[800px]">
+      {faq.map((item, i) => (
+        <details class="group border-t border-zinc-200 last:border-b">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none text-lg font-medium select-none">
+            {item.title}
+            <span class="shrink-0 text-zinc-400 group-open:rotate-45 transition-transform duration-200 text-2xl leading-none">+</span>
+          </summary>
+          <p class="pb-5 text-zinc-500 leading-relaxed">{item.description}</p>
+        </details>
+      ))}
+    </div>
   </div>
 </Section>
