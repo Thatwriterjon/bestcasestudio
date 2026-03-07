@@ -33,7 +33,7 @@ const Logo = createSvgComponent({"meta":{"src":"/_astro/alt-logo.Bri7TY3f.svg","
 const $$Footer = createComponent(($$result, $$props, $$slots) => {
   const links = [
     { name: "Services", href: "#services" },
-    { name: "Pricing", href: "#pricing" },
+    { name: "Pricing", href: "/pricing" },
     { name: "Process", href: "#process" },
     { name: "FAQ", href: "#faq" }
   ];
@@ -141,6 +141,7 @@ const $$Navbar = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Navbar;
   const menuitems = [
+    { href: "/pricing", label: "Pricing" },
     { href: "/about", label: "About us" },
     { href: "/articles", label: "Blog" }
   ];

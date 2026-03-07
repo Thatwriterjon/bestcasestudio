@@ -1,55 +1,27 @@
 /* empty css                                 */
-import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead, d as addAttribute } from '../chunks/astro/server_DTu46K8G.mjs';
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DTu46K8G.mjs';
 import 'kleur/colors';
-import { $ as $$MainLayout } from '../chunks/MainLayout_B-cBUST4.mjs';
-import { $ as $$Card } from '../chunks/Card_CxLGULV8.mjs';
+import { $ as $$MainLayout } from '../chunks/MainLayout_BOqgw-oP.mjs';
 export { renderers } from '../renderers.mjs';
 
-const priceData = [
-	{
-		title: "Starter",
-		description: "Best option for personal use & for your next project",
-		price: 29,
-		devCount: "1 developer",
-		support: "6 months",
-		update: "6 months",
-		action: "Get Started",
-		link: "/"
-	},
-	{
-		title: "Company",
-		description: "Relevant for multiple users, extended & premium support",
-		price: 99,
-		devCount: "10 developers",
-		support: "24 months",
-		update: "24 months",
-		action: "Get Started",
-		link: "/"
-	},
-	{
-		title: "Enterprise",
-		description: "Best for large scale uses and extended redistribution rights",
-		price: 499,
-		devCount: "100+ developers",
-		support: "36 months",
-		update: "36 months",
-		action: "Get Started",
-		link: "/"
-	}
-];
-
 const $$Pricing = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "MainLayout", $$MainLayout, { "title": "Our Pricing" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="space-y-20"> <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3"> <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12"> <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Designed for business teams like yours</h2> <p class="mb-5 font-light text-gray-500 sm:text-xl">Here at Positivus we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p> </div> <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0"> <!-- Pricing Card --> ${priceData.map((item) => renderTemplate`${renderComponent($$result2, "Card", $$Card, { "isUnderline": true }, { "default": ($$result3) => renderTemplate` <div class="flex flex-col p-6 mx-auto max-w-lg text-center"> <h3 class="mb-4 text-2xl font-semibold">${item.title}</h3> <p class="font-light text-gray-500 sm:text-lg">${item.description}</p> <div class="flex justify-center items-baseline my-8"> <span class="mr-2 text-5xl font-extrabold">$${item.price}</span> <span class="text-gray-500">/month</span> </div> <!-- List --> <ul role="list" class="mb-8 space-y-4 text-left"> <li class="flex items-center space-x-3"> <!-- Icon --> <svg class="flex-shrink-0 w-5 h-5 text-pink" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>Individual configuration</span> </li> <li class="flex items-center space-x-3"> <!-- Icon --> <svg class="flex-shrink-0 w-5 h-5 text-pink" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>No setup, or hidden fees</span> </li> <li class="flex items-center space-x-3"> <!-- Icon --> <svg class="flex-shrink-0 w-5 h-5 text-pink" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>Team size: <span class="font-semibold">${item.devCount}</span></span> </li> <li class="flex items-center space-x-3"> <!-- Icon --> <svg class="flex-shrink-0 w-5 h-5 text-pink" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>Premium support: <span class="font-semibold">${item.support}</span></span> </li> <li class="flex items-center space-x-3"> <!-- Icon --> <svg class="flex-shrink-0 w-5 h-5 text-pink" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>Free updates: <span class="font-semibold">${item.update}</span></span> </li> </ul> <a${addAttribute(item.link, "href")} class="text-black hover:text-white bg-pink hover:bg-black font-medium rounded-lg text-sm px-5 py-2.5 text-center">${item.action}</a> </div> ` })}`)} </div> </div> </main> ` })}`;
+  return renderTemplate`${renderComponent($$result, "MainLayout", $$MainLayout, { "title": "Pricing \u2014 Best Case Studio", "description": "One complete case study ecosystem \u2014 video, copy, and social assets. Single case study at $3,000 or a Trio at $7,500." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="w-full max-w-[1240px] mx-auto px-5 mt-[160px] mb-[140px]"> <h1 class="text-5xl lg:text-6xl font-medium leading-tight mb-4">Pricing & Packages</h1> <p class="text-zinc-500 text-lg mb-16 max-w-[560px]">
+One complete case study ecosystem — video, copy, and social assets. Pick the package that fits.
+</p> <div class="flex flex-col md:flex-row gap-8"> <!-- Single tier --> <div class="flex-1 bg-[#F3F3F3] border border-dark shadow-[0px_5px_0px_#191a23] rounded-[45px] p-10 flex flex-col"> <h2 class="text-2xl font-medium mb-4">Single Full-Stack Case Study</h2> <p class="text-5xl font-bold">$3,000</p> <p class="text-sm text-zinc-500 mb-8">per case study</p> <ul class="flex flex-col gap-4 flex-1 text-lg"> <li class="flex items-start gap-3"><span class="text-pink font-bold mt-0.5">✓</span> 1 video case study</li> <li class="flex items-start gap-3"><span class="text-pink font-bold mt-0.5">✓</span> Short testimonial video</li> <li class="flex items-start gap-3"><span class="text-pink font-bold mt-0.5">✓</span> 5 social videos</li> <li class="flex items-start gap-3"><span class="text-pink font-bold mt-0.5">✓</span> Landing page copy</li> </ul> <p class="text-sm font-medium mt-6 mb-6">Timeline: 2–3 weeks</p> <a href="https://calendly.com/thatwriterjon/best-case-studio" class="btn-primary inline-block text-center">Book Discovery Call</a> </div> <!-- Trio tier --> <div class="flex-1 bg-yellow border border-dark shadow-[0px_5px_0px_#191a23] rounded-[45px] p-10 flex flex-col"> <h2 class="text-2xl font-medium mb-4">Trio of Full-Stack Case Studies</h2> <p class="text-5xl font-bold">$7,500</p> <p class="text-sm mb-8">$2,500 per case study — save $1,500</p> <ul class="flex flex-col gap-4 flex-1 text-lg"> <li class="flex items-start gap-3"><span class="font-bold mt-0.5">✓</span> 3 video case studies</li> <li class="flex items-start gap-3"><span class="font-bold mt-0.5">✓</span> 3 short testimonial videos</li> <li class="flex items-start gap-3"><span class="font-bold mt-0.5">✓</span> 15 social videos</li> <li class="flex items-start gap-3"><span class="font-bold mt-0.5">✓</span> 3 × landing page copy</li> </ul> <p class="text-sm font-medium mt-6 mb-6">Timeline: 3–6 weeks</p> <a href="https://calendly.com/thatwriterjon/best-case-studio" class="btn-primary inline-block text-center">Book Discovery Call</a> </div> </div> <!-- FAQ nudge --> <p class="mt-12 text-center text-zinc-500">
+Questions before committing?
+<a href="/#faq" class="text-pink underline">See the FAQ</a> or
+<a href="/contact" class="text-pink underline">book a free discovery call</a>.
+</p> </div> ` })}`;
 }, "/Users/jon/bestcasestud.io/src/pages/pricing.astro", void 0);
 
 const $$file = "/Users/jon/bestcasestud.io/src/pages/pricing.astro";
 const $$url = "/pricing";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-    __proto__: null,
-    default: $$Pricing,
-    file: $$file,
-    url: $$url
+  __proto__: null,
+  default: $$Pricing,
+  file: $$file,
+  url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const page = () => _page;
