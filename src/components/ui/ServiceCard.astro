@@ -2,16 +2,7 @@
 import { Image } from "astro:assets";
 import Card from "./Card.astro";
 
-import gob from "../../assets/icon6.svg";
-import wob from "../../assets/icon7.svg";
-
-/* 
-1. Gray card with green title and green on black icon 
-2. Green card with gray title and green on black icon
-3. Black card with gray title and gray on black icon
-*/
-
-const { index, titleTop, titleBottom, img, alt, link } = Astro.props;
+const { index, titleTop, titleBottom, img, alt } = Astro.props;
 ---
 
 <Card isUnderline={true}>
@@ -35,12 +26,6 @@ const { index, titleTop, titleBottom, img, alt, link } = Astro.props;
         class="h-[100px] w-auto sm:h-auto sm:w-3/4 object-cover"
       />
     </picture>
-    <div class="flex items-end">
-      <a href={link} class="flex items-center gap-3.5"
-        ><Image src={index === 1 || index === 2 ? gob : wob} alt={alt} />
-        <span class="hidden sm:block">Service Info</span></a
-      >
-    </div>
   </div>
 </Card>
 

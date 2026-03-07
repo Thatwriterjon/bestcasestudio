@@ -1,36 +1,37 @@
 ---
 import Section from "./Section.astro";
-import SectionTitle from "../ui/SectionTitle.astro";
 ---
 
 <Section id="referral">
   <div class="mt-[140px] mb-[140px]">
-    <SectionTitle
-      sectionTitle="$500 Referral Bounty"
-      description="Know a B2B SaaS company that needs case studies? Refer them to us."
-    />
-    <div class="max-w-[680px]">
-      <p class="text-lg mb-6">
-        If you refer a B2B SaaS company and they become a client, we'll send you
-        <strong>$500 cash</strong> when they make their first payment.
-      </p>
-      <ul class="space-y-3 list-none">
-        <li class="flex items-start gap-3">
-          <span class="text-pink font-bold">—</span>
-          <span>No cap on referrals — refer ten companies, earn $5,000.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-pink font-bold">—</span>
-          <span>No forms to fill. Just make the introduction.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-pink font-bold">—</span>
-          <span>Payment sent when the referred company pays their first invoice.</span>
-        </li>
-      </ul>
-      <p class="mt-8 text-zinc-500 text-sm">
-        To refer someone, email jon@bestcasestud.io with the subject line "Referral" and tell us who to expect.
-      </p>
+    <div class="relative flex flex-col lg:flex-row items-center justify-between gap-10 bg-[#F3F3F3] rounded-[45px] px-[60px] py-[70px] overflow-hidden">
+
+      <!-- Left: content -->
+      <div class="relative z-10 max-w-[560px]">
+        <div class="inline-block bg-pink text-black text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+          Referral Programme
+        </div>
+        <h2 class="text-5xl lg:text-6xl font-medium leading-tight mb-6">
+          Earn $500 per<br />referral. No cap.
+        </h2>
+        <p class="text-lg text-zinc-600 mb-8">
+          Know a B2B SaaS company that needs case studies? Make the introduction.
+          When they pay their first invoice, we send you $500 cash — no forms, no limits.
+        </p>
+        <a
+          href="mailto:jon@bestcasestud.io?subject=Referral"
+          class="inline-flex items-center gap-3 bg-dark text-gray px-8 py-4 rounded-2xl hover:opacity-90 transition-opacity text-lg"
+        >
+          Email us to refer someone
+        </a>
+      </div>
+
+      <!-- Right: decorative element -->
+      <div class="relative z-10 shrink-0 w-[280px] h-[280px] lg:w-[360px] lg:h-[360px] rounded-full bg-pink flex flex-col items-center justify-center text-center">
+        <span class="text-7xl lg:text-8xl font-bold text-black leading-none">$500</span>
+        <span class="text-base font-medium text-black/70 mt-2">per referral</span>
+      </div>
+
     </div>
   </div>
 </Section>

@@ -1,35 +1,35 @@
 ---
-import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
 ---
 
 <Section id="contact">
   <div class="mb-[140px] mt-[140px]">
-    <SectionTitle
-      sectionTitle="Book Your Discovery Call"
-      description="30 minutes. No hard sell. We'll find out if we're a good fit and answer any questions you have."
-    />
+    <div class="relative flex flex-col lg:flex-row items-center justify-between gap-10 bg-dark text-gray rounded-[45px] px-[60px] py-[70px] overflow-hidden">
 
-    <!-- Calendly inline widget -->
-    <div
-      class="calendly-inline-widget rounded-[20px] overflow-hidden"
-      data-url="https://calendly.com/thatwriterjon/best-case-studio"
-      style="min-width:320px;height:700px;"
-    ></div>
-    <script
-      is:inline
-      type="text/javascript"
-      src="https://assets.calendly.com/assets/external/widget.js"
-      async
-    ></script>
+      <!-- Left: content -->
+      <div class="max-w-[560px]">
+        <h2 class="text-5xl lg:text-6xl font-medium leading-tight mb-6">
+          Let's make things happen
+        </h2>
+        <p class="text-zinc-400 text-lg mb-8">
+          Book a free 30-minute discovery call. No hard sell — just a conversation
+          about whether case studies are the right move for you right now.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-3 bg-pink text-black px-8 py-4 rounded-2xl hover:opacity-90 transition-opacity text-lg font-medium"
+        >
+          Book a discovery call
+        </a>
+      </div>
 
-    <p class="mt-6 text-sm text-zinc-500 text-center">
-      Can't see the calendar?
-      <a
-        href="https://calendly.com/thatwriterjon/best-case-studio"
-        target="_blank"
-        class="text-pink underline"
-      >Book directly on Calendly</a>.
-    </p>
+      <!-- Right: decorative element -->
+      <div class="shrink-0 w-[280px] h-[280px] lg:w-[360px] lg:h-[360px] rounded-full border border-zinc-700 flex items-center justify-center">
+        <div class="w-[200px] h-[200px] lg:w-[260px] lg:h-[260px] rounded-full border border-zinc-600 flex items-center justify-center">
+          <div class="w-[120px] h-[120px] lg:w-[160px] lg:h-[160px] rounded-full bg-pink opacity-20"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </Section>

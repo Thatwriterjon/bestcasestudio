@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import vivaldi from "../../assets/company/Vivaldi.svg";
+import myCheckins from "../../assets/company/MyCheckins.svg";
+import rally from "../../assets/company/Rally.svg";
+import engineYard from "../../assets/company/Engine Yard.svg";
+import tagTeamAI from "../../assets/company/TagTeam AI.svg";
+import projul from "../../assets/company/Projul.svg";
+import scoro from "../../assets/company/Scoro.svg";
+import babelForce from "../../assets/company/BabelForce.svg";
+import bullet from "../../assets/company/Bullet.svg";
+import elastic from "../../assets/company/Elastic.svg";
+import float from "../../assets/company/Float.svg";
+import ismsOnline from "../../assets/company/isms.online.svg";
+import Section from "./Section.astro";
+
+const sponsors = [
+  { logo: vivaldi, alt: "Vivaldi logo" },
+  { logo: myCheckins, alt: "MyCheckins logo" },
+  { logo: rally, alt: "Rally logo" },
+  { logo: engineYard, alt: "Engine Yard logo" },
+  { logo: tagTeamAI, alt: "TagTeam AI logo" },
+  { logo: projul, alt: "Projul logo" },
+  { logo: scoro, alt: "Scoro logo" },
+  { logo: babelForce, alt: "BabelForce logo" },
+  { logo: bullet, alt: "Bullet logo" },
+  { logo: elastic, alt: "Elastic logo" },
+  { logo: float, alt: "Float logo" },
+  { logo: ismsOnline, alt: "isms.online logo" },
+];
+---
+
+<Section id="sponsors">
+  <div class="flex flex-col items-center gap-6">
+    <p class="text-xs uppercase tracking-widest text-zinc-500">Brands our founder has worked with</p>
+    <div class="grid grid-cols-3 md:grid-cols-6 w-full">
+      {
+        sponsors.map((sponsor) => {
+          return (
+            <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+              <Image src={sponsor.logo} class="h-12 w-auto mx-auto" alt={sponsor.alt} loading="lazy" />
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</Section>
