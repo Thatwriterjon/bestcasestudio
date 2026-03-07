@@ -9,10 +9,16 @@ import Section from "./Section.astro";
       sectionTitle="What Our Clients Say"
       description="Real feedback from B2B SaaS companies who've worked with Best Case Studio."
     />
-    <div
+    <script is:inline type="text/javascript" src="https://testimonial.to/js/iframeResizer.min.js"></script>
+    <iframe
       id="testimonialto-a9a5cbcc-76b3-4896-99d9-f94ed6736bf2"
-      aria-label="Testimonials Wall of Love"
-    ></div>
-    <script is:inline type="text/javascript" src="https://testimonial.to/js/widget.js"></script>
+      src="https://embed-v2.testimonial.to/carousel/all/best-case-studio?id=a9a5cbcc-76b3-4896-99d9-f94ed6736bf2"
+      frameborder="0"
+      scrolling="no"
+      width="100%"
+      height="450"
+      style="min-height: 450px;"
+    ></iframe>
+    <script is:inline type="text/javascript">iFrameResize({log: false, checkOrigin: false}, '#testimonialto-a9a5cbcc-76b3-4896-99d9-f94ed6736bf2');</script>
   </div>
 </Section>
