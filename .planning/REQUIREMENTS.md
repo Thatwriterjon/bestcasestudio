@@ -51,7 +51,7 @@
 
 ### Testimonials
 
-- [ ] **TEST-01**: TestimonialTo iframe embedded (ID: a9a5cbcc-76b3-4896-99d9-f94ed6736bf2)
+- [x] **TEST-01**: TestimonialTo iframe embedded (ID: a9a5cbcc-76b3-4896-99d9-f94ed6736bf2)
 
 ### Referral
 
@@ -110,7 +110,7 @@
 | TEAM-01 | Phase 2 | Pending |
 | TEAM-02 | Phase 2 | Pending |
 | TEAM-03 | Phase 2 | Pending |
-| TEST-01 | Phase 3 | Pending |
+| TEST-01 | Phase 3 | Complete |
 | REF-01 | Phase 3 | Pending |
 | FAQ-01 | Phase 3 | Pending |
 | CONT-01 | Phase 3 | Pending |

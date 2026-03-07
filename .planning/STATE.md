@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 02-core-content-01-PLAN.md
-last_updated: "2026-03-07T13:40:57.588Z"
+stopped_at: Completed 03-conversion-close-01-PLAN.md
+last_updated: "2026-03-07T13:52:22.969Z"
 last_activity: 2026-03-07 — Roadmap created, Phase 1 ready for planning
 progress:
   total_phases: 3
   completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 9
+  completed_plans: 7
   percent: 0
 ---
 
@@ -55,6 +55,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P03 | 8 | 2 tasks | 2 files |
 | Phase 02-core-content P02 | 3 | 2 tasks | 2 files |
 | Phase 02-core-content P01 | 12 | 3 tasks | 3 files |
+| Phase 03-conversion-close P01 | 5 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,7 @@ Recent decisions affecting current work:
 - [Phase 02-core-content]: Kept Proposal.astro filename, rewrote as pricing section — Single $3,000 / Trio $7,500, Calendly CTAs, no launch discount
 - [Phase 02-core-content P01]: Used 9 real client logos (1, 3, 7, 8, 10, 11, 12, 13, 14.svg) — excluded 2, 4, 6 per Jon's instruction; grid md:grid-cols-9
 - [Phase 02-core-content P01]: Services section reduced from 6 template cards to 3 BCS value props (Build Trust, Improve SEO & GEO, Lower CAC); grid lg:grid-cols-3
+- [Phase 03-conversion-close]: Replaced Swiper carousel with TestimonialTo iframe embed (wall ID a9a5cbcc-76b3-4896-99d9-f94ed6736bf2) — real client voices over template placeholders
 
 ### Pending Todos
 
@@ -87,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T13:15:00.000Z
-Stopped at: Completed 02-core-content-01-PLAN.md
+Last session: 2026-03-07T13:52:22.966Z
+Stopped at: Completed 03-conversion-close-01-PLAN.md
 Resume file: None
