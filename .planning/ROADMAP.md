@@ -44,7 +44,12 @@ Plans:
   3. Pricing section shows Single ($3,000) and Trio ($7,500) tiers with full deliverables and a CTA on each
   4. The three-step process (Interview, Editing & Writing, Content Delivery) is displayed in order
   5. Team section shows Jon, Alex, and Jessie with accurate roles and bios appropriate for a B2B SaaS audience
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Sponsors logo strip with framing copy and three Why Case Studies? value prop cards
+- [ ] 02-02-PLAN.md — Pricing section (Single $3,000 / Trio $7,500) with deliverables and Calendly CTAs
+- [ ] 02-03-PLAN.md — Process accordion (3 steps) and Team section (Jon, Alex, Jessie)
 
 ### Phase 3: Conversion Close
 **Goal**: Visitors have everything they need to trust BCS and book a discovery call — site is launch-ready
@@ -66,5 +71,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-03-07 |
-| 2. Core Content | 0/TBD | Not started | - |
+| 2. Core Content | 0/3 | Not started | - |
 | 3. Conversion Close | 0/TBD | Not started | - |
