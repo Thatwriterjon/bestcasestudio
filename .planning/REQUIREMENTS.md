@@ -12,13 +12,13 @@
 
 ### Navigation
 
-- [ ] **NAV-01**: Main nav includes a "Credibility Scorecard" link that opens scorecard.bestcasestud.io in a new tab
+- [x] **NAV-01**: Main nav includes a "Credibility Scorecard" link that opens scorecard.bestcasestud.io in a new tab
 
 ### Hero
 
-- [ ] **HERO-01**: Headline — "Your current customers are your most effective salespeople"
-- [ ] **HERO-02**: Subheading — case studies build trust for B2B SaaS, used on website/social/sales materials
-- [ ] **HERO-03**: Two CTAs — "Book Discovery Call" (anchors to contact section with embedded calendar) and "Credibility Scorecard" (opens scorecard.bestcasestud.io in new tab)
+- [x] **HERO-01**: Headline — "Your current customers are your most effective salespeople"
+- [x] **HERO-02**: Subheading — case studies build trust for B2B SaaS, used on website/social/sales materials
+- [x] **HERO-03**: Two CTAs — "Book Discovery Call" (anchors to contact section with embedded calendar) and "Credibility Scorecard" (opens scorecard.bestcasestud.io in new tab)
 
 ### Sponsors
 
@@ -92,10 +92,10 @@
 |-------------|-------|--------|
 | SETUP-01 | Phase 1 | Complete |
 | SETUP-02 | Phase 1 | Complete |
-| NAV-01 | Phase 1 | Pending |
-| HERO-01 | Phase 1 | Pending |
-| HERO-02 | Phase 1 | Pending |
-| HERO-03 | Phase 1 | Pending |
+| NAV-01 | Phase 1 | Complete |
+| HERO-01 | Phase 1 | Complete |
+| HERO-02 | Phase 1 | Complete |
+| HERO-03 | Phase 1 | Complete |
 | SPONS-01 | Phase 2 | Pending |
 | SPONS-02 | Phase 2 | Pending |
 | SERV-01 | Phase 2 | Pending |
