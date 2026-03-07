@@ -1,7 +1,7 @@
 /* empty css                                    */
 import { b as createAstro, c as createComponent, m as maybeRenderHead, d as addAttribute, a as renderTemplate, r as renderComponent } from '../../chunks/astro/server_DTu46K8G.mjs';
 import 'kleur/colors';
-import { $ as $$MainLayout } from '../../chunks/MainLayout_CxWmjx_D.mjs';
+import { $ as $$MainLayout } from '../../chunks/MainLayout_B-cBUST4.mjs';
 import 'clsx';
 import { c as capitalize, f as formatDate } from '../../chunks/utils_CIZL8hpr.mjs';
 import { a as getEntry } from '../../chunks/_astro_content_BKtj0G-A.mjs';

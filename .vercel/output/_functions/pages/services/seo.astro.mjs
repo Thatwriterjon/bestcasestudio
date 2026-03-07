@@ -1,7 +1,7 @@
 /* empty css                                    */
 import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_DTu46K8G.mjs';
 import 'kleur/colors';
-import { c as createSvgComponent, $ as $$MainLayout } from '../../chunks/MainLayout_CxWmjx_D.mjs';
+import { c as createSvgComponent, $ as $$MainLayout } from '../../chunks/MainLayout_B-cBUST4.mjs';
 import { $ as $$Card } from '../../chunks/Card_CxLGULV8.mjs';
 import '../../chunks/index_MaT6fT73.mjs';
 import { $ as $$Image } from '../../chunks/_astro_assets_CT8oIhJs.mjs';

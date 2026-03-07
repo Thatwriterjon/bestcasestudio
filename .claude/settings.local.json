@@ -51,7 +51,9 @@
       "Bash(node \"$HOME/.claude/get-shit-done/bin/gsd-tools.cjs\" phase complete \"03\")",
       "Bash(git add .planning/phases/03-conversion-close/03-VERIFICATION.md .planning/ROADMAP.md .planning/STATE.md .planning/REQUIREMENTS.md)",
       "Bash(git add src/components/sections/Contact.astro src/components/ui/Footer.astro)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git add src/components/sections/Testimonials.astro)",
+      "Bash(git add src/components/ui/Navbar.astro src/components/ui/Footer.astro)"
     ]
   }
 }

@@ -1,59 +1,46 @@
 ---
-import SectionTitle from "../ui/SectionTitle.astro";
-import ServiceCard from "../ui/ServiceCard.astro";
 import Section from "./Section.astro";
-
-import c1 from "../../assets/pics/card-pic1.png";
-import c2 from "../../assets/pics/card-pic2.png";
-import c3 from "../../assets/pics/card-pic3.png";
+import SectionTitle from "../ui/SectionTitle.astro";
 
 const cards = [
   {
     index: 1,
-    titleTop: "Build",
-    titleBottom: "Trust",
-    img: c1,
-    alt: "Build Trust",
-    link: "#pricing",
+    title: "Build Trust",
+    description:
+      "Case studies tell skeptical B2B buyers why they should choose you — from someone they believe. A real customer story beats any marketing copy.",
+    bg: "bg-[#F3F3F3]",
   },
   {
     index: 2,
-    titleTop: "Improve SEO",
-    titleBottom: "& GEO",
-    img: c2,
-    alt: "Improve SEO and GEO",
-    link: "#pricing",
+    title: "Improve SEO & GEO",
+    description:
+      "Case studies are evergreen content that compounds over time. They improve your search ranking and get you talked about favourably by LLMs.",
+    bg: "bg-yellow",
   },
   {
     index: 3,
-    titleTop: "Lower",
-    titleBottom: "CAC",
-    img: c3,
-    alt: "Lower CAC",
-    link: "#pricing",
+    title: "Lower CAC",
+    description:
+      "Proof-driven content shortens the sales cycle. Prospects arrive already convinced — fewer calls to close, lower cost per customer.",
+    bg: "bg-dark text-gray",
   },
 ];
-
-const description =
-  "Case studies are one of the highest-performing content types for B2B SaaS. Here's what they can do for you.";
 ---
 
 <Section id="services">
   <div class="mt-[140px] mb-5">
-    <SectionTitle sectionTitle="Why Case Studies?" description={description} />
-    <div class="grid lg:grid-cols-3 gap-10">
-      {
-        cards.map((card) => (
-          <ServiceCard
-            index={card.index}
-            titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
-            img={card.img}
-            alt={card.alt}
-            link={card.link}
-          />
-        ))
-      }
+    <SectionTitle
+      sectionTitle="Why Case Studies?"
+      description="Case studies are one of the highest-performing content types for B2B SaaS. Here's what they can do for you."
+    />
+    <div class="grid lg:grid-cols-3 gap-6">
+      {cards.map((card) => (
+        <div class={`${card.bg} rounded-[45px] p-[50px] border border-dark shadow-[0px_5px_0px_#191a23]`}>
+          <p class="text-5xl font-bold mb-6 leading-none">0{card.index}</p>
+          <h3 class="text-3xl font-medium mb-4">{card.title}</h3>
+          <p class={`text-lg leading-relaxed ${card.index === 3 ? 'text-zinc-400' : 'text-zinc-600'}`}>{card.description}</p>
+        </div>
+      ))}
     </div>
   </div>
 </Section>
