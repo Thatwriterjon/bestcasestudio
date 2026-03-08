@@ -1,13 +1,13 @@
 ---
-import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
 ---
 
 <Section id="testimonials">
-  <div class="mt-20 mb-[150px]">
+  <div class="mt-24 mb-0">
     <SectionTitle
-      sectionTitle="What Our Clients Say"
-      description="Real feedback from B2B SaaS companies who've worked with Best Case Studio."
+      sectionTitle="Testimonials"
+      description="Jon has been working with B2B SaaS companies for over 7 years. These are a few things clients have said along the way."
     />
     <script is:inline type="text/javascript" src="https://testimonial.to/js/iframeResizer.min.js"></script>
     <iframe
@@ -17,7 +17,7 @@ import Section from "./Section.astro";
       scrolling="no"
       width="100%"
       height="450"
-      style="min-height: 450px;"
+      style="min-height: 450px; display: block;"
     ></iframe>
     <script is:inline type="text/javascript">iFrameResize({log: false, checkOrigin: false}, '#testimonialto-a9a5cbcc-76b3-4896-99d9-f94ed6736bf2');</script>
   </div>

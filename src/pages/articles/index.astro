@@ -1,32 +1,15 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import ArticleCard from "../../components/ui/ArticleCard.astro";
-import SearchForm from "../../components/ui/SearchForm.astro";
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from "astro:content";
-
-const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
-
-const allBlogArticles: CollectionEntry<'blog'>[] = (await getCollection('blog'))
-  .sort((a:CollectionEntry<'blog'>, b:CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
 ---
 
-<MainLayout title="Positivus - Blog">
-	<main class="space-y-20">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
-                <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-                    <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold">Our Blog</h2>
-                    <p class="font-light sm:text-xl">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
-                </div> 
-                <br>
-                <SearchForm />
-                <br>
-                <div class="grid gap-8 lg:grid-cols-2">
-                    {allBlogArticles.map(article => (
-                        <ArticleCard article={article} />
-                    ))}
-                </div>  
-            </div>
-	</main>
+<MainLayout
+  title="Blog — Best Case Studio"
+  description="Case study tips, SaaS positioning insights, and customer marketing advice. Coming soon."
+>
+  <div class="w-full max-w-[1240px] mx-auto px-5 mt-[160px] mb-[140px] text-center">
+    <h1 class="text-5xl lg:text-6xl font-medium leading-tight mb-6">Coming soon</h1>
+    <p class="text-zinc-500 text-lg max-w-[480px] mx-auto">
+      We're working on articles about case study strategy, SaaS positioning, and customer marketing. Check back soon.
+    </p>
+  </div>
 </MainLayout>
