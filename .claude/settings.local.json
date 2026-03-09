@@ -55,7 +55,14 @@
       "Bash(git add src/components/sections/Testimonials.astro)",
       "Bash(git add src/components/ui/Navbar.astro src/components/ui/Footer.astro)",
       "Bash(git add src/pages/index.astro)",
-      "Bash(git add src/components/sections/FAQ.astro)"
+      "Bash(git add src/components/sections/FAQ.astro)",
+      "Bash(git add src/components/sections/Hero.astro src/components/sections/Proposal.astro src/components/sections/Referral.astro src/components/sections/Team.astro src/components/sections/Testimonials.astro src/components/ui/Navbar.astro src/components/ui/TeamCard.astro src/pages/contact.astro src/pages/index.astro src/pages/pricing.astro src/pages/articles/index.astro src/assets/team/Alex.png src/assets/team/Jessie.png src/assets/team/Jon.png public/\"Website hero image.png\")",
+      "Bash(git rm src/assets/team/t1.png src/assets/team/t2.png src/assets/team/t3.png src/assets/team/t4.png src/assets/team/t5.png src/assets/team/t6.png src/pages/about.astro)",
+      "Bash(git push)",
+      "Bash(git remote add origin https://github.com/Thatwriterjon/bestcasestudio.git)",
+      "Bash(git push -u origin main)",
+      "Bash(git add README.md)",
+      "Bash(git add astro.config.mjs)"
     ]
   }
 }
