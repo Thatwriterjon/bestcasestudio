@@ -26,20 +26,20 @@ const steps = [
 ---
 
 <Section id="process">
-  <div class="mt-[140px]">
+  <div class="mt-[140px] ">
     <SectionTitle
       sectionTitle="Our Process"
       description="Three steps from customer interview to ready-to-publish content."
     />
-    <div class="flex flex-col lg:flex-row justify-between rounded-[45px] p-1 gap-[2px]">
+      <div class="flex flex-col lg:flex-row justify-between rounded-[45px] p-1 gap-8">
       {
         steps.map((step) => (
           <Card>
-            <div class="flex p-[60px] h-full bg-dark text-gray rounded-[45px] m-[1px]">
+            <div class="flex p-[60px] h-full bg-white  rounded-[45px] m-[1px] border border-dark">
               <div class="flex flex-col gap-5">
-                <span class="text-6xl text-zinc-600 font-bold leading-none">0{step.index}</span>
-                <h3 class="text-2xl font-medium">{step.title}</h3>
-                <p class="text-zinc-400 leading-relaxed">{step.description}</p>
+                  <span class="text-6xl text-black font-bold leading-none">0{step.index}</span>
+                  <h3 class="text-2xl font-medium text-black">{step.title}</h3>
+                  <p class="text-black leading-relaxed">{step.description}</p>
               </div>
             </div>
           </Card>
