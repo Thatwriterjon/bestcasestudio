@@ -76,7 +76,9 @@
       "Bash(git push origin main)",
       "Bash(git add posthog-setup-report.md src/components/sections/Contact.astro \"src/pages/articles/[slug].astro\" src/pages/articles/index.astro src/pages/pricing.astro src/pages/services/seo.astro)",
       "Bash(npm run preview)",
-      "Bash(git add src/pages/services.astro src/pages/services/seo.astro .claude/settings.local.json)"
+      "Bash(git add src/pages/services.astro src/pages/services/seo.astro .claude/settings.local.json)",
+      "Bash(ls -la /Users/jonmcgreevy/bestcasestudio/src/pages/services*)",
+      "Bash(git add 'src/pages/articles/[slug].astro')"
     ]
   }
 }

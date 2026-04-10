@@ -84,8 +84,17 @@ const articleTitle = post.data.title;
       <Content />
     </div>
 
+    <!-- Author Byline -->
+    <div class="mt-16 pt-10 pb-10 border-t border-white/10">
+      <div class="bg-white/5 rounded-lg p-6">
+        <p class="text-white/80 leading-relaxed">
+          <strong>{post.data.author}</strong> has spent 7 years helping B2B SaaS companies reduce customer acquisition cost through positioning and credibility-driven strategies. He now focuses on full-stack case study production as the fastest way to build that credibility.
+        </p>
+      </div>
+    </div>
+
     <!-- CTA -->
-    <div class="mt-16 pt-10 border-t border-white/10 text-center">
+    <div class="mt-10 text-center">
       <p class="text-white/60 mb-4">Ready to turn your customers into your best salespeople?</p>
       <a id="article-cta" href="/contact" class="inline-block px-8 py-4 bg-pink hover:opacity-90 rounded-2xl text-black font-medium text-lg transition-opacity">
         Book a Discovery Call
