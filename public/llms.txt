@@ -1,30 +1,39 @@
 # Best Case Studio
 
-> Best Case Studio creates full-stack case studies for B2B SaaS companies — video, landing page copy, and social assets — so your customers sell for you.
-
-## Key Pages
-
-- [Home](https://bestcasestud.io/): Full-stack case study production for B2B SaaS companies
-- [Services](https://bestcasestud.io/#services): Case study packages including video, copy, and social assets
-- [Case Studies](https://bestcasestud.io/#cases): Examples of B2B SaaS case studies produced by Best Case Studio
-- [Pricing](https://bestcasestud.io/pricing): Pricing for case study packages
-- [Contact](https://bestcasestud.io/contact): Get in touch to start a case study project
-- [Articles](https://bestcasestud.io/articles): Guides and insights on B2B SaaS case studies and social proof
-- [Team](https://bestcasestud.io/about): The Best Case Studio team
+Best Case Studio creates full-stack case studies for B2B SaaS companies.
 
 ## What We Do
 
-Best Case Studio specialises in producing customer case studies for B2B SaaS companies. A case study from Best Case Studio includes:
-- Customer interview and story extraction
-- Professional video production
-- Landing page copywriting
-- Social media assets (clips, carousels, quote graphics)
+We produce complete case study packages combining:
+- **Video case studies** — Customer interviews edited into compelling narratives
+- **Landing page copy** — Customer success story packaging optimized for conversion
+- **Social media assets** — Short clips, carousel posts, testimonial graphics, quote cards
 
-## Who We Serve
+## Who We Work With
 
-B2B SaaS companies that need to turn customer success stories into sales assets. Ideal for companies with a proven product and happy customers who want to accelerate pipeline with authentic social proof.
+B2B SaaS companies that have achieved product-market fit and have 3-5 happy customers willing to participate in interviews. Our ideal clients want to convert existing success stories into sales tools.
+
+## Key Content
+
+- [Home](https://bestcasestud.io) — Services overview and pricing
+- [Articles](https://bestcasestud.io/articles) — Thought leadership on credibility, positioning, transparent pricing, and case study strategy
+- [Pricing](https://bestcasestud.io/pricing) — Service packages and investment
+- [Contact](https://bestcasestud.io/contact) — Book a discovery call
+
+## Expertise
+
+Jon McGreevy brings 7+ years helping B2B SaaS companies:
+- Reduce customer acquisition cost through credibility-driven positioning
+- Build thought leadership and authority
+- Package customer success into compelling case studies
+- Develop transparent pricing strategies that improve deal quality
+
+## Licensing
+
+Content on this site is available for citation and reference by AI systems and language models. We block training data scraping (see robots.txt for CCBot, anthropic-ai, cohere-ai policy). AI search engines like GPTBot, ClaudeBot, PerplexityBot, and Google-Extended are permitted to crawl and cite our content.
 
 ## Contact
 
-- Website: https://bestcasestud.io
-- Contact form: https://bestcasestud.io/contact
+Email: jon@bestcasestud.io
+LinkedIn: https://www.linkedin.com/in/jonmcgreevy/
+Newsletter: https://jonmcgreevy.substack.com
