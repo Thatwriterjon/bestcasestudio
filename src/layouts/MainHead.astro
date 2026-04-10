@@ -1,5 +1,6 @@
 ---
 import Seo from "../components/seo/Seo.astro";
+import PostHog from "../components/posthog.astro";
 
 // Pass the contents to create SEO for the page
 const { title, description, image, frontmatter, robots } = Astro.props;
@@ -30,4 +31,6 @@ const { title, description, image, frontmatter, robots } = Astro.props;
   <!-- Preload critical fonts -->
   <link rel="preload" as="font" type="font/woff" href="/fonts/nohemi/Nohemi-Regular-BF6438cc579d934.woff" crossorigin />
   <link rel="preload" as="font" type="font/woff" href="/fonts/nohemi/Nohemi-Medium-BF6438cc57ddecd.woff" crossorigin />
+
+  <PostHog />
 </head>

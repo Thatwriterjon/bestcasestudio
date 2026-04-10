@@ -21,6 +21,7 @@ import Section from "./Section.astro";
         <a
           href="mailto:jon@bestcasestud.io?subject=Referral"
           class="inline-flex items-center gap-3 bg-pink text-black px-8 py-4 rounded-2xl hover:opacity-90 transition-opacity text-lg font-medium"
+          onclick="window.posthog?.capture('referral_email_clicked')"
         >
           Email us to refer someone
         </a>

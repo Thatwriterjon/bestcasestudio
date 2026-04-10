@@ -57,6 +57,7 @@ const navButton = {
                 target={navButton.target}
                 rel={navButton.rel}
                 data-close-menu="true"
+                onclick="window.posthog?.capture('scorecard_cta_clicked', { location: 'mobile_nav' })"
               >
                 <h2 class="text-center text-xl font-normal leading-7">{navButton.label}</h2>
               </a>
@@ -72,6 +73,7 @@ const navButton = {
             href={navButton.href}
             target={navButton.target}
             rel={navButton.rel}
+            onclick="window.posthog?.capture('scorecard_cta_clicked', { location: 'desktop_nav' })"
           >
             <h2 class="text-center text-xl font-normal leading-7">{navButton.label}</h2>
           </a>

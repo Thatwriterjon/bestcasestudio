@@ -75,3 +75,14 @@ const faq = [
     </div>
   </div>
 </Section>
+
+<script is:inline>
+  document.querySelectorAll('#faq details').forEach(function (details) {
+    details.addEventListener('toggle', function () {
+      if (details.open) {
+        var question = details.querySelector('summary')?.firstChild?.textContent?.trim();
+        window.posthog?.capture('faq_expanded', { question: question });
+      }
+    });
+  });
+</script>

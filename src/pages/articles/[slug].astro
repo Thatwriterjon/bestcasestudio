@@ -18,6 +18,9 @@ const formattedDate = new Date(post.data.pubDate).toLocaleDateString('en-GB', {
   month: 'long',
   year: 'numeric',
 });
+
+const articleSlug = post.id.replace(/\.md$/, '');
+const articleTitle = post.data.title;
 ---
 
 <MainLayout
@@ -91,3 +94,10 @@ const formattedDate = new Date(post.data.pubDate).toLocaleDateString('en-GB', {
 
   </div>
 </MainLayout>
+
+<script is:inline define:vars={{ articleSlug, articleTitle }}>
+  window.posthog?.capture('article_viewed', {
+    article_slug: articleSlug,
+    article_title: articleTitle,
+  });
+</script>

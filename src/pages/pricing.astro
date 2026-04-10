@@ -30,6 +30,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         <a
           href="/contact"
           class="btn-primary inline-block text-center"
+          onclick="window.posthog?.capture('pricing_cta_clicked', { tier: 'single', price: 3000 })"
         >Book Discovery Call</a>
       </div>
 
@@ -48,6 +49,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         <a
           href="/contact"
           class="btn-primary inline-block text-center"
+          onclick="window.posthog?.capture('pricing_cta_clicked', { tier: 'trio', price: 7500 })"
         >Book Discovery Call</a>
       </div>
 

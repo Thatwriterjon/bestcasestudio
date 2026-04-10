@@ -109,4 +109,30 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     </div>
   </div>
+
+<script is:inline>
+  // Track contact form submission
+  var contactForm = document.querySelector('form[name="contact"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function () {
+      var email = document.getElementById('email') ? document.getElementById('email').value : '';
+      var company = document.getElementById('company') ? document.getElementById('company').value : '';
+      window.posthog?.capture('contact_form_submitted', {
+        has_company: company.length > 0,
+      });
+      if (email) {
+        window.posthog?.identify(email, { email: email, company: company || undefined });
+      }
+    });
+  }
+
+  // Track Calendly booking completion
+  window.addEventListener('message', function (e) {
+    if (e.data && e.data.event === 'calendly.event_scheduled') {
+      window.posthog?.capture('discovery_call_booked', {
+        source: 'calendly',
+      });
+    }
+  });
+</script>
 </MainLayout>
