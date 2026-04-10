@@ -3,7 +3,7 @@ title: 'Why Good SaaS Fails (And Mediocre SaaS Thrives)'
 pubDate: 2026-03-11
 author: 'Jon McGreevy'
 authImage: 'https://www.jonmcgreevy.com/avatar.jpg'
-image: 'credibility-multiplier.jpg'
+image: 'why-good-saas-fails.png'
 tags: ['credibility', 'SaaS', 'positioning', 'CAC', 'framework']
 slug: why-good-saas-fails
 summary: 'At the end of 2025 I had an epiphany: credibility isn''t a filter, it''s a multiplier. Here''s the formula that explains why some companies thrive while others struggle.'
