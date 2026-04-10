@@ -4,13 +4,32 @@ import MainLayout from '../../layouts/MainLayout.astro';
 
 const learningPages = await getCollection('learning');
 
-// Group pages by category (using folder names)
-const grouped = learningPages.reduce((acc, page) => {
+// Filter to get only child pages (exclude category index pages)
+const childPages = learningPages.filter(page => {
+  const parts = page.id.split('/');
+  return parts.length > 1 && parts[parts.length - 1] !== 'index';
+});
+
+// Add category landing pages (the index.md files)
+const categoryLandingPages = learningPages.filter(page => {
+  const parts = page.id.split('/');
+  return parts.length === 2 && parts[parts.length - 1] === 'index';
+});
+
+// Group child pages by category (using folder names)
+const grouped = childPages.reduce((acc, page) => {
   const category = page.id.split('/')[0];
   if (!acc[category]) acc[category] = [];
   acc[category].push(page);
   return acc;
 }, {} as Record<string, typeof learningPages>);
+
+// Add the category landing page to each category
+categoryLandingPages.forEach(page => {
+  const category = page.id.split('/')[0];
+  if (!grouped[category]) grouped[category] = [];
+  grouped[category].unshift(page); // Add at beginning
+});
 
 // Sort categories and pages
 const sortedCategories = Object.keys(grouped).sort();
@@ -29,12 +48,23 @@ const sortedCategories = Object.keys(grouped).sort();
       </p>
     </div>
 
-    {sortedCategories.map((category) => (
+    {sortedCategories.map((category) => {
+      // Get the landing page for this category to link to it
+      const landingPage = grouped[category]?.find(page => page.id.endsWith('/index'));
+      const landingPagePath = landingPage ? `/learning/${landingPage.id.replace(/\.md$/, '')}` : null;
+
+      return (
       <div class="mb-16">
-        <h2 class="text-3xl font-medium leading-tight mb-6 capitalize">{category.replace(/-/g, ' ')}</h2>
+        {landingPagePath ? (
+          <a href={landingPagePath} class="inline-block group">
+            <h2 class="text-3xl font-medium leading-tight mb-6 capitalize group-hover:text-pink transition-colors">{category.replace(/-/g, ' ')}</h2>
+          </a>
+        ) : (
+          <h2 class="text-3xl font-medium leading-tight mb-6 capitalize">{category.replace(/-/g, ' ')}</h2>
+        )}
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {grouped[category]?.map((page) => {
+          {grouped[category]?.filter(page => !page.id.endsWith('/index')).map((page) => {
             const date = page.data.pubDate ? new Date(page.data.pubDate).toLocaleDateString('en-GB', {
               day: 'numeric', month: 'short', year: 'numeric',
             }) : null;
@@ -67,7 +97,8 @@ const sortedCategories = Object.keys(grouped).sort();
           })}
         </div>
       </div>
-    ))}
+      );
+    })}
 
   </div>
 </MainLayout>

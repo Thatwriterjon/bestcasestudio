@@ -85,7 +85,9 @@
       "Bash(git rm --cached .claude-seo-temp)",
       "Bash(git reset .claude/settings.local.json)",
       "Bash(git reset)",
-      "Bash(git add public/llms.txt src/components/sections/FAQ.astro src/content/blog/credibility-multiplier.md src/content/blog/transparent-pricing-reduces-cac.md)"
+      "Bash(git add public/llms.txt src/components/sections/FAQ.astro src/content/blog/credibility-multiplier.md src/content/blog/transparent-pricing-reduces-cac.md)",
+      "Bash(npm exec astro -- --version)",
+      "Bash(curl -s http://localhost:3000/learning/authority/)"
     ]
   }
 }
