@@ -16,15 +16,15 @@ const navButton = {
 ---
 
 <div class="mt-20">
-  <nav class="w-full top-0 left-0 z-50 fixed bg-white">
-    <header class="flex flex-col lg:flex-row justify-between items-center my-5 px-6 md:px-32">
+  <nav class="w-full top-0 left-0 z-50 fixed bg-black border-b border-gray">
+    <header class="flex flex-col lg:flex-row justify-between items-center my-5 px-6 lg:px-10 max-w-[1240px] mx-auto w-full">
       <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between">
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="/logo.png" class="h-12" alt="Best Case Studio" />
           </a>
           <div class="block lg:hidden">
-            <div id="menu-icon" class="w-8 h-8 text-black cursor-pointer">
+            <div id="menu-icon" class="w-8 h-8 text-white cursor-pointer">
               <!-- Open (hamburger) icon -->
               <svg id="open-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-8 h-8">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -43,7 +43,7 @@ const navButton = {
               <li>
                 <a
                   href={item.href}
-                  class="mobile-nav-link block py-2 px-3 text-black rounded lg:bg-transparent lg:p-0"
+                  class="mobile-nav-link block py-2 px-3 text-white rounded lg:bg-transparent lg:p-0 hover:text-pink transition-colors"
                   data-close-menu="true"
                 >
                   {item.label}
@@ -52,7 +52,7 @@ const navButton = {
             ))}
             <div class="lg:hidden flex items-center justify-center mt-3 gap-4">
               <a
-                class="mobile-nav-link px-9 py-5 rounded-2xl bg-yellow hover:opacity-90 text-black inline-flex"
+                class="mobile-nav-link px-9 py-5 rounded-2xl bg-pink hover:opacity-90 text-black inline-flex"
                 href={navButton.href}
                 target={navButton.target}
                 rel={navButton.rel}
@@ -68,7 +68,7 @@ const navButton = {
       <div>
         <div class="hidden lg:flex items-center gap-4">
           <a
-            class="px-9 py-5 rounded-2xl bg-yellow hover:opacity-90 text-black inline-flex"
+            class="px-9 py-5 rounded-2xl bg-pink hover:opacity-90 text-black inline-flex"
             href={navButton.href}
             target={navButton.target}
             rel={navButton.rel}

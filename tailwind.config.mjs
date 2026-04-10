@@ -11,7 +11,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        grotesk: ["Grotesk", "sans-serif"],
+        nohemi: ["Nohemi", "sans-serif"],
+        grotesk: ["Nohemi", "sans-serif"],
       },
       fontWeight: {
         regular: 400,
@@ -24,6 +25,7 @@ export default {
         dark: "var(--dark)",
         gray: "var(--gray)",
         white: "var(--white)",
+        bg: "var(--bg)",
       },
     },
   },

@@ -62,7 +62,13 @@
       "Bash(git remote add origin https://github.com/Thatwriterjon/bestcasestudio.git)",
       "Bash(git push -u origin main)",
       "Bash(git add README.md)",
-      "Bash(git add astro.config.mjs)"
+      "Bash(git add astro.config.mjs)",
+      "Bash(ls /Users/jonmcgreevy/bestcasestudio/public/*.png /Users/jonmcgreevy/bestcasestudio/public/*.svg /Users/jonmcgreevy/bestcasestudio/public/*.webp)",
+      "Bash(git add src/pages/team.astro src/pages/index.astro src/components/sections/Team.astro src/components/ui/Footer.astro)",
+      "Bash(npm install)",
+      "Bash(git add package.json package-lock.json)",
+      "Bash(npm view @astrojs/tailwind versions --json)",
+      "Bash(npm view @astrojs/tailwind@6.0.2 peerDependencies)"
     ]
   }
 }
