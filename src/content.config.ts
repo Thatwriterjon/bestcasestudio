@@ -10,7 +10,7 @@ const blogCollection = defineCollection({
     image: z.string(),
     tags: z.array(z.string()),
     summary: z.string(),
-    type: z.enum(['Article', 'Tutorial']),
+    type: z.enum(['Article', 'Tutorial', 'Framework', 'Analysis', 'Strategy']),
   }),
   // Astro v6 requires a loader for each collection
   // Example loader for markdown files

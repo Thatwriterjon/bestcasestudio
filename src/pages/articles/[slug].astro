@@ -1,0 +1,93 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = new Date(post.data.pubDate).toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<MainLayout
+  title={`${post.data.title} — Best Case Studio`}
+  description={post.data.summary}
+  frontmatter={{
+    title: post.data.title,
+    description: post.data.summary,
+    image: { src: `/blog/${post.data.image}`, alt: post.data.title },
+    author: post.data.author,
+    date: post.data.pubDate,
+  }}
+>
+  <div class="w-full max-w-[760px] mx-auto px-5 mt-[120px] mb-[120px]">
+
+    <!-- Back link -->
+    <a href="/articles" class="inline-flex items-center gap-2 text-white/50 hover:text-pink transition-colors text-sm mb-10">
+      ← All articles
+    </a>
+
+    <!-- Tags -->
+    {post.data.tags && post.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-6">
+        {post.data.tags.map((tag: string) => (
+          <span class="text-xs uppercase tracking-widest text-pink border border-pink/40 rounded-full px-3 py-1">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+
+    <!-- Title -->
+    <h1 class="text-4xl lg:text-5xl font-medium leading-tight mb-6">{post.data.title}</h1>
+
+    <!-- Summary -->
+    <p class="text-lg text-white/70 leading-relaxed mb-8">{post.data.summary}</p>
+
+    <!-- Meta -->
+    <div class="flex items-center gap-4 mb-10 pb-10 border-b border-white/10">
+      {post.data.authImage && (
+        <img src={post.data.authImage} alt={post.data.author} class="w-10 h-10 rounded-full object-cover" />
+      )}
+      <div>
+        <p class="font-medium text-sm">{post.data.author}</p>
+        <p class="text-white/50 text-sm">{formattedDate}</p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="prose prose-invert prose-lg max-w-none
+      prose-headings:font-medium prose-headings:text-white
+      prose-p:text-white/80 prose-p:leading-relaxed
+      prose-a:text-pink prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-white
+      prose-ul:text-white/80 prose-ol:text-white/80
+      prose-li:my-1
+      prose-hr:border-white/10
+      prose-blockquote:border-l-pink prose-blockquote:text-white/70
+      prose-code:text-pink prose-code:bg-white/5 prose-code:px-1 prose-code:rounded
+      prose-pre:bg-white/5">
+      <Content />
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 pt-10 border-t border-white/10 text-center">
+      <p class="text-white/60 mb-4">Ready to turn your customers into your best salespeople?</p>
+      <a href="/contact" class="inline-block px-8 py-4 bg-pink hover:opacity-90 rounded-2xl text-black font-medium text-lg transition-opacity">
+        Book a Discovery Call
+      </a>
+    </div>
+
+  </div>
+</MainLayout>

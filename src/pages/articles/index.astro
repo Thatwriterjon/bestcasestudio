@@ -1,15 +1,74 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const posts = await getCollection('blog');
+const sorted = posts.sort(
+  (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
 ---
 
 <MainLayout
-  title="Blog — Best Case Studio"
-  description="Case study tips, SaaS positioning insights, and customer marketing advice. Coming soon."
+  title="Articles — Best Case Studio"
+  description="Case study strategy, SaaS positioning insights, and customer marketing advice from Jon McGreevy."
 >
-  <div class="w-full max-w-[1240px] mx-auto px-5 mt-[160px] mb-[140px] text-center">
-    <h1 class="text-5xl lg:text-6xl font-medium leading-tight mb-6">Coming soon</h1>
-    <p class="text-white opacity-60 text-lg max-w-[480px] mx-auto">
-      We're working on articles about case study strategy, SaaS positioning, and customer marketing. Check back soon.
-    </p>
+  <div class="w-full max-w-[1240px] mx-auto px-5 mt-[120px] mb-[120px]">
+
+    <div class="mb-14">
+      <h1 class="text-5xl lg:text-6xl font-medium leading-tight mb-4">Articles</h1>
+      <p class="text-white/60 text-lg max-w-[560px]">
+        Case study strategy, SaaS positioning, and customer marketing — from the team at Best Case Studio.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sorted.map((post) => {
+        const slug = post.id.replace(/\.md$/, '');
+        const date = new Date(post.data.pubDate).toLocaleDateString('en-GB', {
+          day: 'numeric', month: 'long', year: 'numeric',
+        });
+        return (
+          <a
+            href={`/articles/${slug}`}
+            class="group flex flex-col bg-dark border border-white/10 rounded-[28px] overflow-hidden hover:border-pink/40 transition-colors"
+          >
+            {post.data.image && (
+              <div class="aspect-[16/9] overflow-hidden">
+                <img
+                  src={`/blog/${post.data.image}`}
+                  alt={post.data.title}
+                  loading="lazy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            )}
+            <div class="p-7 flex flex-col flex-1">
+              {post.data.tags && post.data.tags.length > 0 && (
+                <div class="flex flex-wrap gap-2 mb-3">
+                  {post.data.tags.slice(0, 2).map((tag: string) => (
+                    <span class="text-xs uppercase tracking-widest text-pink">{tag}</span>
+                  ))}
+                </div>
+              )}
+              <h2 class="text-xl font-medium leading-snug mb-3 group-hover:text-pink transition-colors">
+                {post.data.title}
+              </h2>
+              <p class="text-white/60 text-sm leading-relaxed flex-1 mb-4">{post.data.summary}</p>
+              <div class="flex items-center gap-3 mt-auto pt-4 border-t border-white/10">
+                {post.data.authImage && (
+                  <img
+                    src={post.data.authImage}
+                    alt={post.data.author}
+                    class="w-7 h-7 rounded-full object-cover"
+                  />
+                )}
+                <span class="text-white/40 text-xs">{post.data.author} · {date}</span>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
   </div>
 </MainLayout>

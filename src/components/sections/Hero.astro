@@ -1,5 +1,7 @@
 ---
 import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import heroImage from "../../assets/hero.png";
 ---
 
 <Section id="home">
@@ -17,7 +19,7 @@ import Section from "./Section.astro";
         </div>
     </div>
     <div class="flex items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
-        <img src="/Website hero image.png" alt="Best Case Studio hero" loading="eager" class="w-full h-auto" />
+        <Image src={heroImage} alt="Best Case Studio hero" loading="eager" fetchpriority="high" class="w-full h-auto" />
     </div>
 </div>
 </Section>

@@ -8,12 +8,32 @@ import Testimonials from "../components/sections/Testimonials.astro";
 import Referral from "../components/sections/Referral.astro";
 import FAQ from "../components/sections/FAQ.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How long does a case study take?", "acceptedAnswer": { "@type": "Answer", "text": "A Single takes 2–3 weeks from customer interview to delivery. The Trio takes 3–6 weeks. We work around your client's schedule for the interview." } },
+    { "@type": "Question", "name": "Do you work with clients outside the UK?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we work with B2B SaaS companies globally. Interviews are remote, so location doesn't matter." } },
+    { "@type": "Question", "name": "Can I buy one case study now and add more later?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. You can start with a Single and commission a Trio later. The per-case-study price stays the same — the Trio just saves you money upfront." } },
+    { "@type": "Question", "name": "What makes Best Case Studio different from a freelance copywriter?", "acceptedAnswer": { "@type": "Answer", "text": "We handle the full production stack: customer interview, video editing, landing page copy, and social assets. Most copywriters hand you a Word doc. We hand you a ready-to-publish content package." } },
+    { "@type": "Question", "name": "What types of B2B SaaS companies do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "We work best with companies that have at least a handful of happy customers and want to use their stories to close more deals. If you're pre-product-market-fit, case studies probably aren't your next move." } },
+    { "@type": "Question", "name": "How do case studies actually improve conversion rates?", "acceptedAnswer": { "@type": "Answer", "text": "A case study removes the 'will this work for us?' objection by showing a real company with a real result. It shortens the buying decision for prospects at the bottom of the funnel." } },
+    { "@type": "Question", "name": "What if our customer can't point to a specific measurable result?", "acceptedAnswer": { "@type": "Answer", "text": "That's fine. Not every great case study leads with a metric. Strong stories about reduced friction, improved confidence, or better team alignment are just as persuasive to the right buyer." } },
+    { "@type": "Question", "name": "Why is the Trio cheaper per case study?", "acceptedAnswer": { "@type": "Answer", "text": "Three interviews scheduled in the same window, one editing sprint, one delivery round. The fixed overhead is shared, so we pass the saving on." } },
+    { "@type": "Question", "name": "Who actually runs Best Case Studio?", "acceptedAnswer": { "@type": "Answer", "text": "Jon McGreevy leads every project — strategy, interviews, and copy. Alex handles all video production. Jessie keeps projects on track. There's no outsourcing or AI-generated content." } },
+    { "@type": "Question", "name": "How does the $500 referral bounty work?", "acceptedAnswer": { "@type": "Answer", "text": "Refer a B2B SaaS company to us. When they make their first payment, we send you $500 cash — no cap on how many referrals you make." } }
+  ]
+};
 ---
 
 <MainLayout
   title="Best Case Studio — B2B SaaS Case Studies"
   description="Best Case Studio creates full-stack case studies for B2B SaaS companies — video, landing page copy, and social assets — so your customers sell for you."
 >
+  <Fragment>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <Hero />
   <Logos />
   <Services />

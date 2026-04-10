@@ -12,7 +12,7 @@ const { title, description, image, frontmatter, robots } = Astro.props;
   <!-- iOS 
   <link rel="apple-touch-icon" sizes="256x256" href="/path/to/your/icon.png" />
   -->
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="generator" content={Astro.generator} />
 
   <title>{title}</title>
@@ -27,5 +27,7 @@ const { title, description, image, frontmatter, robots } = Astro.props;
     {robots}
   />
 
-  <!-- Preconnect fonts, images... -->
+  <!-- Preload critical fonts -->
+  <link rel="preload" as="font" type="font/woff" href="/fonts/nohemi/Nohemi-Regular-BF6438cc579d934.woff" crossorigin />
+  <link rel="preload" as="font" type="font/woff" href="/fonts/nohemi/Nohemi-Medium-BF6438cc57ddecd.woff" crossorigin />
 </head>

@@ -10,7 +10,7 @@
 - [Pricing](https://bestcasestud.io/pricing): Pricing for case study packages
 - [Contact](https://bestcasestud.io/contact): Get in touch to start a case study project
 - [Articles](https://bestcasestud.io/articles): Guides and insights on B2B SaaS case studies and social proof
-- [Team](https://bestcasestud.io/team): The Best Case Studio team
+- [Team](https://bestcasestud.io/about): The Best Case Studio team
 
 ## What We Do
 
