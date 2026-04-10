@@ -305,3 +305,15 @@ const process = [
     </div>
   </div>
 </MainLayout>
+
+<script is:inline>
+  var seoAuditForm = document.querySelector('#contact form');
+  if (seoAuditForm) {
+    seoAuditForm.addEventListener('submit', function () {
+      var website = document.getElementById('website') ? document.getElementById('website').value : '';
+      window.posthog?.capture('seo_audit_form_submitted', {
+        has_website: website.length > 0,
+      });
+    });
+  }
+</script>

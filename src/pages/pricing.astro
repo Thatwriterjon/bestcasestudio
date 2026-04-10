@@ -64,3 +64,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
   </div>
 </MainLayout>
+
+<script is:inline>
+  window.posthog?.capture('pricing_page_viewed');
+</script>

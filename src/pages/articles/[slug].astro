@@ -87,7 +87,7 @@ const articleTitle = post.data.title;
     <!-- CTA -->
     <div class="mt-16 pt-10 border-t border-white/10 text-center">
       <p class="text-white/60 mb-4">Ready to turn your customers into your best salespeople?</p>
-      <a href="/contact" class="inline-block px-8 py-4 bg-pink hover:opacity-90 rounded-2xl text-black font-medium text-lg transition-opacity">
+      <a id="article-cta" href="/contact" class="inline-block px-8 py-4 bg-pink hover:opacity-90 rounded-2xl text-black font-medium text-lg transition-opacity">
         Book a Discovery Call
       </a>
     </div>
@@ -100,4 +100,14 @@ const articleTitle = post.data.title;
     article_slug: articleSlug,
     article_title: articleTitle,
   });
+
+  var articleCta = document.getElementById('article-cta');
+  if (articleCta) {
+    articleCta.addEventListener('click', function () {
+      window.posthog?.capture('article_cta_clicked', {
+        article_slug: articleSlug,
+        article_title: articleTitle,
+      });
+    });
+  }
 </script>
