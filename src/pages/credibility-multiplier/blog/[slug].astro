@@ -10,8 +10,13 @@ export async function getStaticPaths() {
   }));
 }
 
-const { post } = Astro.props;
-const { Content } = await post.render();
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props as Props;
+const rendered = await post.render?.();
+const Content = rendered?.Content;
 
 const formattedDate = new Date(post.data.pubDate).toLocaleDateString('en-GB', {
   day: 'numeric',
