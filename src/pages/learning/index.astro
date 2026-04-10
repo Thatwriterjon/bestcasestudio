@@ -6,7 +6,7 @@ const learningPages = await getCollection('learning');
 
 // Group pages by category (using folder names)
 const grouped = learningPages.reduce((acc, page) => {
-  const category = page.slug.split('/')[0];
+  const category = page.id.split('/')[0];
   if (!acc[category]) acc[category] = [];
   acc[category].push(page);
   return acc;
@@ -41,9 +41,9 @@ const sortedCategories = Object.keys(grouped).sort();
 
             return (
               <a
-                href={`/learning/${page.slug}`}
+                href={`/learning/${page.id.replace(/\.md$/, '')}`}
                 class="group flex flex-col bg-dark border border-white/10 rounded-[28px] overflow-hidden hover:border-pink/40 transition-colors p-6"
-                data-page-slug={page.slug}
+                data-page-slug={page.id.replace(/\.md$/, '')}
                 data-page-title={page.data.title}
               >
                 {page.data.tags && page.data.tags.length > 0 && (

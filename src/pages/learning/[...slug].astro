@@ -1,12 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
-import { Content } from 'astro:content';
 
 export async function getStaticPaths() {
   const learningPages = await getCollection('learning');
 
   return learningPages.map((page) => ({
-    params: { slug: page.slug },
+    params: { slug: page.id.replace(/\.md$/, '') },
     props: { page },
   }));
 }
