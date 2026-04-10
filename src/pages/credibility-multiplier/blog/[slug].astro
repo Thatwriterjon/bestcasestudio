@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import MainLayout from '../../layouts/MainLayout.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('credibility-multiplier');
@@ -29,7 +29,7 @@ const articleTitle = post.data.title;
   frontmatter={{
     title: post.data.title,
     description: post.data.summary,
-    image: { src: `/credibility-multiplier/${post.data.image}`, alt: post.data.title },
+    image: { src: `/credibility-multiplier/blog/${post.data.image}`, alt: post.data.title },
     author: post.data.author,
     date: post.data.pubDate,
   }}
@@ -37,7 +37,7 @@ const articleTitle = post.data.title;
   <div class="w-full max-w-[760px] mx-auto px-5 mt-[120px] mb-[120px]">
 
     <!-- Back link -->
-    <a href="/credibility-multiplier" class="inline-flex items-center gap-2 text-white/50 hover:text-pink transition-colors text-sm mb-10">
+    <a href="/credibility-multiplier/blog" class="inline-flex items-center gap-2 text-white/50 hover:text-pink transition-colors text-sm mb-10">
       ← The Credibility Multiplier
     </a>
 

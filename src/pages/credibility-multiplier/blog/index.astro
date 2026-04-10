@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import MainLayout from '../../layouts/MainLayout.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
 
 const posts = await getCollection('credibility-multiplier');
 const sorted = posts.sort(
@@ -29,7 +29,7 @@ const sorted = posts.sort(
         });
         return (
           <a
-            href={`/credibility-multiplier/${slug}`}
+            href={`/credibility-multiplier/blog/${slug}`}
             class="group flex flex-col bg-dark border border-white/10 rounded-[28px] overflow-hidden hover:border-pink/40 transition-colors"
             data-article-slug={slug}
             data-article-title={post.data.title}
@@ -37,7 +37,7 @@ const sorted = posts.sort(
             {post.data.image && (
               <div class="aspect-[16/9] overflow-hidden">
                 <img
-                  src={`/credibility-multiplier/${post.data.image}`}
+                  src={`/credibility-multiplier/blog/${post.data.image}`}
                   alt={post.data.title}
                   loading="lazy"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
