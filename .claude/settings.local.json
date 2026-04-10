@@ -73,7 +73,10 @@
       "Bash(git add astro.config.mjs package-lock.json package.json public/llms.txt src/components/sections/Hero.astro src/components/seo/Seo.astro src/components/ui/Footer.astro src/content.config.ts src/layouts/MainHead.astro src/pages/articles/index.astro src/pages/index.astro src/pages/services.astro src/pages/services/seo.astro src/utils/jsonLD.js src/assets/hero.png src/pages/articles/[slug].astro vercel.json \"public/Website hero image.png\" \"src/content/blog/How to quickly deploy a static website.md\" src/content/blog/cannon-excellence.md src/content/blog/cutting-edge-tablets.md src/content/blog/elevate-your-mobile-experience.md src/content/blog/guardian-of-the-digital-realm.md src/content/blog/credibility-multiplier.md src/content/blog/transparent-pricing-reduces-cac.md src/content/blog/why-thought-leadership-fails.md)",
       "Bash(git add astro.config.mjs package-lock.json package.json public/llms.txt src/components/sections/Hero.astro src/components/seo/Seo.astro src/components/ui/Footer.astro src/content.config.ts src/layouts/MainHead.astro src/pages/articles/index.astro src/pages/index.astro src/pages/services.astro src/pages/services/seo.astro src/utils/jsonLD.js src/assets/hero.png vercel.json)",
       "Bash(git add \"src/pages/articles/[slug].astro\" \"public/Website hero image.png\" \"src/content/blog/How to quickly deploy a static website.md\" src/content/blog/cannon-excellence.md src/content/blog/cutting-edge-tablets.md src/content/blog/elevate-your-mobile-experience.md src/content/blog/guardian-of-the-digital-realm.md src/content/blog/credibility-multiplier.md src/content/blog/transparent-pricing-reduces-cac.md src/content/blog/why-thought-leadership-fails.md)",
-      "Bash(git push origin main)"
+      "Bash(git push origin main)",
+      "Bash(git add posthog-setup-report.md src/components/sections/Contact.astro \"src/pages/articles/[slug].astro\" src/pages/articles/index.astro src/pages/pricing.astro src/pages/services/seo.astro)",
+      "Bash(npm run preview)",
+      "Bash(git add src/pages/services.astro src/pages/services/seo.astro .claude/settings.local.json)"
     ]
   }
 }
