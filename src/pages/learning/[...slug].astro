@@ -1,0 +1,152 @@
+---
+import { getCollection } from 'astro:content';
+import { Content } from 'astro:content';
+
+export async function getStaticPaths() {
+  const learningPages = await getCollection('learning');
+
+  return learningPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+interface Props {
+  page: any;
+}
+
+const { page } = Astro.props as Props;
+const { Content } = await page.render();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{page.data.title} | Best Case Studio</title>
+    <meta name="description" content={page.data.summary} />
+  </head>
+  <body class="bg-slate-950 text-white">
+    <div class="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+      <article class="max-w-3xl mx-auto">
+        <header class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm font-medium">
+              {page.data.type}
+            </span>
+          </div>
+          <h1 class="text-4xl font-bold mb-4 text-white">
+            {page.data.title}
+          </h1>
+          <p class="text-xl text-slate-400 mb-6">
+            {page.data.summary}
+          </p>
+        </header>
+
+        {page.data.image && (
+          <figure class="mb-8 rounded-lg overflow-hidden">
+            <img
+              src={`/blog/${page.data.image}`}
+              alt={page.data.title}
+              class="w-full h-auto"
+            />
+          </figure>
+        )}
+
+        <div class="prose prose-invert max-w-none mb-8">
+          <Content />
+        </div>
+
+        {page.data.tags && page.data.tags.length > 0 && (
+          <footer class="border-t border-slate-800 pt-8">
+            <div class="flex gap-2 flex-wrap">
+              {page.data.tags.map((tag: string) => (
+                <a
+                  href={`/learning?tag=${encodeURIComponent(tag)}`}
+                  class="px-3 py-1 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 text-sm"
+                >
+                  #{tag}
+                </a>
+              ))}
+            </div>
+          </footer>
+        )}
+      </article>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  .prose {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .prose a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  .prose h2 {
+    color: white;
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose h3 {
+    color: #e2e8f0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose p {
+    margin-bottom: 1.25em;
+    line-height: 1.75;
+  }
+
+  .prose ul,
+  .prose ol {
+    margin-bottom: 1.25em;
+    padding-left: 1.5em;
+  }
+
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+
+  .prose code {
+    background-color: rgba(15, 23, 42, 0.5);
+    color: #60a5fa;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    font-size: 0.9em;
+  }
+
+  .prose pre {
+    background-color: rgba(15, 23, 42, 0.5);
+    padding: 1em;
+    border-radius: 0.5em;
+    overflow-x: auto;
+    margin-bottom: 1.25em;
+  }
+
+  .prose blockquote {
+    border-left: 4px solid #60a5fa;
+    padding-left: 1em;
+    color: #cbd5e1;
+    font-style: italic;
+  }
+
+  .prose strong {
+    font-weight: 600;
+    color: white;
+  }
+</style>

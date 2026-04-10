@@ -78,7 +78,14 @@
       "Bash(npm run preview)",
       "Bash(git add src/pages/services.astro src/pages/services/seo.astro .claude/settings.local.json)",
       "Bash(ls -la /Users/jonmcgreevy/bestcasestudio/src/pages/services*)",
-      "Bash(git add 'src/pages/articles/[slug].astro')"
+      "Bash(git add 'src/pages/articles/[slug].astro')",
+      "WebFetch(domain:bestcasestudio.io)",
+      "Bash(xargs cat)",
+      "Bash(ls -la /Users/jonmcgreevy/bestcasestudio/src/content/blog/*.md)",
+      "Bash(git rm --cached .claude-seo-temp)",
+      "Bash(git reset .claude/settings.local.json)",
+      "Bash(git reset)",
+      "Bash(git add public/llms.txt src/components/sections/FAQ.astro src/content/blog/credibility-multiplier.md src/content/blog/transparent-pricing-reduces-cac.md)"
     ]
   }
 }

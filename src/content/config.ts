@@ -27,7 +27,19 @@ const seoContentCollection = defineCollection({
   }),
 });
 
+const learningCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    image: z.string(),
+    summary: z.string(),
+    type: z.enum(['Hub', 'Pillar', 'Tactic']),
+    tags: z.array(z.string()),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   'seo-content': seoContentCollection,
+  'learning': learningCollection,
 };

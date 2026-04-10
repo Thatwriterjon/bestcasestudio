@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const seoContent = await getCollection('seo-content');
+  return seoContent.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const date = new Date(post.data.pubDate).toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<MainLayout
+  title={`${post.data.title} — Best Case Studio`}
+  description={post.data.summary}
+>
+  <article class="w-full max-w-[800px] mx-auto px-5 mt-[80px] mb-[120px]">
+
+    <div class="mb-12">
+      <div class="mb-6">
+        {post.data.tags && post.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-4">
+            {post.data.tags.map((tag: string) => (
+              <span class="text-xs uppercase tracking-widest text-pink">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <h1 class="text-5xl lg:text-6xl font-medium leading-tight mb-6">
+        {post.data.title}
+      </h1>
+
+      <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+        {post.data.authImage && (
+          <img
+            src={post.data.authImage}
+            alt={post.data.author}
+            class="w-10 h-10 rounded-full object-cover"
+          />
+        )}
+        <div>
+          <p class="text-white text-sm font-medium">{post.data.author}</p>
+          <p class="text-white/40 text-xs">{date}</p>
+        </div>
+      </div>
+    </div>
+
+    {post.data.image && (
+      <div class="aspect-[16/9] overflow-hidden rounded-[28px] mb-12">
+        <img
+          src={`/blog/${post.data.image}`}
+          alt={post.data.title}
+          class="w-full h-full object-cover"
+        />
+      </div>
+    )}
+
+    <div class="prose prose-invert max-w-none prose-headings:font-medium prose-a:text-pink hover:prose-a:text-pink/80">
+      <Content />
+    </div>
+
+  </article>
+</MainLayout>
+
+<style is:global>
+  .prose {
+    --tw-prose-body: rgb(255 255 255 / 0.9);
+    --tw-prose-headings: rgb(255 255 255);
+    --tw-prose-lead: rgb(255 255 255 / 0.7);
+    --tw-prose-links: rgb(255 105 180);
+    --tw-prose-bold: rgb(255 255 255);
+    --tw-prose-counters: rgb(255 255 255 / 0.5);
+    --tw-prose-bullets: rgb(255 255 255 / 0.3);
+    --tw-prose-hr: rgb(255 255 255 / 0.1);
+    --tw-prose-quotes: rgb(255 255 255 / 0.7);
+    --tw-prose-quote-borders: rgb(255 105 180);
+    --tw-prose-captions: rgb(255 255 255 / 0.5);
+    --tw-prose-code: rgb(255 255 255);
+    --tw-prose-pre-bg: rgb(0 0 0 / 0.5);
+    --tw-prose-pre-border: rgb(255 255 255 / 0.1);
+    --tw-prose-th-borders: rgb(255 255 255 / 0.2);
+    --tw-prose-td-borders: rgb(255 255 255 / 0.1);
+  }
+
+  .prose code {
+    background-color: rgb(255 255 255 / 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25em;
+  }
+
+  .prose pre {
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 0.5em;
+  }
+
+  .prose pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .prose blockquote {
+    border-left-color: rgb(255 105 180);
+    font-style: italic;
+  }
+
+  .prose table {
+    border-collapse: collapse;
+  }
+
+  .prose th {
+    border: 1px solid rgb(255 255 255 / 0.2);
+    padding: 0.75em;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .prose td {
+    border: 1px solid rgb(255 255 255 / 0.1);
+    padding: 0.75em;
+  }
+
+  .prose ul {
+    list-style-type: disc;
+  }
+
+  .prose ol {
+    list-style-type: decimal;
+  }
+</style>
