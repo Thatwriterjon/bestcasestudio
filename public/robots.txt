@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+
+# Allow AI search crawlers (ChatGPT Browse, Google AIO, Claude, Perplexity)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Block training/scraping crawlers
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+Sitemap: https://bestcasestud.io/sitemap-index.xml

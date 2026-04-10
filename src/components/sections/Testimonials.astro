@@ -1,24 +1,34 @@
 ---
 import Section from "./Section.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
+import TestimonialCard from "../ui/TestimonialCard.astro";
+import clientsRaw from "../../data/clientData.json";
+
+type Client = { name: string; role: string; comment: string; avatar: string };
+const clients = clientsRaw as Client[];
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/testimonials/*.{jpg,jpeg,png,webp}"
+);
 ---
 
-<Section id="testimonials">
-  <div class="mt-24 mb-0">
-    <SectionTitle
-      sectionTitle="Testimonials"
-      description="Jon has been working with B2B SaaS companies for over 7 years. These are a few things clients have said along the way."
-    />
-    <script is:inline type="text/javascript" src="https://testimonial.to/js/iframeResizer.min.js"></script>
-    <iframe
-      id="testimonialto-a9a5cbcc-76b3-4896-99d9-f94ed6736bf2"
-      src="https://embed-v2.testimonial.to/carousel/all/best-case-studio?id=a9a5cbcc-76b3-4896-99d9-f94ed6736bf2"
-      frameborder="0"
-      scrolling="no"
-      width="100%"
-      height="450"
-      style="min-height: 450px; display: block;"
-    ></iframe>
-    <script is:inline type="text/javascript">iFrameResize({log: false, checkOrigin: false}, '#testimonialto-a9a5cbcc-76b3-4896-99d9-f94ed6736bf2');</script>
-  </div>
-</Section>
+{clients.length > 0 && (
+  <Section id="testimonials">
+    <div class="mt-24 mb-0">
+      <SectionTitle
+        sectionTitle="Testimonials"
+        description="Jon has been working with B2B SaaS companies for over 7 years. These are a few things clients have said along the way."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {clients.map((client) => (
+          <TestimonialCard
+            name={client.name}
+            role={client.role}
+            comment={client.comment}
+            avatar={images[`../../assets/testimonials/${client.avatar}`]}
+          />
+        ))}
+      </div>
+    </div>
+  </Section>
+)}

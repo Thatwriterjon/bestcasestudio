@@ -1,38 +1,44 @@
 [
-    {
-        "index": 1,
-        "name": "John Smith",
-        "role": "Marketing dierector at XYZ",
-        "comment": "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."
-    },
-    {
-        "index": 2,
-        "name": "Jane Doe",
-        "role": "CEO at ABC",
-        "comment": "We chose Positivus to help us with our SEO and PPC campaigns and have been very impressed with their results. They are knowledgeable, responsive, and truly care about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."
-    },
-    {
-        "index": 3,
-        "name": "Alice Johnson",
-        "role": "Owner at 123",
-        "comment": "I recently started working with Positivus and have been very impressed with their professionalism and expertise. They have helped me increase my online visibility and generate more leads for my business. I highly recommend Positivus to anyone looking to improve their online marketing strategy."
-    },
-    {
-        "index": 4,
-        "name": "Bob Brown",
-        "role": "Dierector at XYZ",
-        "comment": "Positivus has been a great partner for our company. They are knowledgeable, responsive, and truly care about the success of our business. We have seen a significant increase in website traffic and leads as a result of their efforts. I highly recommend Positivus to any company looking to grow their online presence."
-    },
-    {
-        "index": 5,
-        "name": "Gupta Patel",
-        "role": "Content creator",
-        "comment": "I have been working with Positivus for the past year and have been very impressed with their professionalism and expertise. They have helped me increase my online visibility and generate more leads for my business. I highly recommend Positivus to anyone looking to improve their online marketing strategy."
-    },
-    {
-        "index": 6,
-        "name": "Sara Johnson",
-        "role": "Freelancer",
-        "comment": "Positivus made a huge difference in our online presence. They are knowledgeable, responsive, and truly care about the success of our business. We have seen a significant increase in website traffic and leads as a result of their efforts. I highly recommend Positivus to any company looking to grow their online presence."
-    }
+  {
+    "index": 1,
+    "name": "Marc Thomas",
+    "role": "Head of Growth at Powered By Search",
+    "avatar": "marc-thomas.jpg",
+    "comment": "He captures the client's voice while targeting customer pain points with precision. Jon's talent and professionalism has elevated a number of projects, and we're excited to continue working with him."
+  },
+  {
+    "index": 2,
+    "name": "Alessandro Trezza",
+    "role": "Co-Founder at Creatora",
+    "avatar": "alessandro-trezza.jpg",
+    "comment": "In just two days, we completely rewrote Creatora.io's homepage. Same product, same features, but a radically clearer story. He didn't just improve our messaging. He saved us weeks of wandering in the dark."
+  },
+  {
+    "index": 3,
+    "name": "Stuart Brent",
+    "role": "Founder at SaaSy DB",
+    "avatar": "stuart-brent.jpg",
+    "comment": "Jon's feedback on how to improve the positioning of my SaaS company was powerful, easy to digest, and easy to implement. I'd recommend Jon to anyone whose marketing website is important to their company's growth."
+  },
+  {
+    "index": 4,
+    "name": "Michael Semer",
+    "role": "Founder at MSMC Marketing Consultancy",
+    "avatar": "michael-semer.jpg",
+    "comment": "Jon's an extremely talented writer, professional and scrupulous to the highest degree. We've used him on a lot of content projects and we're looking to use him even more. Don't hesitate — he won't let you down."
+  },
+  {
+    "index": 5,
+    "name": "Pedro Villalobos",
+    "role": "Founder at WhyCreativity",
+    "avatar": "pedro-villalobos.jpg",
+    "comment": "His ability to create original and engaging content on any topic has made him the go-to writer at Powered By Search. Bouncing ideas and structuring content strategies with him is super easy."
+  },
+  {
+    "index": 6,
+    "name": "Polly Wong",
+    "role": "Marketing Executive at Float",
+    "avatar": "polly-wong.jpg",
+    "comment": "He brought fresh perspectives we'd never thought of and gave us a new tone of voice that's more vibrant — but the essence of our value is still very clear. That's skill."
+  }
 ]

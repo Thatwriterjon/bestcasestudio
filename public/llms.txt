@@ -1,0 +1,30 @@
+# Best Case Studio
+
+> Best Case Studio creates full-stack case studies for B2B SaaS companies — video, landing page copy, and social assets — so your customers sell for you.
+
+## Key Pages
+
+- [Home](https://bestcasestud.io/): Full-stack case study production for B2B SaaS companies
+- [Services](https://bestcasestud.io/#services): Case study packages including video, copy, and social assets
+- [Case Studies](https://bestcasestud.io/#cases): Examples of B2B SaaS case studies produced by Best Case Studio
+- [Pricing](https://bestcasestud.io/pricing): Pricing for case study packages
+- [Contact](https://bestcasestud.io/contact): Get in touch to start a case study project
+- [Articles](https://bestcasestud.io/articles): Guides and insights on B2B SaaS case studies and social proof
+- [Team](https://bestcasestud.io/team): The Best Case Studio team
+
+## What We Do
+
+Best Case Studio specialises in producing customer case studies for B2B SaaS companies. A case study from Best Case Studio includes:
+- Customer interview and story extraction
+- Professional video production
+- Landing page copywriting
+- Social media assets (clips, carousels, quote graphics)
+
+## Who We Serve
+
+B2B SaaS companies that need to turn customer success stories into sales assets. Ideal for companies with a proven product and happy customers who want to accelerate pipeline with authentic social proof.
+
+## Contact
+
+- Website: https://bestcasestud.io
+- Contact form: https://bestcasestud.io/contact
