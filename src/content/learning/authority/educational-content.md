@@ -1,12 +1,9 @@
 ---
 title: 'Educational Content: Teaching as Authority'
-image: 'educational-content.jpg'
 summary: 'Teaching through guides, frameworks, and resources establishes you as an expert.'
 type: 'Tactic'
 tags: ['authority', 'content', 'education', 'teaching']
 ---
-
-# Educational Content: Teaching as Authority
 
 ## What Is Educational Content?
 
@@ -27,10 +24,13 @@ Educational content establishes authority because it proves you know your domain
 
 Educational content works because:
 
-1. **It proves expertise.** You can't teach what you don't know.
-2. **It's generous.** Giving away valuable information signals confidence.
-3. **It's visible.** Educational content gets shared, referenced, cited.
-4. **It's durable.** Good educational content stays relevant for years.
+**It proves expertise.** You can't teach what you don't know.
+
+**It's generous.** Giving away valuable information signals confidence.
+
+**It's visible.** Educational content gets shared, referenced, cited.
+
+**It's durable.** Good educational content stays relevant for years.
 
 A prospect reading your comprehensive guide thinks: "This founder really understands this problem."
 

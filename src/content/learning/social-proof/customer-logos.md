@@ -1,12 +1,9 @@
 ---
 title: 'Customer Logos: Visual Trust Signals'
-image: 'customer-logos.jpg'
-summary: 'Recognizable customer logos create instant visual credibility and trust.'
+summary: 'Recognisable customer logos create instant visual credibility and trust.'
 type: 'Tactic'
 tags: ['social proof', 'logos', 'branding', 'trust']
 ---
-
-# Customer Logos: Visual Trust Signals
 
 ## What Are Customer Logos?
 
@@ -18,12 +15,15 @@ Most commonly seen as a row of logos on your homepage: "Trusted by [logo] [logo]
 
 Customer logos work because:
 
-1. **Visual recognition.** Your brain recognizes brands instantly. Seeing a known brand creates immediate trust.
-2. **Brand association.** If a company you respect uses this product, the product gains credibility.
-3. **FOMO.** Seeing competitors or peers using a product creates subtle pressure to evaluate it.
-4. **Proof of scale.** Multiple logos signal that this isn't a fringe product.
+**Visual recognition.** Your brain recognises brands instantly. Seeing a known brand creates immediate trust.
 
-A prospect seeing recognizable customer logos thinks: "Companies I know use this. It must be good."
+**Brand association.** If a company you respect uses this product, the product gains credibility.
+
+**FOMO.** Seeing competitors or peers using a product creates subtle pressure to evaluate it.
+
+**Proof of scale.** Multiple logos signal that this isn't a fringe product.
+
+A prospect seeing recognisable customer logos thinks: "Companies I know use this. It must be good."
 
 ## Which Customer Logos Matter Most
 
@@ -31,7 +31,7 @@ A prospect seeing recognizable customer logos thinks: "Companies I know use this
 - Fortune 500 companies
 - Well-known startups or unicorns
 - Industry leaders
-- Recognizable consumer brands
+- Recognisable consumer brands
 - Companies in the same industry as your prospect
 
 **Low-impact logos:**
@@ -40,7 +40,7 @@ A prospect seeing recognizable customer logos thinks: "Companies I know use this
 - Generic company names
 - Too many small logos (looks desperate)
 
-One recognizable logo is worth 100 unknown ones.
+One recognisable logo is worth 100 unknown ones. Don't pad your logo section with random companies nobody's heard of.
 
 ## The Logo Trap
 
@@ -58,13 +58,13 @@ Including logos of customers who:
 - Are unhappy but haven't churned yet
 - Were acquired by you (not using your product)
 
-This backfires when prospects dig deeper and realize the logos don't correlate with actual success.
+This backfires when prospects dig deeper and realise the logos don't correlate with actual success.
 
 **Logo trap 3: Misleading arrangement**
 
 Arranging logos to make it look like you have more enterprise customers than you do.
 
-If you have 100 customers and 5 are enterprise, don't make it look like half your base is enterprise.
+If you have 100 customers and 5 are enterprise, don't arrange them to make it look like half your base is enterprise.
 
 ## Where to Display Customer Logos
 
@@ -80,7 +80,7 @@ If you have 100 customers and 5 are enterprise, don't make it look like half you
 
 **Sales collateral:** Relevant customer logos in decks and materials sent to prospects.
 
-**Ads:** Feature a recognizable customer logo in paid ad creative.
+**Ads:** Feature a recognisable customer logo in paid ad creative.
 
 ## Getting Permission to Use Logos
 
@@ -101,13 +101,13 @@ Arrange logos in a way that makes sense to your prospect:
 
 **By size:** If you sell to enterprise, show enterprise logos prominently.
 
-**By recognition:** Put your most recognizable logos first.
+**By recognition:** Put your most recognisable logos first.
 
 **By geography:** If you sell internationally, group by region.
 
 ## Key Takeaway
 
-Customer logos prove that recognizable, reputable companies trust your product.
+Customer logos prove that recognisable, reputable companies trust your product.
 
 Quality matters more than quantity. One Fortune 500 logo is worth a hundred unknown logos.
 

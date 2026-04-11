@@ -1,22 +1,23 @@
 ---
 title: 'Newsletter: Owned Audience & Consistency'
-image: 'newsletter.jpg'
 summary: 'A regular newsletter builds direct audience relationships and establishes consistent authority.'
 type: 'Tactic'
 tags: ['authority', 'newsletter', 'email', 'audience']
 ---
 
-# Newsletter: Owned Audience & Consistency
-
 ## Why Newsletters Build Authority
 
 Newsletters build authority through:
 
-1. **Consistency.** Publishing regularly proves you're serious and committed.
-2. **Owned audience.** Subscribers are your audience, not borrowed from another platform.
-3. **Permission.** People opt-in to hear from you. They're already interested.
-4. **Depth.** Email allows you to go deeper than social media posts.
-5. **Direct relationship.** Inbox is more intimate than social feeds.
+**Consistency.** Publishing regularly proves you're serious and committed.
+
+**Owned audience.** Subscribers are your audience, not borrowed from another platform.
+
+**Permission.** People opt-in to hear from you. They're already interested.
+
+**Depth.** Email allows you to go deeper than social media posts.
+
+**Direct relationship.** Inbox is more intimate than social feeds.
 
 A founder with a newsletter has stronger authority than a founder with a large Twitter following. Subscribers are more engaged and loyal.
 
@@ -38,9 +39,9 @@ Missing one month signals unreliability. Stick to your schedule.
 
 "This week: Why positioning matters more than features"
 
-**Analysis content:** Analyze what's happening in your industry.
+**Analysis content:** Analyse what's happening in your industry.
 
-"Analyzing the three biggest SaaS trends this year"
+"Analysing the three biggest SaaS trends this year"
 
 **Curated content:** Share valuable articles, research, tools from others.
 
@@ -58,7 +59,7 @@ Missing one month signals unreliability. Stick to your schedule.
 
 ## Newsletter Growth Strategy
 
-Newsletters grow slowly. Expect 10-20% monthly growth if you're promoting actively.
+Newsletters grow slowly. Expect 10–20% monthly growth if you're promoting actively.
 
 **To grow your newsletter:**
 
@@ -94,13 +95,13 @@ Publishing these signals on your website ("Join 5,000+ weekly readers") adds cre
 
 ## Newsletter Strategy Over Time
 
-**Phase 1 (Months 1-3):** Build audience. Focus on consistency, not perfection.
+**Phase 1 (Months 1–3):** Build audience. Focus on consistency, not perfection.
 
-**Phase 2 (Months 4-12):** Grow audience. Promote actively. Build archive.
+**Phase 2 (Months 4–12):** Grow audience. Promote actively. Build archive.
 
-**Phase 3 (Year 2+):** Monetize optionally. Leverage audience for speaking, advisory, partnerships.
+**Phase 3 (Year 2+):** Monetise optionally. Leverage audience for speaking, advisory, partnerships.
 
-Most founders don't monetize newsletters directly. But they become valuable assets for building authority.
+Most founders don't monetise newsletters directly. But they become valuable assets for building authority.
 
 ## Key Takeaway
 

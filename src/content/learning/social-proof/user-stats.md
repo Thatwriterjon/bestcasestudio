@@ -1,12 +1,9 @@
 ---
 title: 'User Statistics: Growth as Proof'
-image: 'user-stats.jpg'
 summary: 'Metrics like customer count, user growth, and adoption signals prove market validation.'
 type: 'Tactic'
 tags: ['social proof', 'metrics', 'growth', 'user-stats']
 ---
-
-# User Statistics: Growth as Proof
 
 ## What Are User Statistics?
 
@@ -24,10 +21,13 @@ These metrics serve as social proof by showing that many people are using and tr
 
 User statistics signal:
 
-1. **Market validation.** Many users means the product solves a real problem.
-2. **Momentum.** Growth numbers signal that the product is gaining traction.
-3. **Viability.** Large user bases mean the company isn't going to disappear.
-4. **Network effects.** More users often means more value (for network-dependent products).
+**Market validation.** Many users means the product solves a real problem.
+
+**Momentum.** Growth numbers signal that the product is gaining traction.
+
+**Viability.** Large user bases mean the company isn't going to disappear tomorrow.
+
+**Network effects.** More users often means more value (for network-dependent products).
 
 A prospect seeing "1,000 companies use us" thinks: "This isn't a fringe product. It's widely adopted."
 
@@ -36,7 +36,7 @@ A prospect seeing "1,000 companies use us" thinks: "This isn't a fringe product.
 Not all statistics are equally credible.
 
 **Strong statistics:**
-- Customer count (especially from recognizable companies)
+- Customer count (especially from recognisable companies)
 - Active user count
 - Transaction volume
 - Uptime/reliability metrics
@@ -75,15 +75,13 @@ Many SaaS companies use "Used by Fortune 500 company" as social proof even thoug
 
 This backfires. Prospects know you're cherry-picking.
 
-Instead:
-
 **Do:** "Used by 500+ companies including Fortune 500s"
 
-**Don't:** "Used by Fortune 500" (implying only that)
+**Don't:** "Used by Fortune 500" (implying that's all)
 
 **Do:** "2,000+ companies, from startups to enterprises"
 
-**Don't:** Logos that make it look like you only have enterprise customers if you actually sell to SMB
+**Don't:** Arrange logos to make it look like you only have enterprise customers if you actually sell to SMB.
 
 Honesty about who uses you (and who doesn't) builds more credibility than selective highlighting.
 

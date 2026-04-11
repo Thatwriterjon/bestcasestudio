@@ -1,131 +1,68 @@
 ---
-title: 'Leadership Profiles: Visible Expertise'
-image: 'leadership.jpg'
-summary: 'Visible leadership profiles establish expertise and build trust.'
-type: 'Tactic'
-tags: ['people', 'leadership', 'profiles', 'visibility']
+title: 'Leadership Profiles: Individual Credibility'
+summary: 'Visible leadership proves your company has experienced people making decisions.'
+type: 'Learning'
+tags: ['people', 'leadership', 'visibility', 'trust']
 ---
 
-# Leadership Profiles: Visible Expertise
+A prospect arrives at your website. They're evaluating whether to buy from you. One of the things they'll do—consciously or not—is look at who's leading the company.
 
-## Why Leadership Profiles Matter
+Do you have credible people in charge? Or is it faceless? That question affects their buying decision.
 
-Prospects evaluate your team by understanding who's leading.
+Individual leadership visibility says something specific: this company is led by people who've done this before, know what they're doing, and are confident enough to put their names on their decisions.
 
-A complete leadership profile signals:
-- This person is credible (background, experience)
-- This person is visible (willing to be public-facing)
-- This team is capable (credible people executing)
+## What Makes a Profile Credible
 
-**Leadership visibility varies by role:**
+A leadership profile isn't a biography. It's a credibility document. It should answer the question a prospect is actually asking: "Is this person credible enough to lead a company I'd buy from?"
 
-- **CEOs/Founders:** Most visible, often public-facing
-- **CTO/VP Engineering:** Important for technical buyers
-- **VP Sales:** Important for sales-focused prospects
-- **Other C-suite:** Important for enterprise buyers
+Include their relevant background. What industry have they worked in? What companies have they founded or worked for? What specific expertise do they bring? This isn't the place for childhood details or hobbies. This is professional credibility.
 
-## What Makes a Strong Leadership Profile
+Include their track record. If they've exited a company before, mention it. If they've worked at scale before, mention it. If they've solved problems in this specific domain before, mention it. These are credibility signals.
 
-**Professional information:**
-- Name and title
-- Clear headshot (professional, recent)
-- Background (previous roles, education)
-- Domain expertise (what they're expert in)
-- Social media links (LinkedIn, Twitter)
+Include professional links. LinkedIn especially. Twitter if they're active and thoughtful there. A person who's willing to put their professional profile out there is someone confident in their credibility.
 
-**Credibility signals:**
-- Previous successful roles
-- Recognizable companies
-- Years of experience
-- Specific accomplishments
-- Relevant domain expertise
+Keep it brief. One or two paragraphs. Prospects aren't reading long bios. They're scanning to see if the leadership team looks credible.
 
-**Personal touch:**
-- Brief bio (2-3 sentences, not a novel)
-- Maybe: personal interests or values
-- Authentic voice (not corporate speak)
+## Where to Display Leadership Profiles
 
-## Profile Format Variations
+Your website is the obvious place. A dedicated leadership or team page. But also consider LinkedIn. Your company LinkedIn page should feature your leadership team with links to their profiles.
 
-**Company website team page:**
-- Professional format
-- Consistent with your brand
-- Easy to scan
-- Includes headshots, names, titles, bios
+If you're early stage and don't have a team page, at least make your founder visible. LinkedIn, your personal website, a podcast appearance. Somewhere a prospect can find you and evaluate your credibility.
 
-**LinkedIn profile:**
-- Founder/CEO should have complete, active profile
-- Highlight relevant experience and accomplishments
-- Regular activity (posts, engagement)
+For B2B SaaS especially, consider industry events, podcasts, or speaking opportunities. Leadership visibility in your domain builds credibility faster than a static profile.
 
-**Email signature:**
-- Can include credentials briefly
-- Not necessary but can help
+## Founder Visibility vs C-Suite Visibility
 
-**Sales materials:**
-- Relevant leaders highlighted in pitch decks
+Your founder should be the most visible leader. This is especially important early on. When you're a young company, the founder is the credibility anchor. People buy from founders they trust.
 
-## Profile Content That Builds Credibility
+As you scale, other leaders become visible too. Your VP of Product, VP of Sales, Head of Engineering. This signals that the company isn't just founder-dependent. You've built a credible team.
 
-**Strong profile:**
-"Sarah is VP of Engineering. She previously led infrastructure at TechCorp, where she scaled systems to handle 10B+ daily transactions. Sarah holds a CS degree from MIT. She speaks regularly at infrastructure conferences."
+But the founder remains the primary credibility signal. Even at scale. If your founder completely disappears, prospects wonder: are they actually building this company? Do they believe in it? Why aren't they visible?
 
-**Weak profile:**
-"Sarah is VP of Engineering. She loves coding and has 10 years of experience."
+## Mistakes to Avoid
 
-**Why it's stronger:** Specific accomplishments, recognizable company, relevant credentials, visible expertise.
+**Generic profiles.** "Passionate about technology and helping customers." No one cares. What specifically have you done? What makes you credible?
 
-## Avoiding Profile Pitfalls
+**Overstuffed bios.** Listing every job you've ever had, every skill, every award. Prospects don't read long profiles. Keep it focused on what makes you credible for this specific company.
 
-**Don't:**
-- Exaggerate credentials or experience
-- Include irrelevant personal information
-- Use casual, unprofessional language
-- Leave profiles incomplete or outdated
-- Oversell or use marketing language ("visionary," "guru")
+**Fake accomplishments.** If you're exaggerating or outright lying, it will come out. Prospects will check. Your credibility will evaporate.
 
-**Do:**
-- Include specific accomplishments
-- Highlight relevant experience
-- Use authentic, professional tone
-- Keep profiles current
-- Let credentials speak for themselves
+**No visibility at all.** Hiding your leadership team because you think it looks more "mature" or "professional" is a mistake. The opposite is true. Visible leadership is credible leadership.
 
-## Leadership Visibility Strategy
+**Inconsistent visibility.** One founder is visible everywhere and the other is invisible. This creates confusion. You both matter.
 
-**For small companies (2-5 people):**
-- Founder should be highly visible
-- Small team list on website
+## LinkedIn as Your Baseline
 
-**For growing companies (5-20 people):**
-- C-suite profiles visible
-- Department heads listed
-- Keep team page updated
+Your LinkedIn profile is the minimum viable leadership visibility. It takes 30 minutes to set up properly.
 
-**For larger companies (20+ people):**
-- Executive leadership profiles (CEO, C-suite)
-- Optional: department head profiles
-- Too many profiles becomes noise
+Professional photo. Clear headline explaining what you've built. A complete work history focusing on relevant experience. Links to your company. Posts or activity showing you're thinking about your domain.
 
-## Women in Tech: Diversity as Credibility
-
-Female and underrepresented leadership is a credibility signal in tech.
-
-**Why it matters:**
-- Shows commitment to diversity
-- Indicates modern, progressive culture
-- Attracts diverse talent
-- Signals good judgment (hiring best people regardless of demographics)
-
-**How to display:**
-- Feature diversity naturally (not tokenizing)
-- Celebrate diverse leadership (highlight accomplishments)
-- Be authentic (don't force representation for show)
+If a prospect looks you up—and they will—they'll find a credible person, not a blank page.
 
 ## Key Takeaway
 
-Leadership profiles prove that credible people are running the company.
+Visible leadership proves your company has experienced people making decisions.
 
-Feature founders and key leaders with professional profiles highlighting relevant experience and accomplishments.
+Put your face and credibility on your company. Keep profiles brief and focused on credibility signals. Use LinkedIn as your baseline.
 
 That's how SaaS companies build credibility through visible leadership.

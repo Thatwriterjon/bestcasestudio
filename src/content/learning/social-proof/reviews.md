@@ -1,12 +1,9 @@
 ---
 title: 'Reviews & Ratings: Third-Party Credibility'
-image: 'reviews.jpg'
 summary: 'Third-party reviews on G2, Capterra, and similar platforms are powerful social proof signals.'
 type: 'Tactic'
 tags: ['social proof', 'reviews', 'g2', 'ratings']
 ---
-
-# Reviews & Ratings: Third-Party Credibility
 
 ## What Are Third-Party Reviews?
 
@@ -17,30 +14,33 @@ Common platforms for SaaS:
 - **Capterra** (strong for mid-market and SMB SaaS)
 - **Trustpilot** (general business reviews)
 - **AppSumo** (consumer and SMB SaaS)
-- **ProductHunt** (launch visibility and early adoption)
+- **Product Hunt** (launch visibility and early adoption)
 
 ## Why Third-Party Reviews Are Credible
 
 Third-party reviews are powerful because:
 
-1. **They're unbiased.** You didn't write them. Third-party platforms govern the content.
-2. **They're verified.** Platforms verify that reviewers are actual users.
-3. **They're mixed.** Platforms show both positive and negative reviews, which actually increases credibility.
-4. **They're aggregated.** One review doesn't matter. 50 reviews with 4.5 stars matters a lot.
+**They're unbiased.** You didn't write them. Third-party platforms govern the content and verify reviewers.
 
-Prospects trust third-party reviews more than testimonials you provide because you didn't write them.
+**They're verified.** Platforms check that reviewers are actual users.
+
+**They're mixed.** Platforms show both positive and negative reviews, which actually increases credibility.
+
+**They're aggregated.** One review doesn't matter. 50 reviews with a 4.5-star rating matters a lot.
+
+Prospects trust third-party reviews more than testimonials you provide because you had nothing to do with them.
 
 ## Which Platforms Matter Most
 
-**G2:** Enterprise SaaS buyers check G2 before evaluating. Being a "G2 leader" or "High Performer" is worth significant pipeline.
+**G2:** Enterprise SaaS buyers check G2 before evaluating anything. Being a "G2 Leader" or "High Performer" is worth significant pipeline.
 
 **Capterra:** Strong for mid-market and SMB SaaS. Great for visibility among non-enterprise buyers.
 
 **Trustpilot:** General business credibility. Useful if you sell to broad markets.
 
-**ProductHunt:** Launch visibility and momentum signal. A #1 Product of the Day is worth media attention.
+**Product Hunt:** Launch visibility and momentum signal. A #1 Product of the Day is worth media attention.
 
-**Industry-specific platforms:** Some industries have their own review platforms. Use those too.
+**Industry-specific platforms:** Some industries have their own review platforms. Use those too if they exist in your space.
 
 ## Review Velocity and Momentum
 
@@ -52,10 +52,10 @@ Review velocity (how many reviews you're getting per month) signals growth and o
 
 ## How to Encourage Reviews Responsibly
 
-1. **Ask at the right time.** After onboarding completion, milestone achievement, or support success.
+1. **Ask at the right time.** After onboarding completion, milestone achievement, or when they solve a problem for a customer.
 2. **Make it easy.** Send a direct link. One click should take them to the review form.
 3. **Time it right.** Ask when they're happy, not when they're in the middle of a problem.
-4. **Don't incentivize manipulation.** Never offer payment or rewards for positive reviews.
+4. **Don't incentivise manipulation.** Never offer payment or rewards for positive reviews. It's illegal in most places and kills credibility when discovered.
 5. **Respond to all reviews.** Thank positive reviewers. Address concerns in negative reviews.
 
 ## What to Do About Negative Reviews

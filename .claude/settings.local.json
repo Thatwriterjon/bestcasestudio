@@ -87,7 +87,17 @@
       "Bash(git reset)",
       "Bash(git add public/llms.txt src/components/sections/FAQ.astro src/content/blog/credibility-multiplier.md src/content/blog/transparent-pricing-reduces-cac.md)",
       "Bash(npm exec astro -- --version)",
-      "Bash(curl -s http://localhost:3000/learning/authority/)"
+      "Bash(curl -s http://localhost:3000/learning/authority/)",
+      "Bash(curl -s http://localhost:3000/learning)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(lsof -i :3000)",
+      "Bash(curl -s http://localhost:4323/learning/authority/)",
+      "Bash(curl -s http://localhost:4323/learning)",
+      "Bash(curl -s http://localhost:4323/learning/authority)",
+      "Bash(curl -s http://localhost:4323/learning/authority/educational-content)",
+      "Bash(curl -s http://localhost:4323/learning/authority/awards)",
+      "Bash(/tmp/restart_dev.sh:*)",
+      "Bash(bash /tmp/restart_dev.sh)"
     ]
   }
 }

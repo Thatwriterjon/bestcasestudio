@@ -8,136 +8,57 @@ tags: ['process', 'reliability', 'support', 'uptime']
 
 # Reliability & Support: Operational Excellence
 
-## Uptime as Credibility
+In the Credibility Multiplier framework, this is the "Process" signal. It says: "This company operates professionally. We deliver what we promise. When things go wrong, we communicate clearly."
 
-Uptime is how often your service is available and working.
+## Uptime: The Reliability Foundation
 
-**Standard SLA (Service Level Agreement):**
-- 99.9% uptime = 8.64 hours downtime per year (acceptable)
-- 99.95% uptime = 4.32 hours downtime per year (good)
-- 99.99% uptime = 52.56 minutes downtime per year (excellent)
+Uptime is how often your service is available and working. It's measured as a percentage. 99.9% uptime means you're down 8.6 hours per year. That's acceptable for most SMB SaaS. 99.95% uptime means 4.3 hours downtime per year. That's good. 99.99% uptime means 52 minutes downtime per year. That's excellent.
 
-**What uptime signals:**
-- Low uptime = amateur operations
-- 99%+ uptime = professional operations
-- Transparent uptime = honest operations
+**Show your uptime.** Create a public status page. Document your SLA (Service Level Agreement). If your uptime is excellent, mention it in your marketing.
 
-**How to display uptime:**
-- Public status page (shows live status + history)
-- SLA document (states your commitment)
-- Mention in marketing (if you're excellent)
+A prospect seeing "99.9% uptime" thinks: "This company is reliable and cares enough to track it." A prospect seeing no uptime information thinks: "I have no idea if they're reliable. That's a red flag."
 
-A prospect seeing "99.9% uptime" thinks: "This company is reliable."
+## A Public Status Page Signals Transparency
 
-A prospect seeing no uptime info thinks: "Are they reliable? Who knows."
+A public status page shows current service status, historical uptime, incident history, and estimated time to resolution during outages. It signals transparency, accountability, and professional monitoring.
 
-## Status Page
+Companies without status pages signal the opposite: either they're not confident in their reliability, or they don't care enough to publish it. Prospects notice.
 
-A public status page is a credibility signal.
+## Support Quality Determines Customer Success
 
-**What it shows:**
-- Current service status (up/degraded/down)
-- Historical uptime (past 30/90 days)
-- Incident history
-- Estimated time to resolution (during outages)
+Support quality determines whether customers succeed or churn. When someone hits a problem, your support response determines whether they keep using your product or leave.
 
-**What it signals:**
-- Transparency
-- Honest operations
-- Professional monitoring
-- Accountability
+Good support responds in hours, not days. It solves issues completely instead of creating back-and-forth loops. It provides helpful guidance that actually helps, not generic canned responses. It's proactive—you reach out to customers before they get stuck.
 
-Companies without status pages signal: "We're not confident in our reliability."
+Poor support is slow, repetitive, generic, and reactive.
 
-## Support Quality
+Track your response time, resolution time, first-contact resolution rate, and customer satisfaction. These metrics reveal whether you're actually supporting customers well.
 
-Support quality determines whether customers succeed or churn.
+## Offer Multiple Support Channels
 
-**Support metrics:**
-- Response time (how fast do we reply?)
-- Resolution time (how long to fix the issue?)
-- First-contact resolution (do we solve it first try?)
-- Customer satisfaction (CSAT score)
+Email works for non-urgent issues that need documentation. Chat provides real-time help for quick questions. Phone is for complex issues or enterprise customers. Communities let users help each other.
 
-**Good support:**
-- Responds in hours (not days)
-- Solves issues completely
-- Provides helpful guidance
-- Proactive in preventing issues
+Most companies should offer email and chat at minimum. If you have capacity, add a community. Add phone support for enterprise customers. The combination signals you take support seriously.
 
-**Poor support:**
-- Takes days to respond
-- Requires many back-and-forths
-- Generic responses
-- Unresponsive
+## Great Support Becomes Marketing
 
-## Support Channels
+This is often overlooked: great support turns into word-of-mouth marketing. Customers tell friends about it. It affects NPS scores. It drives referrals.
 
-**Email:** Asynchronous, documented, searchable. Best for non-urgent issues.
+Some companies become known for their customer support. That reputation attracts customers who value being supported well.
 
-**Chat:** Real-time, quick. Best for quick questions.
+## How You Communicate During Outages Matters
 
-**Phone:** High-touch, personal. Best for complex issues or enterprise.
+Outages happen. They're not the credibility killer that silence is.
 
-**Community:** Peer-to-peer support, helps users help each other.
+Acknowledge the issue immediately. Don't let customers wonder if you know there's a problem. Provide status updates every 30 minutes. Explain what happened afterward (post-mortem). If it was your fault, apologize. If appropriate, compensate affected customers.
 
-**Most companies should offer:** Email + Chat + Community. Phone for enterprise.
+Transparent incident communication can actually improve credibility even after failure. Silence during an outage destroys it. Customers think you don't care or don't have your act together.
 
-## Support as Marketing
+## Set Response Time Expectations and Meet Them
 
-Great support becomes marketing.
+Startups should aim for 24-hour response time. Growing SaaS, 8 hours. Mature SaaS, 4 hours. Enterprise SaaS, 1 hour or SLA-based.
 
-- Customers tell friends about good support
-- Support interactions are marketing moments
-- Support quality affects NPS and referrals
-
-**Example:** One company with famous customer support becomes known for it. That reputation attracts customers.
-
-## Incident Communication
-
-How you communicate during outages signals credibility.
-
-**Good incident communication:**
-- Acknowledge issue immediately
-- Provide status updates every 30 minutes
-- Explain what happened (post-mortem)
-- Apologize and compensate if needed
-
-**Poor incident communication:**
-- No communication during outage
-- Vague updates
-- No explanation afterward
-- No accountability
-
-Transparent incident communication can actually improve credibility even after failure. Lack of communication destroys it.
-
-## Support Responsiveness Signals
-
-**Response time expectations:**
-- Startup SaaS: 24-hour response
-- Growing SaaS: 8-hour response
-- Mature SaaS: 4-hour response
-- Enterprise SaaS: 1-hour response (or SLA-based)
-
-If you commit to response times in your SLA, meet them. Failing to meet SLAs destroys credibility.
-
-## Support Credibility Signals
-
-**Strong support:**
-- Clear support channels (email, chat, etc.)
-- Fast response times (stated in SLA)
-- Professional, helpful tone
-- Proactive issue prevention
-- Public status page
-- Transparent incident communication
-
-**Weak support:**
-- No clear support channel
-- Slow response times
-- Generic or unhelpful responses
-- Reactive only
-- No status page
-- Silent during outages
+Whatever you commit to, meet it. Failing to meet published SLAs destroys credibility faster than slow response times you never promised.
 
 ## Key Takeaway
 

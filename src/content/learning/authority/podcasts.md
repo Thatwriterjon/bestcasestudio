@@ -1,12 +1,9 @@
 ---
 title: 'Podcasts: Voice & Visibility'
-image: 'podcasts.jpg'
 summary: 'Hosting your own podcast or appearing on others builds direct audience relationships and authority.'
 type: 'Tactic'
 tags: ['authority', 'podcasts', 'audio', 'speaking']
 ---
-
-# Podcasts: Voice & Visibility
 
 ## Starting Your Own Podcast vs. Appearing on Others
 
@@ -29,10 +26,10 @@ Both build authority. Both have different trade-offs.
 - Requires consistency (weekly or bi-weekly)
 - Takes time to build audience
 - Production overhead
-- Difficult to monetize directly
+- Difficult to monetise directly
 - Declining medium (less popular than previous years)
 
-**Best for:** Founders willing to commit to weekly/bi-weekly consistency for 1-2 years.
+**Best for:** Founders willing to commit to weekly/bi-weekly consistency for 1–2 years.
 
 ## Appearing on Other Podcasts
 
@@ -72,7 +69,7 @@ Starting a podcast is not the fastest way to build authority.
 
 **The reality:**
 - Most podcasts get under 100 listeners per episode
-- It takes 1-2 years to build meaningful audience
+- It takes 1–2 years to build meaningful audience
 - Consistency matters more than quality
 - You need guests/content strategy to maintain momentum
 
@@ -89,12 +86,12 @@ If you start a podcast, commit to 52 episodes (one year) before evaluating.
 **The strategy:**
 
 1. **Research podcasts in your niche.** Find shows with relevant audiences.
-2. **Listen to 2-3 episodes.** Understand the format, tone, typical guests.
-3. **Pitch the host.** Email with: your topic angle, why it's relevant to their audience, 2-3 specific episode ideas.
+2. **Listen to 2–3 episodes.** Understand the format, tone, typical guests.
+3. **Pitch the host.** Email with: your topic angle, why it's relevant to their audience, 2–3 specific episode ideas.
 4. **Prepare thoroughly.** Know what you want to say. Have specific stories ready.
 5. **Promote the episode.** Share it with your audience.
 
-**Podcast appearances to prioritize:**
+**Podcast appearances to prioritise:**
 - Shows with 10k+ listeners
 - Shows with your target audience
 - Shows with engaged communities

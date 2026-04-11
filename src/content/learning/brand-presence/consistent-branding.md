@@ -1,139 +1,83 @@
 ---
 title: 'Consistent Branding: Visual & Voice Identity'
-image: 'consistent-branding.jpg'
 summary: 'Consistency across channels signals professionalism and builds recognition.'
 type: 'Tactic'
 tags: ['brand presence', 'branding', 'consistency', 'identity']
 ---
 
-# Consistent Branding: Visual & Voice Identity
-
 ## Why Consistency Matters
 
-Consistency signals:
-- Attention to detail
-- Professionalism
-- Intentionality
-- Care about brand
+Consistency is invisible when it's done right. You notice a brand when it's inconsistent—different logos in different places, the website sounds formal whilst Twitter is casual, the app looks modern but the documentation looks outdated.
 
-Inconsistency signals:
-- Lack of coordination
-- Disorganization
-- Lack of attention
-- Unprofessionalism
+Inconsistency signals disorganisation. Consistency signals that you've thought about how your brand shows up everywhere. A prospect experiencing consistent branding thinks: "This company has their act together." That consistency compounds your credibility multiplier.
 
-A prospect seeing consistent branding thinks: "This company has their act together."
+## Visual Consistency: The Foundation
 
-A prospect seeing inconsistent branding thinks: "This company is disorganized."
+Visual consistency covers several elements that work together.
 
-## Visual Consistency
+**Logo:** Use the same logo everywhere. Don't resize it arbitrarily or change its colours. Don't use an old version on the website and a new version on social media.
 
-Visual consistency includes:
+**Colour palette:** Pick primary and secondary colours and stick to them. Consistent colour makes you recognisable.
 
-**Logo:** Same logo across all channels. Don't resize, distort, or change colors arbitrarily.
+**Typography:** Choose your fonts and use them consistently. One font for headings, one for body text. Switching fonts randomly looks chaotic.
 
-**Color palette:** Consistent primary and secondary colors. Not constantly changing.
+**Imagery:** Use consistent styles. If you use photography, use consistent styles. If you use illustrations, use consistent styles. Mixing different styles looks unfocussed.
 
-**Typography:** Consistent headline, body, and accent fonts. Not switching fonts randomly.
+**Layout and spacing:** Consistent margins and padding across your website, app, and marketing materials signal intentionality.
 
-**Imagery style:** Consistent style (illustration vs. photography, colors, tone).
+**Icons:** Keep them consistent in style, size, and weight.
 
-**Layout and spacing:** Consistent margins, padding, spacing between elements.
+## Document Your Brand Identity
 
-**Icons:** Consistent icon style and design.
+You need a brand guide—a single source of truth for how your brand shows up. This doesn't need to be a 50-page document.
 
-## Creating a Brand Style Guide
+**At minimum, cover:**
+- Your logo (and how not to use it—sizing minimums, spacing rules, wrong colour variations)
+- Your colour palette (exact hex codes so someone doesn't guess)
+- Your typography (which fonts are used where)
+- Your imagery style (photograph? illustration?)
+- Layout conventions (consistent spacing and margins)
 
-A brand guide documents your visual identity:
-
-**Essential elements:**
-- Logo (how to use, sizing, spacing)
-- Color palette (primary, secondary, accent colors with hex codes)
-- Typography (heading font, body font, sizes)
-- Photography style (what your images look like)
-- Icon usage (style, sizing)
-- Layout guidelines (spacing, margins)
-
-**Advanced elements:**
-- Voice and tone guidelines
-- Imagery examples and guidelines
+**If you have capacity, add:**
+- Voice and tone guidelines (formal vs. friendly, technical vs. accessible)
 - Examples of correct and incorrect usage
-- Partner guidelines
+- Partner guidelines (if you work with agencies)
 
-A style guide helps everyone (team, contractors, partners) maintain consistency.
+This document prevents inconsistency from creeping in as your company grows. A new hire can reference it. An agency designing your next ad can reference it.
 
-## Voice Consistency
+## Voice Consistency: The Harder Part
 
-Voice is how you communicate. Consistent voice builds recognition.
+Visual consistency is relatively easy. Voice consistency is harder because it depends on people making choices.
 
-**Voice elements:**
-- Tone (formal, friendly, technical, playful?)
-- Vocabulary (sophisticated words vs. simple words?)
-- Sentence structure (short punchy sentences vs. complex prose?)
-- Values (what you stand for, what you don't)
-- Humor (do you use it? how?)
+Voice is how your company communicates. Are you formal or friendly? Do you use industry jargon or plain language? Witty and playful or serious and professional?
 
-**Example voice:**
-- Tone: Friendly but professional
-- Vocabulary: Simple, no jargon
-- Sentence structure: Short, scannable
-- Values: Transparency, simplicity, customer success
-- Humor: Occasional, never mean-spirited
+**Define your voice deliberately.** Decide: "We're friendly but professional. We use simple language, no jargon. Our tone is conversational. We use humour occasionally but never mean-spirited. We value transparency and clarity."
 
-**Consistency across channels:**
-- Website copy
-- Email communication
-- Social media posts
-- Customer support
-- Documentation
-- Blog posts
+Make sure this voice shows up everywhere: your website, emails, social media posts, customer support, documentation, blog. A prospect shouldn't find your website sounding formal whilst your Twitter sounds like a teenager.
 
-## Common Consistency Mistakes
+When voice is consistent, prospects feel like they know your company before they buy. Inconsistent voice creates confusion: "Are you professional or casual? Who are you actually?"
 
-**Logo inconsistency:**
-- Using different versions of logo
-- Changing logo colors
-- Resizing logo inconsistently
-- Using outdated logo version
+## Protecting Consistency As You Scale
 
-**Color inconsistency:**
-- Using different shades of same color
-- Adding new colors without reason
-- Switching primary color
-- No contrast between text and background
+When you're small, consistency is easy. As your company grows, new team members, agencies, and contractors create things, and consistency becomes harder.
 
-**Typography inconsistency:**
-- Too many different fonts
-- Switching fonts randomly
-- Wrong font sizes
-- Hard-to-read fonts
+**Protect it by being deliberate:** Document your brand identity. Create templates. Review work before publishing. Do a brand audit quarterly.
 
-**Voice inconsistency:**
-- Formal in some places, casual in others
-- Different tone in different channels
-- Inconsistent messaging
-- Contradictory values
+Educate new team members on your brand. It shouldn't feel like rules they resent. It should feel like "here's who we are, and here's how that shows up in everything we create."
 
-## Maintaining Consistency Over Time
+## When to Evolve Your Brand (Rarely)
 
-As your company grows, consistency gets harder.
+Your brand is an asset. Don't change it constantly. But there are legitimate reasons to evolve:
 
-**How to maintain it:**
-- Document everything in a style guide
-- Educate new team members on brand
-- Use templates (email, social, documents)
-- Review work before publishing
-- Audit your brand quarterly
+**Company direction shifts.** You pivoted from enterprise to SMB. Your visual identity should reflect that.
 
-## When to Update Your Branding
+**Market positioning changes.** You're no longer a startup. You're now the market leader. Your brand should reflect maturity.
 
-Update your branding when:
-- Company direction changes
-- Market positioning changes
-- Visual identity feels dated (5+ years)
-- You've outgrown your brand
+**Your identity feels dated.** Five or more years is reasonable. But don't rebrand because a trend looks cool.
 
-Don't update branding because of minor preferences or trends. Consistency matters more than being trendy.
+**You've genuinely outgrown your brand.** You started selling to freelancers and now you're selling to enterprises. The visual identity might need to mature with you.
+
+Don't rebrand because of personal preferences, or trends, or because someone wants to shake things up. Consistency is an asset. Changing it costs credibility.
 
 ## Key Takeaway
 

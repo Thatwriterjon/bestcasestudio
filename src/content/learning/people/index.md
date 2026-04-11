@@ -1,12 +1,9 @@
 ---
 title: 'People: The Signal of Trust'
-image: 'people.jpg'
 summary: 'People credibility is built through founder visibility, team composition, and employee advocacy.'
 type: 'Pillar'
 tags: ['people', 'credibility', 'founder brand', 'team']
 ---
-
-# People: The Signal of Trust
 
 ## What Is People Credibility?
 
@@ -14,7 +11,7 @@ People credibility is the trust that comes from knowing and believing in the hum
 
 It's different from product credibility or brand credibility. It's personal: "I trust this founder. I trust this team."
 
-When a prospect recognizes the founder as knowledgeable, sees a strong team behind the product, or finds employees actively advocating for the company, their brain computes: "Good people built this. I can trust it."
+When a prospect recognises the founder as knowledgeable, sees a strong team behind the product, or finds employees actively advocating for the company, their brain computes: "Good people built this. I can trust it."
 
 People credibility converts because humans buy from humans, not companies.
 
@@ -22,12 +19,15 @@ People credibility converts because humans buy from humans, not companies.
 
 For SaaS products, the people matter because:
 
-- **Support matters.** If the team doesn't care, support will be bad.
-- **Direction matters.** If the founder doesn't understand the market, the product will miss.
-- **Stability matters.** Enterprise buyers want to know the company won't disappear.
-- **Values matter.** Buyers want to work with people they agree with.
+**Support matters.** If the team doesn't care, support will be bad.
 
-People credibility is especially important for:
+**Direction matters.** If the founder doesn't understand the market, the product will miss.
+
+**Stability matters.** Enterprise buyers want to know the company won't disappear.
+
+**Values matter.** Buyers want to work with people they agree with.
+
+People credibility matters especially for:
 
 - **Early-stage SaaS** where the founder *is* the company
 - **High-touch SaaS** where the team will be working with customers
@@ -39,22 +39,22 @@ People credibility is especially important for:
 ### 1. Founder Brand & Visibility
 The founder being known, respected, visible, and trusted in the space.
 
-**SaaS-specific:** Founders with personal credibility transfer that to their company.
+**For SaaS:** Founders with personal credibility transfer that to their company.
 
 ### 2. Team Composition & Credentials
 Who the team is, what they've built, what expertise they bring.
 
-**SaaS-specific:** Hiring experienced people (especially from known companies) signals you'll execute.
+**For SaaS:** Hiring experienced people (especially from known companies) signals you'll execute.
 
 ### 3. Employee Activity & Advocacy
 Employees showing up on social media, in public, advocating for the company.
 
-**SaaS-specific:** Employees talking about what they're building signals internal buy-in.
+**For SaaS:** Employees talking about what they're building signals internal buy-in.
 
 ### 4. Leadership Visibility & Profiles
 Leaders being visible, known, and credible in their domains.
 
-**SaaS-specific:** Visible leadership team builds confidence in execution.
+**For SaaS:** Visible leadership team builds confidence in execution.
 
 ## Founder Brand vs. Personal Brand (The Critical Distinction)
 
@@ -62,7 +62,7 @@ This is where most founders get confused. They think "founder brand" means becom
 
 It doesn't.
 
-**Personal brand** is broad individual fame. "I'm a thought leader in business," "I'm an influencer."
+**Personal brand** is broad individual fame. "I'm a thought leader in business." "I'm an influencer."
 
 **Founder brand** is narrow, company-focused credibility. "I'm the founder of this specific company that solves this specific problem."
 
@@ -91,7 +91,7 @@ When the company posts "we're proud of X," prospects think: "Of course they say 
 
 Employee advocacy is harder to fake. It signals internal alignment and genuine excitement.
 
-## Avoiding People Credibility Pitfalls
+## People Credibility Pitfalls
 
 Fake people credibility collapses fast.
 
@@ -111,7 +111,7 @@ Fake people credibility collapses fast.
 
 ## Specific Tactics for Building People Credibility
 
-Each element of people credibility has specific strategies. Explore these:
+Each element has specific strategies. Go deeper:
 
 - **[Founder Brand](/learning/people/founder-brand)** — Building founder-specific credibility
 - **[Team & Composition](/learning/people/team)** — Hiring and presenting your team
@@ -120,7 +120,7 @@ Each element of people credibility has specific strategies. Explore these:
 
 ## Key Takeaway
 
-People credibility answers the question: "Are the humans behind this company trustworthy?"
+People credibility answers one question: "Are the humans behind this company trustworthy?"
 
 The better you answer that question, the faster prospects convert.
 

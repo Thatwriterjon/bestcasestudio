@@ -1,134 +1,84 @@
 ---
 title: 'Website Experience: UX Credibility'
-image: 'website-ux.jpg'
 summary: 'How your website works is as important as how it looks.'
 type: 'Tactic'
 tags: ['brand presence', 'ux', 'website', 'experience']
 ---
 
-# Website Experience: UX Credibility
+## What Makes a Website Experience Good?
 
-## Design vs. Experience
+**Site speed.** Pages should load in under 3 seconds. A slow site signals technical incompetence. A fast site signals competence.
 
-Design is how something looks.
+**Clear navigation.** A visitor should find what they're looking for without frustration. Logical menu structure. Related content linked. Easy to get back to the homepage. No dead links.
 
-Experience is how it works.
+**Obvious next steps.** The call-to-action should be unmistakable. "Sign up for free trial." "Book a demo." "View pricing." Not vague. Not hidden.
 
-Both matter for credibility.
+**Mobile responsiveness.** Works beautifully on phones, tablets, and desktops. Designed mobile-first from the start.
 
-A beautiful website that's hard to use signals: "They care about appearance but not functionality."
+**Simple forms.** Only ask for necessary information. Clear labels. Real-time validation. Large, obvious submit buttons. Easy on mobile.
 
-A functional website that's easy to use signals: "They care about results."
+**Scannable content.** Copy is written for scanning, not dense paragraphs. Headlines guide the eye. Bullet points break up text. Paragraphs are short. Value is obvious without reading every word.
 
-## Key Elements of Website Experience
+**Helpful error messages.** When something goes wrong, users get friendly feedback. Not cryptic error codes. Not blame. Guidance on how to fix it.
 
-**Site speed:** Pages load quickly (under 3 seconds). Slow sites signal incompetence.
+## Site Speed Is Non-Negotiable
 
-**Clear navigation:** Visitors can find what they're looking for easily.
+A site that loads in 2 seconds feels professional. A site that takes 6 seconds feels broken. Visitors notice. They judge. They leave.
 
-**Obvious CTAs:** Next steps are clear. "Sign up," "Book a demo," "Learn more."
+Use a CDN so content is served from servers close to your visitors. Optimise images. Minimise your code. Use caching so repeat visitors load faster. Consider static hosting services like Netlify or Vercel.
 
-**Mobile responsiveness:** Site works seamlessly on phone, tablet, desktop.
+Target under 3 seconds for desktop and under 5 seconds for mobile.
 
-**Form experience:** Forms are simple, don't ask for unnecessary info, work properly.
+## Navigation Should Be Obvious
 
-**Content clarity:** Copy is scannable, headers guide reading, value is obvious.
+A visitor should find what they're looking for in 2–3 clicks maximum. Not buried in submenus. Not hidden. Obvious.
 
-**Error handling:** Errors are friendly, helpful, easy to fix.
+Your main menu shouldn't overwhelm. Too many options confuse people. Typically 5–7 main menu items is right. For large sites, add search functionality. Use breadcrumb navigation. Link related content.
 
-## Site Speed Matters for Credibility
+## Copy Should Be Scannable, Not Dense
 
-A slow site signals technical incompetence. Fast sites signal competence.
+Prospects don't read every word. They scan.
 
-**Load time impact:**
-- Under 2 seconds: Excellent
-- 2-4 seconds: Good
-- 4-6 seconds: Acceptable
-- Over 6 seconds: Poor (visitors leave)
+Write clear headlines that explain what each section is about. Use subheadings. Bullet points for lists. Short paragraphs—three sentences maximum usually. Use active voice. Make specific claims, not vague ones.
 
-**Performance optimization:**
-- Use a content delivery network (CDN)
-- Optimize images (compress, proper format)
-- Minimize code (remove unused CSS/JavaScript)
-- Cache assets (reduce repeated requests)
-- Use static hosting where possible (Netlify, Vercel)
+A wall of text signals that you don't respect the reader's time. Scannable content signals that you do.
 
-## Navigation and Information Architecture
+## Forms Should Respect Your Visitor's Time
 
-Visitors should be able to find what they're looking for in 2-3 clicks.
+Every field in a form is friction. Only ask for what you absolutely need.
 
-**Good navigation:**
-- Clear main menu (not too many options)
-- Logical page structure
-- Search functionality (for large sites)
-- Clear breadcrumb navigation
-- Links to related content
+Make labels clear. Real-time validation is better than submission validation—show errors immediately so they can fix them before submitting.
 
-**Poor navigation:**
-- Confusing menu structure
-- Buried important information
-- Hard to get back to homepage
-- Dead links
-- No search
+Make your submit button large and obvious. "Submit" is vague. "Start free trial" is specific.
 
-## Copy and Content UX
+Test forms on mobile. Make sure input fields are large enough to tap. Make sure the keyboard doesn't cover the form.
 
-How your copy is written and displayed affects experience.
+## Test Your Website Experience Yourself
 
-**Good copy UX:**
-- Clear headlines that explain value
-- Subheadings that break up content
-- Bullet points for scannability
-- Short paragraphs
-- Active voice
-- Specific claims (not vague)
+Go to your homepage fresh. Time yourself:
 
-**Poor copy UX:**
-- Long blocks of text
-- Unclear headlines
-- Passive voice
-- Vague claims
-- No visual breaks
+Can you understand what you do in 10 seconds?
 
-## Form Experience Matters
+Can you find the main call-to-action in 5 seconds?
 
-Forms should be as simple as possible.
+Can you complete the primary action in under 2 minutes?
 
-**Good forms:**
-- Only ask for necessary information
-- Clear labels
-- Real-time validation (show errors immediately)
-- Large submit button
-- Mobile-friendly input fields
+If the answer to any of these is no, your experience needs work.
 
-**Poor forms:**
-- Too many fields
-- Unclear labels
-- Validation only on submission
-- Tiny submit button
-- Hard to use on mobile
+## Get Real Users to Test
 
-## Testing Your Website Experience
+Ask 5 people you don't know to visit your site. Give them a task: "Sign up for a free trial" or "Find the pricing page." Watch them do it without helping.
 
-**Quick usability test:**
+Where do they get stuck? What confuses them? That's where your UX breaks. Fix it.
 
-1. Go to your homepage fresh (don't know your product)
-2. Can you understand what you do in 10 seconds?
-3. Can you find the main CTA in 5 seconds?
-4. Can you sign up / book a demo / get pricing in under 2 minutes?
-
-If not, your experience needs improvement.
-
-**Have others test it:**
-
-Ask 5 people to complete a task on your site (sign up, book a demo, etc.). Watch them struggle. That's where your UX breaks.
+Most teams discover their UX problems through this simple exercise.
 
 ## Key Takeaway
 
-Website experience proves that your company is well-organized and thoughtful.
+Website experience proves that your company is well-organised and thoughtful.
 
 Good experience doesn't require fancy design. It requires clarity and functionality.
 
-Test your site. Simplify navigation. Optimize speed. Improve forms.
+Test your site. Simplify navigation. Optimise speed. Improve forms.
 
 That's how SaaS companies build credibility through usable websites.

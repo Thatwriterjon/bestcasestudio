@@ -1,16 +1,13 @@
 ---
 title: 'Awards & Recognition: Authority Through Validation'
-image: 'awards.jpg'
 summary: 'Industry awards and recognition establish you as an expert worthy of respect.'
 type: 'Tactic'
 tags: ['authority', 'awards', 'recognition', 'credentials']
 ---
 
-# Awards & Recognition: Authority Through Validation
-
 ## What Are Authority Awards?
 
-Authority awards are distinctions from industry bodies, publications, or peer groups recognizing your expertise.
+Authority awards are distinctions from industry bodies, publications, or peer groups recognising your expertise.
 
 Examples:
 - "Top 10 SaaS Thought Leaders"
@@ -20,13 +17,13 @@ Examples:
 - Speaking accolades
 - Teaching credentials
 
-These signal that external authorities recognize you as knowledgeable.
+These signal that external authorities recognise you as knowledgeable.
 
 ## Industry Awards vs. Self-Awarded Badges
 
 **Industry awards** are earned through nomination or application with external evaluation.
 
-**Self-awarded badges** are created by you ("recognized by our own expert panel").
+**Self-awarded badges** are created by you ("recognised by our own expert panel").
 
 Industry awards carry credibility. Self-awarded badges don't.
 
@@ -65,7 +62,7 @@ Industry awards carry credibility. Self-awarded badges don't.
 
 Founders sometimes exaggerate credentials or awards to seem more authoritative.
 
-**This backfires.** Prospects will verify. If your awards don't check out, your credibility collapses.
+This backfires. Prospects will verify. If your awards don't check out, your credibility collapses.
 
 **Don't:**
 - Claim awards you didn't win
@@ -75,13 +72,13 @@ Founders sometimes exaggerate credentials or awards to seem more authoritative.
 
 **Do:**
 - Mention legitimate awards and credentials
-- Be specific about what the award recognizes
-- Include the year and organization
+- Be specific about what the award recognises
+- Include the year and organisation
 - Let achievements speak for themselves
 
 ## Building Award-Worthy Authority
 
-Rather than chasing awards, build authority that awards recognize.
+Rather than chasing awards, build authority that awards recognise.
 
 To become award-worthy:
 

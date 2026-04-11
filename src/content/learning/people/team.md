@@ -1,112 +1,60 @@
 ---
 title: 'Team & Composition: Credibility Through People'
-image: 'team.jpg'
-summary: 'A strong team signals that the company can execute.'
-type: 'Tactic'
+summary: 'A strong team signals that your company can execute.'
+type: 'Learning'
 tags: ['people', 'team', 'hiring', 'credentials']
 ---
 
-# Team & Composition: Credibility Through People
+Prospects evaluate your company partly based on the people building it. A strong team signals capability. A weak or misaligned team signals problems ahead.
 
-## Team Size as a Credibility Signal
+## What Team Size Signals
 
-Prospects evaluate companies partly based on team size and composition.
+A small team—1-3 people—signals efficiency and founder-driven execution. Prospects think: "These founders are hands-on."
 
-**Small team signal:** "Efficient, lean, founder-driven."
+A medium team—10-20 people—signals you've moved past MVP and built infrastructure. Prospects think: "They're capable of scaling."
 
-**Medium team signal:** "Capable of scaling, infrastructure in place."
+A large team—50+ people—signals you're serious and well-resourced. Prospects think: "This company is real."
 
-**Large team signal:** "Well-resourced, serious about the market."
+The "right" size depends on your stage. Pre-product, three people is normal. At product-market fit, you should be 5-10. At growth stage, 10-50. At maturity, 50+.
 
-The "right" team size depends on your stage and market:
-- Early-stage (pre-product): 1-3 people (just founders/technical co-founder)
-- Product-market fit: 3-10 people (core team in place)
-- Growth: 10-50 people (scaling operations)
-- Mature: 50+ people (well-staffed)
+Hiring pace sends a signal too. Slow, intentional hiring signals confidence. Rapid hiring signals desperation or explosive growth—it's hard to tell from the outside.
 
-Hiring the right people at the right time signals good judgment.
+## What Makes a Strong Team
 
-## Team Composition Signals
+Prospects evaluate team composition through several lenses.
 
-**What prospects evaluate:**
-- Have you hired experienced people? (previous roles, exits, accomplishments)
-- Are people credible in their domains? (engineers from known companies, sales people who've sold enterprise)
-- Is there diversity in backgrounds? (different perspectives, not monoculture)
-- Do you have domain expertise? (people who've worked in your space before)
+**Experience and track record.** Have you hired people who've done this before? A seasoned engineer. A sales person who's sold enterprise software. A product manager who's shipped successful products. This signals you're not making it up as you go.
 
-**Strong team composition:**
-- Mix of experience levels (not all juniors, not all senior)
-- People from credible companies
-- Relevant domain expertise
-- Diverse perspectives and backgrounds
+**Domain expertise.** Have you hired people who understand the space you're in? This matters most for B2B SaaS. A founder who's spent five years in the industry they're now building for signals credibility. You understand the problems intimately.
 
-**Weak team composition:**
-- All junior people with no domain experience
-- People from no-name companies
-- No apparent strategy to hiring
-- Obvious turnover (people leave after months)
+**Company pedigree.** Where did your team come from? People from known, credible companies signal that you can attract talent. People from scrappy startups or unknown companies signal less clarity.
 
-## Displaying Team Credibility
+**Diversity.** Do you have different perspectives? All male engineers and female marketers? Everyone from the same background or geography? Diverse teams make better products. Homogeneous teams often miss problems.
 
-**Company team page:**
-- Professional headshots
-- Names, titles, roles
-- Brief bio (1-2 sentences on background)
-- Social links (LinkedIn, Twitter)
-- Maybe: previous companies, notable accomplishments
+**Stability.** Have people stayed with you? A team that's been together for 2+ years signals you're doing something right—culture works, people believe in the mission, management is sound. Obvious turnover signals problems.
 
-**What NOT to include:**
-- Personal details (family, hobbies, unrelated interests)
-- Overly casual tone or photos
-- Too much detail (leave some mystery)
+## How to Display Team Credibility
 
-**Team size visibility:**
-- Display team size on your site or LinkedIn ("10-person team")
-- Shows growth over time (2 people at launch, 10 now signals growth)
-- Shows stability (same team for 3 years signals low turnover)
+Your team page matters. Include professional headshots (not casual or blurry). Names, titles, and what they do. A brief bio—one or two sentences explaining their background and relevant experience. Link their LinkedIn or Twitter so prospects can verify credibility.
 
-## Hiring Signals
+Don't include irrelevant personal details like hobbies or family. Keep the tone professional. You're displaying credibility, not trying to be friends.
 
-**Good hiring signals:**
-- Hiring people from credible companies
-- Hiring people with domain expertise
-- Hiring people who have done the role before (not training on the job)
-- Slow, intentional hiring (not desperate)
+Make team size visible on your website and LinkedIn. "10-person team" signals scale. Growth from 2 to 10 signals momentum. Same team for 3 years signals stability.
 
-**Bad hiring signals:**
-- Hiring quickly because of urgency (signals desperation)
-- Hiring only friends and connections (signals poor judgment)
-- High turnover (people leave after 6 months)
-- Hiring people unqualified for the role
+## What Your Hiring Decisions Communicate
 
-## The "Used to Work at Google/Facebook" Signal
+How you hire tells prospects something.
 
-Hiring someone from a major tech company sends a signal.
+Hiring people from credible companies signals you can attract top talent. Hiring people with domain expertise signals you understand the space. Hiring people who've done the role before signals confidence. Slow, deliberate hiring signals you know where you're headed.
 
-**What the signal means:**
-- We could recruit top talent
-- We probably have credibility and funding
-- This person has relevant experience
+Rapid hiring signals desperation or explosive growth—it's unclear which. Hiring only friends signals poor judgment. High turnover signals cultural or management problems. Hiring unqualified people signals you don't know what you're doing.
 
-**The caveat:**
-- One person from a big company doesn't prove much
-- What matters is: are they actually good at their job?
-- Are they still there 18 months later?
-
-## Team Stability as Credibility
-
-Team turnover signals something.
-
-**Low turnover (same team for 2+ years):** Signals people are happy, company is stable, strong culture.
-
-**High turnover (people leave after months):** Signals problems—bad culture, poor management, or poor hiring.
-
-Prospects notice turnover. A team that's been together for 2+ years signals stability.
+A hire from Google or Facebook sends a credibility signal. But one person isn't meaningful. What matters is whether they're still with you 18 months later, and whether they're actually good at their job.
 
 ## Key Takeaway
 
-A strong team proves that you can execute.
+A strong team proves you can execute.
 
-Hire experienced people. Display team composition. Show stability through low turnover.
+Hire experienced people. Display team composition clearly. Show stability through low turnover.
 
-That's how SaaS companies build credibility through their team.
+That's how SaaS companies build credibility through their people.

@@ -1,12 +1,9 @@
 ---
 title: 'Webinars & Speaking: Public Presence'
-image: 'speaking.jpg'
 summary: 'Speaking at conferences and hosting webinars establish you as an expert.'
 type: 'Tactic'
 tags: ['authority', 'speaking', 'webinars', 'conferences']
 ---
-
-# Webinars & Speaking: Public Presence
 
 ## Conference Speaking: The Authority Accelerator
 
@@ -37,7 +34,7 @@ Choose conferences where your ideal customer actually attends.
 
 **Method 1: Cold pitch**
 
-Email the conference organizer with:
+Email the conference organiser with:
 - Your proposed topic
 - Why it's relevant to their audience
 - Your credentials
@@ -122,7 +119,7 @@ One 45-minute talk becomes 10+ pieces of content.
 
 ## Key Takeaway
 
-Speaking and webinars prove that you're recognized as an expert.
+Speaking and webinars prove that you're recognised as an expert.
 
 Regular speaking (not one-off talks) builds visible authority.
 

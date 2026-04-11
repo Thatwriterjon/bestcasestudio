@@ -8,132 +8,71 @@ tags: ['process', 'onboarding', 'implementation', 'success']
 
 # Onboarding: Time to First Value
 
-## Why Onboarding Credibility Matters
+Onboarding is the critical first moment when prospects become customers and actually experience your product in action. This is where brand promise meets operational reality.
 
-Onboarding is the first moment customers experience your product operationally.
+A bad onboarding experience kills credibility faster than almost anything else. A customer arrives excited to use your product, hits friction immediately, gets stuck, waits for support, and eventually gives up. Your credibility multiplier just took a hit.
 
-**What onboarding signals:**
-- Whether the company cares about customer success
-- Whether the product is easy or hard to use
-- Whether the company has good processes
-- Whether customers will succeed or fail
+Good onboarding builds credibility. Customers see they made a good choice. They experience the product doing what you said it would do. They feel supported. They're more likely to expand, less likely to churn, and more likely to recommend you. That's the process signal in the Credibility Multiplier framework—operational excellence compounds credibility.
 
-Bad onboarding kills credibility. Good onboarding builds it.
+## Choosing Your Onboarding Model
 
-## The Onboarding Experience
+The right onboarding model depends on your customer segment and product complexity.
 
-**Self-serve onboarding (best for SMB/upmarket):**
-- Prospects sign up
-- In-app wizard guides setup
-- Clear next steps
-- Email followup
+**Self-serve onboarding** works best for SMB customers with straightforward products. A prospect signs up, an in-app wizard guides them through setup, they see value within hours, and email followup keeps them engaged. Low cost, scales easily.
 
-**Human-led onboarding (better for enterprise):**
-- Dedicated onboarding specialist
-- Custom implementation plan
-- Regular check-ins
-- Training and handoff
+**Human-led onboarding** works better for enterprise customers with complex implementations. A dedicated onboarding specialist owns the relationship, creates a custom implementation plan, provides training, and stays involved through the handoff to support. High touch, expensive, but necessary for six-figure deals.
 
-**Hybrid (most common for mid-market):**
-- Self-serve initial setup
-- Optional human-led support
-- Documentation for self-sufficiency
-- Support team available for issues
+**Hybrid onboarding** is most common for mid-market. Self-serve setup gets them started quickly, but they have optional access to a human if they get stuck. Documentation is excellent, so most customers succeed without support. But your team is there when needed.
 
-## Time to First Value
+## Time to First Value: The Critical Metric
 
-Time to first value is how long before customers see value from your product.
+The speed at which customers experience value determines everything. If they see value in hours, they're excited. If it takes weeks, they're frustrated. If it takes months, they've churned.
 
-**Best case:** Hours to days (product is self-obvious)
+**Ideal:** Hours to a day. A prospect signs up, follows simple steps, and within hours sees the first meaningful result. This is the best case for product-led growth.
 
-**Normal case:** Days to weeks (needs setup and learning)
+**Good:** Days to a week. The product needs some setup and learning, but they're seeing value by the end of week one.
 
-**Problem case:** Weeks to months (complex onboarding, lots of learning)
+**Problem:** Weeks or months. Complex onboarding, steep learning curve, no quick wins. Churn risk is high.
 
-Longer time to value = higher churn. Faster time to value = lower churn and better retention.
+The longer your time to first value, the more sophisticated your onboarding needs to be. If your product takes six weeks to show value, you need excellent documentation, proactive support, and regular check-ins. Otherwise, customers will leave before they see results.
 
-**How to improve:**
-- Simplify initial setup
-- Provide templates or presets
-- Clear success criteria (what's the first win?)
-- Guided tutorials for common workflows
+**How to improve time to first value:** Simplify your initial setup. Don't ask for 50 configuration options when 5 sensible defaults would work. Provide templates or presets so customers can get started immediately. Make the first win obvious and achievable in their first session.
 
-## Onboarding Documentation
+## Documentation Is Part of Your Onboarding
 
-Clear documentation improves onboarding success.
+Clear documentation isn't a nice-to-have. It's part of your onboarding and part of your credibility signal.
 
-**Essential documentation:**
-- Getting started guide (first steps)
-- Feature walkthroughs (how to use key features)
-- Common workflows (step-by-step)
-- FAQ (common questions)
-- Video tutorials (for visual learners)
+Customers arriving at your documentation should find a getting started guide that covers first steps. Feature walkthroughs. Common workflows explained step-by-step. An FAQ addressing the most common questions and gotchas. Video tutorials for visual learners.
 
-**Organization:**
-- Searchable
-- Well-indexed
-- Linked from product
-- Current (not outdated)
+**Organise this so it's actually usable.** It should be searchable. Well-indexed so people can find what they're looking for. Linked from relevant places in your product. And it should be current—outdated documentation is worse than no documentation because it's confusing.
 
-Poor documentation signals: "We don't expect customers to succeed."
+Poor documentation signals that you don't expect customers to succeed on their own. Good documentation signals that you've thought about the common questions and paths, and you've prepared for them. That signals confidence and professionalism.
 
-Good documentation signals: "We've built this to be easy to use."
+## Support During Onboarding Matters
 
-## Onboarding Support
+Some customers will get stuck. Some will have questions. How you respond matters.
 
-Supporting customers during onboarding is crucial.
+**Offer multiple support channels.** Email for async follow-ups. Chat for real-time quick questions. Maybe phone for enterprise customers with complex issues. Some teams offer office hours—scheduled times when the team is available to help multiple customers at once. This is efficient and creates a sense of community.
 
-**Support channels:**
-- Email (async, useful for follow-ups)
-- Chat (real-time, useful for quick questions)
-- Phone (high-touch, useful for complex issues)
-- Office hours (group learning, efficient)
+**Make support responsive.** If someone reaches out, reply quickly. Better: be proactive. Send a check-in email after they've been using the product for three days. Ask if they hit any friction. Offer help. This signals you actually care about their success.
 
-**Support quality signals:**
-- Response time (are we responsive?)
-- Knowledge (do we help or just redirect to docs?)
-- Proactivity (do we check in or wait for issues?)
+**Train your support team to actually help.** Don't just redirect them to documentation. Read their question, understand their situation, provide thoughtful guidance. A support interaction that solves their problem builds credibility. One that just points to docs frustrates them further.
 
-## Onboarding Metrics That Matter
+## Metrics That Reveal Onboarding Quality
 
-**Metrics to track:**
-- Time to first value (how long?)
-- Setup completion rate (do people finish?)
-- Early churn (do customers leave after setup?)
-- Support tickets during onboarding (how many need help?)
-- Customer satisfaction (how do they feel after onboarding?)
+Track the metrics that actually matter:
 
-If these metrics are bad, your onboarding is bad. Improve them.
+**Time to first value.** How long before customers experience value? Measure this and try to improve it continuously.
 
-## Enterprise vs. SMB Onboarding
+**Setup completion rate.** What percentage of customers actually finish onboarding? If it's low, something is wrong.
 
-**SMB onboarding (self-serve focus):**
-- Quick setup (< 1 hour)
-- In-app guidance
-- Automated onboarding
-- Self-service support
+**Early churn.** Do customers leave shortly after onboarding completes? This suggests they didn't find value or hit friction.
 
-**Enterprise onboarding (human-led focus):**
-- Custom implementation (weeks)
-- Dedicated resource
-- Data migration support
-- Training and change management
+**Support tickets during onboarding.** This tells you where people get stuck. Too many tickets in one area? Improve your documentation or product flow there.
 
-## Onboarding Credibility Signals
+**Customer satisfaction after onboarding.** How do customers feel? Ask them. Their feedback drives improvements.
 
-**Strong onboarding:**
-- Clear initial steps
-- Guided setup process
-- Proactive support during setup
-- Clear success criteria
-- Fast time to first value
-
-**Weak onboarding:**
-- Vague initial steps
-- No guidance (just documentation)
-- Unresponsive support
-- Unclear success criteria
-- Slow time to first value
+If these metrics are bad, your onboarding is bad. Fix them, and you're fixing a credibility leak.
 
 ## Key Takeaway
 

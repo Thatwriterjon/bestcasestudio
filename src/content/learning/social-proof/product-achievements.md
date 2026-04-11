@@ -1,12 +1,9 @@
 ---
 title: 'Product Achievements: Recognition & Awards'
-image: 'product-achievements.jpg'
 summary: 'Awards, Product Hunt results, and industry recognition signal market validation.'
 type: 'Tactic'
 tags: ['social proof', 'awards', 'recognition', 'product-hunt']
 ---
-
-# Product Achievements: Recognition & Awards
 
 ## What Are Product Achievements?
 
@@ -24,10 +21,13 @@ These signal that external authorities have validated your product.
 
 Product achievements work because:
 
-1. **External validation.** An outside authority saying you're good is more credible than you saying it.
-2. **Scarcity.** Not every product wins awards. It signals rarity.
-3. **News value.** Awards often generate media attention, amplifying the signal.
-4. **Momentum.** Winning awards signals your product is gaining traction.
+**External validation.** An outside authority saying you're good is more credible than you saying it.
+
+**Scarcity.** Not every product wins awards. It signals rarity.
+
+**News value.** Awards often generate media attention, amplifying the signal.
+
+**Momentum.** Winning awards signals your product is gaining traction.
 
 A prospect seeing "Product Hunt #1" or "Named a Gartner Magic Quadrant Leader" thinks: "External experts validated this. It must be good."
 
@@ -43,7 +43,7 @@ Product Hunt is often the first product achievement for early-stage SaaS.
 
 **Best for:** Visibility with early-adopter, tech-forward buyers.
 
-**Declining relevance for:** Enterprise SaaS (rarely check Product Hunt) and mature products.
+**Less relevant for:** Enterprise SaaS (they rarely check Product Hunt) and mature products.
 
 ## Industry Awards That Matter
 
@@ -65,7 +65,7 @@ Awards vary by industry, but some carry weight:
 - FinTech awards
 - MarTech awards
 
-Not all awards matter. Some are pay-to-play ("pay $10k, get an award"). Focus on earned awards that require nomination or selection by third parties.
+Not all awards matter. Some are pay-to-play ("pay £10k, get an award"). Focus on earned awards that require nomination or selection by third parties.
 
 ## Media Features as Social Proof
 
@@ -118,7 +118,7 @@ Update your achievements section as you earn new ones. Retiring old achievements
 - Exaggerate achievement ("almost won" ≠ won)
 - Display pay-to-play awards
 - Show achievements unrelated to your product category
-- Make vague claims ("recognized for excellence")
+- Make vague claims ("recognised for excellence")
 
 **Do:**
 - Be specific about what you achieved

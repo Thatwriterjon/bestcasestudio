@@ -1,137 +1,85 @@
 ---
 title: 'Website Design: First Impression Credibility'
-image: 'website-design.jpg'
 summary: 'Professional website design creates instant credibility and trust.'
 type: 'Tactic'
 tags: ['brand presence', 'design', 'website', 'ux']
 ---
 
-# Website Design: First Impression Credibility
+## What Professional Design Actually Looks Like
 
-## The First Impression Window
+Professional design doesn't mean trendy or expensive. It means intentional. Here's what actually matters:
 
-A prospect forms an opinion about your company in 2.6 seconds.
+**Clean layout with clear hierarchy.** A visitor should scan your homepage and immediately know what matters. The important stuff is prominent. Less important stuff is secondary. There's a visual flow that guides the eye.
 
-In that window, design is everything. Copy hasn't been read. Features haven't been understood. Only design has registered.
+**Consistent colour scheme and typography.** You've picked fonts that work together and colours that complement. They're used consistently throughout. Not random colour choices every time you add a new section.
 
-Professional design says: "This is a legitimate company."
+**Professional imagery.** Your photos are high quality and relevant. Not blurry or generic. If you use stock photography, it's authentic stock, not obviously fake. Better: your own product and team photos.
 
-Poor design says: "This is built by amateurs."
+**Adequate whitespace.** The design breathes. Space between elements. Nothing feels cramped or overwhelming.
 
-## What Signals Professional Design?
+**Modern aesthetic without chasing trends.** Your site looks current, not like it was designed in 2015. But not aggressively trendy in ways that'll look dated in two years.
 
-**Professional design elements:**
-- Clean layout with clear hierarchy
-- Consistent color scheme and typography
-- Professional imagery and photography
-- Adequate whitespace (not cramped)
-- Modern, current (not dated) aesthetic
-- Mobile-responsive (works on phones)
-- Fast loading (design includes performance)
+**Mobile-responsive design.** Works beautifully on phones, tablets, desktops. Not an afterthought—designed mobile-first.
 
-**Signals of amateur design:**
-- Cluttered layout with no clear hierarchy
-- Mismatched colors and fonts
-- Low-quality or stock imagery
-- Cramped layout, hard to read
-- Dated aesthetic (looks 5+ years old)
-- Doesn't work on mobile
-- Slow loading, poor performance
+**Fast loading.** Pages load in under 3 seconds. Performance is part of the design.
 
-## Design Trends vs. Timeless Design
+## Timeless Design vs. Trendy Design
 
-Founders often chase design trends because they want to look current.
+Chasing design trends feels good. They look cool. They feel current. But trends date incredibly fast.
 
-**The problem:** Trends date quickly.
+A website designed to 2018 trends looks dated by 2024. A website designed to 2022 trends feels off by 2025. A website with timeless design principles lasts 3–5 years before needing a refresh.
 
-Website designed in 2018 trend style looks dated in 2024.
+**Build for timeless design:** Clean, readable typography. Generous whitespace. Professional photography. Subtle animations that enhance without overwhelming. Consistent visual hierarchy. A clear choice between dark and light (not constantly switching).
 
-**Better approach:** Timeless design that's well-executed.
+Timeless design requires more discipline than trendy design. You can't follow every trend. You have to make decisions and stick with them. That consistency—that discipline—is exactly what signals professionalism to prospects.
 
-Timeless design elements:
-- Clean, readable typography
-- Generous whitespace
-- Professional photography
-- Subtle animations (not overdone)
-- Consistent visual hierarchy
-- Dark or light mode (not both constantly changing)
+## How Much Should You Spend on Design?
 
-Timeless design lasts 3-5 years without looking dated. Trendy design lasts 1-2 years.
+**DIY design using templates.** Fast and cheap. Downside: your website looks similar to dozens of competitors using the same template.
 
-## Investing in Design
+**Template customisation by a designer.** Costs £1–3k. Gives decent results. Still somewhat generic, but more tailored. Other companies might have hired the same designer and used a modified version of the same template.
 
-**DIY design:** Canva, Webflow, or templates.
+**Custom design from scratch.** Costs £5–20k and takes longer. Unique to your brand. Completely tailored. But expensive and time-consuming.
 
-**Pros:** Cheap, fast.
+**Match your stage to your investment:** Early-stage, a good template is fine. Growth-stage, template customisation makes sense. Scaling-stage, custom design is worth it.
 
-**Cons:** Looks similar to competitors using same templates. Limited customization.
+## The Core Sections Every SaaS Site Needs
 
-**Template design:** Hire designer to customize a template.
+**Homepage hero section.** Clear headline. What you do and who it's for. A strong call to action (not "learn more"—something specific like "Start free trial"). Maybe a product screenshot.
 
-**Pros:** Affordable ($1-3k), decent results.
+**Feature sections.** Clean layouts. Icons or screenshots for each feature. Focus on benefits, not just specs.
 
-**Cons:** Still somewhat generic. Other companies use modified versions of same template.
+**Pricing page.** Transparent pricing. Feature comparison table. Multiple tiers. Clear CTA for each tier.
 
-**Custom design:** Hire designer to create custom design.
+**Trust elements.** Customer logos. Testimonials. Metrics. Case studies if you have them.
 
-**Pros:** Unique, tailored to your brand.
+**Footer.** Links to important pages. Contact information. Social media links.
 
-**Cons:** Expensive ($5-20k), longer timeline.
-
-**Budget recommendation:**
-
-**Early-stage:** Use good template ($0-1k). Design matters less than product at this stage.
-
-**Growth stage:** Invest in template customization ($1-3k). You're starting to need differentiation.
-
-**Scaling stage:** Invest in custom design ($5-10k). Design is part of your competitive advantage.
-
-## Key Design Elements for SaaS
-
-**Homepage hero:** Clear value prop, strong CTA, maybe a product screenshot.
-
-**Feature sections:** Clean layout, icons or imagery, clear benefits.
-
-**Pricing page:** Clear pricing, feature comparison, CTA.
-
-**Trust elements:** Logos, testimonials, stats, case studies.
-
-**Footer:** Links, contact info, social media, newsletter signup.
-
-## Design Systems for Consistency
-
-Using a design system (consistent colors, typography, components) helps your site look cohesive and professional.
-
-**Design system elements:**
-- Color palette (primary, secondary, accents)
-- Typography (heading, body, code font choices and sizes)
-- Spacing system (margins, padding consistency)
-- Components (buttons, forms, cards designed consistently)
-- Icons and imagery style
-
-Consistent design looks more professional than mismatched design.
+Design these sections consistently using the same colour palette, typography, spacing, and component styles.
 
 ## Mobile Design Is Non-Negotiable
 
-Over 50% of web traffic is mobile. If your site doesn't work well on mobile, you're losing credibility with most visitors.
+Over 50% of web traffic is mobile. If your site doesn't work on mobile, you're losing half your audience and damaging your credibility.
 
-Mobile design needs:
-- Touch-friendly buttons (large enough to tap)
-- Readable text (not tiny)
-- Fast loading (mobile is slower)
-- Single column layout (not cramped)
-- Accessible navigation
+Mobile design requires thinking about touch targets (buttons need to be big enough to tap), readable text (not shrunk to illegibility), fast loading (mobile connections are slower), single-column layouts, and accessible navigation.
 
-## When to Redesign
+Test your site on actual mobile devices, not just Chrome's mobile emulator.
 
-Redesign your website when:
-- Design is 5+ years old (looks dated)
-- Mobile experience is poor
-- Core messaging has changed
-- Performance has degraded
-- You're changing market positioning
+## When to Refresh Your Design
 
-Don't redesign because of minor stylistic preferences. Your audience doesn't notice.
+Your website doesn't need a complete overhaul every year. But there are legitimate moments:
+
+Your design is 5+ years old and visually dated. Visual standards have moved on.
+
+Your mobile experience is poor. Fix this immediately.
+
+Your core messaging has changed. New value prop, new positioning. Your design should reflect that.
+
+Your performance has degraded. Your site loads slowly.
+
+You're repositioning. You used to sell to enterprises, now you sell to SMBs.
+
+Don't redesign because someone has a stylistic preference. Don't redesign to follow a trend.
 
 ## Key Takeaway
 
@@ -139,6 +87,6 @@ Website design is your first opportunity to signal credibility.
 
 Professional design doesn't need to be trendy or expensive. It needs to be clean, readable, and work on mobile.
 
-Invest in design that lasts. Avoid chasing trends. Refresh every 3-5 years.
+Invest in design that lasts. Avoid chasing trends. Refresh every 3–5 years.
 
 That's how SaaS companies build credibility through professional presence.
