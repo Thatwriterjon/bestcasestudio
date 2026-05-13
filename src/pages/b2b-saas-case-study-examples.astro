@@ -325,7 +325,7 @@ const entries = [
 >
   <article class="article">
     <header class="hero">
-      <div class="wrap-tight">
+      <div class="wrap-article">
         <p class="eyebrow mono">Trust audit · B2B SaaS case studies</p>
         <h1>
           15 Best B2B SaaS Case Study Examples <em>(Ranked Through a Trust Lens)</em>
@@ -340,7 +340,7 @@ const entries = [
     </header>
 
     <section class="prose">
-      <div class="wrap-tight">
+      <div class="wrap-article">
         <p>
           There are roughly nine hundred <em>"15 best B2B SaaS case study examples"</em> posts on the internet. They mostly do the same thing: collect ten famous logos, write a sentence each about how <em>"powerful"</em> and <em>"compelling"</em> the stories are, and stop. Nobody names a flaw. Nobody applies a framework. Nobody puts the entry next to the criteria and checks the work.
         </p>
@@ -355,7 +355,7 @@ const entries = [
     </section>
 
     <section class="quick">
-      <div class="wrap-tight">
+      <div class="wrap-article">
         <h2>Quick answer: the 15, ranked.</h2>
         <ol class="quick-list">
           {quickList.map((item) => <li set:html={item} />)}
@@ -367,7 +367,7 @@ const entries = [
     </section>
 
     <section class="methodology">
-      <div class="wrap-tight">
+      <div class="wrap-article">
         <p class="eyebrow mono">Methodology</p>
         <h2>Five criteria for a case study that earns trust.</h2>
         <p>
@@ -410,7 +410,7 @@ const entries = [
 
     {entries.map((entry) => (
       <section class="entry" id={`${entry.n}-${entry.name.toLowerCase().replace(/\s+/g, '-')}`}>
-        <div class="wrap-tight">
+        <div class="wrap-article">
           <p class="entry-num mono">Entry {String(entry.n).padStart(2, '0')} / 15</p>
           <h2 class="entry-title">
             {entry.n}. {entry.name} <span class="dash" aria-hidden="true">—</span> <span class="customer">{entry.customer}</span>
@@ -452,7 +452,7 @@ const entries = [
     ))}
 
     <section class="pattern">
-      <div class="wrap-tight">
+      <div class="wrap-article">
         <h2>The pattern across the fifteen.</h2>
         <p>
           A few things stop being coincidences once you've audited fifteen of these in a row.
@@ -470,7 +470,7 @@ const entries = [
     </section>
 
     <section id="faq" class="faq">
-      <div class="wrap-tight">
+      <div class="wrap-article">
         <p class="eyebrow mono">FAQ</p>
         <h2>Frequently asked <em>questions</em>.</h2>
         <div class="faq-list">
@@ -488,7 +488,7 @@ const entries = [
     </section>
 
     <section class="related">
-      <div class="wrap-tight">
+      <div class="wrap-article">
         <p class="eyebrow mono">Related reading</p>
         <ul class="related-list">
           <li>
@@ -600,7 +600,6 @@ const entries = [
     font-size: 18px;
     line-height: 1.65;
     margin: 0 0 20px;
-    max-width: 68ch;
   }
   section p:last-child {
     margin-bottom: 0;
@@ -684,7 +683,6 @@ const entries = [
     margin: 0;
     font-size: 17px;
     line-height: 1.6;
-    max-width: 70ch;
   }
 
   /* Entry */
@@ -837,7 +835,6 @@ const entries = [
     padding: 0 0 28px;
     font-size: 17px;
     line-height: 1.6;
-    max-width: 72ch;
   }
   details.q .a p {
     margin: 0;

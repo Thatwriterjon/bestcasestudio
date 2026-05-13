@@ -91,6 +91,68 @@ button {
   padding-right: 48px;
 }
 
+/* Article container — single readable column for long-form pages.
+   Use on every section of an article so prose fills its visible width
+   instead of pooling on the left of a wider container. */
+.wrap-article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+/* Two-column section layout for marketing pages.
+   Apply to a .wrap div as: <div class="wrap cols">
+     <div class="col-head">heading + eyebrow + optional lede</div>
+     <div class="col-body">paragraphs / lists / CTAs</div>
+   </div>
+   Stops prose-heavy sections from collapsing into a thin left-aligned
+   column inside the 1440px wrap. Stacks on viewports under 1100px. */
+.cols {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 2fr;
+  gap: 80px;
+  align-items: start;
+}
+.cols .col-head {
+  position: sticky;
+  top: 96px;
+}
+.cols .col-head h2 {
+  margin: 0;
+  max-width: 18ch;
+}
+.cols .col-head .eyebrow {
+  margin-bottom: 24px;
+}
+.cols .col-head .lede {
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin: 24px 0 0;
+  max-width: 32ch;
+}
+.cols .col-body > *:first-child {
+  margin-top: 0;
+}
+.cols .col-body .ctas {
+  margin-top: 32px;
+}
+
+/* Heading block for full-width sections (tables, image grids, etc.)
+   Use when the body content needs the full wrap width and shouldn't be
+   forced into the cols grid. */
+.sec-head-block {
+  margin-bottom: 32px;
+}
+.sec-head-block .lede {
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin: 16px 0 0;
+  max-width: 60ch;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -110,9 +172,23 @@ button {
   top: 16px;
 }
 
+@media (max-width: 1100px) {
+  .cols {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cols .col-head {
+    position: static;
+  }
+  .cols .col-head h2 {
+    max-width: 22ch;
+  }
+}
+
 @media (max-width: 900px) {
   .wrap,
-  .wrap-tight {
+  .wrap-tight,
+  .wrap-article {
     padding-left: 24px;
     padding-right: 24px;
   }
