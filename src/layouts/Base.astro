@@ -18,6 +18,7 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://bestcasestud.io').toString();
+const ogImage = new URL('/og.jpg', Astro.site ?? 'https://bestcasestud.io').toString();
 ---
 
 <!doctype html>
@@ -32,7 +33,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://bestcasestu
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="663" />
+    <meta property="og:image:alt" content="Best Case Studio — Your happy customers are your best salespeople." />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
