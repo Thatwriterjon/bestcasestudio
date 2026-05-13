@@ -1,2 +1,6 @@
 # Cloudflare Pages redirects. One rule per line: <from> <to> <status>
-/pricing  /#pricing  301
+# /pricing is now a real page — no redirect needed.
+
+# @astrojs/sitemap emits sitemap-index.xml. Forward the conventional /sitemap.xml URL
+# so external submitters (Search Console, AI crawlers) hit the right file.
+/sitemap.xml  /sitemap-index.xml  301

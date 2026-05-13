@@ -3,7 +3,28 @@ import { getCollection } from 'astro:content';
 import SectionHead from '../SectionHead.astro';
 
 const items = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.order);
+
+/** Strip basic inline HTML (e.g. <em>) so the schema text matches the plain rendered question/answer. */
+const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '');
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: items.map(({ data: q }) => ({
+    '@type': 'Question',
+    name: stripHtml(q.question),
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: q.answer.map((p) => stripHtml(p)).join('\n\n'),
+    },
+  })),
+};
 ---
+
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify({ '@context': 'https://schema.org', ...faqSchema })}
+/>
 
 <section id="faq" class="faq">
   <div class="wrap-tight">

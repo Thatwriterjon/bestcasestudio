@@ -1,0 +1,131 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CloseCta from '../../components/sections/CloseCta.astro';
+
+const studies = (await getCollection('caseStudies', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+);
+---
+
+<Base
+  title="Case studies · Best Case Studio"
+  description="Customer case studies produced by Best Case Studio for B2B SaaS companies. Story-led video, written page, and social assets."
+>
+  <section class="head">
+    <div class="wrap">
+      <p class="eyebrow mono">Case studies</p>
+      <h1>
+        Customer stories, <em>fully produced</em>.
+      </h1>
+      <p class="lede">
+        A live index of case studies we've produced for B2B SaaS companies. Each one is a real customer telling a real story in their own words.
+      </p>
+    </div>
+  </section>
+
+  <section class="grid-section">
+    <div class="wrap">
+      {studies.length === 0 ? (
+        <div class="empty">
+          <p>New case studies are landing here soon. In the meantime, <a href="/contact/">book a discovery call</a> and we'll walk you through recent work directly.</p>
+        </div>
+      ) : (
+        <ul class="grid">
+          {studies.map((s) => (
+            <li>
+              <a href={`/case-studies/${s.id}/`}>
+                <span class="customer mono">{s.data.customer}</span>
+                <h2>{s.data.title}</h2>
+                <p>{s.data.summary}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  <CloseCta />
+</Base>
+
+<style>
+  .head {
+    background: var(--bg);
+    padding: 180px 0 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(48px, 6.5vw, 104px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+    max-width: 18ch;
+  }
+  h1 em {
+    font-style: italic;
+  }
+  .lede {
+    font-size: 22px;
+    line-height: 1.45;
+    max-width: 60ch;
+    margin: 0;
+  }
+  .grid-section {
+    padding: 80px 0 120px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .empty {
+    padding: 64px 0;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+  .empty a {
+    text-decoration: underline;
+    color: var(--ink);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .grid a {
+    display: block;
+    border: 1px solid var(--ink);
+    padding: 28px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .customer {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .grid h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .grid p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>

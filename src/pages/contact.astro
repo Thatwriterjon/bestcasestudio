@@ -9,13 +9,14 @@ import Base from '../layouts/Base.astro';
   <section class="contact">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow mono">Book a discovery call</p>
+        <p class="eyebrow mono">Let's make <span class="yelhl">things happen</span></p>
         <h1>
-          Let's make <span class="yelhl">things happen</span>.
+          Book a <em>discovery call</em>.
         </h1>
         <p class="lede">
           30 minutes, remote, free. We talk through your customers, your sales motion, and whether case studies are the right move for you right now. <em>Zero pitch.</em>
         </p>
+        <p class="sub">Or skip the call and email <a href="mailto:jon@bestcasestud.io?subject=Discovery%20call">jon@bestcasestud.io</a>. We aim to reply within one business day.</p>
       </div>
 
       <div class="booking">
@@ -38,6 +39,31 @@ import Base from '../layouts/Base.astro';
             JavaScript is needed to load the booking widget. <a href="https://calendly.com/thatwriterjon/best-case-studio">Open the Calendly page directly</a> or email <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a>.
           </p>
         </noscript>
+      </div>
+    </div>
+  </section>
+
+  <section class="what-happens">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <h2>What happens on the call.</h2>
+          <ol>
+            <li>You tell us about a customer or two you'd want featured, and why.</li>
+            <li>We ask the questions that decide whether a case study is the right move for you right now — or whether something else would serve you better.</li>
+            <li>If it's a fit, we walk through the process, timeline, and how the customer interview works.</li>
+            <li>If it isn't a fit, we say so on the call. No follow-up sequence.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Who this isn't for.</h2>
+          <ul>
+            <li>Pre-product-market-fit startups without paying customers yet.</li>
+            <li>Companies who want anonymous, persona-style case studies. We only produce named-customer stories.</li>
+            <li>Anyone looking for AI-generated content. Every word and every cut is ours.</li>
+            <li>Teams without a customer success or sales contact who can introduce us to the customer.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -67,6 +93,21 @@ import Base from '../layouts/Base.astro';
     letter-spacing: -0.025em;
     margin: 0 0 28px;
     max-width: 16ch;
+  }
+  h1 em {
+    font-style: italic;
+  }
+  .sub {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 16px 0 0;
+  }
+  .sub a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--ink);
   }
   .yelhl {
     background: var(--yellow);
@@ -162,6 +203,42 @@ import Base from '../layouts/Base.astro';
     }
     .meta {
       position: static;
+    }
+  }
+
+  .what-happens {
+    background: var(--bg-2, var(--bg));
+    padding: 96px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .what-happens .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+  .what-happens h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .what-happens ol,
+  .what-happens ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .what-happens li {
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+    max-width: 56ch;
+  }
+  @media (max-width: 800px) {
+    .what-happens .cols {
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
   }
 </style>

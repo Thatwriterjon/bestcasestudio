@@ -9,16 +9,60 @@ interface Props {
   /** When true, the nav starts transparent and only switches to its solid background once the
    * user scrolls past the hero. Used on the home page. */
   transparentNav?: boolean;
+  /** When true, emits `<meta name="robots" content="noindex">`. Used on 404 and other pages
+   * that should not be indexed. */
+  noindex?: boolean;
+  /** Optional additional JSON-LD blocks injected into the head, on top of the sitewide
+   * Organization graph node. Each entry is a Schema.org object — it will be JSON-stringified
+   * inside a `<script type="application/ld+json">` tag. */
+  schema?: Record<string, unknown>[];
 }
 
 const {
   title = 'Best Case Studio — Case studies for B2B SaaS',
   description = 'Customer case studies for B2B SaaS. Story-led video, written page and social assets, fully produced and delivered in 14 business days.',
   transparentNav = false,
+  noindex = false,
+  schema = [],
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://bestcasestud.io').toString();
-const ogImage = new URL('/og.jpg', Astro.site ?? 'https://bestcasestud.io').toString();
+const siteOrigin = Astro.site ?? new URL('https://bestcasestud.io');
+const canonical = new URL(Astro.url.pathname, siteOrigin).toString();
+const ogImage = new URL('/og.jpg', siteOrigin).toString();
+
+const organization = {
+  '@type': 'Organization',
+  '@id': 'https://bestcasestud.io/#org',
+  name: 'Best Case Studio',
+  url: 'https://bestcasestud.io/',
+  logo: 'https://bestcasestud.io/og.jpg',
+  description: 'Two-person studio producing customer case study videos and written pages for B2B SaaS.',
+  founder: [
+    {
+      '@type': 'Person',
+      '@id': 'https://bestcasestud.io/#jon',
+      name: 'Jon McGreevy',
+      jobTitle: 'Founder, Lead',
+      worksFor: { '@id': 'https://bestcasestud.io/#org' },
+      sameAs: [
+        'https://jonmcgreevy.com',
+        'https://www.linkedin.com/in/jonmcgreevy/',
+        'https://jonmcgreevy.substack.com',
+      ],
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://bestcasestud.io/#jessie',
+      name: 'Jessie McGreevy',
+      jobTitle: 'Operations',
+      worksFor: { '@id': 'https://bestcasestud.io/#org' },
+    },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/jonmcgreevy/',
+    'https://jonmcgreevy.substack.com',
+  ],
+};
 ---
 
 <!doctype html>
@@ -28,6 +72,7 @@ const ogImage = new URL('/og.jpg', Astro.site ?? 'https://bestcasestud.io').toSt
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -40,6 +85,19 @@ const ogImage = new URL('/og.jpg', Astro.site ?? 'https://bestcasestud.io').toSt
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({ '@context': 'https://schema.org', ...organization })}
+    />
+    {schema.map((node) => (
+      <script
+        type="application/ld+json"
+        is:inline
+        set:html={JSON.stringify({ '@context': 'https://schema.org', ...node })}
+      />
+    ))}
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>

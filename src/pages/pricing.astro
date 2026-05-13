@@ -1,0 +1,134 @@
+---
+import Base from '../layouts/Base.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import Faq from '../components/sections/Faq.astro';
+import CloseCta from '../components/sections/CloseCta.astro';
+
+const offerSchema = {
+  '@type': 'ProfessionalService',
+  '@id': 'https://bestcasestud.io/#service',
+  name: 'Customer case study production',
+  serviceType: 'Customer case study production',
+  provider: { '@id': 'https://bestcasestud.io/#org' },
+  areaServed: 'Worldwide',
+  url: 'https://bestcasestud.io/pricing/',
+  description:
+    'One customer case study, fully produced. 30-minute customer interview, 800–1,200 word written case study, PDF for sales use, 90–120s highlight video, three quote graphics, one launch LinkedIn post, two pull-quotes for sales decks, and one revision round.',
+  offers: {
+    '@type': 'Offer',
+    price: '2500',
+    priceCurrency: 'USD',
+    url: 'https://bestcasestud.io/pricing/',
+    availability: 'https://schema.org/InStock',
+    category: 'Marketing services',
+    eligibleCustomerType: 'B2B SaaS',
+  },
+};
+---
+
+<Base
+  title="Case study pricing · $2,500 fixed · Best Case Studio"
+  description="One product, one price: $2,500 per fully produced customer case study. Video, written page, social assets and PDF. 14 business days from interview to first drafts."
+  schema={[offerSchema]}
+>
+  <section class="pricing-intro">
+    <div class="wrap">
+      <p class="eyebrow mono">Pricing</p>
+      <h1>
+        One product. <em>Clear price.</em>
+      </h1>
+      <p class="lede">
+        $2,500 per customer case study, fully produced. No tiers, no upsells, no per-deliverable line items. The price below is what you pay; the list below is what you get. 14 business days from the customer interview to first drafts.
+      </p>
+      <dl class="quickfacts">
+        <div>
+          <dt>Price</dt>
+          <dd>$2,500 USD per case study</dd>
+        </div>
+        <div>
+          <dt>Turnaround</dt>
+          <dd>14 business days, interview to first drafts</dd>
+        </div>
+        <div>
+          <dt>Revisions</dt>
+          <dd>One consolidated round, included</dd>
+        </div>
+        <div>
+          <dt>Who it's for</dt>
+          <dd>B2B SaaS companies, any geography</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <Pricing />
+  <Faq />
+  <CloseCta />
+</Base>
+
+<style>
+  .pricing-intro {
+    background: var(--bg);
+    padding: 180px 0 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(48px, 6.5vw, 104px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+    max-width: 18ch;
+  }
+  h1 em {
+    font-style: italic;
+  }
+  .lede {
+    font-size: 22px;
+    line-height: 1.45;
+    max-width: 64ch;
+    margin: 0 0 56px;
+  }
+  .quickfacts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid var(--ink);
+    padding-top: 32px;
+    margin: 0;
+  }
+  .quickfacts > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .quickfacts dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .quickfacts dd {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.4;
+  }
+  @media (max-width: 800px) {
+    .quickfacts {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 500px) {
+    .quickfacts {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

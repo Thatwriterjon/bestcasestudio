@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page not found · Best Case Studio"
+  description="That page doesn't exist on bestcasestud.io. Head back to the homepage or book a discovery call."
+  noindex
+>
+  <section class="notfound">
+    <div class="wrap">
+      <p class="eyebrow mono">404</p>
+      <h1>Page <em>not found</em>.</h1>
+      <p class="lede">
+        The page you're looking for has moved or never existed. Try the <a href="/">homepage</a>, read <a href="/about/">about the studio</a>, or <a href="/contact/">book a discovery call</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .notfound {
+    background: var(--bg);
+    padding: 200px 0 160px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(56px, 7vw, 112px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+    max-width: 16ch;
+  }
+  h1 em {
+    font-style: italic;
+  }
+  .lede {
+    font-size: 21px;
+    line-height: 1.5;
+    max-width: 60ch;
+    margin: 0;
+  }
+  .lede a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

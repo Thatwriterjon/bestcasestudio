@@ -11,12 +11,43 @@ import About from '../components/sections/About.astro';
 import Referral from '../components/sections/Referral.astro';
 import Faq from '../components/sections/Faq.astro';
 import CloseCta from '../components/sections/CloseCta.astro';
+
+const homepageSchema = [
+  {
+    '@type': 'WebSite',
+    '@id': 'https://bestcasestud.io/#website',
+    url: 'https://bestcasestud.io/',
+    name: 'Best Case Studio',
+    publisher: { '@id': 'https://bestcasestud.io/#org' },
+    inLanguage: 'en',
+  },
+  {
+    '@type': 'ProfessionalService',
+    '@id': 'https://bestcasestud.io/#service',
+    name: 'Customer case study production',
+    serviceType: 'Customer case study production',
+    provider: { '@id': 'https://bestcasestud.io/#org' },
+    areaServed: 'Worldwide',
+    url: 'https://bestcasestud.io/',
+    description:
+      'Two-person studio producing customer case study videos and written pages for B2B SaaS. One fixed product: video, written page, social assets, fully produced and delivered.',
+    offers: {
+      '@type': 'Offer',
+      price: '2500',
+      priceCurrency: 'USD',
+      url: 'https://bestcasestud.io/pricing/',
+      availability: 'https://schema.org/InStock',
+      category: 'Marketing services',
+    },
+  },
+];
 ---
 
 <Base
   title="Best Case Studio — Customer case studies for B2B SaaS"
   description="A two-person studio producing customer case study videos and written pages for B2B SaaS. One product. Clear price. 14 business days, interview to first drafts."
   transparentNav
+  schema={homepageSchema}
 >
   <Hero />
   <LogoWall />
