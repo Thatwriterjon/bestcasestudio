@@ -1,0 +1,67 @@
+---
+import Button from '../Button.astro';
+---
+
+<section id="contact-bottom" class="close">
+  <div class="wrap">
+    <p class="punch">Your <span class="yel">move</span>.</p>
+    <p class="aside">
+      30-minute discovery call. Remote. Free. No hard sell, no pitch deck, just an honest answer about whether case studies are right for you right now.
+    </p>
+    <div class="ctas">
+      <Button href="mailto:jon@bestcasestud.io" variant="primary">Book a discovery call</Button>
+      <Button href="https://scorecard.bestcasestud.io/" variant="secondary" external>Credibility Scorecard</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .close {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 140px 0;
+  }
+  .punch {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(56px, 7vw, 108px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+    margin: 0 0 40px;
+  }
+  .punch :global(em) {
+    font-style: italic;
+    color: var(--pink);
+  }
+  .punch .yel {
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 0 0.12em 0.04em;
+    display: inline-block;
+  }
+  .aside {
+    color: #bdb7a8;
+    font-size: 18px;
+    line-height: 1.55;
+    max-width: 54ch;
+    margin: 0 0 40px;
+  }
+  .ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .close :global(.btn) {
+    border-color: var(--bg);
+    color: var(--bg);
+  }
+  .close :global(.btn.primary) {
+    background: var(--pink);
+    color: var(--ink);
+    border-color: var(--pink);
+  }
+  .close :global(.btn.primary:hover) {
+    background: var(--pink);
+  }
+</style>

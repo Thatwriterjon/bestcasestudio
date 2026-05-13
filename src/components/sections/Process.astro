@@ -1,17 +1,133 @@
 ---
-import Accordion from "../ui/Accordion.astro";
-import SectionTitle from "../ui/SectionTitle.astro";
-import Section from "./Section.astro";
+import SectionHead from '../SectionHead.astro';
 
-const description = "Three steps from customer interview to ready-to-publish content.";
+interface Pillar {
+  num: string;
+  title: string;
+  body: string;
+  tag: string;
+}
+
+const pillars: Pillar[] = [
+  {
+    num: '01',
+    title: 'The <em>interview</em>.',
+    body: "30 minutes with your customer, recorded on Riverside. We schedule it, run it, and dig out the stories, quotes, and examples that will resonate with your ICP. You don't have to be on the call.",
+    tag: 'Week 1',
+  },
+  {
+    num: '02',
+    title: 'Editing &amp; <em>writing</em>.',
+    body: 'We turn the interview into everything you need to publish: a 800–1,200 word case study, a 90-second to 2-minute highlight video, three quote graphics for social, two pull-quotes ready for sales decks, a launch LinkedIn post, and a PDF for sales use.',
+    tag: 'Week 2–3',
+  },
+  {
+    num: '03',
+    title: 'Revision &amp; <em>delivery</em>.',
+    body: 'One consolidated round of revisions across the whole package. Then we hand over all the files. You own the content outright and can start sharing immediately.',
+    tag: 'Week 3+',
+  },
+];
 ---
 
-<Section id="process">
-  <div class="mt-[140px]">
-    <SectionTitle
-      sectionTitle="Our Process"
-      description={description}
-    />
-    <Accordion />
+<section id="process">
+  <div class="wrap">
+    <SectionHead title="Our <em>process</em>." />
+    <p class="lede">Three steps from customer interview to ready-to-publish content.</p>
+    <div class="pillars">
+      {pillars.map((p) => (
+        <div class="pillar">
+          <span class="num">{p.num}</span>
+          <h4 set:html={p.title} />
+          <p>{p.body}</p>
+          <span class="tag">{p.tag}</span>
+        </div>
+      ))}
+    </div>
   </div>
-</Section>
+</section>
+
+<style>
+  section {
+    padding: 120px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .lede {
+    font-size: 21px;
+    line-height: 1.45;
+    max-width: 64ch;
+    margin: 0 0 56px;
+    color: var(--ink);
+  }
+  .pillars {
+    border-top: 1px solid var(--ink);
+  }
+  .pillar {
+    display: grid;
+    grid-template-columns: 80px 1fr 1.4fr 80px;
+    gap: 32px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+    transition: background 0.2s;
+    cursor: default;
+  }
+  .pillar:hover {
+    background: var(--yellow);
+  }
+  .pillar .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    padding-top: 14px;
+  }
+  .pillar h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    margin: 0;
+    max-width: 14ch;
+  }
+  .pillar h4 :global(em) {
+    font-style: italic;
+  }
+  .pillar p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 46ch;
+    padding-top: 8px;
+  }
+  .pillar .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: right;
+    padding-top: 14px;
+  }
+  @media (max-width: 900px) {
+    .pillar {
+      grid-template-columns: 60px 1fr;
+      gap: 16px 20px;
+    }
+    .pillar h4 {
+      grid-column: 2;
+    }
+    .pillar p {
+      grid-column: 2;
+    }
+    .pillar .tag {
+      grid-column: 2;
+      text-align: left;
+      padding-top: 4px;
+    }
+  }
+</style>

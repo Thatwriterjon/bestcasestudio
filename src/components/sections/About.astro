@@ -1,0 +1,159 @@
+---
+import SectionHead from '../SectionHead.astro';
+
+interface Props {
+  /** Show the section header. Disabled when used inside a dedicated /about page that has its own header. */
+  showHead?: boolean;
+}
+
+const { showHead = true } = Astro.props;
+---
+
+<section id="about">
+  <div class="wrap">
+    {showHead && <SectionHead title="Who's actually <em>doing this</em>." />}
+    <p class="lede">Best Case Studio is a two-person studio. No outsourcing, no AI-generated content.</p>
+    <div class="about-rows">
+      <div class="person-row">
+        <div class="portrait">
+          <img src="/team/jon-portrait-1.png" alt="Jon McGreevy" loading="lazy" />
+        </div>
+        <div>
+          <span class="who-name">Jon McGreevy</span>
+          <h3>Strategy, interviews, copy, video.</h3>
+          <span class="role-tag">Founder · Lead</span>
+        </div>
+        <div>
+          <p class="bio">
+            Leads every project end-to-end. Seven years working with B2B SaaS companies on positioning, content and conversion.
+          </p>
+          <p class="bio">
+            Also writes at <a href="https://jonmcgreevy.com" target="_blank" rel="noopener noreferrer">jonmcgreevy.com</a> about <em>trust and credibility</em> in B2B SaaS, and hosts the <em>SaaSy as F**k</em> podcast.
+          </p>
+        </div>
+      </div>
+      <div class="person-row jess">
+        <div class="portrait">
+          <img src="/team/jessie.jpg" alt="Jessie McGreevy" loading="lazy" />
+        </div>
+        <div>
+          <span class="who-name">Jessie McGreevy</span>
+          <h3>Keeps projects <em>on track</em>.</h3>
+          <span class="role-tag">Operations</span>
+        </div>
+        <div>
+          <p class="bio">
+            Scheduling, logistics, the bit where someone has to make sure the customer interview actually happens on the day, the deliverables ship on time, and nothing gets lost between the camera and the client.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 120px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .lede {
+    font-size: 21px;
+    line-height: 1.45;
+    max-width: 64ch;
+    margin: 0 0 56px;
+    color: var(--ink);
+  }
+  .about-rows {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--ink);
+  }
+  .person-row {
+    display: grid;
+    grid-template-columns: 280px 1fr 1fr;
+    gap: 64px;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .person-row:last-child {
+    border-bottom: 1px solid var(--ink);
+  }
+  .portrait {
+    width: 240px;
+    height: 300px;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .person-row.jess .portrait {
+    background: var(--pink);
+  }
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .who-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin-bottom: 18px;
+    display: block;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    max-width: 14ch;
+  }
+  h3 :global(em) {
+    font-style: italic;
+  }
+  .role-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 500;
+    padding: 6px 10px;
+    border: 1px solid var(--ink);
+    margin-top: 8px;
+  }
+  .bio {
+    font-size: 18px;
+    line-height: 1.55;
+    margin: 0 0 16px;
+    color: var(--ink);
+    max-width: 42ch;
+  }
+  .bio em {
+    font-style: italic;
+  }
+  .bio a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  @media (max-width: 900px) {
+    .person-row {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 48px 0;
+    }
+    .portrait {
+      width: 100%;
+      max-width: 320px;
+      height: 360px;
+    }
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+interface Props {
+  href?: string;
+  /** Used by the footer copy where the wordmark is purely decorative inside the brand column. */
+  asLink?: boolean;
+}
+
+const { href = '/', asLink = true } = Astro.props;
+const Tag = asLink ? 'a' : 'span';
+---
+
+<Tag class="wordmark" {...asLink ? { href } : {}}>
+  bestcasestud<span class="dot" aria-hidden="true">.</span><span class="tld">io</span>
+</Tag>
+
+<style>
+  .wordmark {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    display: inline-block;
+  }
+  .wordmark .dot {
+    /* Defaults to pink; overridable via --wordmark-dot so the Nav can swap it to yellow when
+       it's sitting transparent over the pink hero (where pink-on-pink would vanish). */
+    color: var(--wordmark-dot, var(--pink));
+    font-weight: 700;
+  }
+  .wordmark .tld {
+    font-style: italic;
+    font-weight: 500;
+  }
+</style>

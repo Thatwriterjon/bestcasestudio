@@ -1,0 +1,53 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary';
+  /** Whether to mark the link as opening externally (rel + target). */
+  external?: boolean;
+  class?: string;
+}
+
+const { href, variant = 'secondary', external = false, class: className } = Astro.props;
+const externalAttrs = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+---
+
+<a href={href} class:list={['btn', variant, className]} {...externalAttrs}>
+  <slot /> <span class="arr" aria-hidden="true">→</span>
+</a>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, transform 0.15s;
+    border-radius: 999px;
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+  .btn .arr {
+    transition: transform 0.2s;
+    font-family: var(--serif);
+  }
+  .btn:hover .arr {
+    transform: translateX(4px);
+  }
+  .btn.primary {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .btn.primary:hover {
+    background: #000;
+  }
+</style>

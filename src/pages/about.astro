@@ -1,11 +1,13 @@
 ---
-import Team from "../components/sections/Team.astro";
-import MainLayout from "../layouts/MainLayout.astro";
+import Base from '../layouts/Base.astro';
+import About from '../components/sections/About.astro';
+import CloseCta from '../components/sections/CloseCta.astro';
 ---
 
-<MainLayout
-  title="Our Team — Best Case Studio"
-  description="Meet the small, focused team behind Best Case Studio case studies."
+<Base
+  title="About · Best Case Studio"
+  description="Best Case Studio is a two-person studio. Jon McGreevy leads strategy, interviews, copy and video. Jessie McGreevy keeps projects on track. No outsourcing, no AI-generated content."
 >
-  <Team />
-</MainLayout>
+  <About />
+  <CloseCta />
+</Base>

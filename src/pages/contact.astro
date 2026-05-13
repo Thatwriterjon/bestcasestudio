@@ -1,138 +1,167 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import Base from '../layouts/Base.astro';
 ---
 
-<MainLayout
-  title="Book a Discovery Call — Best Case Studio"
-  description="Book a free 30-minute discovery call with Best Case Studio. No hard sell — just a conversation about your case study needs."
+<Base
+  title="Book a discovery call · Best Case Studio"
+  description="Book a free 30-minute discovery call with Best Case Studio. Remote. No hard sell, no pitch deck."
 >
-  <div class="w-full max-w-[1240px] mx-auto px-5 mt-[160px] mb-[140px]">
-
-    <h1 class="text-5xl lg:text-6xl font-medium leading-tight mb-4">
-      Book a discovery call
-    </h1>
-    <p class="text-white opacity-60 text-lg mb-16 max-w-[560px]">
-      30 minutes. No hard sell. We'll find out if we're a good fit and answer any questions you have.
-    </p>
-
-    <div class="flex flex-col lg:flex-row gap-16">
-
-      <!-- Calendly embed -->
-      <div class="flex-1">
-        <h2 class="text-2xl font-medium mb-6">Pick a time</h2>
-        <div
-          class="calendly-inline-widget rounded-[20px] overflow-hidden"
-          data-url="https://calendly.com/thatwriterjon/best-case-studio"
-          style="min-width:320px;height:1300px;"
-        ></div>
-        <script
-          is:inline
-          type="text/javascript"
-          src="https://assets.calendly.com/assets/external/widget.js"
-          async
-        ></script>
-        <p class="mt-4 text-sm text-white opacity-50">
-          Can't see the calendar?
-          <a
-            href="https://calendly.com/thatwriterjon/best-case-studio"
-            target="_blank"
-            class="text-pink underline"
-          >Book directly on Calendly</a>.
+  <section class="contact">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow mono">Book a discovery call</p>
+        <h1>
+          Let's make <span class="yelhl">things happen</span>.
+        </h1>
+        <p class="lede">
+          30 minutes, remote, free. We talk through your customers, your sales motion, and whether case studies are the right move for you right now. <em>Zero pitch.</em>
         </p>
       </div>
 
-      <!-- Contact form -->
-      <div class="lg:w-[420px]">
-        <h2 class="text-2xl font-medium mb-6">Or send a message</h2>
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          class="flex flex-col gap-5"
-        >
-          <input type="hidden" name="form-name" value="contact" />
+      <div class="booking">
+        <div class="meta">
+          <div class="row"><span class="k">Duration</span><span class="v">30 minutes</span></div>
+          <div class="row"><span class="k">Format</span><span class="v">Remote · video call</span></div>
+          <div class="row"><span class="k">Cost</span><span class="v"><em>Free</em></span></div>
+          <div class="row"><span class="k">Pitch level</span><span class="v">Zero</span></div>
+          <div class="row"><span class="k">Output</span><span class="v">An honest answer</span></div>
+          <div class="row last"><span class="k">Or email</span><span class="v"><a href="mailto:jon@bestcasestud.io?subject=Discovery%20call">jon@bestcasestud.io</a></span></div>
+        </div>
 
-          <div>
-            <label for="name" class="block text-sm font-medium mb-2">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your name"
-              required
-              class="w-full px-[20px] py-[14px] border border-gray bg-gray rounded-[14px] text-white placeholder:text-white/40 outline-none focus:border-pink transition-colors"
-            />
-          </div>
-
-          <div>
-            <label for="email" class="block text-sm font-medium mb-2">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="you@company.com"
-              required
-              class="w-full px-[20px] py-[14px] border border-gray bg-gray rounded-[14px] text-white placeholder:text-white/40 outline-none focus:border-pink transition-colors"
-            />
-          </div>
-
-          <div>
-            <label for="company" class="block text-sm font-medium mb-2">Company</label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              placeholder="Company name"
-              class="w-full px-[20px] py-[14px] border border-gray bg-gray rounded-[14px] text-white placeholder:text-white/40 outline-none focus:border-pink transition-colors"
-            />
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium mb-2">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Tell us a bit about what you're looking for"
-              rows="5"
-              class="w-full px-[20px] py-[14px] border border-gray bg-gray rounded-[14px] text-white placeholder:text-white/40 outline-none focus:border-pink transition-colors resize-none"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="w-full bg-pink text-black py-4 rounded-2xl hover:opacity-90 transition-opacity font-medium text-lg"
-          >
-            Send message
-          </button>
-        </form>
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/thatwriterjon/best-case-studio"
+          aria-label="Calendly scheduling widget"
+        ></div>
+        <noscript>
+          <p class="noscript-fallback">
+            JavaScript is needed to load the booking widget. <a href="https://calendly.com/thatwriterjon/best-case-studio">Open the Calendly page directly</a> or email <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a>.
+          </p>
+        </noscript>
       </div>
-
     </div>
-  </div>
+  </section>
 
-<script is:inline>
-  // Track contact form submission
-  var contactForm = document.querySelector('form[name="contact"]');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function () {
-      var email = document.getElementById('email') ? document.getElementById('email').value : '';
-      var company = document.getElementById('company') ? document.getElementById('company').value : '';
-      window.posthog?.capture('contact_form_submitted', {
-        has_company: company.length > 0,
-      });
-      if (email) {
-        window.posthog?.identify(email, { email: email, company: company || undefined });
-      }
-    });
+  <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</Base>
+
+<style>
+  .contact {
+    background: var(--bg);
+    padding: 160px 0 120px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .head {
+    max-width: 880px;
+    margin-bottom: 64px;
+  }
+  .eyebrow {
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(48px, 6vw, 96px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+    max-width: 16ch;
+  }
+  .yelhl {
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 0 0.12em 0.04em;
+    display: inline-block;
+  }
+  .lede {
+    font-size: 22px;
+    line-height: 1.4;
+    max-width: 56ch;
+    margin: 0;
+  }
+  .lede em {
+    font-style: italic;
   }
 
-  // Track Calendly booking completion
-  window.addEventListener('message', function (e) {
-    if (e.data && e.data.event === 'calendly.event_scheduled') {
-      window.posthog?.capture('discovery_call_booked', {
-        source: 'calendly',
-      });
+  .booking {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+    align-items: start;
+    border-top: 1px solid var(--ink);
+    padding-top: 48px;
+  }
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: sticky;
+    top: 96px;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+  }
+  .row:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  .row .k {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .row .v {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .row .v em {
+    font-style: italic;
+    color: var(--pink);
+  }
+  .row.last .v a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .calendly-inline-widget {
+    min-width: 320px;
+    /* Calendly's inline widget renders to whatever height the container gives it (the iframe
+       doesn't auto-resize), so size it generously enough that the date picker, time slots,
+       and confirmation step all fit without an inner scrollbar on a typical desktop. */
+    height: 1080px;
+    border: 1px solid var(--ink);
+    background: var(--bg);
+  }
+  @media (max-width: 700px) {
+    .calendly-inline-widget {
+      height: 1240px;
     }
-  });
-</script>
-</MainLayout>
+  }
+  .noscript-fallback {
+    padding: 24px;
+    border: 1px solid var(--ink);
+    background: var(--bg-2);
+  }
+  .noscript-fallback a {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .booking {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .meta {
+      position: static;
+    }
+  }
+</style>

@@ -1,88 +1,99 @@
 ---
-import Section from "./Section.astro";
-import SectionTitle from "../ui/SectionTitle.astro";
+import { getCollection } from 'astro:content';
+import SectionHead from '../SectionHead.astro';
 
-const faq = [
-  {
-    title: "How long does a case study take?",
-    description:
-      "A Single case study takes 2–3 weeks from initial customer interview to final delivery. The Trio takes 3–6 weeks total because we batch three interviews in the same window and run them through a single editing pipeline. Timeline depends on customer availability — we work around your client's schedule for the interview, and once we have interview footage, we control the production timeline. Most delays come from waiting for customer responses or internal approval cycles, not from our production process.",
-  },
-  {
-    title: "Do you work with clients outside the UK?",
-    description:
-      "Yes — we work with B2B SaaS companies globally. Interviews are remote, so location doesn't matter.",
-  },
-  {
-    title: "Can I buy one case study now and add more later?",
-    description:
-      "Absolutely. You can start with a Single and commission a Trio later. The per-case-study price stays the same — the Trio just saves you money upfront.",
-  },
-  {
-    title: "What makes Best Case Studio different from a freelance copywriter?",
-    description:
-      "Most freelance copywriters deliver text — you get a Word document and have to coordinate video production, design, and distribution separately. Best Case Studio owns the entire production workflow from customer interview through final asset delivery. We conduct the customer interview, extract the story, produce professional video, write landing page copy optimized for conversion, and create social media assets (clips, carousels, testimonial graphics) all at once. The result is a coordinated, on-brand content package ready to deploy across all your sales channels immediately — no additional production steps required.",
-  },
-  {
-    title: "What types of B2B SaaS companies do you work with?",
-    description:
-      "We work best with B2B SaaS companies that have achieved product-market fit and have at least 3-5 happy customers willing to participate in interviews and go on camera. Our ideal clients have proven their product solves a real problem, have customers achieving measurable outcomes, and want to use those success stories as sales assets to close similar deals faster. If you're pre-product-market-fit, bootstrapped without clear customer wins, or unsure if your customers would publicly endorse you, case studies probably aren't your next move — focus on product first.",
-  },
-  {
-    title: "How do case studies actually improve conversion rates?",
-    description:
-      "A case study removes the primary objection in B2B SaaS sales: 'will this work for a company like ours?' By showing a real customer with a comparable use case achieving a measurable result, case studies do three things. First, they reduce perceived risk — prospects see proof of success in their context, not just theoretical benefits. Second, they shorten the buying decision by addressing the final remaining objection before the sales call. Third, they improve deal quality — because buyers have already validated product viability, they enter negotiations focused on terms and implementation, not feasibility. Best Case Studio case studies specifically target this bottom-of-funnel conversion point by combining customer interview footage, outcome documentation, and social proof assets into a single compelling package.",
-  },
-  {
-    title: "What if our customer can't point to a specific measurable result?",
-    description:
-      "That's fine. Not every great case study leads with a metric. Strong stories about reduced friction, improved confidence, or better team alignment are just as persuasive to the right buyer.",
-  },
-  {
-    title: "Why is the Trio cheaper per case study?",
-    description:
-      "When you commission three case studies together, we batch the production workflow for efficiency. Instead of three separate customer interview scheduling windows, three separate editing sprints, and three separate delivery rounds, we conduct all three interviews in a single week, edit all three in one production sprint, and deliver all three at once. The fixed overhead — scheduling coordination, project setup, and delivery — gets shared across three case studies instead of one, so we pass those savings directly to you. The per-case-study price drops from $4,500 (Single) to $3,500 (Trio).",
-  },
-  {
-    title: "Who actually runs Best Case Studio?",
-    description:
-      "Jon McGreevy leads every project — strategy, interviews, and copy. Alex handles all video production. Jessie keeps projects on track. There's no outsourcing or AI-generated content.",
-  },
-  {
-    title: "How does the $500 referral bounty work?",
-    description:
-      "Refer a B2B SaaS company to us. When they make their first payment, we send you $500 cash — no cap on how many referrals you make.",
-  },
-];
+const items = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Section id="faq">
-  <div class="mt-[140px] mb-[140px]">
-    <SectionTitle
-      sectionTitle="Frequently Asked Questions"
-      description="Everything you need to know before booking a discovery call."
-    />
-    <div>
-      {faq.map((item, i) => (
-        <details class="group border-t border-gray last:border-b">
-          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none text-lg font-medium select-none text-white">
-            {item.title}
-            <span class="shrink-0 text-pink group-open:rotate-45 transition-transform duration-200 text-2xl leading-none">+</span>
+<section id="faq" class="faq">
+  <div class="wrap-tight">
+    <SectionHead title="Frequently asked <em>questions</em>." compact />
+    <p class="lede">Everything you need to know before booking a discovery call.</p>
+    <div class="faq-list">
+      {items.map(({ data: q }) => (
+        <details class="q">
+          <summary>
+            <span set:html={q.question} />
+            <span class="marker" aria-hidden="true">+</span>
           </summary>
-          <p class="pb-5 text-white opacity-60 leading-relaxed">{item.description}</p>
+          <div class="a">
+            {q.answer.map((p) => <p set:html={p} />)}
+          </div>
         </details>
       ))}
     </div>
   </div>
-</Section>
+</section>
 
-<script is:inline>
-  document.querySelectorAll('#faq details').forEach(function (details) {
-    details.addEventListener('toggle', function () {
-      if (details.open) {
-        var question = details.querySelector('summary')?.firstChild?.textContent?.trim();
-        window.posthog?.capture('faq_expanded', { question: question });
-      }
-    });
-  });
-</script>
+<style>
+  .faq {
+    padding: 120px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .lede {
+    font-size: 19px;
+    line-height: 1.45;
+    max-width: 60ch;
+    margin: 0 0 40px;
+    color: var(--ink-soft);
+  }
+  .faq-list {
+    border-top: 1px solid var(--ink);
+  }
+  details.q {
+    border-bottom: 1px solid var(--rule);
+    padding: 0;
+  }
+  details.q summary {
+    list-style: none;
+    padding: 28px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    transition: color 0.15s;
+  }
+  details.q summary::-webkit-details-marker {
+    display: none;
+  }
+  details.q summary :global(em) {
+    font-style: italic;
+  }
+  details.q .marker {
+    flex: 0 0 32px;
+    text-align: right;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--ink);
+    transition: transform 0.2s;
+    font-style: italic;
+  }
+  details.q[open] .marker {
+    transform: rotate(45deg);
+  }
+  details.q .a {
+    padding: 0 0 32px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 72ch;
+  }
+  details.q .a p {
+    margin: 0 0 14px;
+  }
+  details.q .a p:last-child {
+    margin-bottom: 0;
+  }
+  details.q .a :global(em) {
+    font-style: italic;
+  }
+</style>

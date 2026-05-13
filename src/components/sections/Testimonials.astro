@@ -1,34 +1,144 @@
 ---
-import Section from "./Section.astro";
-import SectionTitle from "../ui/SectionTitle.astro";
-import TestimonialCard from "../ui/TestimonialCard.astro";
-import clientsRaw from "../../data/clientData.json";
+import { getCollection } from 'astro:content';
+import SectionHead from '../SectionHead.astro';
 
-type Client = { name: string; role: string; comment: string; avatar: string };
-const clients = clientsRaw as Client[];
-
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../../assets/testimonials/*.{jpg,jpeg,png,webp}"
+const items = (await getCollection('testimonials')).sort(
+  (a, b) => a.data.order - b.data.order
 );
 ---
 
-{clients.length > 0 && (
-  <Section id="testimonials">
-    <div class="mt-24 mb-0">
-      <SectionTitle
-        sectionTitle="Testimonials"
-        description="Jon has been working with B2B SaaS companies for over 7 years. These are a few things clients have said along the way."
-      />
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {clients.map((client) => (
-          <TestimonialCard
-            name={client.name}
-            role={client.role}
-            comment={client.comment}
-            avatar={images[`../../assets/testimonials/${client.avatar}`]}
-          />
-        ))}
-      </div>
+<section id="testimonials" class="testimonials">
+  <div class="wrap">
+    <SectionHead title="What clients have <em>said</em>." />
+    <p class="lede">
+      Jon has been working with B2B SaaS companies for over <em>7 years</em>. These are a few things clients have said along the way.
+    </p>
+    <div class="t-grid">
+      {items.map(({ data: t }) => (
+        <article class="t-card">
+          <p class="quote" set:html={t.quote} />
+          <div class="author">
+            {t.avatar ? (
+              <img class="avatar" src={t.avatar} alt={t.name} loading="lazy" width="44" height="44" />
+            ) : (
+              <span class="avatar" aria-hidden="true">{t.initials}</span>
+            )}
+            <div>
+              <div class="name">{t.name}</div>
+              <div class="role">{t.role} · {t.company}</div>
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
-  </Section>
-)}
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: 120px 0;
+    background: var(--pink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .lede {
+    font-size: 21px;
+    line-height: 1.45;
+    max-width: 64ch;
+    margin: 0;
+    color: var(--ink);
+  }
+  .lede :global(em) {
+    font-style: italic;
+  }
+  .t-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .t-card {
+    padding: 36px 32px;
+    border: 1px solid var(--ink);
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .t-card:hover {
+    transform: translateY(-3px);
+    background: var(--yellow);
+  }
+  .quote {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    flex: 1;
+    margin: 0;
+  }
+  .quote :global(em) {
+    font-style: italic;
+  }
+  .quote::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 48px;
+    line-height: 0;
+    vertical-align: -12px;
+    margin-right: 4px;
+    color: var(--ink);
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--ink);
+  }
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    font-family: var(--mono);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    object-fit: cover;
+  }
+  .name {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .role {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  @media (max-width: 1000px) {
+    .t-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .t-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

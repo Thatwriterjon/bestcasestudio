@@ -1,0 +1,112 @@
+---
+import { logos, LOGOS_FINAL } from '../../data/logos';
+---
+
+<section class="logos" aria-label="Brands our founder has worked with">
+  <div class="wrap">
+    <div class="head mono">
+      <span>Brands our founder has worked with</span>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <ul class="logo-grid">
+      {logos.map((logo) => (
+        <li class:list={['logo', logo.svgPath && 'has-image']}>
+          {logo.svgPath ? (
+            <img src={logo.svgPath} alt={logo.name} loading="lazy" />
+          ) : (
+            <span class="wordmark-fallback">{logo.name}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+    {!LOGOS_FINAL && (
+      <p class="placeholder-note">⌁ Wordmarks shown as type placeholders. Drop actual logo SVGs in here.</p>
+    )}
+  </div>
+</section>
+
+<style>
+  .logos {
+    padding: 64px 0 72px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+  }
+  .head .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .logo-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px 32px;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 8px;
+    /* Dashed cell border only shown when the cell holds a text placeholder; once real
+       SVGs are dropped in (LOGOS_FINAL = true) it just adds visual noise. */
+    border-bottom: 1px dashed var(--rule);
+    color: var(--ink);
+    min-height: 56px;
+  }
+  .logo.has-image {
+    border-bottom: none;
+  }
+  .logo img {
+    max-width: 130px;
+    max-height: 36px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* brightness(0) flattens every logo to pure black silhouette regardless of source colour
+       or luminance. Opacity then dials in a uniform mid-grey on the off-white wall. */
+    filter: brightness(0);
+    opacity: 0.55;
+    transition: opacity 0.15s, filter 0.15s;
+  }
+  .logo:hover img {
+    filter: none;
+    opacity: 1;
+  }
+  .wordmark-fallback {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .placeholder-note {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-top: 24px;
+    font-weight: 500;
+  }
+  @media (max-width: 900px) {
+    .logo-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 500px) {
+    .logo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

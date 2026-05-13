@@ -1,23 +1,30 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
-const blogCollection = defineCollection({
-  type: 'content',
+const testimonials = defineCollection({
+  loader: glob({ pattern: '**/*.yaml', base: './src/content/testimonials' }),
   schema: z.object({
-    title: z.string(),
-    pubDate: z.date(),
-    author: z.string(),
-    authImage: z.string(),
-    image: z.string(),
-    tags: z.array(z.string()),
-    summary: z.string(),
-    type: z.enum(['Article', 'Tutorial', 'Framework', 'Analysis', 'Strategy']),
+    name: z.string(),
+    role: z.string(),
+    company: z.string(),
+    initials: z.string(),
+    /** HTML-allowed string. Use <em> for italics. Do not include the opening curly quote — the
+     * card adds it as a decorative pseudo-element. */
+    quote: z.string(),
+    avatar: z.string().optional(),
+    order: z.number(),
   }),
-  // Astro v6 requires a loader for each collection
-  // Example loader for markdown files
-  // See: https://docs.astro.build/en/guides/upgrade-to/v6/#removed-legacy-content-collections
-  // Adjust as needed for your project
 });
 
-export const collections = {
-  blog: blogCollection,
-};
+const faq = defineCollection({
+  loader: glob({ pattern: '**/*.yaml', base: './src/content/faq' }),
+  schema: z.object({
+    /** HTML-allowed. Use <em> for italics. */
+    question: z.string(),
+    /** Array of paragraph strings. HTML-allowed. */
+    answer: z.array(z.string()),
+    order: z.number(),
+  }),
+});
+
+export const collections = { testimonials, faq };
