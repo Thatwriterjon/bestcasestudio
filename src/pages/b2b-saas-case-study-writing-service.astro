@@ -1,0 +1,733 @@
+---
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+import CloseCta from '../components/sections/CloseCta.astro';
+
+const pageUrl = 'https://bestcasestud.io/b2b-saas-case-study-writing-service/';
+
+const serviceSchema = {
+  '@type': 'Service',
+  '@id': `${pageUrl}#service`,
+  name: 'B2B SaaS case study writing service',
+  serviceType: 'B2B SaaS case study writing service',
+  provider: { '@id': 'https://bestcasestud.io/#org' },
+  areaServed: 'Worldwide',
+  url: pageUrl,
+  description:
+    'End-to-end B2B SaaS case studies: interview, written page, edited video, social assets. $2,500 flat per study. First drafts land 14 business days after the customer interview.',
+  offers: {
+    '@type': 'Offer',
+    price: '2500',
+    priceCurrency: 'USD',
+    url: pageUrl,
+    availability: 'https://schema.org/InStock',
+    category: 'Marketing services',
+    eligibleCustomerType: 'B2B SaaS',
+  },
+};
+
+const faqs = [
+  {
+    q: 'How long does a case study take?',
+    a: 'About three weeks end to end. Week 1 is the customer interview. Weeks 2–3 are editing the video and writing the case study. Week 3+ is one consolidated round of revisions and final delivery. First drafts land 14 business days after the interview. Most delays come from customer responses or internal approvals, not the production timeline.',
+  },
+  {
+    q: 'Do you write case studies for early-stage SaaS?',
+    a: "Yes, with one caveat. You need at least one customer who can speak credibly to a result, even if the result isn't a hard metric. If you're pre-revenue or pre-first-customer, focus on product first. Case studies don't fix the absence of a customer; they make the presence of one count.",
+  },
+  {
+    q: 'Do you work with Series A or PLG companies?',
+    a: "Yes. The format works particularly well for both. Series A companies need credibility assets that punch above their stage. PLG companies need stories explaining why a user became a power user, not just a product walkthrough. We've worked with both shapes of company.",
+  },
+  {
+    q: 'How is this different from a video testimonial service?',
+    a: 'A video testimonial is a customer saying something nice on camera, edited to 90 seconds. A case study is a story — a problem, a decision, an implementation, an outcome — with the video, the written page, the social cuts, and the sales pull-quotes all produced from the same interview. Testimonial Hero does the former at scale. We do the latter, end-to-end, for one flat price.',
+  },
+  {
+    q: 'What if our customer refuses to be named?',
+    a: "We can produce a redacted case study with role-and-industry naming instead of company naming (e.g. 'the Head of RevOps at a Series B observability platform'). The story still works; the specificity moves from the company name to the situational detail. Anonymous case studies do convert less well than named ones, so it's worth pushing back on the customer if there's room.",
+  },
+  {
+    q: 'Do you handle the customer interview yourself?',
+    a: "Yes. Jon runs every interview. We don't outsource the interview to a junior, a virtual assistant, or an AI tool. The interview is where the case study is actually built; everything downstream is editing and production.",
+  },
+  {
+    q: 'Do you work with clients outside the UK?',
+    a: 'Yes. Interviews are remote, so location doesn’t matter. We work with B2B SaaS companies globally, with US clients being the largest segment.',
+  },
+  {
+    q: 'Can I buy one case study now and add more later?',
+    a: "Yes. Every case study is priced the same flat $2,500. Commission one now, come back in a month or six months for the next one. There's no minimum and no commitment.",
+  },
+  {
+    q: 'What makes Best Case Studio different from a freelance copywriter?',
+    a: 'Most freelance copywriters deliver text. You get a Word document, then you have to coordinate video production, design, and distribution separately. Best Case Studio owns the entire workflow — interview through final asset delivery, in one coordinated package, with one invoice.',
+  },
+  {
+    q: 'What types of B2B SaaS companies do you work with?',
+    a: "Companies that have achieved product-market fit and have at least 3–5 happy customers willing to participate in interviews. If you're pre-product-market-fit, bootstrapped without clear customer wins, or unsure whether customers would publicly endorse you, case studies probably aren't your next move.",
+  },
+  {
+    q: 'How do case studies actually improve conversion rates?',
+    a: "They remove the primary objection in B2B SaaS sales: 'will this work for a company like ours?' By showing a real customer with a comparable use case achieving a real result, case studies reduce perceived risk, shorten the buying decision, and improve deal quality — buyers enter the sales call already focused on terms and implementation rather than feasibility.",
+  },
+  {
+    q: "What if our customer can't point to a specific measurable result?",
+    a: "That's fine. Not every great case study leads with a metric. Strong stories about reduced friction, improved confidence, or better team alignment are persuasive to the right buyer.",
+  },
+  {
+    q: 'Who actually runs Best Case Studio?',
+    a: 'Jon McGreevy leads every project: strategy, interviews, video production, and copy. Jessie McGreevy keeps projects on track. No outsourcing, no AI-generated content.',
+  },
+  {
+    q: 'How does the $500 referral bounty work?',
+    a: 'Refer a B2B SaaS company. When they make their first payment, we send you $500 cash. No cap on referrals.',
+  },
+];
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  '@id': `${pageUrl}#faq`,
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+
+const comparison = {
+  columns: [
+    'Best Case Studio',
+    'Uplift Content',
+    'Testimonial Hero (incl. Case Study Buddy)',
+    'Freelance writer',
+    'In-house',
+  ],
+  rows: [
+    {
+      label: 'Typical price',
+      cells: [
+        '$2,500 flat per study',
+        '$1,500–$2,500+, tiered (Story Foundation / Essentials / Showcase)',
+        '$1,661–$8,398 per video, credit-based annual plans from ~$7,800',
+        '$750–$2,000 written, video extra',
+        "Fully loaded marketer's time",
+      ],
+    },
+    {
+      label: 'Turnaround',
+      cells: [
+        'First drafts 14 business days post-interview',
+        '4–6 weeks typical',
+        '30–45 days for video projects',
+        'Variable',
+        'Slips. Always slips.',
+      ],
+    },
+    {
+      label: "What's included",
+      cells: [
+        'Interview, written case study, edited video, social graphics, sales pull-quotes, launch post',
+        'Written case study; video, design, additional formats priced as add-ons',
+        'Video-led; written case studies added since acquiring Case Study Buddy and Upshot',
+        'Written copy. You handle the video, design, scheduling, distribution.',
+        'Whatever the marketer has bandwidth for that week',
+      ],
+    },
+    {
+      label: 'Best for',
+      cells: [
+        'SaaS startups and scale-ups wanting one polished asset, fully produced, no coordination overhead',
+        'Marketing teams wanting a written-first agency relationship and tiered scope',
+        'Larger SaaS with a video-led customer story programme and an annual credit budget',
+        'Buyers prioritising lowest unit cost on the written piece',
+        'Companies where someone owns this <em>and</em> has 20+ free hours per study',
+      ],
+    },
+    {
+      label: 'Watch-out',
+      cells: [
+        'Capacity. Two-person studio means we book up.',
+        'AI is used in the workflow. Worth asking at which steps.',
+        'Pricing transparency requires a sales call. Credit plans tie spend to annual commitment.',
+        'Coordinating video, design, scheduling separately can absorb the price difference and then some.',
+        'Case studies always go on the list, never to the top.',
+      ],
+    },
+  ],
+};
+---
+
+<Base
+  title="B2B SaaS case study writing service · $2,500 flat · Best Case Studio"
+  description="End-to-end B2B SaaS case studies: interview, written page, edited video, social assets. $2,500 flat per study. First drafts 14 business days after the customer interview."
+  schema={[serviceSchema, faqSchema]}
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow mono">B2B SaaS case study writing service</p>
+      <h1>
+        B2B SaaS case studies, <em>end to end</em>. $2,500 flat.
+      </h1>
+      <p class="lede">
+        Interview, write, video, social assets. First drafts land 14 business days after the customer interview.
+      </p>
+      <p class="sub">
+        We're a two-person studio. Jon runs the interview, writes the case study, edits the video. Jessie runs scheduling and delivery. No outsourced writers, no white-labelled video team you've never met, no AI-generated content anywhere in the pipeline. The customer who sits down for the interview is the customer who shows up in the final asset.
+      </p>
+      <div class="ctas">
+        <Button href="/contact" variant="primary">Book a discovery call</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="wrap">
+      <h2>Case studies are the proof B2B SaaS buyers actually trust.</h2>
+      <p>
+        UserEvidence's 2025 <em>Evidence Gap Report</em> found that 53% of B2B sellers say they've lost or delayed deals in the past year because they couldn't provide the right customer evidence at the moment it mattered. Half the people selling SaaS right now have personally watched a deal slow down or die because the proof wasn't there.
+      </p>
+      <p>
+        Case studies are how you close that gap. Not testimonials — those are one-line endorsements. Not reviews — those live on platforms a buyer may not visit. A case study is a named customer, a named problem, named numbers where they exist, and a story that lets a prospect ask <em>"could this be us?"</em> and answer it without a sales call.
+      </p>
+      <p>
+        But not any case study. The bar has risen. AI-generated walls of copy that read like every other "transformation story" actively reduce trust. The signal a buyer is now looking for is <em>specificity</em>: names, numbers, screenshots, video of an actual person speaking in their own words.
+      </p>
+    </div>
+  </section>
+
+  <section class="framing">
+    <div class="wrap">
+      <p class="eyebrow mono">The credibility framing</p>
+      <h2>Credibility is a multiplier, not a cheat code.</h2>
+      <p>
+        The founder, Jon McGreevy, runs <a href="https://trvsted.com" target="_blank" rel="noopener noreferrer">trvsted.com</a> on the side — research into how B2B SaaS buyers form trust. The working framework:
+      </p>
+      <blockquote class="formula">
+        Buying Likelihood = (Price + Positioning + Product) × Credibility
+      </blockquote>
+      <p>
+        Credibility is a multiplier, not a cheat code. It can only multiply what you already have. But if what you already have is shit, then you'll just get more shit.
+      </p>
+      <p>
+        If the product is real, credibility compounds it. If the price is right, credibility makes the price feel right. Case studies are the load-bearing credibility asset in B2B SaaS — the one buyers look for and the one most companies under-invest in.
+      </p>
+      <p>
+        Best Case Studio writes case studies through that lens. Not as portfolio pieces. As credibility assets that sit on the page where the buying decision actually happens.
+      </p>
+    </div>
+  </section>
+
+  <section class="different">
+    <div class="wrap">
+      <h2>Why we're different from a freelance copywriter or a content agency.</h2>
+      <p class="lede">Three things.</p>
+      <ol class="reasons">
+        <li>
+          <h3>Jon spent 14 years as a SaaS tester before doing this full-time.</h3>
+          <p>That's not a CV detail. It's why the interview goes somewhere useful. He's been in the codebase, watched the demos go sideways, sat through the QA triage meetings. When he interviews your customer, he can ask about implementation friction, integration weirdness, the feature that did the thing the salesperson didn't quite mention. The interview becomes a real conversation about a real product, not a glorified testimonial extraction.</p>
+        </li>
+        <li>
+          <h3>Two-person studio. No outsourcing.</h3>
+          <p>A lot of the case study agencies you'll quote against subcontract the writing to freelancers you'll never meet. Some now run that copy through AI to speed things up. You won't always know which agency does that until the third revision when the draft sounds like nothing a person would write. Best Case Studio is Jon and Jessie. The voice you read in the case study is the voice that wrote it.</p>
+        </li>
+        <li>
+          <h3>No AI-generated content.</h3>
+          <p>Worth a sentence on why. AI-generated copy is itself a distrust signal — buyers are trained now to spot it, and identifying it on a vendor's case study tells them the vendor couldn't be bothered to write their own story. Jon writes case studies the slow way: a recorded interview, a transcript, a draft, a rewrite. The video gets edited by hand. The output is the kind of thing that doesn't read like every other thing the buyer scrolled past today.</p>
+        </li>
+      </ol>
+      <div class="ctas">
+        <Button href="/contact" variant="primary">Book a discovery call</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="deliverables">
+    <div class="wrap">
+      <p class="eyebrow mono">What you get</p>
+      <h2>For $2,500, every case study includes:</h2>
+      <ul class="deliverable-list">
+        <li>
+          <strong>Customer interview, 30 minutes</strong>, recorded on Riverside. We schedule it; you don't need to be on the call.
+        </li>
+        <li>
+          <strong>Written case study, 800–1,200 words.</strong> Story-led, specific, structured around the buyer's likely objections.
+        </li>
+        <li>
+          <strong>PDF version</strong> for sales use.
+        </li>
+        <li>
+          <strong>Highlight video, 90 seconds to 2 minutes</strong>, edited from the interview footage.
+        </li>
+        <li>
+          <strong>Three quote graphics</strong> for social.
+        </li>
+        <li>
+          <strong>Two pull-quote excerpts</strong> ready to drop into sales decks.
+        </li>
+        <li>
+          <strong>One launch LinkedIn post</strong>, written for the founder or marketer to publish.
+        </li>
+        <li>
+          <strong>One consolidated round of revisions</strong> across the whole package.
+        </li>
+      </ul>
+      <p class="note">
+        You own everything outright on delivery. No usage caps, no licensing add-ons. The files ship in a shared folder and the project's done.
+      </p>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <p class="eyebrow mono">The process</p>
+      <h2>Three steps.</h2>
+      <ol class="steps">
+        <li>
+          <h3>The interview, week 1.</h3>
+          <p>Jessie schedules the call with your customer. Jon runs it on Riverside, 30 minutes, recorded. You don't need to attend. The interview is structured around the questions that draw out the specifics your ICP will recognise.</p>
+        </li>
+        <li>
+          <h3>Drafting, weeks 2–3.</h3>
+          <p>Jon writes the case study and edits the video. Jessie handles the graphics and supporting assets. First drafts of everything land 14 business days after the interview.</p>
+        </li>
+        <li>
+          <h3>Revision and delivery, week 3+.</h3>
+          <p>One consolidated round of feedback across the package. Then final delivery in a shared folder. You own the files outright.</p>
+        </li>
+      </ol>
+      <p class="note">
+        Customer-side approvals are on you (you know your customer). Everything else is on us.
+      </p>
+    </div>
+  </section>
+
+  <section class="compare">
+    <div class="wrap">
+      <p class="eyebrow mono">How we compare</p>
+      <h2>Honest version, named alternatives.</h2>
+      <p class="lede">Read it as if you were buying.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" aria-label="Criterion"></th>
+              {comparison.columns.map((c) => (
+                <th scope="col">{c}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.rows.map((row) => (
+              <tr>
+                <th scope="row">{row.label}</th>
+                {row.cells.map((cell) => (
+                  <td set:html={cell} />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="recent">
+    <div class="wrap">
+      <p class="eyebrow mono">Recent work</p>
+      <h2>Case studies under our own banner are in production.</h2>
+      <p class="lede">In the meantime, what clients have said about Jon's writing more generally:</p>
+      <div class="quotes">
+        <figure>
+          <blockquote>
+            He captures the client's voice while targeting customer pain points with precision. Jon's talent and professionalism has elevated a number of projects.
+          </blockquote>
+          <figcaption>Marc Thomas, Head of Growth, Powered By Search</figcaption>
+        </figure>
+        <figure>
+          <blockquote>
+            He brought fresh perspectives we'd never thought of and gave us a new tone of voice that's more vibrant — but the essence of our value is still very clear. That's skill.
+          </blockquote>
+          <figcaption>Polly Wong, Marketing Executive, Float</figcaption>
+        </figure>
+        <figure>
+          <blockquote>
+            Jon's an extremely talented writer, professional and scrupulous to the highest degree. Don't hesitate — he won't let you down.
+          </blockquote>
+          <figcaption>Michael Semer, Founder, MSMC Marketing</figcaption>
+        </figure>
+      </div>
+      <p class="note">
+        Once the first cohort of case studies ships under the Best Case Studio banner, this section becomes a portfolio.
+      </p>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap-tight">
+      <p class="eyebrow mono">FAQ</p>
+      <h2>Frequently asked <em>questions</em>.</h2>
+      <div class="faq-list">
+        {faqs.map(({ q, a }) => (
+          <details class="q">
+            <summary>
+              <span>{q}</span>
+              <span class="marker" aria-hidden="true">+</span>
+            </summary>
+            <div class="a"><p>{a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CloseCta />
+</Base>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--bg);
+    padding: 180px 0 96px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(48px, 6.5vw, 104px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+    max-width: 20ch;
+  }
+  h1 em {
+    font-style: italic;
+  }
+  .lede {
+    font-size: 22px;
+    line-height: 1.45;
+    max-width: 60ch;
+    margin: 0 0 32px;
+  }
+  .sub {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 70ch;
+    color: var(--ink-soft);
+    margin: 0 0 40px;
+  }
+  .ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Generic section heads */
+  section.proof,
+  section.framing,
+  section.different,
+  section.deliverables,
+  section.process,
+  section.compare,
+  section.recent,
+  section.faq {
+    background: var(--bg);
+    padding: 96px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(36px, 4.5vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 32px;
+    max-width: 22ch;
+  }
+  section h2 em {
+    font-style: italic;
+  }
+  section p {
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 72ch;
+    margin: 0 0 20px;
+  }
+  section p:last-child {
+    margin-bottom: 0;
+  }
+  section a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Credibility framing formula */
+  .formula {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 32px);
+    line-height: 1.3;
+    margin: 32px 0;
+    padding: 24px 28px;
+    border-left: 4px solid var(--ink);
+    background: var(--bg-2);
+    max-width: 64ch;
+  }
+
+  /* Why different — numbered list (mirrors about.astro principle-list) */
+  .reasons {
+    list-style: none;
+    padding: 0;
+    margin: 48px 0 40px;
+    border-top: 1px solid var(--ink);
+    counter-reset: reason;
+  }
+  .reasons li {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .reasons li::before {
+    counter-increment: reason;
+    content: counter(reason, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    font-weight: 500;
+    padding-top: 12px;
+  }
+  .reasons h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .reasons p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 70ch;
+  }
+
+  /* Deliverables list */
+  .deliverable-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    border-top: 1px solid var(--ink);
+  }
+  .deliverable-list li {
+    font-size: 18px;
+    line-height: 1.55;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+    max-width: 80ch;
+  }
+  .deliverable-list strong {
+    font-weight: 600;
+  }
+  .note {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 70ch;
+    margin-top: 24px;
+  }
+
+  /* Process steps */
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--ink);
+    counter-reset: step;
+  }
+  .steps li {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .steps li::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    font-weight: 500;
+    padding-top: 12px;
+  }
+  .steps h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .steps p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 70ch;
+  }
+
+  /* Comparison table */
+  .table-scroll {
+    overflow-x: auto;
+    margin: 32px 0 0;
+    border-top: 1px solid var(--ink);
+  }
+  .table-scroll table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--serif);
+    min-width: 880px;
+  }
+  .table-scroll thead th {
+    text-align: left;
+    vertical-align: bottom;
+    padding: 20px 16px;
+    border-bottom: 1px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .table-scroll thead th:first-child {
+    width: 160px;
+  }
+  .table-scroll tbody th {
+    text-align: left;
+    vertical-align: top;
+    padding: 24px 16px;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    width: 160px;
+  }
+  .table-scroll tbody td {
+    vertical-align: top;
+    padding: 24px 16px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .table-scroll tbody tr td:first-of-type {
+    background: var(--bg-2);
+    font-weight: 500;
+  }
+
+  /* Recent / quotes */
+  .quotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin: 32px 0;
+  }
+  .quotes figure {
+    margin: 0;
+    padding: 24px 0 0;
+    border-top: 1px solid var(--ink);
+  }
+  .quotes blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.45;
+    margin: 0 0 20px;
+    color: var(--ink);
+  }
+  .quotes figcaption {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* FAQ */
+  .faq h2 {
+    margin-bottom: 40px;
+  }
+  .faq-list {
+    border-top: 1px solid var(--ink);
+  }
+  details.q {
+    border-bottom: 1px solid var(--rule);
+  }
+  details.q summary {
+    list-style: none;
+    padding: 28px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  details.q summary::-webkit-details-marker {
+    display: none;
+  }
+  details.q .marker {
+    flex: 0 0 32px;
+    text-align: right;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    transition: transform 0.2s;
+  }
+  details.q[open] .marker {
+    transform: rotate(45deg);
+  }
+  details.q .a {
+    padding: 0 0 32px;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 72ch;
+  }
+  details.q .a p {
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .quotes {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 700px) {
+    .reasons li,
+    .steps li {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .reasons li::before,
+    .steps li::before {
+      padding-top: 0;
+    }
+  }
+</style>
