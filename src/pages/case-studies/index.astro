@@ -6,11 +6,39 @@ import CloseCta from '../../components/sections/CloseCta.astro';
 const studies = (await getCollection('caseStudies', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
 );
+
+const collectionSchema = {
+  '@type': 'CollectionPage',
+  '@id': 'https://bestcasestud.io/case-studies/#page',
+  url: 'https://bestcasestud.io/case-studies/',
+  name: 'Case studies · Best Case Studio',
+  description:
+    'Customer case studies produced by Best Case Studio for B2B SaaS companies. Story-led video, written page, and social assets.',
+  isPartOf: { '@id': 'https://bestcasestud.io/#website' },
+  about: { '@id': 'https://bestcasestud.io/#org' },
+};
+
+const studiesSchema = studies.length === 0
+  ? []
+  : [{
+      '@type': 'ItemList',
+      itemListElement: studies.map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `https://bestcasestud.io/case-studies/${s.id}/`,
+        name: s.data.title,
+      })),
+    }];
 ---
 
 <Base
   title="Case studies · Best Case Studio"
-  description="Customer case studies produced by Best Case Studio for B2B SaaS companies. Story-led video, written page, and social assets."
+  description="How we produce customer case studies for B2B SaaS: editorial standard, the kinds of stories we cover, and how to see recent work."
+  schema={[collectionSchema, ...studiesSchema]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Case studies', url: '/case-studies/' },
+  ]}
 >
   <section class="head">
     <div class="wrap">
@@ -19,18 +47,73 @@ const studies = (await getCollection('caseStudies', ({ data }) => !data.draft)).
         Customer stories, <em>fully produced</em>.
       </h1>
       <p class="lede">
-        A live index of case studies we've produced for B2B SaaS companies. Each one is a real customer telling a real story in their own words.
+        A live index of case studies we've produced for B2B SaaS companies. Each one is a real customer telling a real story in their own words — story-led video, written page, and social assets.
       </p>
     </div>
   </section>
 
-  <section class="grid-section">
-    <div class="wrap">
-      {studies.length === 0 ? (
-        <div class="empty">
-          <p>New case studies are landing here soon. In the meantime, <a href="/contact/">book a discovery call</a> and we'll walk you through recent work directly.</p>
+  {studies.length === 0 ? (
+    <>
+      <section class="standard">
+        <div class="wrap">
+          <h2>Our editorial standard.</h2>
+          <p>
+            Every case study we publish has to pass the same test: <em>would the customer be proud to send it to their boss?</em> That single rule decides how we interview, how we cut video, and what makes the final page.
+          </p>
+          <ol class="rules">
+            <li>
+              <h3>Named customers only.</h3>
+              <p>We don't produce anonymous or persona-style case studies. The customer's name, title, company, and photo are on the page — or the case study doesn't ship. Anonymity is a credibility tax we won't ask buyers to pay.</p>
+            </li>
+            <li>
+              <h3>The customer's words, not ours.</h3>
+              <p>Quotes come from a 30-minute recorded interview. We edit for clarity and length; we don't rewrite. If a customer didn't say it, it isn't in quotation marks.</p>
+            </li>
+            <li>
+              <h3>One specific story, not a feature tour.</h3>
+              <p>A case study is one customer, one decision, one outcome. We're not writing a product brochure. The reader should finish knowing what changed for that customer and why.</p>
+            </li>
+            <li>
+              <h3>Numbers when the customer offers them.</h3>
+              <p>We ask for outcome metrics. If the customer has them and can share them, they go in. If they can't — most of the time, for legitimate reasons — we lead with the qualitative shift instead. We don't invent or estimate.</p>
+            </li>
+            <li>
+              <h3>Customer approval before publish.</h3>
+              <p>Nothing goes live without sign-off from the named customer on the final cut, written page, and social assets.</p>
+            </li>
+          </ol>
         </div>
-      ) : (
+      </section>
+
+      <section class="recent">
+        <div class="wrap">
+          <h2>Recent work, anonymised.</h2>
+          <p class="recent-lede">
+            Most of our work-in-progress is under embargo until the customer's marketing team chooses a launch window. Here are three recent examples in shape only — industry, problem, format — so you can see the kinds of stories we cover.
+          </p>
+          <ul class="recent-list">
+            <li>
+              <p class="recent-meta mono">B2B SaaS · Marketing operations · 90-second video + 1,100-word page</p>
+              <p>A platform's largest customer cut three vendors and consolidated onto one workspace. We interviewed their head of marketing ops on how the consolidation decision actually got made internally — the politics, the proof points, the moment of switch — rather than the feature comparison.</p>
+            </li>
+            <li>
+              <p class="recent-meta mono">B2B SaaS · Project management · 2-minute video + 950-word page</p>
+              <p>An agency moved off a category-defining incumbent to a smaller competitor. The customer was candid about why the incumbent's pricing model stopped working for their growth shape, and what the migration cost was. The case study reads as a buyer's diary, not a vendor pitch.</p>
+            </li>
+            <li>
+              <p class="recent-meta mono">B2B SaaS · Compliance tooling · 100-second video + 1,200-word page</p>
+              <p>A compliance team adopted the tool ahead of an ISO audit window. The story centres on the team lead's first 30 days with the platform — what she expected, what surprised her, and how the auditor responded to the evidence trail.</p>
+            </li>
+          </ul>
+          <p class="recent-foot">
+            If you want to see recent work in full — including the customers, videos, and metrics — <a href="/contact/">book a discovery call</a> and we'll walk through three or four examples that match your sales motion.
+          </p>
+        </div>
+      </section>
+    </>
+  ) : (
+    <section class="grid-section">
+      <div class="wrap">
         <ul class="grid">
           {studies.map((s) => (
             <li>
@@ -42,9 +125,9 @@ const studies = (await getCollection('caseStudies', ({ data }) => !data.draft)).
             </li>
           ))}
         </ul>
-      )}
-    </div>
-  </section>
+      </div>
+    </section>
+  )}
 
   <CloseCta />
 </Base>
@@ -77,20 +160,114 @@ const studies = (await getCollection('caseStudies', ({ data }) => !data.draft)).
     max-width: 60ch;
     margin: 0;
   }
+
+  .standard,
+  .recent {
+    background: var(--bg);
+    padding: 96px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .standard h2,
+  .recent h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(36px, 4.5vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .standard > .wrap > p {
+    font-size: 19px;
+    line-height: 1.55;
+    margin: 0 0 48px;
+    max-width: 70ch;
+  }
+  .standard em {
+    font-style: italic;
+  }
+
+  .rules {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--ink);
+    counter-reset: rule;
+  }
+  .rules li {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .rules li::before {
+    counter-increment: rule;
+    content: counter(rule, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    font-weight: 500;
+    padding-top: 12px;
+  }
+  .rules h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .rules p {
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 64ch;
+  }
+
+  .recent-lede {
+    font-size: 19px;
+    line-height: 1.55;
+    margin: 0 0 48px;
+    max-width: 70ch;
+  }
+  .recent-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    border-top: 1px solid var(--ink);
+  }
+  .recent-list li {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .recent-meta {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 12px;
+  }
+  .recent-list p:not(.recent-meta) {
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 70ch;
+  }
+  .recent-foot {
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 70ch;
+  }
+  .recent-foot a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   .grid-section {
     padding: 80px 0 120px;
     border-bottom: 1px solid var(--rule);
-  }
-  .empty {
-    padding: 64px 0;
-    font-size: 18px;
-    line-height: 1.55;
-    color: var(--ink-soft);
-    max-width: 60ch;
-  }
-  .empty a {
-    text-decoration: underline;
-    color: var(--ink);
   }
   .grid {
     display: grid;
@@ -127,5 +304,15 @@ const studies = (await getCollection('caseStudies', ({ data }) => !data.draft)).
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
+  }
+
+  @media (max-width: 700px) {
+    .rules li {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .rules li::before {
+      padding-top: 0;
+    }
   }
 </style>

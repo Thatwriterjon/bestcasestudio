@@ -5,6 +5,10 @@ import Base from '../layouts/Base.astro';
 <Base
   title="Book a discovery call · Best Case Studio"
   description="Book a free 30-minute discovery call with Best Case Studio. Remote. No hard sell, no pitch deck."
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact/' },
+  ]}
 >
   <section class="contact">
     <div class="wrap">

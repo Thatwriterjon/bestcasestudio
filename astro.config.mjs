@@ -4,7 +4,12 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://bestcasestud.io',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  integrations: [
+    // `lastmod` defaults to the build time, which gives every URL a real <lastmod> stamp —
+    // the single biggest crawl-prioritization signal Google honours. When per-page accuracy
+    // matters (case studies), override at the page level via the integration's serialize hook.
+    sitemap({ lastmod: new Date() }),
+  ],
   build: {
     inlineStylesheets: 'auto',
   },

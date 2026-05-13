@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/sections/Hero.astro';
 import LogoWall from '../components/sections/LogoWall.astro';
@@ -11,6 +12,24 @@ import About from '../components/sections/About.astro';
 import Referral from '../components/sections/Referral.astro';
 import Faq from '../components/sections/Faq.astro';
 import CloseCta from '../components/sections/CloseCta.astro';
+
+const testimonials = (await getCollection('testimonials')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const stripHtml = (s: string) => s.replace(/<[^>]+>/g, '');
+
+const reviews = testimonials.map((t) => ({
+  '@type': 'Review',
+  author: {
+    '@type': 'Person',
+    name: t.data.name,
+    jobTitle: t.data.role,
+    worksFor: { '@type': 'Organization', name: t.data.company },
+  },
+  reviewBody: stripHtml(t.data.quote),
+  itemReviewed: { '@id': 'https://bestcasestud.io/#service' },
+}));
 
 const homepageSchema = [
   {
@@ -39,13 +58,14 @@ const homepageSchema = [
       availability: 'https://schema.org/InStock',
       category: 'Marketing services',
     },
+    review: reviews,
   },
 ];
 ---
 
 <Base
   title="Best Case Studio — Customer case studies for B2B SaaS"
-  description="A two-person studio producing customer case study videos and written pages for B2B SaaS. One product. Clear price. 14 business days, interview to first drafts."
+  description="Customer case studies for B2B SaaS. Story-led video, written page and social assets. One product, $2,500 fixed, delivered in 14 business days."
   transparentNav
   schema={homepageSchema}
 >

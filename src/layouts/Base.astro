@@ -3,6 +3,12 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
+interface BreadcrumbItem {
+  name: string;
+  /** Absolute or root-relative URL. Root-relative paths are resolved against Astro.site. */
+  url: string;
+}
+
 interface Props {
   title?: string;
   description?: string;
@@ -16,6 +22,12 @@ interface Props {
    * Organization graph node. Each entry is a Schema.org object — it will be JSON-stringified
    * inside a `<script type="application/ld+json">` tag. */
   schema?: Record<string, unknown>[];
+  /** When set, a BreadcrumbList JSON-LD node is emitted. Pass the trail from root to current
+   * page; the current page itself is the last item. Omit on the home page. */
+  breadcrumbs?: BreadcrumbItem[];
+  /** Optional Twitter-specific overrides. When omitted, falls back to title/description. */
+  twitterTitle?: string;
+  twitterDescription?: string;
 }
 
 const {
@@ -24,6 +36,9 @@ const {
   transparentNav = false,
   noindex = false,
   schema = [],
+  breadcrumbs,
+  twitterTitle,
+  twitterDescription,
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? new URL('https://bestcasestud.io');
@@ -58,11 +73,35 @@ const organization = {
       worksFor: { '@id': 'https://bestcasestud.io/#org' },
     },
   ],
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: 'jon@bestcasestud.io',
+      areaServed: 'Worldwide',
+      availableLanguage: ['English'],
+    },
+  ],
   sameAs: [
     'https://www.linkedin.com/in/jonmcgreevy/',
     'https://jonmcgreevy.substack.com',
   ],
 };
+
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
+  ? {
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b.name,
+        item: new URL(b.url, siteOrigin).toString(),
+      })),
+    }
+  : null;
+
+const twTitle = twitterTitle ?? title;
+const twDescription = twitterDescription ?? description;
 ---
 
 <!doctype html>
@@ -80,17 +119,28 @@ const organization = {
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="663" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Best Case Studio — Your happy customers are your best salespeople." />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={twTitle} />
+    <meta name="twitter:description" content={twDescription} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="theme-color" content="#f6f3ec" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <script
       type="application/ld+json"
       is:inline
       set:html={JSON.stringify({ '@context': 'https://schema.org', ...organization })}
     />
+    {breadcrumbSchema && (
+      <script
+        type="application/ld+json"
+        is:inline
+        set:html={JSON.stringify({ '@context': 'https://schema.org', ...breadcrumbSchema })}
+      />
+    )}
     {schema.map((node) => (
       <script
         type="application/ld+json"

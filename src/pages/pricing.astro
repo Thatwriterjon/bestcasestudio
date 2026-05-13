@@ -28,8 +28,12 @@ const offerSchema = {
 
 <Base
   title="Case study pricing · $2,500 fixed · Best Case Studio"
-  description="One product, one price: $2,500 per fully produced customer case study. Video, written page, social assets and PDF. 14 business days from interview to first drafts."
+  description="$2,500 per fully produced customer case study. Video, written page, social assets, PDF. 14 business days from interview to first drafts."
   schema={[offerSchema]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Pricing', url: '/pricing/' },
+  ]}
 >
   <section class="pricing-intro">
     <div class="wrap">
