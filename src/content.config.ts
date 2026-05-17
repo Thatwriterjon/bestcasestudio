@@ -27,32 +27,4 @@ const faq = defineCollection({
   }),
 });
 
-const caseStudies = defineCollection({
-  // Pattern excludes files starting with `_` so `_README.md` and other internal notes
-  // are skipped without needing a draft flag.
-  loader: glob({ pattern: '**/[!_]*.md', base: './src/content/case-studies' }),
-  schema: z.object({
-    title: z.string(),
-    /** Customer / featured company name (e.g. "Scoro"). */
-    customer: z.string(),
-    /** Optional logo path under /public. */
-    customerLogo: z.string().optional(),
-    /** One-sentence summary used in cards and meta description. */
-    summary: z.string(),
-    /** SEO meta description override. Defaults to summary if absent. */
-    description: z.string().optional(),
-    /** Hero image path under /public, used for OG and on-page hero. */
-    heroImage: z.string().optional(),
-    /** Optional YouTube/Vimeo/Riverside embed URL for the headline video. */
-    videoUrl: z.string().url().optional(),
-    /** ISO date string. Used for sitemap lastmod and Article schema. */
-    publishedAt: z.coerce.date(),
-    updatedAt: z.coerce.date().optional(),
-    /** Tags for filtering / cross-linking (vertical, use case, persona). */
-    tags: z.array(z.string()).default([]),
-    /** Set true to hide from listings/sitemap while drafting. */
-    draft: z.boolean().default(false),
-  }),
-});
-
-export const collections = { testimonials, faq, caseStudies };
+export const collections = { testimonials, faq };
