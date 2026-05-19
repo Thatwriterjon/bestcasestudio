@@ -70,6 +70,12 @@ const homepageSchema = [
         category: 'Marketing services',
       },
     ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      bestRating: '5',
+      reviewCount: String(reviews.length),
+    },
     review: reviews,
   },
 ];

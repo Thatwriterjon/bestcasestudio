@@ -50,7 +50,7 @@ const organization = {
   '@id': 'https://bestcasestud.io/#org',
   name: 'Best Case Studio',
   url: 'https://bestcasestud.io/',
-  logo: 'https://bestcasestud.io/og.jpg',
+  logo: 'https://bestcasestud.io/favicon.svg',
   description: 'Two-person studio producing B2B case studies built to rank on Google, get cited by ChatGPT, and persuade the people who read them.',
   founder: [
     {
@@ -109,6 +109,8 @@ const twDescription = twitterDescription ?? description;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader-latin-wght-normal.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/ibm-plex-mono-latin-500-normal.woff2" crossorigin />
     <title>{title}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}

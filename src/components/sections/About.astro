@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import SectionHead from '../SectionHead.astro';
+import jonPhoto from '../../assets/team/jon-portrait-1.jpg';
+import jessiePhoto from '../../assets/team/jessie.jpg';
 
 interface Props {
   /** Show the section header. Disabled when used inside a dedicated /about page that has its own header. */
@@ -16,7 +19,7 @@ const { showHead = true } = Astro.props;
     <div class="about-rows">
       <div class="person-row">
         <div class="portrait">
-          <img src="/team/jon-portrait-1.jpg" alt="Jon McGreevy" loading="lazy" width="240" height="300" />
+          <Image src={jonPhoto} alt="Jon McGreevy" loading="lazy" width={240} height={300} format="webp" />
         </div>
         <div>
           <span class="who-name">Jon McGreevy</span>
@@ -34,7 +37,7 @@ const { showHead = true } = Astro.props;
       </div>
       <div class="person-row jess">
         <div class="portrait">
-          <img src="/team/jessie.jpg" alt="Jessie McGreevy" loading="lazy" width="240" height="300" />
+          <Image src={jessiePhoto} alt="Jessie McGreevy" loading="lazy" width={240} height={300} format="webp" />
         </div>
         <div>
           <span class="who-name">Jessie McGreevy</span>

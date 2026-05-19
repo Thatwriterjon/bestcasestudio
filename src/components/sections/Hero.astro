@@ -7,9 +7,8 @@ import Button from '../Button.astro';
     <div class="hero-grid">
       <h1>B2B case studies that get <em>cited</em>, <em>ranked</em>, and <span class="yel">read</span>.</h1>
       <div class="hero-right">
-        <h2 class="sub">We produce the case studies you don't have time to create.</h2>
         <p class="lede">
-          Structured to rank on Google. Formatted to be cited by ChatGPT. Written to persuade the people who read them.
+          We produce the case studies you don't have time to create. Structured to rank on Google. Formatted to be cited by ChatGPT. Written to persuade the people who read them.
         </p>
         <div class="ctas">
           <Button href="/#audit" variant="primary" class="hero-cta">Send us a case study to audit</Button>
@@ -46,7 +45,7 @@ import Button from '../Button.astro';
   .hero h1 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(64px, 8.4vw, 144px);
+    font-size: clamp(56px, 7vw, 108px);
     line-height: 0.92;
     letter-spacing: -0.025em;
     margin: 0;
@@ -67,15 +66,6 @@ import Button from '../Button.astro';
     flex-direction: column;
     gap: 0;
   }
-  .hero-right .sub {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    margin: 0 0 16px;
-    max-width: 28ch;
-  }
   .hero-right .lede {
     font-family: var(--serif);
     font-weight: 400;
@@ -85,17 +75,10 @@ import Button from '../Button.astro';
     margin: 0 0 32px;
     color: var(--ink);
   }
-  .hero-right .lede em {
-    font-style: italic;
-  }
   .ctas {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-  }
-  .hero :global(.btn) {
-    font-size: 19px;
-    padding: 20px 28px;
   }
   @media (max-width: 900px) {
     .hero {

@@ -1,10 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const contactSchema = {
+  '@type': 'ContactPage',
+  '@id': 'https://bestcasestud.io/contact/#page',
+  name: 'Contact Best Case Studio',
+  description: 'Book a free 30-minute discovery call or email jon@bestcasestud.io.',
+  url: 'https://bestcasestud.io/contact/',
+  mainEntity: { '@id': 'https://bestcasestud.io/#org' },
+};
 ---
 
 <Base
   title="Get in touch · Best Case Studio"
   description="Send us a case study to audit or get in touch about working together. Free written audit, no call required."
+  schema={[contactSchema]}
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Contact', url: '/contact/' },
