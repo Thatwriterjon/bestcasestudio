@@ -10,6 +10,8 @@ import Base from '../layouts/Base.astro';
     { name: 'Contact', url: '/contact/' },
   ]}
 >
+  <link slot="head" rel="preconnect" href="https://assets.calendly.com" />
+  <link slot="head" rel="dns-prefetch" href="https://assets.calendly.com" />
   <section class="contact">
     <div class="wrap">
       <div class="head">
@@ -21,6 +23,7 @@ import Base from '../layouts/Base.astro';
           30 minutes, remote, free. We talk through your customers, your sales motion, and whether case studies are the right move for you right now. <em>Zero pitch.</em>
         </p>
         <p class="sub">Or skip the call and email <a href="mailto:jon@bestcasestud.io?subject=Discovery%20call">jon@bestcasestud.io</a>. We aim to reply within one business day.</p>
+        <p class="sub"><a href="/pricing/">See our pricing →</a></p>
       </div>
 
       <div class="booking">

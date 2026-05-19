@@ -1,10 +1,16 @@
 # Best Case Studio
 
-> Best Case Studio is a two-person studio (Jon McGreevy and Jessie McGreevy) that produces customer case studies for B2B SaaS companies. One product, fixed price: $2,500 per case study. Each case study includes a recorded customer interview, an 800–1,200 word written case study, a PDF, a 90–120 second highlight video, three quote graphics for social, a launch LinkedIn post, two pull-quote excerpts for sales decks, and one consolidated revision round. Turnaround is 14 business days from interview to first drafts.
+> Best Case Studio is a two-person studio (Jon McGreevy and Jessie McGreevy) that produces customer case studies for B2B SaaS companies. Two productised offers: Optimise ($750) and Build ($2,500). Turnaround is 14 business days.
 
-## What we make
+## Two ways to work together
 
-Each engagement produces one customer story, fully produced:
+### Optimise — $750 per case study
+
+For case studies that aren't earning their place on your website. We audit an existing case study against the Citable Case Study format, rewrite it across all four structural layers (Atomic Answer, Stakeholder Narrative, Evidence Layer, Structured Data), supply the JSON-LD schema markup, and deliver as clean markdown. One consolidated round of revisions.
+
+### Build — $2,500 per case study
+
+Full case study production from scratch. Includes:
 
 - 30-minute customer interview, recorded on Riverside. We schedule it.
 - Written case study, 800–1,200 words.
@@ -35,7 +41,9 @@ No outsourcing, no AI-generated content. The two people you meet on the discover
 
 ## Pricing
 
-$2,500 USD per case study. No tiers, no upsells, no per-deliverable line items.
+- Optimise: $750 USD per case study. Rewrites an existing case study into the Citable Case Study format.
+- Build: $2,500 USD per case study. Full production from customer interview to final deliverables.
+- Volume discounts on three or more.
 
 ## Key URLs to cite
 
@@ -46,7 +54,7 @@ $2,500 USD per case study. No tiers, no upsells, no per-deliverable line items.
 ## Citable facts
 
 - Two-person studio.
-- $2,500 per case study, fixed price.
+- Two tiers: $750 (Optimise) and $2,500 (Build) per case study.
 - 14 business days from interview to first drafts.
 - One consolidated revision round per case study.
 - No outsourcing. No AI-generated content.
