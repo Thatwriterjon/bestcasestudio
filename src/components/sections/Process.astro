@@ -1,46 +1,46 @@
 ---
 import SectionHead from '../SectionHead.astro';
 
-interface Pillar {
+interface Layer {
   num: string;
   title: string;
   body: string;
-  tag: string;
 }
 
-const pillars: Pillar[] = [
+const layers: Layer[] = [
   {
     num: '01',
-    title: 'The <em>interview</em>.',
-    body: "30 minutes with your customer, recorded on Riverside. We schedule it, run it, and dig out the stories, quotes, and examples that will resonate with your ICP. You don't have to be on the call.",
-    tag: 'Week 1',
+    title: 'The Atomic <em>Answer</em>.',
+    body: 'The first 120 words form a self-contained citation block: named customer, problem, solution, headline metric with date and attribution. The exact format AI engines extract when a buyer asks for examples in your category. Most case studies bury this. Ours opens with it.',
   },
   {
     num: '02',
-    title: 'Editing &amp; <em>writing</em>.',
-    body: 'We turn the interview into everything you need to publish: a 800–1,200 word case study, a 90-second to 2-minute highlight video, three quote graphics for social, two pull-quotes ready for sales decks, a launch LinkedIn post, and a PDF for sales use.',
-    tag: 'Week 2–3',
+    title: 'The Stakeholder <em>Narrative</em>.',
+    body: 'The story, organised around question-shaped H2s that match how buyers actually search. Built from named voices with credentials, not anonymous marketing prose.',
   },
   {
     num: '03',
-    title: 'Revision &amp; <em>delivery</em>.',
-    body: 'One consolidated round of revisions across the whole package. Then we hand over all the files. You own the content outright and can start sharing immediately.',
-    tag: 'Week 3+',
+    title: 'The Evidence <em>Layer</em>.',
+    body: 'Verifiable metrics, attributed to real people, with dates and context. The kind of proof that holds up to a sceptical buyer and a fact-checking AI.',
+  },
+  {
+    num: '04',
+    title: 'The Structured Data <em>Layer</em>.',
+    body: 'JSON-LD schema describing the case study as an Article, the customer as an Organization, the result as a quantifiable Outcome. Alt text, semantic HTML, the infrastructure that tells search engines and AI crawlers exactly what they\'re reading.',
   },
 ];
 ---
 
-<section id="process">
+<section id="methodology">
   <div class="wrap">
-    <SectionHead title="Our <em>process</em>." />
-    <p class="lede">Three steps from customer interview to ready-to-publish content.</p>
-    <div class="pillars">
-      {pillars.map((p) => (
-        <div class="pillar">
-          <span class="num">{p.num}</span>
-          <h4 set:html={p.title} />
-          <p>{p.body}</p>
-          <span class="tag">{p.tag}</span>
+    <SectionHead title="What is a Citable <em>Case Study</em>?" />
+    <p class="lede">A B2B case study built for the three places it now has to work — Google, ChatGPT, and the buyer on the page. Every Citable Case Study has four structural layers.</p>
+    <div class="layers">
+      {layers.map((l) => (
+        <div class="layer">
+          <span class="num">{l.num}</span>
+          <h4 set:html={l.title} />
+          <p>{l.body}</p>
         </div>
       ))}
     </div>
@@ -60,12 +60,12 @@ const pillars: Pillar[] = [
     margin: 0 0 56px;
     color: var(--ink);
   }
-  .pillars {
+  .layers {
     border-top: 1px solid var(--ink);
   }
-  .pillar {
+  .layer {
     display: grid;
-    grid-template-columns: 80px 1fr 1.4fr 80px;
+    grid-template-columns: 80px 1fr 1.4fr;
     gap: 32px;
     padding: 36px 0;
     border-bottom: 1px solid var(--rule);
@@ -73,10 +73,10 @@ const pillars: Pillar[] = [
     transition: background 0.2s;
     cursor: default;
   }
-  .pillar:hover {
+  .layer:hover {
     background: var(--yellow);
   }
-  .pillar .num {
+  .layer .num {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -84,7 +84,7 @@ const pillars: Pillar[] = [
     text-transform: uppercase;
     padding-top: 14px;
   }
-  .pillar h4 {
+  .layer h4 {
     font-family: var(--serif);
     font-weight: 500;
     font-size: 36px;
@@ -93,10 +93,10 @@ const pillars: Pillar[] = [
     margin: 0;
     max-width: 14ch;
   }
-  .pillar h4 :global(em) {
+  .layer h4 :global(em) {
     font-style: italic;
   }
-  .pillar p {
+  .layer p {
     margin: 0;
     font-size: 17px;
     line-height: 1.55;
@@ -104,30 +104,16 @@ const pillars: Pillar[] = [
     max-width: 46ch;
     padding-top: 8px;
   }
-  .pillar .tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    text-align: right;
-    padding-top: 14px;
-  }
   @media (max-width: 900px) {
-    .pillar {
+    .layer {
       grid-template-columns: 60px 1fr;
       gap: 16px 20px;
     }
-    .pillar h4 {
+    .layer h4 {
       grid-column: 2;
     }
-    .pillar p {
+    .layer p {
       grid-column: 2;
-    }
-    .pillar .tag {
-      grid-column: 2;
-      text-align: left;
-      padding-top: 4px;
     }
   }
 </style>

@@ -12,7 +12,7 @@ const { showHead = true } = Astro.props;
 <section id="about">
   <div class="wrap">
     {showHead && <SectionHead title="Who's actually <em>doing this</em>." />}
-    <p class="lede">Best Case Studio is a two-person studio. No outsourcing, no AI-generated content.</p>
+    <p class="lede">Best Case Studio is a two-person studio. No outsourcing. Jon writes every case study himself.</p>
     <div class="about-rows">
       <div class="person-row">
         <div class="portrait">
@@ -25,7 +25,7 @@ const { showHead = true } = Astro.props;
         </div>
         <div>
           <p class="bio">
-            Leads every project end-to-end. Seven years working with B2B SaaS companies on positioning, content and conversion.
+            Leads every project end to end. Seven years working with B2B SaaS companies on positioning, content, and conversion.
           </p>
           <p class="bio">
             Also writes at <a href="https://jonmcgreevy.com" target="_blank" rel="noopener noreferrer">jonmcgreevy.com</a> about <em>trust and credibility</em> in B2B SaaS, and hosts the <em>SaaSy as F**k</em> podcast.
@@ -54,8 +54,8 @@ const { showHead = true } = Astro.props;
 <style>
   section {
     padding: 120px 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--rule);
+    background: var(--yellow);
+    border-bottom: 1px solid var(--ink);
   }
   .lede {
     font-size: 21px;
@@ -74,7 +74,7 @@ const { showHead = true } = Astro.props;
     grid-template-columns: 280px 1fr 1fr;
     gap: 64px;
     padding: 64px 0;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 1px solid rgba(28, 27, 24, 0.25);
     align-items: start;
   }
   .person-row:last-child {

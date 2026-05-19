@@ -16,10 +16,10 @@ const { transparent = false } = Astro.props;
     <nav aria-label="Primary">
       <ul>
         <li><a href="/#pricing">Pricing</a></li>
-        <li><a href="/#process">Process</a></li>
-        <li><a href="/#testimonials">Testimonials</a></li>
+        <li><a href="/#methodology">Methodology</a></li>
+        <li><a href="/#proof">Proof</a></li>
         <li><a href="/#faq">FAQ</a></li>
-        <li><a href="/contact" class="cta">Book a call →</a></li>
+        <li><a href="/#audit" class="cta">Free audit →</a></li>
       </ul>
     </nav>
   </div>
@@ -105,7 +105,7 @@ const { transparent = false } = Astro.props;
     nav li:not(:last-child):not(:first-child) {
       display: none;
     }
-    /* On narrow screens keep just Pricing + Book-a-call to avoid wrap. */
+    /* On narrow screens keep just Pricing + Free audit to avoid wrap. */
     nav li:first-child {
       display: list-item;
     }

@@ -9,13 +9,14 @@ const year = new Date().getFullYear();
     <div class="foot-grid">
       <div class="col brand">
         <Wordmark href="/" />
-        <p>Case studies for B2B SaaS. Story-led, doc-style, built to move deals, not collect dust on a slide.</p>
+        <p>B2B case studies that get cited, ranked, and read. Two productised offers, transparent pricing, no retainers.</p>
       </div>
       <div class="col">
         <h6>Site</h6>
         <ul>
           <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#process">Process</a></li>
+          <li><a href="/#methodology">Methodology</a></li>
+          <li><a href="/#proof">Proof</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="mailto:jon@bestcasestud.io">Refer someone</a></li>
         </ul>
@@ -29,6 +30,9 @@ const year = new Date().getFullYear();
           <li><a href="https://podcasts.apple.com/us/podcast/saasy-as-f-k-podcast/id1573388272" target="_blank" rel="noopener noreferrer">Apple Podcasts ↗</a></li>
         </ul>
       </div>
+    </div>
+    <div class="referral-note">
+      <strong>Referrals:</strong> $500 cash per referral, no cap, paid when the client makes their first payment. <a href="mailto:jon@bestcasestud.io">Email us →</a>
     </div>
     <div class="foot-row">
       <span class="mono">© {year} Best Case Studio · All rights reserved.</span>
@@ -81,6 +85,23 @@ const year = new Date().getFullYear();
     font-size: 16px;
     max-width: 34ch;
     line-height: 1.5;
+  }
+  .referral-note {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 24px;
+  }
+  .referral-note strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .referral-note a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   .foot-row {
     display: flex;

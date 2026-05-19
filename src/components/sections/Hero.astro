@@ -5,14 +5,15 @@ import Button from '../Button.astro';
 <section class="hero" aria-label="Introduction">
   <div class="wrap">
     <div class="hero-grid">
-      <h1>Your happy customers are your <em>best</em> <span class="yel">salespeople</span>.</h1>
+      <h1>B2B case studies that get <em>cited</em>, <em>ranked</em>, and <span class="yel">read</span>.</h1>
       <div class="hero-right">
+        <h2 class="sub">We produce the case studies you don't have time to create.</h2>
         <p class="lede">
-          Selling SaaS is <em>really</em> hard. You're competing with huge multinationals, copycats, and vibe coded monstrosities. Case studies give you the advantage by proving your credibility and giving customers a reason to trust your software.
+          Structured to rank on Google. Formatted to be cited by ChatGPT. Written to persuade the people who read them.
         </p>
         <div class="ctas">
-          <Button href="/contact" variant="primary" class="hero-cta">Book a discovery call</Button>
-          <Button href="https://scorecard.bestcasestud.io/" variant="secondary" external>Credibility Scorecard</Button>
+          <Button href="/#audit" variant="primary" class="hero-cta">Send us a case study to audit</Button>
+          <Button href="/#pricing" variant="secondary">See the offers</Button>
         </div>
       </div>
     </div>
@@ -64,15 +65,25 @@ import Button from '../Button.astro';
   .hero-right {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 0;
+  }
+  .hero-right .sub {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    max-width: 28ch;
   }
   .hero-right .lede {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: 22px;
-    line-height: 1.4;
+    font-size: 20px;
+    line-height: 1.45;
     max-width: 38ch;
-    margin: 0;
+    margin: 0 0 32px;
+    color: var(--ink);
   }
   .hero-right .lede em {
     font-style: italic;
@@ -82,9 +93,9 @@ import Button from '../Button.astro';
     gap: 12px;
     flex-wrap: wrap;
   }
-  /* Hero primary uses pink text on ink, per design reference. */
-  .hero :global(.btn.primary) {
-    color: var(--pink);
+  .hero :global(.btn) {
+    font-size: 19px;
+    padding: 20px 28px;
   }
   @media (max-width: 900px) {
     .hero {

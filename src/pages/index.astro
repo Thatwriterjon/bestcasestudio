@@ -6,10 +6,10 @@ import LogoWall from '../components/sections/LogoWall.astro';
 import WhyCaseStudies from '../components/sections/WhyCaseStudies.astro';
 import Process from '../components/sections/Process.astro';
 import Pricing from '../components/sections/Pricing.astro';
-import DiscoveryCta from '../components/sections/DiscoveryCta.astro';
+import Differentiation from '../components/sections/Differentiation.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
+import DiscoveryCta from '../components/sections/DiscoveryCta.astro';
 import About from '../components/sections/About.astro';
-import Referral from '../components/sections/Referral.astro';
 import Faq from '../components/sections/Faq.astro';
 import CloseCta from '../components/sections/CloseCta.astro';
 
@@ -43,29 +43,41 @@ const homepageSchema = [
   {
     '@type': 'ProfessionalService',
     '@id': 'https://bestcasestud.io/#service',
-    name: 'Customer case study production',
-    serviceType: 'Customer case study production',
+    name: 'B2B case study production',
+    serviceType: 'B2B case study production',
     provider: { '@id': 'https://bestcasestud.io/#org' },
     areaServed: 'Worldwide',
     url: 'https://bestcasestud.io/',
     description:
-      'Two-person studio producing customer case study videos and written pages for B2B SaaS. One fixed product: video, written page, social assets, fully produced and delivered.',
-    offers: {
-      '@type': 'Offer',
-      price: '2500',
-      priceCurrency: 'USD',
-      url: 'https://bestcasestud.io/pricing/',
-      availability: 'https://schema.org/InStock',
-      category: 'Marketing services',
-    },
+      'Two-person studio producing B2B case studies built to rank on Google, get cited by ChatGPT, and persuade the people who read them. Two productised offers: optimise an existing case study ($750) or build one from scratch ($2,500).',
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Optimise an existing case study',
+        price: '750',
+        priceCurrency: 'USD',
+        url: 'https://bestcasestud.io/#pricing',
+        availability: 'https://schema.org/InStock',
+        category: 'Marketing services',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Build a new case study from scratch',
+        price: '2500',
+        priceCurrency: 'USD',
+        url: 'https://bestcasestud.io/#pricing',
+        availability: 'https://schema.org/InStock',
+        category: 'Marketing services',
+      },
+    ],
     review: reviews,
   },
 ];
 ---
 
 <Base
-  title="Best Case Studio — Customer case studies for B2B SaaS"
-  description="Customer case studies for B2B SaaS. Story-led video, written page and social assets. One product, $2,500 fixed, delivered in 14 business days."
+  title="Best Case Studio — B2B case studies that get cited, ranked, and read"
+  description="B2B case studies built to rank on Google, get cited by ChatGPT, and persuade the people who read them. Two productised offers. Transparent pricing."
   transparentNav
   schema={homepageSchema}
 >
@@ -74,10 +86,10 @@ const homepageSchema = [
   <WhyCaseStudies />
   <Process />
   <Pricing />
-  <DiscoveryCta />
+  <Differentiation />
   <Testimonials />
+  <DiscoveryCta />
   <About />
-  <Referral />
   <Faq />
   <CloseCta />
 </Base>

@@ -2,54 +2,77 @@
 import SectionHead from '../SectionHead.astro';
 import Button from '../Button.astro';
 
-const included = [
-  'Customer interview, 30 minutes, recorded on Riverside. <em>We schedule it.</em>',
-  'Written case study, 800–1,200 words.',
-  'PDF version for sales use.',
-  'Highlight video, 90 seconds to 2 minutes, edited.',
-  'Three quote graphics for social.',
-  'One launch LinkedIn post, written for the client to publish.',
-  'Two pull-quote excerpts ready for sales decks.',
-  'One round of revision after consolidated feedback.',
+const optimiseIncluded = [
+  'We audit your existing case study against the Citable Case Study format.',
+  'We rewrite it across all four structural layers: Atomic Answer, Stakeholder Narrative, Evidence Layer, Structured Data.',
+  'We supply the JSON-LD schema markup.',
+  'Delivered as clean markdown, ready for your team to publish.',
+  'One consolidated round of revisions.',
 ];
+
+const buildIncluded = [
+  'We run the customer interview ourselves. 30 minutes, remote, on Riverside. We schedule it.',
+  'We pull the verified metrics and write the full Citable Case Study.',
+  'We supply the JSON-LD schema markup.',
+  'We edit the interview footage into a companion video.',
+  'Delivered as clean markdown plus video file.',
+  'One consolidated round of revisions.',
+];
+
 ---
 
 <section id="pricing">
   <div class="wrap">
     <SectionHead title="<em>Pricing</em>." />
     <p class="lede">
-      One product. Clear price. Everything you need to publish one case study, fully produced.
+      Two ways to work together.
     </p>
+    <p class="sub-lede">Both deliver the Citable Case Study. Both priced per case study. Volume discounts on three or more.</p>
 
-    <div class="pricing-card">
-      <div class="pricing-top">
-        <div class="pricing-left">
-          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Best Case Studio</span>
-          <h3>The <em>Case Study</em>.</h3>
-          <p class="price-lede">
-            One customer. One story. Video, written page, social assets, fully produced and delivered.
-          </p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-inner">
+          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Optimise</span>
+          <h3><em>Optimise</em> an existing case study.</h3>
+          <p class="price-lede">For case studies that aren't earning their place on your website.</p>
           <div class="price-spacer"></div>
-          <span class="price">$2,500</span>
-          <Button href="/contact" variant="primary">Book a discovery call</Button>
-        </div>
-        <div class="pricing-right">
-          <h4>What's included</h4>
-          <ul>
-            {included.map((item) => (
-              <li><span set:html={item} /></li>
-            ))}
-          </ul>
+          <span class="price">$750</span>
+          <div class="included">
+            <h4>What's included</h4>
+            <ul>
+              {optimiseIncluded.map((item) => (
+                <li><span>{item}</span></li>
+              ))}
+            </ul>
+          </div>
+          <div class="turnaround">
+            <span class="k">Turnaround</span>
+            <span class="v"><em>14 business days.</em></span>
+          </div>
+          <Button href="/#audit" variant="primary">Start with an audit</Button>
         </div>
       </div>
-      <div class="pricing-meta">
-        <div>
-          <span class="k">Turnaround</span>
-          <span class="v"><em>14 business days</em> from interview to first drafts.</span>
-        </div>
-        <div>
-          <span class="k">Division of labour</span>
-          <span class="v">Client handles customer-side approvals. We handle everything else, including scheduling the interview. <a href="/contact/">Book a discovery call</a> to walk through the workflow.</span>
+
+      <div class="pricing-card featured">
+        <div class="pricing-inner">
+          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Build</span>
+          <h3><em>Build</em> a new case study from scratch.</h3>
+          <p class="price-lede">For when you need a case study and your team doesn't have the bandwidth to produce it.</p>
+          <div class="price-spacer"></div>
+          <span class="price">$2,500</span>
+          <div class="included">
+            <h4>What's included</h4>
+            <ul>
+              {buildIncluded.map((item) => (
+                <li><span>{item}</span></li>
+              ))}
+            </ul>
+          </div>
+          <div class="turnaround">
+            <span class="k">Turnaround</span>
+            <span class="v"><em>14 business days</em> from interview to first drafts.</span>
+          </div>
+          <Button href="/#audit" variant="primary">Commission a case study</Button>
         </div>
       </div>
     </div>
@@ -61,7 +84,6 @@ const included = [
     padding: 120px 0;
     background: var(--ink);
     color: var(--bg);
-    border-bottom: 1px solid var(--ink);
   }
   section :global(.sec-head h2) {
     color: var(--bg);
@@ -79,28 +101,33 @@ const included = [
     margin: 0;
     color: #cfcabd;
   }
+  .sub-lede {
+    font-size: 18px;
+    line-height: 1.45;
+    max-width: 64ch;
+    margin: 8px 0 0;
+    color: #cfcabd;
+  }
 
-  .pricing-card {
-    border: 1px solid var(--ink);
-    background: var(--bg);
-    color: var(--ink);
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
     margin-top: 48px;
   }
-  .pricing-top {
-    display: grid;
-    grid-template-columns: 1fr 1.15fr;
-    gap: 0;
+
+  .pricing-card {
+    background: var(--bg);
+    color: var(--ink);
   }
-  .pricing-left {
+  .pricing-card.featured {
+    border: 2px solid var(--pink);
+  }
+  .pricing-inner {
     padding: 48px;
-    border-right: 1px solid var(--ink);
     display: flex;
     flex-direction: column;
     gap: 20px;
-    min-height: 520px;
-  }
-  .pricing-right {
-    padding: 48px;
   }
   .eyebrow {
     font-family: var(--mono);
@@ -122,11 +149,11 @@ const included = [
   .pricing-card h3 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: 56px;
-    line-height: 0.98;
+    font-size: 36px;
+    line-height: 1.02;
     letter-spacing: -0.02em;
     margin: 0;
-    max-width: 14ch;
+    max-width: 18ch;
   }
   .pricing-card h3 :global(em) {
     font-style: italic;
@@ -135,18 +162,19 @@ const included = [
     font-family: var(--serif);
     font-style: italic;
     color: var(--ink-soft);
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.45;
     margin: 0;
     max-width: 36ch;
   }
   .price-spacer {
     flex: 1;
+    min-height: 8px;
   }
   .price {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(96px, 11vw, 156px);
+    font-size: clamp(72px, 9vw, 120px);
     line-height: 0.85;
     letter-spacing: -0.04em;
     font-style: italic;
@@ -156,21 +184,17 @@ const included = [
     color: var(--ink);
     align-self: flex-start;
   }
-  .pricing-left :global(.btn) {
-    align-self: flex-start;
-    margin-top: 8px;
-  }
 
-  .pricing-right h4 {
+  .included h4 {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-soft);
     font-weight: 500;
-    margin: 0 0 24px;
+    margin: 0 0 16px;
   }
-  .pricing-right ul {
+  .included ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -178,20 +202,20 @@ const included = [
     flex-direction: column;
     counter-reset: price-item;
   }
-  .pricing-right li {
+  .included li {
     font-family: var(--serif);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.45;
     display: grid;
-    grid-template-columns: 44px 1fr;
+    grid-template-columns: 36px 1fr;
     align-items: baseline;
-    padding: 14px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--rule);
   }
-  .pricing-right li:last-child {
+  .included li:last-child {
     border-bottom: none;
   }
-  .pricing-right li::before {
+  .included li::before {
     counter-increment: price-item;
     content: counter(price-item, decimal-leading-zero);
     font-family: var(--mono);
@@ -200,19 +224,12 @@ const included = [
     color: var(--ink-soft);
     font-weight: 500;
   }
-  .pricing-right li :global(em) {
-    font-style: italic;
-  }
 
-  .pricing-meta {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    padding: 32px 48px;
-    border-top: 1px solid var(--ink);
-    background: var(--bg-2);
+  .turnaround {
+    padding-top: 8px;
+    border-top: 1px solid var(--rule);
   }
-  .pricing-meta .k {
+  .turnaround .k {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -220,35 +237,32 @@ const included = [
     color: var(--ink-soft);
     font-weight: 500;
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
-  .pricing-meta .v {
+  .turnaround .v {
     font-family: var(--serif);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.45;
     color: var(--ink);
   }
-  .pricing-meta .v :global(em) {
+  .turnaround .v :global(em) {
     font-style: italic;
   }
 
+  .pricing-inner :global(.btn) {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+
   @media (max-width: 900px) {
-    .pricing-top {
+    .pricing-grid {
       grid-template-columns: 1fr;
     }
-    .pricing-left {
-      border-right: none;
-      border-bottom: 1px solid var(--ink);
-      min-height: 0;
+    .pricing-inner {
       padding: 36px;
     }
-    .pricing-right {
-      padding: 36px;
-    }
-    .pricing-meta {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      padding: 28px 36px;
+    .price {
+      font-size: clamp(64px, 14vw, 100px);
     }
   }
 </style>

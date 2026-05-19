@@ -4,13 +4,13 @@ import Button from '../Button.astro';
 
 <section id="contact-bottom" class="close">
   <div class="wrap">
-    <p class="punch">Your <span class="yel">move</span>.</p>
+    <p class="eyebrow"><em>Your move.</em></p>
+    <h2>Send us a case study. We'll tell you what's <span class="yel">broken</span>.</h2>
     <p class="aside">
-      30-minute discovery call. Remote. Free. No hard sell, no pitch deck, just an honest answer about whether case studies are right for you right now.
+      Free written audit. No call required. Five business days.
     </p>
     <div class="ctas">
-      <Button href="mailto:jon@bestcasestud.io" variant="primary">Book a discovery call</Button>
-      <Button href="https://scorecard.bestcasestud.io/" variant="secondary" external>Credibility Scorecard</Button>
+      <Button href="mailto:jon@bestcasestud.io" variant="primary">Email us your case study</Button>
     </div>
   </div>
 </section>
@@ -21,7 +21,14 @@ import Button from '../Button.astro';
     color: var(--bg);
     padding: 140px 0;
   }
-  .punch {
+  .eyebrow {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-style: italic;
+    color: #bdb7a8;
+    margin: 0 0 20px;
+  }
+  h2 {
     font-family: var(--serif);
     font-weight: 500;
     font-size: clamp(56px, 7vw, 108px);
@@ -29,12 +36,9 @@ import Button from '../Button.astro';
     letter-spacing: -0.02em;
     max-width: 18ch;
     margin: 0 0 40px;
+    color: var(--bg);
   }
-  .punch :global(em) {
-    font-style: italic;
-    color: var(--pink);
-  }
-  .punch .yel {
+  h2 .yel {
     background: var(--yellow);
     color: var(--ink);
     padding: 0 0.12em 0.04em;

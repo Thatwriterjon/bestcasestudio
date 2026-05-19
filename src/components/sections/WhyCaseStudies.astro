@@ -1,54 +1,31 @@
 ---
 import SectionHead from '../SectionHead.astro';
-
-interface Reason {
-  num: string;
-  label: string;
-  title: string;
-  body: string;
-}
-
-const reasons: Reason[] = [
-  {
-    num: '01',
-    label: 'Trust',
-    title: 'Build <em>trust</em>.',
-    body: 'Case studies tell skeptical B2B buyers why they should choose you, from someone they believe. A real customer story beats any marketing copy.',
-  },
-  {
-    num: '02',
-    label: 'SEO & GEO',
-    title: 'Improve <em>SEO &amp; GEO</em>.',
-    body: 'Case studies are evergreen content that compounds over time. They improve your search ranking and get you talked about favourably by LLMs.',
-  },
-  {
-    num: '03',
-    label: 'CAC',
-    title: 'Lower <em>CAC</em>.',
-    body: 'Proof-driven content shortens the sales cycle. Prospects arrive already convinced, fewer calls to close, lower cost per customer.',
-  },
-];
 ---
 
-<section id="why" aria-labelledby="why-h">
+<section id="bridge" aria-label="Why case studies underperform">
   <div class="wrap">
-    <SectionHead title="Why <em>case studies</em>?" />
-    <p id="why-h" class="lede">
-      Case studies are one of the highest-performing content types for B2B SaaS. Here's what they can do for you.
-    </p>
-    <div class="why">
-      {reasons.map((r) => (
-        <div class="card">
-          <div class="num">
-            <span class="pip" aria-hidden="true"></span>
-            <span>{r.num}</span>
-            <span>·</span>
-            <span>{r.label}</span>
-          </div>
-          <h3 set:html={r.title} />
-          <p>{r.body}</p>
+    <div class="two-col">
+      <div class="col-prose">
+        <SectionHead title="Why are most B2B case studies <em>underperforming</em>?" />
+        <div class="prose-body">
+          <p>Most case studies were designed for a buying journey that ran through a sales rep. That journey is gone.</p>
+          <p><em>63% of B2B buyers now shortlist two or three vendors before sales ever hears their name.</em> They start on Google. They ask ChatGPT for examples. They scan the page for 45 seconds and decide whether to keep reading.</p>
+          <p>The case study itself hasn't changed. Same length, same shape, same anonymous quotes. It's the channels that changed, and the format never caught up.</p>
         </div>
-      ))}
+      </div>
+      <div class="col-diag">
+        <h3>Are any of these true of your case studies?</h3>
+        <ul>
+          <li>They take longer to produce than you'd like.</li>
+          <li>Your team finishes drafts but the final piece never quite gets shipped.</li>
+          <li>Quotes are anonymous, partial, or undated.</li>
+          <li>Metrics aren't attached to a named person at a named company.</li>
+          <li>Searching "[your category] case study" on Google doesn't surface them.</li>
+          <li>Asking ChatGPT for examples in your category doesn't surface them either.</li>
+          <li>You can't remember the last time sales mentioned a case study by name.</li>
+        </ul>
+        <p class="closing">If any apply, the Citable Case Study format will fix the structural problems behind them. If none apply, you probably don't need us.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -59,81 +36,77 @@ const reasons: Reason[] = [
     background: var(--yellow);
     border-bottom: 1px solid var(--ink);
   }
-  .lede {
-    font-size: 21px;
-    line-height: 1.45;
-    max-width: 64ch;
-    margin: 0 0 56px;
-    color: var(--ink);
-  }
-  .why {
+  .two-col {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--ink);
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
   }
-  .card {
-    padding: 48px 36px 48px 0;
-    border-right: 1px solid rgba(28, 27, 24, 0.18);
-    position: relative;
+  .col-prose :global(.sec-head) {
+    margin-bottom: 48px;
   }
-  .card:nth-child(n + 2) {
-    padding-left: 36px;
+  .col-prose :global(.sec-head h2) {
+    font-size: clamp(36px, 4.5vw, 56px);
   }
-  .card:last-child {
-    border-right: none;
-    padding-right: 0;
+  .prose-body {
+    margin-top: 48px;
   }
-  .num {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-weight: 500;
-    margin-bottom: 36px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  .prose-body p {
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 24px;
   }
-  .pip {
-    width: 8px;
-    height: 8px;
-    display: inline-block;
-    background: var(--ink);
+  .prose-body p:last-child {
+    margin-bottom: 0;
+  }
+  .prose-body p :global(em) {
+    font-style: italic;
   }
   h3 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: 36px;
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    margin: 0 0 18px;
+    font-size: clamp(28px, 3.5vw, 36px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 32px;
   }
-  h3 :global(em) {
-    font-style: italic;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
   }
-  p {
-    margin: 0;
+  li {
+    font-family: var(--serif);
     font-size: 18px;
     line-height: 1.55;
     color: var(--ink);
-    max-width: 42ch;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  li:first-child {
+    border-top: 1px solid var(--rule);
+  }
+  li::before {
+    content: '—';
+    color: var(--ink-soft);
+    flex-shrink: 0;
+  }
+  .closing {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+    font-style: italic;
   }
   @media (max-width: 900px) {
-    .why {
+    .two-col {
       grid-template-columns: 1fr;
-    }
-    .card {
-      border-right: none;
-      border-bottom: 1px solid rgba(28, 27, 24, 0.18);
-      padding: 40px 0;
-    }
-    .card:nth-child(n + 2) {
-      padding-left: 0;
-    }
-    .card:last-child {
-      border-bottom: none;
+      gap: 48px;
     }
   }
 </style>

@@ -7,11 +7,11 @@ const items = (await getCollection('testimonials')).sort(
 );
 ---
 
-<section id="testimonials" class="testimonials">
+<section id="proof" class="testimonials">
   <div class="wrap">
-    <SectionHead title="What clients have <em>said</em>." />
+    <SectionHead title="<em>Proof</em>." />
     <p class="lede">
-      Jon has been working with B2B SaaS companies for over <em>7 years</em>. These are a few things clients have said along the way.
+      These quotes are from Jon's prior copywriting work, not from Best Case Studio specifically. They speak to the craft underneath the methodology — the writing, the customer-handling, the ability to find the story. That craft is the foundation of every Citable Case Study we produce.
     </p>
     <div class="t-grid">
       {items.map(({ data: t }) => (
@@ -31,6 +31,7 @@ const items = (await getCollection('testimonials')).sort(
         </article>
       ))}
     </div>
+
   </div>
 </section>
 
@@ -41,14 +42,11 @@ const items = (await getCollection('testimonials')).sort(
     border-bottom: 1px solid var(--ink);
   }
   .lede {
-    font-size: 21px;
-    line-height: 1.45;
+    font-size: 19px;
+    line-height: 1.55;
     max-width: 64ch;
     margin: 0;
     color: var(--ink);
-  }
-  .lede :global(em) {
-    font-style: italic;
   }
   .t-grid {
     display: grid;
@@ -131,6 +129,7 @@ const items = (await getCollection('testimonials')).sort(
     font-weight: 500;
     margin-top: 2px;
   }
+
   @media (max-width: 1000px) {
     .t-grid {
       grid-template-columns: repeat(2, 1fr);

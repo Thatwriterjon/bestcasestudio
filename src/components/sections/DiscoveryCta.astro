@@ -1,64 +1,43 @@
 ---
 import Button from '../Button.astro';
-
-interface Row {
-  k: string;
-  /** HTML-allowed value. */
-  v: string;
-}
-
-const rows: Row[] = [
-  { k: 'Duration', v: '30 minutes' },
-  { k: 'Format', v: 'Remote · video call' },
-  { k: 'Cost', v: '<em>Free</em>' },
-  { k: 'Pitch level', v: 'Zero' },
-  { k: 'Output', v: 'An honest answer' },
-];
 ---
 
-<section class="discovery" aria-label="Book a discovery call">
-  <div class="wrap inner">
+<section id="audit" class="audit" aria-label="Free audit">
+  <div class="wrap">
     <div>
-      <h2>Let's make <span class="yelhl">things happen</span>.</h2>
+      <h2>Send us your <span class="yelhl">worst-performing</span> case study.</h2>
       <p>
-        Book a free 30-minute discovery call. No hard sell, just a conversation about whether case studies are the right move for you right now.
+        We'll audit it against the Citable Case Study format and tell you exactly what's broken. Free, written, no call required.
+      </p>
+      <p>
+        If the gaps are worth fixing, the $750 optimisation is the obvious next step. If not, you'll have a clear answer.
       </p>
       <div class="ctas">
-        <Button href="/contact" variant="primary">Book a discovery call</Button>
+        <Button href="mailto:jon@bestcasestud.io" variant="primary">Email us your case study</Button>
       </div>
+      <p class="secondary">
+        Send a public URL or a PDF. We'll respond within five business days with a written audit. No call required, no sales follow-up.
+      </p>
     </div>
-    <dl class="right">
-      {rows.map((r) => (
-        <div class="row">
-          <dt>{r.k}</dt>
-          <dd class="v" set:html={r.v} />
-        </div>
-      ))}
-    </dl>
   </div>
 </section>
 
 <style>
-  .discovery {
+  .audit {
     background: var(--bg);
     color: var(--ink);
     padding: 120px 0;
     border-bottom: 1px solid var(--rule);
   }
-  .inner {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .discovery h2 {
+  .audit h2 {
     font-family: var(--serif);
     font-weight: 500;
     font-size: clamp(44px, 5.5vw, 84px);
     line-height: 1;
     letter-spacing: -0.02em;
-    margin: 0 0 24px;
+    margin: 0 0 32px;
     color: var(--ink);
+    max-width: 18ch;
   }
   .yelhl {
     background: var(--yellow);
@@ -66,50 +45,21 @@ const rows: Row[] = [
     padding: 0 0.12em 0.04em;
     display: inline-block;
   }
-  .discovery p {
+  .audit p {
     font-size: 19px;
     line-height: 1.55;
-    color: var(--ink-soft);
-    margin: 0 0 32px;
-    max-width: 48ch;
-  }
-  .right {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin: 0;
-  }
-  .row {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid var(--rule);
-    padding-top: 12px;
-    gap: 24px;
-  }
-  .row dt {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-weight: 500;
-  }
-  .row .v {
     color: var(--ink);
-    font-family: var(--serif);
+    margin: 0 0 20px;
+    max-width: 56ch;
+  }
+  .ctas {
+    margin-top: 12px;
+    margin-bottom: 24px;
+  }
+  .secondary {
     font-size: 16px;
-    letter-spacing: -0.005em;
-    font-weight: 500;
-    margin: 0;
-  }
-  .row .v :global(em) {
+    color: var(--ink-soft);
     font-style: italic;
-    color: var(--pink);
-  }
-  @media (max-width: 900px) {
-    .inner {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
+    margin: 0;
   }
 </style>
