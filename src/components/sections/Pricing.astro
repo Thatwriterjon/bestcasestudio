@@ -3,40 +3,59 @@ import SectionHead from '../SectionHead.astro';
 import Button from '../Button.astro';
 
 const optimiseIncluded = [
-  'We audit your existing case study against the Citable Case Study format.',
-  'We rewrite it across all four structural layers: Atomic Answer, Stakeholder Narrative, Evidence Layer, Structured Data.',
-  'We supply the JSON-LD schema markup.',
-  'Delivered as clean markdown, ready for your team to publish.',
-  'One consolidated round of revisions.',
+  'Full 4-layer Citable rewrite (Atomic Answer, Stakeholder Narrative, Evidence, Machine Layer)',
+  'JSON-LD structured data (Article, Organization, Review)',
+  'Question-shaped H2s, named stakeholders, dated metrics',
+  'AI-tone enforcement — every line passes the Citable voice check',
+  '14-day turnaround',
 ];
 
 const buildIncluded = [
-  'We run the customer interview ourselves. 30 minutes, remote, on Riverside. We schedule it.',
-  'We pull the verified metrics and write the full Citable Case Study.',
-  'We supply the JSON-LD schema markup.',
-  'We edit the interview footage into a companion video.',
-  'Delivered as clean markdown plus video file.',
-  'One consolidated round of revisions.',
+  'Customer interview (scheduled and conducted by Jon)',
+  'Full 5-layer Citable build (Atomic Answer, Stakeholder Narrative, Evidence, Machine Layer, Evidence Ledger)',
+  'Evidence Ledger — 7-column verification table tracing every claim to its source',
+  'Edited companion video (5-section timed script)',
+  'JSON-LD schema and structured data',
+  'AI-tone enforcement throughout',
+  '14-day turnaround',
+  'Volume pricing on 3+ Builds — ask Jon',
 ];
 
 ---
 
 <section id="pricing">
   <div class="wrap">
-    <SectionHead title="<em>Pricing</em>." />
-    <p class="lede">
-      Two ways to work together.
-    </p>
-    <p class="sub-lede">Both deliver the Citable Case Study. Both priced per case study. Volume discounts on three or more.</p>
+    <SectionHead title="Pricing built for <em>B2B</em>." />
+
+    <!-- Free audit CTA — visually separate from paid tiers -->
+    <div class="free-audit-block">
+      <div class="free-audit-inner">
+        <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Citable Audit</span>
+        <h3><em>Citable Audit</em> — free.</h3>
+        <p class="price-lede">5-day turnaround, no call required.</p>
+        <ul class="free-audit-bullets">
+          <li>100-point scored report across 6 dimensions</li>
+          <li>AI-citability score (ChatGPT, Claude, Perplexity, Google AI Overviews)</li>
+          <li>Prioritised list of what's costing you citations</li>
+          <li>Delivered as a markdown report to your inbox</li>
+        </ul>
+        <Button href="/contact/" variant="primary">Get your free audit</Button>
+      </div>
+    </div>
 
     <div class="pricing-grid">
+      <!-- Optimise -->
       <div class="pricing-card">
         <div class="pricing-inner">
           <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Optimise</span>
           <h3><em>Optimise</em> an existing case study.</h3>
-          <p class="price-lede">For case studies that aren't earning their place on your website.</p>
+          <p class="price-lede">Take a case study you already have and make it the one AI cites.</p>
           <div class="price-spacer"></div>
-          <span class="price">$750</span>
+          <div class="price-row">
+            <span class="price-struck">$1,500</span>
+            <span class="price">$997</span>
+          </div>
+          <span class="founding-badge">Founding Customer pricing — first 10 only</span>
           <div class="included">
             <h4>What's included</h4>
             <ul>
@@ -45,21 +64,22 @@ const buildIncluded = [
               ))}
             </ul>
           </div>
-          <div class="turnaround">
-            <span class="k">Turnaround</span>
-            <span class="v"><em>14 business days.</em></span>
-          </div>
-          <Button href="/contact/" variant="primary">Start with an audit</Button>
+          <Button href="/contact/" variant="primary">Start with Optimise</Button>
         </div>
       </div>
 
+      <!-- Tier 2: Build (featured) -->
       <div class="pricing-card featured">
         <div class="pricing-inner">
           <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Build</span>
           <h3><em>Build</em> a new case study from scratch.</h3>
-          <p class="price-lede">For when you need a case study and your team doesn't have the bandwidth to produce it.</p>
+          <p class="price-lede">A new case study, engineered for citation, in 14 days.</p>
           <div class="price-spacer"></div>
-          <span class="price">$2,500</span>
+          <div class="price-row">
+            <span class="price-struck">$5,000</span>
+            <span class="price">$2,997</span>
+          </div>
+          <span class="founding-badge">Founding Customer pricing — first 10 only</span>
           <div class="included">
             <h4>What's included</h4>
             <ul>
@@ -68,13 +88,10 @@ const buildIncluded = [
               ))}
             </ul>
           </div>
-          <div class="turnaround">
-            <span class="k">Turnaround</span>
-            <span class="v"><em>14 business days</em> from interview to first drafts.</span>
-          </div>
-          <Button href="/contact/" variant="primary">Commission a case study</Button>
+          <Button href="/contact/" variant="primary">Commission a Build</Button>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -94,19 +111,65 @@ const buildIncluded = [
   section :global(.sec-num) {
     color: #8a857a;
   }
-  .lede {
-    font-size: 21px;
-    line-height: 1.45;
-    max-width: 64ch;
-    margin: 0;
-    color: #cfcabd;
+  /* Free audit block — visually separate from paid grid */
+  .free-audit-block {
+    margin-top: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(207, 202, 189, 0.15);
   }
-  .sub-lede {
-    font-size: 18px;
-    line-height: 1.45;
-    max-width: 64ch;
-    margin: 8px 0 0;
+  .free-audit-inner {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 640px;
+  }
+  .free-audit-inner h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--bg);
+  }
+  .free-audit-inner h3 :global(em) {
+    font-style: italic;
+  }
+  .free-audit-inner .price-lede {
+    font-family: var(--serif);
+    font-style: italic;
     color: #cfcabd;
+    font-size: 16px;
+    line-height: 1.45;
+    margin: 0;
+  }
+  .free-audit-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .free-audit-bullets li {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.45;
+    color: #cfcabd;
+    padding-left: 20px;
+    position: relative;
+  }
+  .free-audit-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+  }
+  .free-audit-inner :global(.btn) {
+    align-self: flex-start;
+    margin-top: 4px;
   }
 
   .pricing-grid {
@@ -140,6 +203,9 @@ const buildIncluded = [
     align-items: center;
     gap: 10px;
   }
+  .free-audit-inner .eyebrow {
+    color: #cfcabd;
+  }
   .eyebrow .pip {
     width: 8px;
     height: 8px;
@@ -171,10 +237,27 @@ const buildIncluded = [
     flex: 1;
     min-height: 8px;
   }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .price-struck {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(28px, 3.5vw, 44px);
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+    font-style: italic;
+    color: var(--ink-soft);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+  }
   .price {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(72px, 9vw, 120px);
+    font-size: clamp(60px, 7.5vw, 96px);
     line-height: 0.85;
     letter-spacing: -0.04em;
     font-style: italic;
@@ -182,7 +265,15 @@ const buildIncluded = [
     padding: 0 0.14em 0.04em;
     display: inline-block;
     color: var(--ink);
-    align-self: flex-start;
+  }
+  .founding-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pink);
+    font-weight: 500;
+    display: block;
   }
 
   .included h4 {
@@ -225,30 +316,6 @@ const buildIncluded = [
     font-weight: 500;
   }
 
-  .turnaround {
-    padding-top: 8px;
-    border-top: 1px solid var(--rule);
-  }
-  .turnaround .k {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-weight: 500;
-    display: block;
-    margin-bottom: 4px;
-  }
-  .turnaround .v {
-    font-family: var(--serif);
-    font-size: 16px;
-    line-height: 1.45;
-    color: var(--ink);
-  }
-  .turnaround .v :global(em) {
-    font-style: italic;
-  }
-
   .pricing-inner :global(.btn) {
     align-self: flex-start;
     margin-top: 8px;
@@ -262,7 +329,10 @@ const buildIncluded = [
       padding: 36px;
     }
     .price {
-      font-size: clamp(64px, 14vw, 100px);
+      font-size: clamp(52px, 12vw, 80px);
+    }
+    .free-audit-inner {
+      padding: 28px;
     }
   }
 </style>

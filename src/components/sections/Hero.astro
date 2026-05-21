@@ -11,7 +11,7 @@ import Button from '../Button.astro';
           We produce the case studies you don't have time to create. Structured to rank on Google. Formatted to be cited by ChatGPT. Written to persuade the people who read them.
         </p>
         <div class="ctas">
-          <Button href="/#audit" variant="primary" class="hero-cta">Send us a case study to audit</Button>
+          <Button href="/#audit" variant="primary" class="hero-cta">Get your free audit</Button>
           <Button href="/#pricing" variant="secondary">See the offers</Button>
         </div>
       </div>
@@ -77,8 +77,13 @@ import Button from '../Button.astro';
   }
   .ctas {
     display: flex;
+    flex-direction: column;
     gap: 12px;
-    flex-wrap: wrap;
+  }
+  .ctas :global(.btn) {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
   }
   @media (max-width: 900px) {
     .hero {

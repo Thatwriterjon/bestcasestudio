@@ -10,23 +10,33 @@ interface Layer {
 const layers: Layer[] = [
   {
     num: '01',
-    title: 'The Atomic <em>Answer</em>.',
-    body: 'The first 120 words form a self-contained citation block: named customer, problem, solution, headline metric with date and attribution. The exact format AI engines extract when a buyer asks for examples in your category. Most case studies bury this. Ours opens with it.',
+    title: 'Atomic <em>Answer</em>.',
+    body: 'The first 120 words form a self-contained citation block: named customer, problem, solution, headline metric with date and attribution, followed by a key numbers block of 3–5 attributed metrics.',
   },
   {
     num: '02',
-    title: 'The Stakeholder <em>Narrative</em>.',
-    body: 'The story, organised around question-shaped H2s that match how buyers actually search. Built from named voices with credentials, not anonymous marketing prose.',
+    title: 'Stakeholder <em>Narrative</em>.',
+    body: 'The story, organised around question-shaped H2s that match how buyers actually search. Built from named customer-side voices with credentials, not anonymous marketing prose.',
   },
   {
     num: '03',
-    title: 'The Evidence <em>Layer</em>.',
-    body: 'Verifiable metrics, attributed to real people, with dates and context. The kind of proof that holds up to a sceptical buyer and a fact-checking AI.',
+    title: 'The <em>Evidence</em>.',
+    body: 'Verifiable metrics, attributed to named people, with baselines, dates, and measurement windows. The kind of proof that holds up to a sceptical buyer and a fact-checking AI.',
   },
   {
     num: '04',
-    title: 'The Structured Data <em>Layer</em>.',
-    body: 'JSON-LD schema describing the case study as an Article, the customer as an Organization, the result as a quantifiable Outcome. Alt text, semantic HTML, the infrastructure that tells search engines and AI crawlers exactly what they\'re reading.',
+    title: 'The Machine <em>Layer</em>.',
+    body: 'Schema, server rendering, crawlability, search optimisation. Compound JSON-LD linking Article + Organization (customer) + Organization (vendor) + Review. Open Graph tags, descriptive alt text, clean heading hierarchy. The infrastructure that tells AI engines and search engines exactly what they\'re reading.',
+  },
+  {
+    num: '05',
+    title: 'Voice &amp; <em>Writing</em>.',
+    body: 'Every line of agent-written prose is scanned for AI-tell language, filler tricolons, decorative em-dashes, and weak verbs. Direct quotes from named individuals are exempt. The case study reads like business journalism, not marketing copy.',
+  },
+  {
+    num: '06',
+    title: 'Asset <em>Depth</em>.',
+    body: 'The strongest case studies aren\'t dead-end pages. They have depth — a downloadable one-pager, a customer-led video, an ROI calculator link, and at least three internal links to related products or stories. We score what\'s behind the page, not just what\'s on it.',
   },
 ];
 ---
@@ -34,7 +44,7 @@ const layers: Layer[] = [
 <section id="methodology">
   <div class="wrap">
     <SectionHead title="What is a Citable <em>Case Study</em>?" />
-    <p class="lede">A B2B case study built for the three places it now has to work — Google, ChatGPT, and the buyer on the page. Every Citable Case Study has four structural layers.</p>
+    <p class="lede">A B2B case study built for the three places it now has to work — Google, ChatGPT, and the buyer on the page. Every Citable Case Study is scored across six dimensions.</p>
     <div class="layers">
       {layers.map((l) => (
         <div class="layer">
