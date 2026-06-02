@@ -1,0 +1,144 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import CloseCta from '../../components/sections/CloseCta.astro';
+import CaseStudyExample from '../../components/CaseStudyExample.astro';
+import { examples, typeLabel, type CaseStudyExample as CS } from '../../data/examples';
+
+export const getStaticPaths = (() => {
+  return examples.map((ex) => ({
+    params: { slug: ex.slug },
+    props: { ex },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  ex: CS;
+}
+
+const { ex } = Astro.props;
+const others = examples.filter((e) => e.slug !== ex.slug).sort((a, b) => a.order - b.order);
+---
+
+<Base
+  title={`${ex.title} · Example · Best Case Studio`}
+  description={`A worked example of the Citable method: how ${ex.client} tells the ${ex.customer} story. ${typeLabel(ex.type)} from existing content.`}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Examples', url: '/examples/' },
+    { name: ex.customer, url: `/examples/${ex.slug}/` },
+  ]}
+>
+  <section class="ex-page">
+    <div class="wrap-tight">
+      <a href="/examples/" class="back">← All examples</a>
+      <CaseStudyExample example={ex} eager />
+    </div>
+  </section>
+
+  {others.length > 0 && (
+    <section class="ex-more">
+      <div class="wrap">
+        <h2 class="more-kicker">More examples</h2>
+        <ul>
+          {others.map((o) => (
+            <li>
+              <a href={`/examples/${o.slug}/`}>
+                <span class="more-client">{o.tabLabel}</span>
+                <span class="more-title">{o.title}</span>
+                <span class="more-meta">{o.customer} · {typeLabel(o.type)}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <CloseCta />
+</Base>
+
+<style>
+  .ex-page {
+    padding: 140px 0 96px;
+  }
+  .back {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 48px;
+  }
+  .back:hover {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .ex-more {
+    padding: 80px 0;
+    border-top: 1px solid var(--rule);
+    background: var(--bg-2);
+  }
+  .more-kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin: 0 0 32px;
+  }
+  .ex-more ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .ex-more a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 28px;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    height: 100%;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .ex-more a:hover {
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+  .more-client {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .more-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .more-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: auto;
+  }
+  @media (max-width: 900px) {
+    .ex-page {
+      padding-top: 120px;
+    }
+  }
+</style>

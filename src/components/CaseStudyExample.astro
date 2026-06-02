@@ -1,0 +1,550 @@
+---
+import { typeLabel, type CaseStudyExample } from '../data/examples';
+
+interface Props {
+  example: CaseStudyExample;
+  /** When true the YouTube embed loads eagerly. Use for the visible panel. */
+  eager?: boolean;
+}
+
+const { example: ex, eager = false } = Astro.props;
+const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
+---
+
+<article class="cs">
+  {ex.logo && (
+    <div class="cs-brand">
+      <span class="cs-brand-label">Case study for</span>
+      <img
+        class="cs-brand-logo"
+        src={ex.logo.src}
+        width={ex.logo.width}
+        height={ex.logo.height}
+        alt={ex.logo.alt}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+    </div>
+  )}
+
+  <!-- Masthead: summary on the left, customer profile card on the right -->
+  <div class="cs-masthead">
+    <header class="cs-head">
+      <p class="cs-meta">
+        <span class="cs-badge" data-type={ex.type}>{typeLabel(ex.type)}</span>
+        <span class="cs-tags">{ex.industry} <span aria-hidden="true">·</span> {ex.region}</span>
+      </p>
+      <h2 class="cs-title">{ex.title}</h2>
+      <p class="cs-deck" set:html={ex.deck} />
+    </header>
+
+    <aside class="cs-aside">
+      <div class="cs-card">
+        {ex.customerLogo && (
+          <img
+            class="cs-card-logo"
+            src={ex.customerLogo.src}
+            width={ex.customerLogo.width}
+            height={ex.customerLogo.height}
+            alt={ex.customerLogo.alt}
+            loading={eager ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+        )}
+        <h3 class="cs-kicker">Customer profile</h3>
+        <dl>
+          {ex.profile.map((p) => (
+            <div>
+              <dt>{p.label}</dt>
+              <dd>{p.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Stats strip: featured headline metric + supporting numbers -->
+  <div class="cs-stats">
+    <div class="cs-stat is-featured">
+      <span class="cs-stat-v">{ex.hero.value}</span>
+      <span class="cs-stat-l">{ex.hero.label}</span>
+    </div>
+    {ex.metrics.map((m) => (
+      <div class="cs-stat">
+        <span class="cs-stat-v">{m.value}</span>
+        <span class="cs-stat-l">{m.label}</span>
+      </div>
+    ))}
+  </div>
+
+  {ex.video && (
+    <figure class="cs-video">
+      <div class="cs-video-frame">
+        <iframe
+          src={ex.video.embedUrl}
+          title={ex.video.label}
+          loading={eager ? 'eager' : 'lazy'}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <figcaption class="cs-kicker">{ex.video.label}</figcaption>
+    </figure>
+  )}
+
+  <!-- Body: question-shaped headings rail on the left, prose + quote on the right -->
+  <div class="cs-body">
+    {ex.sections.map((s) => (
+      <section class="cs-section">
+        <h3>{s.heading}</h3>
+        <div class="cs-prose">
+          {s.body?.map((p) => <p set:html={p} />)}
+          {s.quote && (
+            <blockquote class="cs-quote">
+              <p>{s.quote.text}</p>
+              {(s.quote.name || s.quote.role) && (
+                <footer>
+                  {s.quote.name && <span class="cs-quote-name">{s.quote.name}</span>}
+                  {s.quote.role && <span class="cs-quote-role">{s.quote.role}</span>}
+                </footer>
+              )}
+            </blockquote>
+          )}
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <section class="cs-cta">
+    <div class="cs-cta-head">
+      <h3>{ex.cta.heading}</h3>
+    </div>
+    <div class="cs-cta-body">
+      <p set:html={ex.cta.body} />
+      <ul class="cs-cta-links">
+        {ex.cta.links.map((l) => (
+          <li>
+            <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label} <span aria-hidden="true">→</span></a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <details class="cs-machine" open>
+    <summary>
+      <span class="cs-kicker">The machine layer</span>
+      <span class="cs-machine-hint">Structured data AI engines and search read — invisible to the reader, shipped in the page head.</span>
+    </summary>
+    <pre><code>{schemaJson}</code></pre>
+  </details>
+</article>
+
+<style>
+  .cs {
+    width: 100%;
+  }
+  .cs-kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin: 0 0 20px;
+  }
+
+  /* ---- Masthead ---- */
+  .cs-masthead {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(280px, 1fr);
+    gap: 72px;
+    align-items: start;
+  }
+  .cs-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 0 0 32px;
+  }
+  .cs-brand-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .cs-brand-logo {
+    height: 32px;
+    width: auto;
+    max-width: 240px;
+  }
+  .cs-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 0 0 28px;
+  }
+  .cs-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .cs-badge[data-type='build'] {
+    background: var(--pink);
+  }
+  .cs-tags {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .cs-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+  }
+  .cs-deck {
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+  .cs-deck :global(strong) {
+    font-weight: 600;
+  }
+  .cs-deck :global(a),
+  .cs-body :global(a),
+  .cs-cta :global(a) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--ink-faint);
+  }
+
+  /* Profile card — sits beside the summary */
+  .cs-aside {
+    position: sticky;
+    top: 96px;
+  }
+  .cs-card {
+    background: var(--bg-2);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 28px;
+  }
+  .cs-card-logo {
+    height: 26px;
+    width: auto;
+    max-width: 72%;
+    margin-bottom: 22px;
+  }
+  .cs-card dl {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-card dl > div {
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .cs-card dl > div:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+  .cs-card dt {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 3px;
+  }
+  .cs-card dd {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* ---- Stats strip ---- */
+  .cs-stats {
+    margin: 64px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .cs-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 22px;
+    min-height: 172px;
+    padding: 40px 22px;
+    border-right: 1px solid var(--rule);
+  }
+  .cs-stat:last-child {
+    border-right: none;
+  }
+  .cs-stat-v {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(30px, 3.2vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .cs-stat-l {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    max-width: 20ch;
+  }
+  .cs-stat.is-featured .cs-stat-v {
+    font-size: clamp(38px, 4.2vw, 54px);
+    line-height: 1.08;
+    box-shadow: inset 0 -0.16em 0 var(--yellow);
+    padding-bottom: 0.04em;
+  }
+
+  /* ---- Video ---- */
+  .cs-video {
+    margin: 0 0 8px;
+  }
+  .cs-video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--ink);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .cs-video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .cs-video figcaption {
+    margin: 16px 0 0;
+  }
+
+  /* ---- Body ---- */
+  .cs-body {
+    margin-top: 56px;
+    border-top: 1px solid var(--ink);
+  }
+  .cs-section {
+    display: grid;
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    gap: 56px;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cs-section h3 {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(24px, 2.5vw, 30px);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+  .cs-prose {
+    max-width: 660px;
+  }
+  .cs-prose p {
+    font-size: 19px;
+    line-height: 1.62;
+    margin: 0 0 18px;
+  }
+  .cs-prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---- Pull quote ---- */
+  .cs-quote {
+    margin: 28px 0 8px;
+    padding: 4px 0 4px 26px;
+    border-left: 3px solid var(--pink);
+  }
+  .cs-quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(21px, 2.4vw, 26px);
+    line-height: 1.34;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+  }
+  .cs-quote footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .cs-quote-name {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .cs-quote-role {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ---- CTA ---- */
+  .cs-cta {
+    margin-top: 72px;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 8px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+  }
+  .cs-cta h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(26px, 3.2vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0;
+    color: var(--bg);
+  }
+  .cs-cta p {
+    font-size: 18px;
+    line-height: 1.55;
+    color: #c8c3b6;
+    margin: 0 0 24px;
+  }
+  .cs-cta :global(a) {
+    text-decoration-color: rgba(246, 243, 236, 0.45);
+  }
+  .cs-cta-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+  }
+  .cs-cta-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--bg);
+    text-decoration: none !important;
+  }
+  .cs-cta-links a:hover {
+    color: var(--pink);
+  }
+
+  /* ---- Machine layer ---- */
+  .cs-machine {
+    margin-top: 24px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .cs-machine summary {
+    cursor: pointer;
+    padding: 22px 24px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: var(--bg);
+    transition: background 0.15s;
+  }
+  .cs-machine summary::-webkit-details-marker {
+    display: none;
+  }
+  .cs-machine summary:hover {
+    background: var(--bg-2);
+  }
+  .cs-machine summary .cs-kicker {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cs-machine summary .cs-kicker::after {
+    content: 'Show ↓';
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+  }
+  .cs-machine[open] summary .cs-kicker::after {
+    content: 'Hide ↑';
+  }
+  .cs-machine-hint {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-soft);
+    max-width: 64ch;
+  }
+  .cs-machine pre {
+    margin: 0;
+    padding: 24px;
+    background: var(--ink);
+    color: #d8d3c6;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.6;
+    overflow-x: auto;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 920px) {
+    .cs-masthead {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .cs-aside {
+      position: static;
+    }
+    .cs-deck {
+      max-width: none;
+    }
+    .cs-section {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .cs-section h3 {
+      position: static;
+    }
+    .cs-cta {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 32px;
+    }
+  }
+  @media (max-width: 560px) {
+    .cs-stat {
+      padding-right: 20px;
+    }
+  }
+</style>
