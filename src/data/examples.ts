@@ -76,6 +76,23 @@ export interface CaseStudyExample {
   video?: { embedUrl: string; label: string };
   sections: Section[];
   cta: { heading: string; body: string; links: CtaLink[] };
+  /** Search metadata produced for the published case study. Shown in the machine-layer panel. */
+  seo: {
+    title: string;
+    metaDescription: string;
+    targetQuery: string;
+    slug: string;
+    imageAlt: string;
+    /** Display domain for the search-result preview, e.g. "www.measurable.energy". */
+    domain: string;
+  };
+  /** Open Graph tags. Shown in the machine-layer panel. */
+  openGraph: {
+    title: string;
+    description: string;
+    type: string;
+    locale: string;
+  };
   jsonLd: Record<string, unknown>;
 }
 
@@ -207,6 +224,23 @@ export const examples: CaseStudyExample[] = [
         { label: 'Calculate your potential savings', href: 'https://www.measurable.energy/roi-calculator' },
         { label: 'Get in touch with the team', href: 'https://www.measurable.energy/talk-to-sales' },
       ],
+    },
+    seo: {
+      title: 'How St Peters Cut Energy Waste by 40% | Measurable Energy',
+      metaDescription:
+        "St Peters School cut energy waste by up to 40% with Measurable Energy's AI-powered smart sockets, saving £7,000–£8,000 a year. Read the case study.",
+      targetQuery: 'St Peters school energy savings case study',
+      slug: '/st-peters-school-energy-savings-case-study',
+      imageAlt:
+        'Iain Gunn, Head Teacher of St Peters Primary School, in a classroom where AI-powered smart sockets have cut energy waste by up to 40%',
+      domain: 'www.measurable.energy',
+    },
+    openGraph: {
+      title: 'How St Peters School Cut Energy Waste by 40%',
+      description:
+        'St Peters School saves £7,000–£8,000/year in energy costs with AI-powered smart sockets from Measurable Energy. 25–40% reduction across three pilot schools.',
+      type: 'article',
+      locale: 'en_GB',
     },
     jsonLd: {
       '@context': 'https://schema.org',
@@ -350,6 +384,23 @@ export const examples: CaseStudyExample[] = [
       heading: 'Spending too long on multi-state sales tax?',
       body: `Stealth Fitness offloaded compliance across all 50 states to a dedicated team — at a fraction of the cost of doing it in-house. If sales tax is eating your time, TaxValet can take it off your plate.`,
       links: [{ label: 'Talk to TaxValet', href: 'https://thetaxvalet.com/' }],
+    },
+    seo: {
+      title: 'How Stealth Fitness Offloaded Sales Tax | TaxValet',
+      metaDescription:
+        "Stealth Fitness replaced TaxJar with TaxValet's managed sales tax service across 50 states at a fraction of in-house cost. Read the full case study.",
+      targetQuery: 'Stealth Fitness sales tax compliance case study',
+      slug: '/stealth-fitness-sales-tax-compliance-case-study',
+      imageAlt:
+        'David Augustine, Co-founder and CEO of Stealth Fitness, discusses switching from TaxJar to TaxValet for 50-state sales tax compliance',
+      domain: 'thetaxvalet.com',
+    },
+    openGraph: {
+      title: 'How Stealth Fitness Offloaded Sales Tax | TaxValet',
+      description:
+        "Stealth Fitness replaced TaxJar with TaxValet's managed sales tax service across 50 states at a fraction of in-house cost. Read the full case study.",
+      type: 'article',
+      locale: 'en_US',
     },
     jsonLd: {
       '@context': 'https://schema.org',

@@ -133,13 +133,47 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     </div>
   </section>
 
-  <details class="cs-machine" open>
-    <summary>
-      <span class="cs-kicker">The machine layer</span>
-      <span class="cs-machine-hint">Structured data AI engines and search read — invisible to the reader, shipped in the page head.</span>
-    </summary>
-    <pre><code>{schemaJson}</code></pre>
-  </details>
+  <section class="cs-machine">
+    <header class="cs-machine-head">
+      <span class="cs-machine-eyebrow">Behind the page</span>
+      <h3 class="cs-machine-title">The Machine Layer</h3>
+      <p class="cs-machine-hint">
+        The invisible optimisation every Citable case study ships with — what search engines and
+        AI read, even though the reader never sees it.
+      </p>
+    </header>
+
+    <div class="cs-machine-grid">
+      <div class="cs-machine-block">
+        <h4 class="cs-machine-label">Search metadata</h4>
+        <div class="cs-serp" aria-hidden="true">
+          <span class="cs-serp-url">{ex.seo.domain}{ex.seo.slug}</span>
+          <span class="cs-serp-title">{ex.seo.title}</span>
+          <span class="cs-serp-desc">{ex.seo.metaDescription}</span>
+        </div>
+        <dl class="cs-tags-dl">
+          <div><dt>Target query</dt><dd>{ex.seo.targetQuery}</dd></div>
+          <div><dt>URL slug</dt><dd><code>{ex.seo.slug}</code></dd></div>
+          <div><dt>Hero image alt text</dt><dd>{ex.seo.imageAlt}</dd></div>
+        </dl>
+      </div>
+
+      <div class="cs-machine-block">
+        <h4 class="cs-machine-label">Open Graph</h4>
+        <dl class="cs-tags-dl">
+          <div><dt>og:title</dt><dd>{ex.openGraph.title}</dd></div>
+          <div><dt>og:description</dt><dd>{ex.openGraph.description}</dd></div>
+          <div><dt>og:type</dt><dd><code>{ex.openGraph.type}</code></dd></div>
+          <div><dt>og:locale</dt><dd><code>{ex.openGraph.locale}</code></dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="cs-machine-block">
+      <h4 class="cs-machine-label">Structured data — JSON-LD</h4>
+      <pre><code>{schemaJson}</code></pre>
+    </div>
+  </section>
 </article>
 
 <style>
@@ -292,11 +326,11 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
-    gap: 22px;
+    gap: 14px;
     min-height: 172px;
-    padding: 40px 22px;
+    padding: 36px 22px;
     border-right: 1px solid var(--rule);
   }
   .cs-stat:last-child {
@@ -463,48 +497,125 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
 
   /* ---- Machine layer ---- */
   .cs-machine {
-    margin-top: 24px;
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-    overflow: hidden;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--ink);
   }
-  .cs-machine summary {
-    cursor: pointer;
-    padding: 22px 24px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    background: var(--bg);
-    transition: background 0.15s;
+  .cs-machine-head {
+    margin-bottom: 36px;
   }
-  .cs-machine summary::-webkit-details-marker {
-    display: none;
-  }
-  .cs-machine summary:hover {
-    background: var(--bg-2);
-  }
-  .cs-machine summary .cs-kicker {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .cs-machine summary .cs-kicker::after {
-    content: 'Show ↓';
+  .cs-machine-eyebrow {
     font-family: var(--mono);
-    font-size: 10px;
-    color: var(--ink-faint);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 14px;
   }
-  .cs-machine[open] summary .cs-kicker::after {
-    content: 'Hide ↑';
+  .cs-machine-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(32px, 3.8vw, 48px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
   }
   .cs-machine-hint {
-    font-size: 14px;
+    font-size: 17px;
     font-style: italic;
     color: var(--ink-soft);
-    max-width: 64ch;
+    max-width: 58ch;
+    margin: 0;
   }
+  .cs-machine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 32px;
+  }
+  .cs-machine-block {
+    min-width: 0;
+  }
+  .cs-machine-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 500;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Search-result preview */
+  .cs-serp {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+  }
+  .cs-serp-url {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    word-break: break-word;
+  }
+  .cs-serp-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.2;
+    color: #1a4ed8;
+    letter-spacing: -0.01em;
+  }
+  .cs-serp-desc {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+
+  /* Tag tables (SEO + Open Graph) */
+  .cs-tags-dl {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-tags-dl > div {
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .cs-tags-dl > div:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  .cs-tags-dl dt {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+  .cs-tags-dl dd {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .cs-tags-dl code {
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--bg-2);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  /* JSON-LD code */
   .cs-machine pre {
     margin: 0;
     padding: 24px;
@@ -513,8 +624,9 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     font-family: var(--mono);
     font-size: 12.5px;
     line-height: 1.6;
-    overflow-x: auto;
-    border-top: 1px solid var(--rule);
+    max-height: 420px;
+    overflow: auto;
+    border-radius: 8px;
   }
 
   /* ---- Responsive ---- */
@@ -535,6 +647,10 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     }
     .cs-section h3 {
       position: static;
+    }
+    .cs-machine-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
     }
     .cs-cta {
       grid-template-columns: 1fr;
