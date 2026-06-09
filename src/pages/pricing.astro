@@ -1,8 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
-import Pricing from '../components/sections/Pricing.astro';
+import Button from '../components/Button.astro';
 import Faq from '../components/sections/Faq.astro';
 import CloseCta from '../components/sections/CloseCta.astro';
+
+const buildIncluded = [
+  '30-minute customer interview (scheduled and run by Jon)',
+  'Full Citable Case Study written to the four-layer methodology',
+  'Companion video edit from the interview footage',
+  'Delivered as clean markdown, ready to publish',
+  '14 business days from interview to first draft',
+  'One consolidated round of revisions',
+];
+
+const optimiseIncluded = [
+  'Full 4-layer Citable rewrite (Atomic Answer, Stakeholder Narrative, Evidence, Machine Layer)',
+  'JSON-LD structured data (Article, Organization, Review)',
+  'Question-shaped H2s, named stakeholders, dated metrics',
+  'AI-tone enforcement — every line passes the Citable voice check',
+  '14-day turnaround',
+];
 
 const offerSchema = {
   '@type': 'ProfessionalService',
@@ -13,7 +30,7 @@ const offerSchema = {
   areaServed: 'Worldwide',
   url: 'https://bestcasestud.io/pricing/',
   description:
-    'Productised case study services for B2B SaaS: Optimise an existing case study ($997) or Build a new case study from scratch ($2,997). Founding Customer pricing in effect.',
+    'Full Citable Case Study build ($1,250 Founding 10 pricing). Optimise an existing case study ($500). 14-day turnaround.',
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5',
@@ -23,17 +40,17 @@ const offerSchema = {
   offers: [
     {
       '@type': 'Offer',
-      name: 'Optimise an existing case study',
-      price: '997',
+      name: 'Founding 10 — Full Citable Case Study',
+      price: '1250',
       priceCurrency: 'USD',
       url: 'https://bestcasestud.io/pricing/',
-      availability: 'https://schema.org/InStock',
+      availability: 'https://schema.org/LimitedAvailability',
       category: 'Marketing services',
     },
     {
       '@type': 'Offer',
-      name: 'Build a new case study from scratch',
-      price: '2997',
+      name: 'Optimise an existing case study',
+      price: '500',
       priceCurrency: 'USD',
       url: 'https://bestcasestud.io/pricing/',
       availability: 'https://schema.org/InStock',
@@ -44,8 +61,8 @@ const offerSchema = {
 ---
 
 <Base
-  title="Case study pricing · $997 and $2,997 · Best Case Studio"
-  description="Productised case study services for B2B SaaS. Optimise ($997) or Build ($2,997). Founding Customer pricing — first 10 clients only. 14-day turnaround."
+  title="Pricing · Founding 10 from $1,250 · Best Case Studio"
+  description="Full Citable Case Study build from $1,250 (Founding 10). Optimise an existing case study from $500. 14-day turnaround."
   schema={[offerSchema]}
   breadcrumbs={[
     { name: 'Home', url: '/' },
@@ -56,38 +73,80 @@ const offerSchema = {
     <div class="wrap">
       <p class="eyebrow mono">Pricing</p>
       <h1>
-        Pricing built for <em>B2B SaaS post-PMF</em>.
+        One offer. <em>Two ways in.</em>
       </h1>
       <p class="lede">
-        Founding Customer pricing in effect. Locked for the first 10 clients.
+        A full Citable Case Study — interview, written case study, companion video — delivered in 14 business days.
       </p>
-      <dl class="quickfacts">
-        <div>
-          <dt>Optimise</dt>
-          <dd>$997 USD per case study</dd>
-        </div>
-        <div>
-          <dt>Build</dt>
-          <dd>$2,997 USD per case study</dd>
-        </div>
-        <div>
-          <dt>Turnaround</dt>
-          <dd>14 business days</dd>
-        </div>
-        <div>
-          <dt>Who it's for</dt>
-          <dd>B2B SaaS companies, any geography</dd>
-        </div>
-      </dl>
     </div>
   </section>
 
-  <Pricing />
+  <section class="pricing-offers">
+    <div class="wrap">
+      <div class="pricing-grid">
+
+        <!-- Founding 10: Build (primary) -->
+        <div class="pricing-card featured">
+          <div class="pricing-inner">
+            <span class="card-eyebrow"><span class="pip" aria-hidden="true"></span>Founding 10</span>
+            <h2><em>Full Citable Case Study</em> build.</h2>
+            <p class="price-lede">10 slots only. Closes end of June or when slots are gone — whichever comes first. Never extended.</p>
+            <div class="price-spacer"></div>
+            <div class="price-row">
+              <span class="price-struck">$2,500</span>
+              <span class="price">$1,250</span>
+            </div>
+            <div class="included">
+              <h3>What's included</h3>
+              <ul>
+                {buildIncluded.map((item: string) => (
+                  <li><span>{item}</span></li>
+                ))}
+              </ul>
+            </div>
+            <p class="trade-note">The trade: a testimonial and permission to document the project publicly.</p>
+            <Button href="[STRIPE LINK]" variant="primary">Lock a slot — $625 deposit</Button>
+            <p class="slot-warning">Once the 10 slots are gone, price goes to $2,500 permanently. No exceptions, no extensions.</p>
+          </div>
+        </div>
+
+        <!-- Optimise (secondary) -->
+        <div class="pricing-card">
+          <div class="pricing-inner">
+            <span class="card-eyebrow"><span class="pip" aria-hidden="true"></span>Optimise</span>
+            <h2><em>Optimise</em> an existing case study.</h2>
+            <p class="price-lede">Take a case study you already have and make it the one AI cites.</p>
+            <div class="price-spacer"></div>
+            <div class="price-row">
+              <span class="price-struck">$1,500</span>
+              <span class="price">$500</span>
+            </div>
+            <div class="included">
+              <h3>What's included</h3>
+              <ul>
+                {optimiseIncluded.map((item: string) => (
+                  <li><span>{item}</span></li>
+                ))}
+              </ul>
+            </div>
+            <Button href="[STRIPE LINK]" variant="primary">Start with Optimise</Button>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="bottom-note">
+        Questions? <a href="/contact/">Get in touch</a>.
+      </p>
+    </div>
+  </section>
+
   <Faq />
   <CloseCta />
 </Base>
 
 <style>
+  /* Intro */
   .pricing-intro {
     background: var(--bg);
     padding: 180px 0 80px;
@@ -113,43 +172,206 @@ const offerSchema = {
     font-size: 22px;
     line-height: 1.45;
     max-width: 64ch;
-    margin: 0 0 56px;
-  }
-  .quickfacts {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    border-top: 1px solid var(--ink);
-    padding-top: 32px;
     margin: 0;
   }
-  .quickfacts > div {
+
+  /* Offers section */
+  .pricing-offers {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 120px 0;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .pricing-card {
+    background: var(--bg);
+    color: var(--ink);
+  }
+  .pricing-card.featured {
+    border: 2px solid var(--pink);
+  }
+  .pricing-inner {
+    padding: 48px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 20px;
   }
-  .quickfacts dt {
+
+  .card-eyebrow {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-soft);
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
   }
-  .quickfacts dd {
+  .card-eyebrow .pip {
+    width: 8px;
+    height: 8px;
+    background: var(--pink);
+    display: inline-block;
+  }
+
+  .pricing-card h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
     margin: 0;
+    max-width: 18ch;
+    color: var(--ink);
+  }
+  .featured h2 {
+    font-size: clamp(36px, 4vw, 48px);
+  }
+  .pricing-card h2 :global(em) {
+    font-style: italic;
+  }
+
+  .price-lede {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.45;
+    margin: 0;
+    max-width: 40ch;
+  }
+  .price-spacer {
+    flex: 1;
+    min-height: 8px;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .price-struck {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(28px, 3.5vw, 44px);
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+    font-style: italic;
+    color: var(--ink-soft);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+  }
+  .price {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(60px, 7.5vw, 96px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    font-style: italic;
+    background: var(--yellow);
+    padding: 0 0.14em 0.04em;
+    display: inline-block;
+    color: var(--ink);
+  }
+
+  .included h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin: 0 0 16px;
+  }
+  .included ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    counter-reset: price-item;
+  }
+  .included li {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.45;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .included li:last-child {
+    border-bottom: none;
+  }
+  .included li::before {
+    counter-increment: price-item;
+    content: counter(price-item, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .trade-note {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .pricing-inner :global(.btn) {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+
+  .slot-warning {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .bottom-note {
+    margin-top: 64px;
     font-family: var(--serif);
     font-size: 17px;
-    line-height: 1.4;
+    color: #cfcabd;
+    text-align: center;
   }
-  @media (max-width: 800px) {
-    .quickfacts {
-      grid-template-columns: 1fr 1fr;
-    }
+  .bottom-note a {
+    color: var(--bg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
   }
-  @media (max-width: 500px) {
-    .quickfacts {
+  .bottom-note a:hover {
+    color: var(--pink);
+  }
+
+  @media (max-width: 900px) {
+    .pricing-grid {
       grid-template-columns: 1fr;
+    }
+    .pricing-inner {
+      padding: 36px;
+    }
+    .price {
+      font-size: clamp(52px, 12vw, 80px);
     }
   }
 </style>
