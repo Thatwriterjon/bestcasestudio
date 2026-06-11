@@ -44,6 +44,30 @@ const buildIncluded = [
     </div>
 
     <div class="pricing-grid">
+      <!-- Build (featured) -->
+      <div class="pricing-card featured">
+        <div class="pricing-inner">
+          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Build</span>
+          <h3><em>Build</em> a new case study from scratch.</h3>
+          <p class="price-lede">A new case study, engineered for citation, in 14 days.</p>
+          <div class="price-spacer"></div>
+          <div class="price-row">
+            <span class="price-struck">$2,500</span>
+            <span class="price">$1,250</span>
+          </div>
+          <span class="founding-badge">Founding Customer pricing — first 10 only</span>
+          <div class="included">
+            <h4>What's included</h4>
+            <ul>
+              {buildIncluded.map((item) => (
+                <li><span>{item}</span></li>
+              ))}
+            </ul>
+          </div>
+          <Button href="https://buy.stripe.com/9B66oHeyy5LzdIu7on0VO00" variant="primary">Commission a Build</Button>
+        </div>
+      </div>
+
       <!-- Optimise -->
       <div class="pricing-card">
         <div class="pricing-inner">
@@ -65,30 +89,6 @@ const buildIncluded = [
             </ul>
           </div>
           <Button href="https://buy.stripe.com/9B66oHeyy5LzdIu7on0VO00" variant="primary">Start with Optimise</Button>
-        </div>
-      </div>
-
-      <!-- Tier 2: Build (featured) -->
-      <div class="pricing-card featured">
-        <div class="pricing-inner">
-          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Build</span>
-          <h3><em>Build</em> a new case study from scratch.</h3>
-          <p class="price-lede">A new case study, engineered for citation, in 14 days.</p>
-          <div class="price-spacer"></div>
-          <div class="price-row">
-            <span class="price-struck">$5,000</span>
-            <span class="price">$1,250</span>
-          </div>
-          <span class="founding-badge">Founding Customer pricing — first 10 only</span>
-          <div class="included">
-            <h4>What's included</h4>
-            <ul>
-              {buildIncluded.map((item) => (
-                <li><span>{item}</span></li>
-              ))}
-            </ul>
-          </div>
-          <Button href="https://buy.stripe.com/9B66oHeyy5LzdIu7on0VO00" variant="primary">Commission a Build</Button>
         </div>
       </div>
 
