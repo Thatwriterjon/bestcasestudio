@@ -99,7 +99,7 @@ export interface CaseStudyExample {
 export const examples: CaseStudyExample[] = [
   {
     slug: 'measurable-energy-st-peters-school',
-    order: 1,
+    order: 2,
     type: 'optimise',
     client: 'Measurable Energy',
     customer: 'St Peters Primary School',
@@ -291,7 +291,7 @@ export const examples: CaseStudyExample[] = [
   },
   {
     slug: 'taxvalet-stealth-fitness',
-    order: 2,
+    order: 3,
     type: 'optimise',
     client: 'TaxValet',
     customer: 'Stealth Fitness',
@@ -445,6 +445,172 @@ export const examples: CaseStudyExample[] = [
             { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://thetaxvalet.com/' },
             { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://thetaxvalet.com/case-studies' },
             { '@type': 'ListItem', position: 3, name: 'How Stealth Fitness offloaded 50-state sales tax compliance to TaxValet' },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    slug: 'extrovert-commit-linkedin-growth',
+    order: 1,
+    type: 'build',
+    client: 'Extrovert',
+    customer: 'COMMIT',
+    tabLabel: 'Extrovert',
+    industry: 'AI-powered LinkedIn engagement',
+    region: 'EMEA',
+    title:
+      'How Mila added 4,000+ LinkedIn connections in 2.5 years with Extrovert',
+    deck: `Mila Tsirelman sells technology services for <a href="https://www.comm-it.com/" target="_blank" rel="noopener noreferrer">COMMIT</a>, a firm with 1,200+ enterprise clients across AI, cloud, and cybersecurity. After adopting <a href="https://www.goextrovert.com/" target="_blank" rel="noopener noreferrer">Extrovert</a>'s AI-powered engagement platform, she grew her personal network from roughly 5,000 to over <strong>9,000 connections in 2.5 years</strong>, with the majority of new connections driven by <strong>10–15 inbound requests daily</strong> from target-audience prospects who discovered her through AI-assisted comments. Her team adopted the platform 1.5 years into her own use. She now runs two Extrovert accounts daily, crediting the tool with shortening her sales cycles by converting cold outreach into warm inbound conversations.`,
+    hero: { value: '4,000+', label: 'new LinkedIn connections in 2.5 years' },
+    metrics: [
+      { value: '2.5 yrs', label: 'sustained daily usage' },
+      { value: '10–15', label: 'inbound connection requests daily' },
+      { value: '22%', label: 'acceptance rate on 2,480 outbound requests' },
+    ],
+    profile: [
+      { label: 'Organisation', value: 'COMMIT' },
+      { label: 'Sector', value: 'Technology services (software, AI/ML, cloud, cybersecurity)' },
+      { label: 'Size', value: '1,200+ enterprise clients' },
+      { label: 'Engagement', value: 'Daily use for 2.5 years (Mila), 1.5 years (team)' },
+    ],
+    logo: {
+      src: '/examples/extrovert.svg',
+      alt: 'Extrovert',
+      width: 174,
+      height: 40,
+    },
+    customerLogo: {
+      src: '/examples/commit.png',
+      alt: 'COMMIT',
+      width: 142,
+      height: 37,
+    },
+    video: { embedUrl: 'https://www.youtube.com/embed/Wrt-DYzDfkY', label: 'Watch the video case study' },
+    sections: [
+      {
+        heading: "Why wasn't LinkedIn working for Mila before Extrovert?",
+        body: [
+          `Mila Tsirelman manages business development across EMEA for <a href="https://www.comm-it.com/" target="_blank" rel="noopener noreferrer">COMMIT</a>, a technology services firm that builds software, AI/ML solutions, cloud infrastructure, and cybersecurity products for more than 1,200 enterprise clients. Her job is finding and closing new business. LinkedIn? Before Extrovert, she barely used it.`,
+          `COMMIT's clients span software development, team augmentation, and cybersecurity across multiple continents. Mila had built a network of roughly 4,500–5,000 connections over years of conferences and direct outreach — but she couldn't keep up with what those contacts were actually posting. Eight to ten meetings a day left no room for scrolling LinkedIn, let alone writing thoughtful comments on other people's posts.`,
+        ],
+        quote: {
+          text: `Before Extrovert, I was not relying much on LinkedIn as a tool. Now I recognize the power of it because with Extrovert, I first of all, discover the power of it.`,
+          name: 'Mila Tsirelman',
+          role: 'Sales and Business Development Manager EMEA, COMMIT',
+        },
+      },
+      {
+        heading: 'What changed in the first three months?',
+        body: [
+          `Mila started using Extrovert 2.5 years ago, initially on her own before her team joined 1.5 years later. The early weeks weren't easy. The biggest pitfall was targeting — LinkedIn's most active commenters tend to be students and early-career professionals, not the enterprise buyers she was after. She refined her playbook three to four times before the tool started surfacing the right people consistently.`,
+          `"It is not small. I would say it's a quarter of a year," Mila says of the learning curve. It paid off. Once her playbooks were dialled in, Extrovert's AI-powered commenting put Mila's name in front of relevant prospects — without her having to type every word. She still reviews and approves each comment before it goes out.`,
+        ],
+        quote: {
+          text: `It is me on steroids.`,
+          name: 'Mila Tsirelman',
+          role: 'Sales and Business Development Manager EMEA, COMMIT',
+        },
+      },
+      {
+        heading: 'How does Extrovert surface prospects Mila would never have found?',
+        body: [
+          `Ask Mila what she values most about Extrovert and she won't say the AI commenting. It's the content discovery underneath. The platform surfaces posts from people she has no connection with, matched by topic rather than who she already knows.`,
+          `"It helps me to find the posts relevant to me from other users whom I'm not familiar with," she explains. "I would never come across" those posts without the tool. The users in question are often based in geographies she would never cover through conferences alone: Singapore, South Africa, Canada, the United States.`,
+          `There's a CRM angle too. When Mila opens a DM thread, Extrovert shows her bullet-point summaries of past interactions and what that contact has posted recently. With 8–10 meetings a day, she'd otherwise lose track.`,
+        ],
+        quote: {
+          text: `They are looking for me, but I would never find them if I didn't use Extrovert.`,
+          name: 'Mila Tsirelman',
+          role: 'Sales and Business Development Manager EMEA, COMMIT',
+        },
+      },
+      {
+        heading: 'What results has Mila seen after 2.5 years?',
+        body: [
+          `Two and a half years in, running two Extrovert accounts daily, the numbers speak for themselves. "I get about, I would say, 10 to 15 connection requests daily from my target audience," Mila reports. These aren't people she reached out to first. They found her through Extrovert-powered comments on posts in her niche.`,
+          `Her outbound acceptance rate is 22% on 2,480 requests sent — decent, but that's not where the real leverage is. Her team came on board 1.5 years after she did. She now runs two Extrovert accounts to cover more ground.`,
+        ],
+        quote: {
+          text: `The walk-in customer is far more powerful. The sales cycle is way shorter as opposed to outreaching outbound sales.`,
+          name: 'Mila Tsirelman',
+          role: 'Sales and Business Development Manager EMEA, COMMIT',
+        },
+      },
+      {
+        heading: "Mila's advice: try first, then decide",
+        body: [
+          `Mila doesn't hedge when asked if she'd recommend Extrovert: "Try first and then decide whether you want or you don't want the tool. Before you try, you never understand."`,
+          `She tells her own customers she uses it. No secret. If you try the platform and don't see results right away, she'd tell you the same thing she learned herself — stick with it and keep tweaking the playbooks. She went through three to four rounds of targeting adjustments before things clicked.`,
+        ],
+        quote: {
+          text: `This AI is 100% human managed. There is a human in the middle because you tell the AI where to go, why to go, what to seek, what to speak.`,
+          name: 'Mila Tsirelman',
+          role: 'Sales and Business Development Manager EMEA, COMMIT',
+        },
+      },
+    ],
+    cta: {
+      heading: 'Want to turn LinkedIn into a warm inbound channel?',
+      body: `Mila grew her network by 4,000+ connections and now receives 10–15 inbound requests daily from her target audience. If you're spending hours on manual LinkedIn outreach, Extrovert can help you scale it.`,
+      links: [
+        { label: 'Try Extrovert', href: 'https://www.goextrovert.com/' },
+      ],
+    },
+    seo: {
+      title: 'How Mila Added 4,000+ LinkedIn Connections | Extrovert',
+      metaDescription:
+        'Mila Tsirelman added 4,000+ LinkedIn connections in 2.5 years using Extrovert, with 10–15 inbound requests daily from her target audience. Read the full case study.',
+      targetQuery: 'Extrovert LinkedIn growth case study',
+      slug: '/mila-tsirelman-linkedin-growth-extrovert-case-study',
+      imageAlt:
+        'Mila Tsirelman, Sales and Business Development Manager at COMMIT, who added 4,000+ LinkedIn connections using Extrovert\'s AI-powered engagement platform',
+      domain: 'www.goextrovert.com',
+    },
+    openGraph: {
+      title: 'How Mila Added 4,000+ LinkedIn Connections | Extrovert',
+      description:
+        'Mila Tsirelman grew her LinkedIn network by 4,000+ connections in 2.5 years with Extrovert. 10–15 inbound requests daily from target prospects.',
+      type: 'article',
+      locale: 'en_US',
+    },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Article',
+          headline:
+            'How Mila added 4,000+ LinkedIn connections in 2.5 years with Extrovert',
+          datePublished: '2026-06-22',
+          dateModified: '2026-06-22',
+          author: { '@type': 'Organization', name: 'Extrovert' },
+          publisher: { '@type': 'Organization', name: 'Extrovert' },
+        },
+        {
+          '@type': 'Review',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          author: {
+            '@type': 'Person',
+            name: 'Mila Tsirelman',
+            jobTitle: 'Sales and Business Development Manager, EMEA',
+            worksFor: { '@type': 'Organization', name: 'COMMIT' },
+          },
+          reviewBody:
+            'I grew my network of contacts on LinkedIn from four, five thousand roughly up to nine plus thousand throughout these two and a half years.',
+        },
+        { '@type': 'Organization', name: 'Extrovert', url: 'https://www.goextrovert.com/' },
+        { '@type': 'Organization', name: 'COMMIT', url: 'https://www.comm-it.com/' },
+        {
+          '@type': 'Service',
+          name: 'AI-powered LinkedIn engagement platform',
+          provider: { '@type': 'Organization', name: 'Extrovert' },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goextrovert.com/' },
+            { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://www.goextrovert.com/case-studies' },
+            { '@type': 'ListItem', position: 3, name: 'How Mila added 4,000+ LinkedIn connections in 2.5 years with Extrovert' },
           ],
         },
       ],
