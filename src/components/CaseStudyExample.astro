@@ -66,7 +66,7 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
 
   <!-- Stats strip: featured headline metric + supporting numbers -->
   <div class="cs-stats">
-    <div class="cs-stat is-featured">
+    <div class={`cs-stat is-featured${ex.hero.value.length > 10 ? ' is-long' : ''}`}>
       <span class="cs-stat-v">{ex.hero.value}</span>
       <span class="cs-stat-l">{ex.hero.label}</span>
     </div>
@@ -212,9 +212,9 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     color: var(--ink-faint);
   }
   .cs-brand-logo {
-    height: 32px;
+    height: 38px;
     width: auto;
-    max-width: 240px;
+    max-width: 280px;
   }
   .cs-meta {
     display: flex;
@@ -282,7 +282,7 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     padding: 28px;
   }
   .cs-card-logo {
-    height: 26px;
+    height: 38px;
     width: auto;
     max-width: 72%;
     margin-bottom: 22px;
@@ -354,6 +354,9 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     line-height: 1.08;
     box-shadow: inset 0 -0.16em 0 var(--yellow);
     padding-bottom: 0.04em;
+  }
+  .cs-stat.is-featured.is-long .cs-stat-v {
+    font-size: clamp(30px, 3.2vw, 42px);
   }
 
   /* ---- Video ---- */
