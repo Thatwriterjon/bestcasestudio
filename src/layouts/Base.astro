@@ -25,6 +25,8 @@ interface Props {
   /** When set, a BreadcrumbList JSON-LD node is emitted. Pass the trail from root to current
    * page; the current page itself is the last item. Omit on the home page. */
   breadcrumbs?: BreadcrumbItem[];
+  /** Open Graph type. Defaults to 'website'; pass 'article' for case-study/example pages. */
+  ogType?: string;
   /** Optional Twitter-specific overrides. When omitted, falls back to title/description. */
   twitterTitle?: string;
   twitterDescription?: string;
@@ -37,6 +39,7 @@ const {
   noindex = false,
   schema = [],
   breadcrumbs,
+  ogType = 'website',
   twitterTitle,
   twitterDescription,
 } = Astro.props;
@@ -63,6 +66,8 @@ const organization = {
         'https://jonmcgreevy.com',
         'https://www.linkedin.com/in/jonmcgreevy/',
         'https://jonmcgreevy.substack.com',
+        'https://open.spotify.com/show/6mH42FJY0OA3CNiMAIj4cN',
+        'https://podcasts.apple.com/us/podcast/saasy-as-f-k-podcast/id1573388272',
       ],
     },
     {
@@ -85,6 +90,7 @@ const organization = {
   sameAs: [
     'https://www.linkedin.com/in/jonmcgreevy/',
     'https://jonmcgreevy.substack.com',
+    'https://www.youtube.com/@thebestcasestudio',
   ],
 };
 
@@ -117,7 +123,7 @@ const twDescription = twitterDescription ?? description;
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />

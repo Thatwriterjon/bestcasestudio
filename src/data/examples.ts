@@ -63,6 +63,9 @@ export interface CaseStudyExample {
   region: string;
   /** Headline. */
   title: string;
+  /** Best Case Studio-facing meta description for the portfolio example page. Distinct from
+   *  seo.metaDescription, which demonstrates the client's own published meta tag. */
+  pageDescription: string;
   /** One-paragraph summary. Inline HTML allowed. */
   deck: string;
   /** The single biggest number, rendered oversized. */
@@ -104,10 +107,12 @@ export const examples: CaseStudyExample[] = [
     client: 'Measurable Energy',
     customer: 'St Peters Primary School',
     tabLabel: 'Measurable Energy',
+    pageDescription:
+      "How Measurable Energy's AI smart sockets cut St Peters School's energy bills by £7,000–£8,000 a year. A Citable Case Study example, built to rank on Google and get cited by AI.",
     industry: 'Clean energy tech',
     region: 'United Kingdom',
     title:
-      'How St Peters School cut energy waste by up to 40% with AI-powered smart sockets',
+      'How St Peters School cut its energy bills by £7,000–£8,000 a year with AI-powered smart sockets',
     deck: `St Peters Primary School in South Weald was wasting energy daily despite a serious investment in renewable infrastructure — 120 solar panels and heat pumps for the swimming pool — because computers, screens, and water heaters were routinely left running overnight and at weekends. After joining a three-school pilot of <a href="https://www.measurable.energy/" target="_blank" rel="noopener noreferrer">Measurable Energy</a>'s AI-powered smart sockets, St Peters now saves an estimated <strong>£7,000–£8,000 a year</strong> in electricity costs, with payback expected inside two years. Savings across the pilot ranged from <strong>25% to 40%</strong>. Staff and pupils noticed no disruption — and the Diocese of Chelmsford is now rolling the technology out to <strong>35 more schools</strong>.`,
     hero: { value: 'Up to 40%', label: 'less energy wasted across the pilot schools' },
     metrics: [
@@ -167,7 +172,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `What I particularly like about them is how easy they are to use. If you've got a double plug, you can have one constantly on and then one on a timer so that each of the separate plug sockets can be controlled completely independently.`,
           name: 'Iain Gunn',
-          role: 'Head Teacher',
         },
       },
       {
@@ -178,7 +182,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `The children are starting to notice when the lights are green and the lights are red. They're starting to ask, could we do our IT lessons in the afternoon when it's sunnier rather than in the morning?`,
           name: 'Iain Gunn',
-          role: 'Head Teacher',
         },
       },
       {
@@ -190,7 +193,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `In under two years the cost of the socket will be paid for. They're going to be saving me about £7,000 or £8,000 a year as a conservative estimate, which is amazing.`,
           name: 'Iain Gunn',
-          role: 'Head Teacher',
         },
       },
       {
@@ -201,7 +203,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `It also saves the overloading of multiple plug sockets, certainly where the IT suites are. We can just automatically turn them off at the end of the day. And we also know that they're safe and not being overloaded.`,
           name: 'Peter Palmer',
-          role: 'Diocese of Chelmsford',
         },
       },
       {
@@ -213,7 +214,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `That's kind of half a learning support teacher, which does start to make a difference. And then that difference we can pass on to the children to make their experience even better.`,
           name: 'Iain Gunn',
-          role: 'Head Teacher',
         },
       },
     ],
@@ -226,17 +226,17 @@ export const examples: CaseStudyExample[] = [
       ],
     },
     seo: {
-      title: 'How St Peters Cut Energy Waste by 40% | Measurable Energy',
+      title: 'How St Peters Cut Its Energy Bills by £7–8k/Year | Measurable Energy',
       metaDescription:
-        "St Peters School cut energy waste by up to 40% with Measurable Energy's AI-powered smart sockets, saving £7,000–£8,000 a year. Read the case study.",
+        "St Peters School cut its energy bills by £7,000–£8,000 a year with Measurable Energy's AI-powered smart sockets — part of a three-school pilot that saved 25–40%. Read the case study.",
       targetQuery: 'St Peters school energy savings case study',
       slug: '/st-peters-school-energy-savings-case-study',
       imageAlt:
-        'Iain Gunn, Head Teacher of St Peters Primary School, in a classroom where AI-powered smart sockets have cut energy waste by up to 40%',
+        "Iain Gunn, Head Teacher of St Peters Primary School, in a classroom where AI-powered smart sockets have cut the school's energy bills by £7,000–£8,000 a year",
       domain: 'www.measurable.energy',
     },
     openGraph: {
-      title: 'How St Peters School Cut Energy Waste by 40%',
+      title: 'How St Peters School Cut Its Energy Bills by £7,000–£8,000 a Year',
       description:
         'St Peters School saves £7,000–£8,000/year in energy costs with AI-powered smart sockets from Measurable Energy. 25–40% reduction across three pilot schools.',
       type: 'article',
@@ -248,7 +248,7 @@ export const examples: CaseStudyExample[] = [
         {
           '@type': 'Article',
           headline:
-            'How St Peters School cut energy waste by up to 40% with AI-powered smart sockets',
+            'How St Peters School cut its energy bills by £7,000–£8,000 a year with AI-powered smart sockets',
           datePublished: '2026-01-20',
           dateModified: '2026-05-27',
           author: { '@type': 'Organization', name: 'Measurable Energy' },
@@ -283,7 +283,7 @@ export const examples: CaseStudyExample[] = [
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.measurable.energy/' },
             { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://www.measurable.energy/case-studies' },
-            { '@type': 'ListItem', position: 3, name: 'How St Peters School cut energy waste by up to 40%' },
+            { '@type': 'ListItem', position: 3, name: 'How St Peters School cut its energy bills by £7,000–£8,000 a year' },
           ],
         },
       ],
@@ -296,6 +296,8 @@ export const examples: CaseStudyExample[] = [
     client: 'TaxValet',
     customer: 'Stealth Fitness',
     tabLabel: 'TaxValet',
+    pageDescription:
+      "How TaxValet took 50-state sales tax compliance off Stealth Fitness's plate at roughly a quarter of the in-house cost. A Citable Case Study example, built to rank on Google and get cited by AI.",
     industry: 'Sales tax compliance',
     region: 'United States',
     title: 'How Stealth Fitness offloaded 50-state sales tax compliance to TaxValet',
@@ -349,6 +351,7 @@ export const examples: CaseStudyExample[] = [
         ],
         quote: {
           text: `TaxJar is not a person. It's just a piece of software.`,
+          name: 'David Augustine',
         },
       },
       {
@@ -358,6 +361,7 @@ export const examples: CaseStudyExample[] = [
         ],
         quote: {
           text: `It feels like I have an in house staff without paying an in house staff.`,
+          name: 'David Augustine',
         },
       },
       {
@@ -368,6 +372,7 @@ export const examples: CaseStudyExample[] = [
         ],
         quote: {
           text: `They handle all the notices, they handle all these pieces of paper that come in. They handle it, they respond to it. I don't have to deal with it at all.`,
+          name: 'David Augustine',
         },
       },
       {
@@ -377,6 +382,7 @@ export const examples: CaseStudyExample[] = [
         ],
         quote: {
           text: `I don't think I'd go back to just the software as a service business. I'd want an in-house accounting firm and the cost of that would probably quadruple.`,
+          name: 'David Augustine',
         },
       },
     ],
@@ -457,6 +463,8 @@ export const examples: CaseStudyExample[] = [
     client: 'Extrovert',
     customer: 'COMMIT',
     tabLabel: 'Extrovert',
+    pageDescription:
+      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT — 4,000+ new connections and 10–15 inbound requests a day. A Citable Case Study example, built to rank on Google and get cited by AI.',
     industry: 'AI-powered LinkedIn engagement',
     region: 'EMEA',
     title:
@@ -509,7 +517,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `It is me on steroids.`,
           name: 'Mila Tsirelman',
-          role: 'Sales and Business Development Manager EMEA, COMMIT',
         },
       },
       {
@@ -522,19 +529,17 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `They are looking for me, but I would never find them if I didn't use Extrovert.`,
           name: 'Mila Tsirelman',
-          role: 'Sales and Business Development Manager EMEA, COMMIT',
         },
       },
       {
         heading: 'What results has Mila seen after 2.5 years?',
         body: [
-          `Two and a half years in, running two Extrovert accounts daily, the numbers speak for themselves. "I get about, I would say, 10 to 15 connection requests daily from my target audience," Mila reports. These aren't people she reached out to first. They found her through Extrovert-powered comments on posts in her niche.`,
+          `Two and a half years in, Mila runs two Extrovert accounts daily. "I get about, I would say, 10 to 15 connection requests daily from my target audience," she reports. These aren't people she reached out to first. They found her through Extrovert-powered comments on posts in her niche.`,
           `Her outbound acceptance rate is 22% on 2,480 requests sent — decent, but that's not where the real leverage is. Her team came on board 1.5 years after she did. She now runs two Extrovert accounts to cover more ground.`,
         ],
         quote: {
           text: `The walk-in customer is far more powerful. The sales cycle is way shorter as opposed to outreaching outbound sales.`,
           name: 'Mila Tsirelman',
-          role: 'Sales and Business Development Manager EMEA, COMMIT',
         },
       },
       {
@@ -546,7 +551,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `This AI is 100% human managed. There is a human in the middle because you tell the AI where to go, why to go, what to seek, what to speak.`,
           name: 'Mila Tsirelman',
-          role: 'Sales and Business Development Manager EMEA, COMMIT',
         },
       },
     ],
@@ -623,6 +627,8 @@ export const examples: CaseStudyExample[] = [
     client: 'SaasyDB',
     customer: 'LeadForce Solutions',
     tabLabel: 'SaasyDB',
+    pageDescription:
+      'How SaasyDB gave LeadForce Solutions SaaS leads that appear in no other database, feeding a 3% cold-email reply rate. A Citable Case Study example, built to rank on Google and get cited by AI.',
     industry: 'SaaS lead database',
     region: 'United States',
     title:
@@ -649,7 +655,7 @@ export const examples: CaseStudyExample[] = [
       height: 380,
     },
     customerLogo: {
-      src: '/examples/leadforce.png',
+      src: '/examples/leadforce.webp',
       alt: 'LeadForce Solutions',
       width: 480,
       height: 170,
@@ -677,7 +683,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `he was talking about how he sources leads. And this was one of the, he said, listen, if you want a great source for AI SaaS companies, there's none better than SaasyDB.`,
           name: 'Aaron Gusinov',
-          role: 'Founder, LeadForce Solutions',
         },
       },
       {
@@ -689,7 +694,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `I would cross-reference, I'm like, can I find this contact in another database? And I couldn't. So for me, that was very attractive.`,
           name: 'Aaron Gusinov',
-          role: 'Founder, LeadForce Solutions',
         },
       },
       {
@@ -702,7 +706,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `it's very satisfying to know that if I email a thousand people here, I'm more likely going to get in touch with people who aren't inundated with emails than a thousand over here.`,
           name: 'Aaron Gusinov',
-          role: 'Founder, LeadForce Solutions',
         },
       },
       {
@@ -713,7 +716,6 @@ export const examples: CaseStudyExample[] = [
         quote: {
           text: `this is the worst it gets. Like right now, it's good enough that Taylor Haren, who's like a big boy, called him out. And this is the worst that it will ever be because it's only going to improve.`,
           name: 'Aaron Gusinov',
-          role: 'Founder, LeadForce Solutions',
         },
       },
     ],

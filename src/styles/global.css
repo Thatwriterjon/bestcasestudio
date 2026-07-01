@@ -86,6 +86,13 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Always reserve space for the vertical scrollbar so navigating between pages of
+     different heights doesn't shift the centered layout sideways (which made the fixed
+     nav's wordmark and menu appear to "jump" when switching examples). */
+  scrollbar-gutter: stable;
+}
+
 html,
 body {
   margin: 0;

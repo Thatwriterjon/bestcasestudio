@@ -34,7 +34,10 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
         <span class="cs-badge" data-type={ex.type}>{typeLabel(ex.type)}</span>
         <span class="cs-tags">{ex.industry} <span aria-hidden="true">·</span> {ex.region}</span>
       </p>
-      <h2 class="cs-title">{ex.title}</h2>
+      <h1 class="cs-title">
+        <span class="cs-title-lead">A Citable Case Study</span>
+        <span class="cs-title-main">{ex.title}</span>
+      </h1>
       <p class="cs-deck" set:html={ex.deck} />
     </header>
 
@@ -98,7 +101,7 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
   <div class="cs-body">
     {ex.sections.map((s) => (
       <section class="cs-section">
-        <h3>{s.heading}</h3>
+        <h2>{s.heading}</h2>
         <div class="cs-prose">
           {s.body?.map((p) => <p set:html={p} />)}
           {s.quote && (
@@ -245,12 +248,25 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     color: var(--ink-soft);
   }
   .cs-title {
+    margin: 0 0 28px;
+  }
+  .cs-title-lead {
+    display: block;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pink);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .cs-title-main {
+    display: block;
     font-family: var(--serif);
     font-weight: 500;
     font-size: clamp(32px, 4vw, 56px);
     line-height: 1.04;
     letter-spacing: -0.02em;
-    margin: 0 0 28px;
   }
   .cs-deck {
     font-size: 20px;
@@ -393,7 +409,7 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
     padding: 48px 0;
     border-bottom: 1px solid var(--rule);
   }
-  .cs-section h3 {
+  .cs-section h2 {
     position: sticky;
     top: 96px;
     align-self: start;
@@ -648,7 +664,7 @@ const schemaJson = JSON.stringify(ex.jsonLd, null, 2);
       grid-template-columns: 1fr;
       gap: 20px;
     }
-    .cs-section h3 {
+    .cs-section h2 {
       position: static;
     }
     .cs-machine-grid {

@@ -2,121 +2,59 @@
 import Base from '../../layouts/Base.astro';
 import CloseCta from '../../components/sections/CloseCta.astro';
 import CaseStudyExample from '../../components/CaseStudyExample.astro';
-import { examples, typeLabel } from '../../data/examples';
+import ExampleTabs from '../../components/ExampleTabs.astro';
+import { examples } from '../../data/examples';
 
+// The strongest example (lowest `order`) is canonical at /examples/. Reorder via the
+// `order` field in data/examples.ts to feature a different one first.
 const ordered = [...examples].sort((a, b) => a.order - b.order);
+const ex = ordered[0];
 ---
 
 <Base
-  title="Examples · See what a Citable Case Study looks like · Best Case Studio"
-  description="Worked examples of the Citable method — real B2B case studies produced for clients, built to rank on Google, get cited by AI, and persuade the buyer on the page."
+  title={`Citable Case Study example: ${ex.client} & ${ex.customer} · Best Case Studio`}
+  description={ex.pageDescription}
+  ogType="article"
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Examples', url: '/examples/' },
   ]}
 >
   <section class="ex-intro">
-    <div class="wrap">
+    <div class="wrap-tight">
       <p class="eyebrow mono">Examples</p>
-      <h1>This is what they <em>look like</em>.</h1>
-      <p class="lede">
-        Real case studies, produced for real clients with the Citable method — built to rank on
-        Google, get cited by AI, and persuade the buyer on the page. Switch between them below.
+      <p class="ex-note">
+        A real case study we produced for a client — shown here as an example of the Citable
+        method. Toggle between them below.
       </p>
     </div>
   </section>
 
   <section class="ex-switch">
     <div class="wrap-tight">
-      <div class="tablist" role="tablist" aria-label="Case study examples">
-        {ordered.map((ex, i) => (
-          <a
-            href={`/examples/${ex.slug}/`}
-            class:list={['tab', i === 0 && 'is-active']}
-            role="tab"
-            aria-selected={i === 0 ? 'true' : 'false'}
-            data-tab={ex.slug}
-          >
-            <span class="tab-client">{ex.tabLabel}</span>
-            <span class="tab-sub">{ex.customer} · {typeLabel(ex.type)}</span>
-          </a>
-        ))}
-      </div>
-
-      <div class="panels">
-        {ordered.map((ex, i) => (
-          <div class="panel" data-panel={ex.slug} hidden={i !== 0}>
-            <CaseStudyExample example={ex} eager={i === 0} />
-          </div>
-        ))}
-      </div>
+      <ExampleTabs items={ordered} active={ex.slug} />
+      <CaseStudyExample example={ex} eager />
     </div>
   </section>
 
   <CloseCta />
 </Base>
 
-<script>
-  const tabs = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-tab]'));
-  const panels = Array.from(document.querySelectorAll<HTMLElement>('[data-panel]'));
-
-  function activate(slug: string, push: boolean) {
-    if (!panels.some((p) => p.dataset.panel === slug)) return;
-    tabs.forEach((t) => {
-      const on = t.dataset.tab === slug;
-      t.classList.toggle('is-active', on);
-      t.setAttribute('aria-selected', String(on));
-    });
-    panels.forEach((p) => {
-      p.hidden = p.dataset.panel !== slug;
-    });
-    if (push) history.pushState({ slug }, '', `/examples/${slug}/`);
-  }
-
-  tabs.forEach((tab) => {
-    // Suppress the browser focusing the anchor on mouse-down, which would scroll its
-    // in-document position into view and jump the page. Keyboard activation is unaffected.
-    tab.addEventListener('mousedown', (e) => e.preventDefault());
-    tab.addEventListener('click', (e) => {
-      // Let modified clicks (new tab, etc.) behave normally.
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      e.preventDefault();
-      activate(tab.dataset.tab!, true);
-    });
-  });
-
-  // Sync when the user navigates back/forward through pushed states.
-  window.addEventListener('popstate', (e) => {
-    const slug = (e.state && (e.state as { slug?: string }).slug) || tabs[0]?.dataset.tab;
-    if (slug) activate(slug, false);
-  });
-</script>
-
 <style>
   .ex-intro {
     background: var(--bg);
-    padding: 180px 0 64px;
+    padding: 180px 0 40px;
   }
   .eyebrow {
     color: var(--ink-soft);
-    margin: 0 0 24px;
+    margin: 0 0 20px;
   }
-  h1 {
+  .ex-note {
     font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(48px, 6.5vw, 104px);
-    line-height: 0.98;
-    letter-spacing: -0.025em;
-    margin: 0 0 28px;
-    max-width: 16ch;
-  }
-  h1 em {
     font-style: italic;
-  }
-  .lede {
-    font-size: 22px;
-    line-height: 1.45;
-    max-width: 60ch;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 56ch;
     margin: 0;
     color: var(--ink-soft);
   }
@@ -124,64 +62,6 @@ const ordered = [...examples].sort((a, b) => a.order - b.order);
   .ex-switch {
     padding: 0 0 120px;
     border-top: 1px solid var(--rule);
-  }
-
-  /* Sticky tab bar so the switcher stays reachable while reading a long study. */
-  .tablist {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    display: flex;
-    gap: 8px;
-    padding: 16px 0;
-    margin-bottom: 56px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--rule);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .tablist::-webkit-scrollbar {
-    display: none;
-  }
-  .tab {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 12px 20px;
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-    background: transparent;
-    transition: background 0.15s, border-color 0.15s, color 0.15s;
-  }
-  .tab:hover {
-    border-color: var(--ink-faint);
-  }
-  .tab.is-active {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: var(--bg);
-  }
-  .tab-client {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 19px;
-    line-height: 1;
-  }
-  .tab-sub {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    white-space: nowrap;
-  }
-  .tab.is-active .tab-sub {
-    color: var(--ink-faint);
-  }
-
-  .panel[hidden] {
-    display: none;
   }
 
   @media (max-width: 900px) {

@@ -4,3 +4,8 @@
 # @astrojs/sitemap emits sitemap-index.xml. Forward the conventional /sitemap.xml URL
 # so external submitters (Search Console, AI crawlers) hit the right file.
 /sitemap.xml  /sitemap-index.xml  301
+
+# The strongest example (lowest `order` in data/examples.ts) is featured at /examples/
+# itself, so it has no standalone slug page. 301 its old slug to the canonical URL.
+# Update this line if you feature a different example first.
+/examples/extrovert-commit-linkedin-growth/  /examples/  301

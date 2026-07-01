@@ -3,6 +3,9 @@
 # bulk training scrapers out. Adjust the lists below if policy changes.
 
 User-agent: *
+# Content Signals (contentsignals.org): search + real-time AI answers are welcome; training is not.
+# Grants ai-input (being cited in AI answers) — the whole point of a "cited by AI" business.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 # Real-time AI search retrieval — explicitly allowed so that ChatGPT search,

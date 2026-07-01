@@ -1,0 +1,160 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Privacy policy · Best Case Studio"
+  description="How Best Case Studio collects, uses, and protects your personal data. Two-person studio, no ad trackers, no data selling."
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Privacy', url: '/privacy/' },
+  ]}
+>
+  <section class="legal">
+    <div class="wrap-article">
+      <p class="eyebrow mono">Privacy</p>
+      <h1>Privacy policy</h1>
+      <p class="updated">Last updated: 1 July 2026</p>
+
+      <p>
+        Best Case Studio is a two-person studio (Jon and Jessie McGreevy) producing B2B case
+        studies. This policy explains what personal data we collect, why, and what you can do
+        about it. Any questions, email <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a>.
+      </p>
+
+      <h2>What we collect</h2>
+      <ul>
+        <li>
+          <strong>Information you give us.</strong> When you email us, fill in a form, or book a
+          call, we collect your name, email address, company, and anything else you choose to
+          tell us.
+        </li>
+        <li>
+          <strong>Booking data.</strong> We use Calendly to schedule discovery calls. When you
+          book, Calendly processes your name, email, and scheduling details on our behalf.
+        </li>
+        <li>
+          <strong>Technical data.</strong> Our host, Cloudflare, processes standard server logs
+          (such as IP address and browser type) to serve and secure the site. We don't run
+          advertising or cross-site tracking.
+        </li>
+      </ul>
+
+      <h2>How we use it</h2>
+      <p>
+        We use your data to reply to you, run discovery calls, deliver our services, and operate
+        and secure the website. Our lawful bases are performing a contract with you and our
+        legitimate interest in running the studio. We do not sell your data or use it for
+        advertising.
+      </p>
+
+      <h2>Who we share it with</h2>
+      <p>
+        We share data only with the service providers who help us run the business — Calendly
+        (scheduling), our email provider, and Cloudflare (hosting and security) — and they
+        process it on our instructions. Some providers are based outside the UK; where they are,
+        they rely on appropriate safeguards for international transfers. We may also disclose
+        data if the law requires it.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        The site itself sets no marketing cookies. Calendly may set cookies when you use its
+        booking widget — see Calendly's own privacy policy for details.
+      </p>
+
+      <h2>How long we keep it</h2>
+      <p>
+        We keep enquiry and client data for as long as we need it to deliver our services and
+        meet legal and accounting obligations, then delete it.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Under UK GDPR you can ask us to access, correct, or delete your data, or object to how
+        we use it. Email <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a> and we'll
+        respond within one month. You can also complain to the Information Commissioner's Office
+        at <a href="https://ico.org.uk/" target="_blank" rel="noopener noreferrer">ico.org.uk</a>.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        We may update this policy from time to time. The "last updated" date above shows when it
+        last changed.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .legal {
+    background: var(--bg);
+    padding: 180px 0 120px;
+  }
+  .eyebrow {
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    margin: 0 0 16px;
+  }
+  .updated {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 48px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 48px 0 16px;
+  }
+  p,
+  li {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  p {
+    margin: 0 0 18px;
+    max-width: 68ch;
+  }
+  ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0 0 18px;
+    max-width: 68ch;
+  }
+  li {
+    padding: 10px 0 10px 22px;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+  li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+  }
+  li strong {
+    font-weight: 600;
+  }
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  a:hover {
+    color: var(--pink);
+  }
+</style>

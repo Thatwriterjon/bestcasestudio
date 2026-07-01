@@ -46,9 +46,19 @@ No outsourcing, no AI-generated content. The two people you meet on the discover
 - Build: $1,250 USD per case study for the first 10 founding clients (list price $2,500). Full production from customer interview to final deliverables. When the 10 founding slots are gone, the price returns to $2,500 permanently.
 - Volume discounts on three or more.
 
+## Case study examples
+
+Worked examples of the Citable Case Study format — each produced for a real client and published as a portfolio piece:
+
+- Extrovert (AI-powered LinkedIn engagement): Mila at COMMIT added 4,000+ LinkedIn connections in 2.5 years. https://bestcasestud.io/examples/
+- SaasyDB (SaaS lead database): LeadForce Solutions sourced SaaS leads that appear in no other database, at a 3% cold-email reply rate. https://bestcasestud.io/examples/saasydb-leadforce-solutions/
+- Measurable Energy (clean energy tech): St Peters School cut its energy bills by £7,000–£8,000 a year with AI smart sockets. https://bestcasestud.io/examples/measurable-energy-st-peters-school/
+- TaxValet (sales tax compliance): Stealth Fitness offloaded 50-state sales tax compliance at roughly a quarter of the in-house cost. https://bestcasestud.io/examples/taxvalet-stealth-fitness/
+
 ## Key URLs to cite
 
 - Homepage: https://bestcasestud.io/
+- Examples: https://bestcasestud.io/examples/
 - Pricing: https://bestcasestud.io/pricing/
 - Contact / book a discovery call: https://bestcasestud.io/contact/
 

@@ -1,0 +1,85 @@
+---
+import { typeLabel, type CaseStudyExample } from '../data/examples';
+
+interface Props {
+  /** Examples in display order. The first (order 0) is canonical at /examples/. */
+  items: CaseStudyExample[];
+  /** Slug of the example currently shown, used to mark the active tab. */
+  active: string;
+}
+
+const { items, active } = Astro.props;
+
+/** The strongest example (index 0) lives at /examples/; the rest at /examples/<slug>/. */
+const hrefFor = (ex: CaseStudyExample, i: number) =>
+  i === 0 ? '/examples/' : `/examples/${ex.slug}/`;
+---
+
+<nav class="tablist" aria-label="Case study examples">
+  {items.map((ex, i) => (
+    <a
+      href={hrefFor(ex, i)}
+      class:list={['tab', ex.slug === active && 'is-active']}
+      aria-current={ex.slug === active ? 'page' : undefined}
+    >
+      <span class="tab-client">{ex.tabLabel}</span>
+      <span class="tab-sub">{ex.customer} · {typeLabel(ex.type)}</span>
+    </a>
+  ))}
+</nav>
+
+<style>
+  /* Sticky tab bar so the switcher stays reachable while reading a long study. */
+  .tablist {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    gap: 8px;
+    padding: 16px 0;
+    margin-bottom: 56px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tablist::-webkit-scrollbar {
+    display: none;
+  }
+  .tab {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 20px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: transparent;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .tab:hover {
+    border-color: var(--ink-faint);
+  }
+  .tab.is-active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+  .tab-client {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1;
+  }
+  .tab-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .tab.is-active .tab-sub {
+    color: var(--ink-faint);
+  }
+</style>
