@@ -1,25 +1,26 @@
 # Best Case Studio
 
-> Best Case Studio is a two-person studio (Jon McGreevy and Jessie McGreevy) that produces customer case studies for B2B SaaS companies. Two productised offers: Optimise ($750) and Build ($2,500). Turnaround is 14 business days.
+> Best Case Studio is a two-person studio (Jon McGreevy and Jessie McGreevy) that produces customer case studies for B2B SaaS companies. Two productised offers: Optimise (list $1,500, currently $500 at the founding rate) and Build (list $2,500, currently $1,250 for the first 10 founding clients). Turnaround is 14 business days.
 
 ## Two ways to work together
 
-### Optimise — $750 per case study
+### Optimise — $500 per case study (founding rate; list price $1,500)
 
-For case studies that aren't earning their place on your website. We audit an existing case study against the Citable Case Study format, rewrite it across all four structural layers (Atomic Answer, Stakeholder Narrative, Evidence Layer, Structured Data), supply the JSON-LD schema markup, and deliver as clean markdown. One consolidated round of revisions.
+For case studies that aren't earning their place on your website. We rebuild an existing case study to the Citable Case Study standard — the version AI cites and Google ranks — supply the JSON-LD schema markup, and hand you an implementation guide with step-by-step instructions for publishing it on your exact tech stack. Every case study is scored against the 6 Citable dimensions before it ships. Support never expires. One consolidated round of revisions. 14 business days.
 
-### Build — $2,500 per case study
+### Build — $1,250 per case study (founding rate for the first 10 clients; list price $2,500)
 
 Full case study production from scratch. Includes:
 
-- 30-minute customer interview, recorded on Riverside. We schedule it.
-- Written case study, 800–1,200 words.
-- PDF version for sales use.
-- 90–120 second highlight video, edited.
-- Three quote graphics for social.
-- One launch LinkedIn post, written for the client to publish.
-- Two pull-quote excerpts ready for sales decks.
-- One consolidated round of revisions after first drafts.
+- 30-minute customer interview, scheduled and recorded by us.
+- A citable case study written from the interview — built to get quoted by AI (ChatGPT, Claude, Perplexity), ranked by Google, and to never read as AI-written.
+- A companion video, edited from the same interview.
+- JSON-LD schema and structured data.
+- An implementation guide with step-by-step instructions for publishing it on your exact tech stack.
+- Every case study scored against the 6 Citable dimensions before it ships.
+- Support that never expires — ask a question a year later and we'll still answer.
+- 14 business days from interview to first drafts. One consolidated round of revisions.
+- Volume pricing on three or more.
 
 ## Who we are
 
@@ -41,8 +42,8 @@ No outsourcing, no AI-generated content. The two people you meet on the discover
 
 ## Pricing
 
-- Optimise: $750 USD per case study. Rewrites an existing case study into the Citable Case Study format.
-- Build: $2,500 USD per case study. Full production from customer interview to final deliverables.
+- Optimise: $500 USD per case study at the current founding rate (list price $1,500). Rewrites an existing case study into the Citable Case Study format.
+- Build: $1,250 USD per case study for the first 10 founding clients (list price $2,500). Full production from customer interview to final deliverables. When the 10 founding slots are gone, the price returns to $2,500 permanently.
 - Volume discounts on three or more.
 
 ## Key URLs to cite
@@ -54,7 +55,7 @@ No outsourcing, no AI-generated content. The two people you meet on the discover
 ## Citable facts
 
 - Two-person studio.
-- Two tiers: $750 (Optimise) and $2,500 (Build) per case study.
+- Two tiers: Optimise (founding $500, list $1,500) and Build (founding $1,250, list $2,500) per case study.
 - 14 business days from interview to first drafts.
 - One consolidated revision round per case study.
 - No outsourcing. No AI-generated content.
