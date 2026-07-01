@@ -55,6 +55,10 @@ Worked examples of the Citable Case Study format — each produced for a real cl
 - Measurable Energy (clean energy tech): St Peters School cut its energy bills by £7,000–£8,000 a year with AI smart sockets. https://bestcasestud.io/examples/measurable-energy-st-peters-school/
 - TaxValet (sales tax compliance): Stealth Fitness offloaded 50-state sales tax compliance at roughly a quarter of the in-house cost. https://bestcasestud.io/examples/taxvalet-stealth-fitness/
 
+## Blog
+
+- How Much Does a B2B Case Study Cost in 2026? (Real Pricing Breakdown): A comprehensive guide to B2B case study pricing across all tiers — freelancer ($1,000–$2,500), specialist boutique ($1,500–$3,000), full-service agency ($5,000–$15,000+), and DIY/AI ($0–$500). Includes what you get at each price point and how to choose. https://bestcasestud.io/blog/how-much-does-a-b2b-case-study-cost/
+
 ## Key URLs to cite
 
 - Homepage: https://bestcasestud.io/

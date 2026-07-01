@@ -1,6 +1,21 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
+    author: z.string().default('Jon McGreevy'),
+    /** Optional FAQ items rendered at the bottom and emitted as FAQPage JSON-LD. */
+    faq: z
+      .array(z.object({ q: z.string(), a: z.string() }))
+      .optional(),
+  }),
+});
+
 const testimonials = defineCollection({
   loader: glob({ pattern: '**/*.yaml', base: './src/content/testimonials' }),
   schema: z.object({
@@ -27,4 +42,4 @@ const faq = defineCollection({
   }),
 });
 
-export const collections = { testimonials, faq };
+export const collections = { blog, testimonials, faq };

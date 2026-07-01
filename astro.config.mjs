@@ -15,6 +15,8 @@ const lastmodByPath = {
   '/examples/saasydb-leadforce-solutions/': '2026-06-02',
   '/examples/measurable-energy-st-peters-school/': '2026-05-27',
   '/examples/taxvalet-stealth-fitness/': '2026-05-26',
+  '/blog/': '2026-07-01',
+  '/blog/how-much-does-a-b2b-case-study-cost/': '2026-07-01',
 };
 
 export default defineConfig({
