@@ -26,18 +26,18 @@ const articleSchema: Record<string, unknown> = {
   '@type': 'Article',
   headline: post.data.title,
   description: post.data.description,
+  image: 'https://bestcasestud.io/og.jpg',
   author: {
     '@type': 'Person',
     '@id': 'https://bestcasestud.io/#jon',
     name: post.data.author,
+    url: 'https://bestcasestud.io/about/',
   },
   publisher: { '@id': 'https://bestcasestud.io/#org' },
   datePublished: isoDate,
+  dateModified: post.data.updated ? post.data.updated.toISOString() : isoDate,
   mainEntityOfPage: `https://bestcasestud.io/blog/${post.id}/`,
 };
-if (post.data.updated) {
-  articleSchema.dateModified = post.data.updated.toISOString();
-}
 
 /* ---- JSON-LD: FAQPage (if frontmatter has faq items) ---- */
 const faqSchema: Record<string, unknown> | null = post.data.faq?.length
@@ -83,6 +83,21 @@ const schemas = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
         <Content />
       </div>
     </div>
+
+    <aside class="post-author">
+      <div class="wrap-article">
+        <div class="author-card">
+          <div class="author-info">
+            <p class="author-name">{post.data.author}</p>
+            <p class="author-bio">
+              Founder of Best Case Studio. Seven years experience writing copy and content for B2B
+              SaaS companies including Google, Elastic, and Scoro. Co-host of the SaaSy as F*ck podcast.
+            </p>
+            <a href="https://www.linkedin.com/in/jonmcgreevy/" class="author-link mono" rel="noopener" target="_blank">LinkedIn →</a>
+          </div>
+        </div>
+      </div>
+    </aside>
 
     {post.data.faq && post.data.faq.length > 0 && (
       <section class="post-faq">
@@ -248,6 +263,37 @@ const schemas = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
     font-weight: 600;
     font-size: 14px;
     white-space: nowrap;
+  }
+
+  /* ---- Author ---- */
+  .post-author {
+    padding: 0 0 56px;
+    border-top: 1px solid var(--rule);
+    padding-top: 40px;
+  }
+  .author-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .author-name {
+    font-weight: 600;
+    font-size: 17px;
+    margin: 0 0 6px;
+  }
+  .author-bio {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+    max-width: 52ch;
+  }
+  .author-link {
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .author-link:hover {
+    color: var(--ink);
   }
 
   /* ---- FAQ ---- */

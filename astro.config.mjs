@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // Stable per-URL <lastmod>. A fixed date per page (instead of new Date()) keeps the signal
 // honest: unchanged pages keep the same lastmod across rebuilds, so Google doesn't learn to
@@ -33,6 +34,11 @@ export default defineConfig({
       },
     }),
   ],
+  markdown: {
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: '_blank', rel: ['noopener'] }],
+    ],
+  },
   build: {
     inlineStylesheets: 'auto',
   },

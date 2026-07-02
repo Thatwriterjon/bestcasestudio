@@ -21,7 +21,7 @@ A B2B case study will cost you somewhere between **$0 and $15,000**. Here's the 
 - **Specialist boutique:** $1,500–$3,000 per case study.
 - **Full-service content agency:** $5,000–$15,000+ (usually bundled in a monthly retainer).
 
-That's the short answer. I run a case study studio, so I'll be upfront about where I sit in this and where my biases are. But I've also worked with or compete against every tier on this list. I'm not guessing at the numbers.
+That's the short answer. I run [Best Case Studio](/), so I'll be upfront about where I sit in this and where my biases are. But I've also worked with or compete against every tier on this list. I'm not guessing at the numbers.
 
 ## Quick-reference pricing table
 
@@ -58,7 +58,7 @@ So if you already know what you want, you've got the customer interview sorted, 
 
 **$1,500–$3,000 per case study.**
 
-*Full disclosure: this is where we sit. Best Case Studio's Build offer is $2,500, so take everything in this section with a healthy pinch of salt.*
+*Full disclosure: this is where we sit. Best Case Studio's [Build offer is $2,500](/pricing/), so take everything in this section with a healthy pinch of salt.*
 
 But here's why this tier exists.
 
@@ -66,7 +66,7 @@ A specialist does case studies all day. Not blog posts, not whitepapers, not ad 
 
 [Uplift Content](https://www.upliftcontent.com/) sits here too (from about $750 for writing-only, higher for full production). [Ace Case Studies](https://www.acecasestudies.com/) by Jody Williams is another solo specialist with some impressive creds (Oracle, Gorgias).
 
-The practical difference from a freelancer is everything that happens *around* the writing. A specialist will schedule and run the customer interview, decide which story to tell (not every happy customer makes a good case study), structure the page for search and AI, and hand you an implementation guide for whatever CMS you're running. Not a generic PDF. And maybe even instructions for *your* stack (that's what we do, anyway).
+The practical difference from a freelancer is everything that happens *around* the writing. A specialist will schedule and run the customer interview, decide which story to tell (not every happy customer makes a good case study), structure the page for search and AI, and hand you an implementation guide for whatever CMS you're running. Not a generic PDF. And maybe even instructions for *your* stack (that's what we do — here are [some examples](/examples/)).
 
 The downside? You're trusting a small operation (sometimes just one or two people) to deliver. If they get overwhelmed, there's no bench. That's a real concern.
 
@@ -148,6 +148,6 @@ I'll keep this short and sweet...
 
 **A freelancer** makes sense if you've got the interview done (or can handle it yourself) and you know what the case study should say. You're buying a pair of writing hands, not a strategy. Fine if your team already has an opinion on what good proof looks like.
 
-**A specialist** is where I'd point most growing B2B SaaS companies. You get the interview, the narrative, the technical optimisation, and a case study that's built to actually generate pipeline rather than sit in a sales folder. Sure, I'm biased. But the pricing data across the market puts it squarely in the sweet spot between "doing it all yourself" and "signing a retainer you don't need."
+**A specialist** is where I'd point most growing B2B SaaS companies. You get the interview, the narrative, the technical optimisation, and a case study that's built to actually generate pipeline rather than sit in a sales folder. ([We do a free audit call](/contact/) if you want to see the difference.) Sure, I'm biased. But the pricing data across the market puts it squarely in the sweet spot between "doing it all yourself" and "signing a retainer you don't need."
 
 **An agency** is the right call if you already run a content programme and want case studies as *part* of the package. Just make sure they have a real case study methodology and aren't treating yours as a bolt-on afterthought with a template from three years ago.
