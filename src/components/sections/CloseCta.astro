@@ -5,13 +5,15 @@ import Button from '../Button.astro';
 <section id="contact-bottom" class="close">
   <div class="wrap">
     <p class="eyebrow"><em>Your move.</em></p>
-    <h2>Send us a case study. We'll tell you what's <span class="yel">broken</span>.</h2>
+    <h2>Your best customer already said the thing that closes your next <span class="yel">deal</span>.</h2>
     <p class="aside">
-      Free written audit. No call required. Five business days.
+      You just haven't captured it yet. One intro. One conversation. A complete Proof Kit in two weeks — for $2,500.
     </p>
     <div class="ctas">
-      <Button href="mailto:jon@bestcasestud.io" variant="primary">Email us your case study</Button>
+      <Button href="/contact/" variant="primary">Book a call</Button>
+      <Button href="/examples/" variant="secondary">See a real example first</Button>
     </div>
+    <p class="soft-note">Or send us a case study you've already got and we'll tell you, free, what's letting it down. <a href="mailto:jon@bestcasestud.io">Email Jon →</a></p>
   </div>
 </section>
 
@@ -67,5 +69,16 @@ import Button from '../Button.astro';
   }
   .close :global(.btn.primary:hover) {
     background: var(--pink);
+  }
+  .soft-note {
+    margin: 28px 0 0;
+    font-size: 15px;
+    color: #bdb7a8;
+    font-style: italic;
+  }
+  .soft-note a {
+    color: var(--bg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 </style>

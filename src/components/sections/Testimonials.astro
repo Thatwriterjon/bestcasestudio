@@ -7,11 +7,11 @@ const items = (await getCollection('testimonials')).sort(
 );
 ---
 
-<section id="proof" class="testimonials">
+<section id="testimonials" class="testimonials">
   <div class="wrap">
-    <SectionHead title="<em>Proof</em>." />
+    <SectionHead title="These folks trust <em>me</em>." />
     <p class="lede">
-      These quotes are from Jon's prior copywriting work, not from Best Case Studio specifically. They speak to the craft underneath the methodology — the writing, the customer-handling, the ability to find the story. That craft is the foundation of every Citable Case Study we produce.
+      Best Case Studio is a brand new company, so we don't have many testimonials yet. But I was a freelance copywriter for 8 years before this. Here are a few things past clients have kindly said about me.
     </p>
     <div class="t-grid">
       {items.map(({ data: t }) => (

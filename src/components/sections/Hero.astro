@@ -5,14 +5,17 @@ import Button from '../Button.astro';
 <section class="hero" aria-label="Introduction">
   <div class="wrap">
     <div class="hero-grid">
-      <h1>B2B case studies that get <em>cited</em>, <em>ranked</em>, and <span class="yel">read</span>.</h1>
+      <h1>You don't need a better pitch.<br />You need <span class="yel">better proof</span>.</h1>
       <div class="hero-right">
+        <p class="lede lede-lead">
+          Prospects don't stall because your offer's weak, they stall because they can't tell if they can trust you to deliver. <em>Social proof fixes that.</em>
+        </p>
         <p class="lede">
-          We produce the case studies you don't have time to create. Structured to rank on Google. Formatted to be cited by ChatGPT. Written to persuade the people who read them.
+          We turn one chat with your happiest customer into a complete B2B case study, including video, written, and a social pack.
         </p>
         <div class="ctas">
-          <Button href="/#audit" variant="primary" class="hero-cta">Get your free audit</Button>
-          <Button href="/#pricing" variant="secondary">See the offers</Button>
+          <Button href="/contact/" variant="primary" class="hero-cta">Book a call</Button>
+          <Button href="/examples/" variant="secondary">See a real example</Button>
         </div>
       </div>
     </div>
@@ -38,9 +41,11 @@ import Button from '../Button.astro';
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.45fr 1fr;
-    gap: 64px;
-    align-items: end;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 72px;
+    /* Centre the shorter supporting column against the tall display headline so the
+       composition stays balanced rather than leaving a void at one corner. */
+    align-items: center;
   }
   .hero h1 {
     font-family: var(--serif);
@@ -48,7 +53,9 @@ import Button from '../Button.astro';
     font-size: clamp(56px, 7vw, 108px);
     line-height: 0.92;
     letter-spacing: -0.025em;
-    margin: 0;
+    /* Optically align the cap-height of the display heading with the top of the lede,
+       which sits lower because of its larger line-height. */
+    margin: 0.12em 0 0;
     max-width: 16ch;
   }
   .hero h1 em {
@@ -65,25 +72,34 @@ import Button from '../Button.astro';
     display: flex;
     flex-direction: column;
     gap: 0;
+    max-width: 44ch;
   }
   .hero-right .lede {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: 20px;
-    line-height: 1.45;
-    max-width: 38ch;
-    margin: 0 0 32px;
+    font-size: 19px;
+    line-height: 1.5;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  .hero-right .lede-lead {
+    margin-bottom: 20px;
+  }
+  .hero-right .lede:last-of-type {
+    margin-bottom: 36px;
+  }
+  .hero-right .lede :global(em) {
+    font-style: italic;
     color: var(--ink);
   }
   .ctas {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 12px;
   }
   .ctas :global(.btn) {
-    justify-content: center;
-    text-align: center;
-    width: 100%;
+    width: auto;
   }
   @media (max-width: 900px) {
     .hero {
@@ -93,6 +109,23 @@ import Button from '../Button.astro';
       grid-template-columns: 1fr;
       gap: 40px;
       align-items: start;
+    }
+    .hero h1 {
+      margin-top: 0;
+    }
+    .hero-right {
+      max-width: none;
+    }
+  }
+  @media (max-width: 600px) {
+    /* Full-width, stacked CTAs make for comfortable tap targets on phones. */
+    .ctas {
+      flex-direction: column;
+    }
+    .ctas :global(.btn) {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
     }
   }
 </style>

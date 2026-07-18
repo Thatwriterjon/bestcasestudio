@@ -1,0 +1,91 @@
+---
+import SectionHead from '../SectionHead.astro';
+
+interface Step {
+  num: string;
+  title: string;
+  body: string;
+}
+
+const steps: Step[] = [
+  {
+    num: '01',
+    title: 'You make the <em>intro</em>.',
+    body: 'One warm email to your best customer. That\'s your entire job in this process.',
+  },
+  {
+    num: '02',
+    title: 'We run the <em>interview</em>.',
+    body: 'One recorded conversation. We handle the scheduling, the questions, the awkward bits. Your customer gives us 30-45 minutes, and we guide them to the good bits.',
+  },
+  {
+    num: '03',
+    title: 'You get your <em>Proof Kit</em>.',
+    body: 'Everything above, delivered 14 days from the interview, ready to publish.',
+  },
+];
+---
+
+<section id="how-it-works">
+  <div class="wrap">
+    <SectionHead title="Three steps." />
+    <div class="steps">
+      {steps.map((s) => (
+        <div class="step">
+          <span class="num">{s.num}</span>
+          <h4 set:html={s.title} />
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 120px 0;
+    background: var(--yellow);
+    border-bottom: 1px solid var(--ink);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    border-top: 1px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .step .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .step h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+  }
+  .step h4 :global(em) {
+    font-style: italic;
+  }
+  .step p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 32ch;
+  }
+  @media (max-width: 900px) {
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

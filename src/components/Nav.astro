@@ -18,9 +18,9 @@ const { transparent = false } = Astro.props;
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/examples/">Examples</a></li>
         <li><a href="/blog/">Blog</a></li>
-        <li><a href="/#methodology">Methodology</a></li>
+        <li><a href="/#whats-included">What you get</a></li>
         <li><a href="/#proof">Proof</a></li>
-        <li><a href="/contact/" class="cta">Free audit →</a></li>
+        <li><a href="/contact/" class="cta">Book a call →</a></li>
       </ul>
       <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
         <span class="burger-line"></span>
@@ -33,10 +33,10 @@ const { transparent = false } = Astro.props;
       <li><a href="/pricing/">Pricing</a></li>
       <li><a href="/examples/">Examples</a></li>
       <li><a href="/blog/">Blog</a></li>
-      <li><a href="/#methodology">Methodology</a></li>
+      <li><a href="/#whats-included">What you get</a></li>
       <li><a href="/#proof">Proof</a></li>
       <li><a href="/contact/">Contact</a></li>
-      <li><a href="/contact/" class="cta">Free audit →</a></li>
+      <li><a href="/contact/" class="cta">Book a call →</a></li>
     </ul>
   </div>
 </header>
@@ -65,17 +65,29 @@ const { transparent = false } = Astro.props;
 {transparent && (
   <script>
     const nav = document.getElementById('nav');
-    const sentinel = document.querySelector('main > section, main > .hero, .hero');
-    if (nav && sentinel) {
-      const io = new IntersectionObserver(
-        ([entry]) => {
-          // Once the hero scrolls mostly out of view, switch the nav to its solid state.
-          if (entry.intersectionRatio < 0.15) nav.classList.add('scrolled');
-          else nav.classList.remove('scrolled');
+    if (nav) {
+      // Switch to the solid background as soon as the page is scrolled a little, rather than
+      // waiting for the whole hero to leave the viewport. On a tall (mobile) hero the old
+      // approach left the nav transparent for most of the scroll, so the wordmark and menu
+      // collided with hero copy passing underneath. A small threshold avoids that entirely
+      // while still showing the clean transparent nav at the very top.
+      const SOLID_AT = 24;
+      let ticking = false;
+      const sync = () => {
+        nav.classList.toggle('scrolled', window.scrollY > SOLID_AT);
+        ticking = false;
+      };
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(sync);
+          }
         },
-        { threshold: [0, 0.15, 0.5, 1] }
+        { passive: true }
       );
-      io.observe(sentinel);
+      sync();
     }
   </script>
 )}

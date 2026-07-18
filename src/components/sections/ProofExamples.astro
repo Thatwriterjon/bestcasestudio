@@ -1,0 +1,97 @@
+---
+import SectionHead from '../SectionHead.astro';
+import { examples } from '../../data/examples';
+
+const featured = ['extrovert-commit-linkedin-growth', 'saasydb-leadforce-solutions']
+  .map((slug) => examples.find((e) => e.slug === slug))
+  .filter((e): e is NonNullable<typeof e> => Boolean(e));
+---
+
+<section id="proof" class="proof-examples">
+  <div class="wrap">
+    <SectionHead title="Check out these real <em>Proof Kit</em>s" />
+    <p class="lede">
+      Promises without proof? We'd never. Check out the examples below of real Proof Kits we've produced for clients. Two case studies, built from scratch, exactly like the one you'd get.
+    </p>
+    <div class="ex-grid">
+      {featured.map((ex) => (
+        <a class="ex-card" href={`/examples/${ex.slug}/`}>
+          <span class="ex-client">{ex.client} × {ex.customer}</span>
+          <h3>{ex.title}</h3>
+          <span class="ex-cta">Watch the video. Read the study. See the full kit. <span class="arr" aria-hidden="true">→</span></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .proof-examples {
+    padding: 120px 0;
+    background: var(--pink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .lede {
+    font-size: 19px;
+    line-height: 1.55;
+    max-width: 68ch;
+    margin: 0 0 56px;
+    color: var(--ink);
+  }
+  .ex-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .ex-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    border: 1px solid var(--ink);
+    background: var(--bg);
+    color: var(--ink);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .ex-card:hover {
+    transform: translateY(-3px);
+    background: var(--yellow);
+  }
+  .ex-client {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .ex-card h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .ex-cta {
+    margin-top: auto;
+    padding-top: 16px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ex-card:hover .ex-cta .arr {
+    transform: translateX(4px);
+  }
+  .ex-cta .arr {
+    transition: transform 0.2s;
+  }
+  @media (max-width: 900px) {
+    .ex-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

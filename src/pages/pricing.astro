@@ -4,53 +4,30 @@ import Button from '../components/Button.astro';
 import Faq from '../components/sections/Faq.astro';
 import CloseCta from '../components/sections/CloseCta.astro';
 
-const buildIncluded = [
-  'Recorded customer interview, scheduled and run by Jon',
-  'A citable case study written from it — built to get quoted by AI, ranked by Google, and to never read as AI-written',
-  'Companion video, edited from the same interview',
-  'JSON-LD schema and structured data',
-  'Implementation guide built for your exact stack — step-by-step to publish it where your site actually runs',
-  'Scored against all 6 Citable dimensions before it ships',
-  'Support that never expires — got a question in a year? Jon still answers it',
-  '14-day turnaround, one consolidated round of revisions',
-  'Volume pricing on 3+ Builds — ask Jon',
-];
-
-const optimiseIncluded = [
-  'A full rebuild of your existing case study to the Citable standard — the version AI cites and Google ranks',
-  'JSON-LD structured data (Article, Organization, Review)',
-  'Question-shaped H2s, named stakeholders, dated metrics',
-  'Implementation guide built for your exact stack — step-by-step to publish it where your site actually runs',
-  'Scored against all 6 Citable dimensions before it ships',
-  'Written to read human — never flagged as AI',
-  'Support that never expires — got a question in a year? Jon still answers it',
-  '14-day turnaround',
+const included = [
+  'Video case study — the full story, on camera, in your customer\'s own words',
+  'Written case study — built to rank on Google and get cited by AI',
+  'Video testimonial — a short, sharp cut for your homepage and socials',
+  'Written testimonial — a pull-quote for your site, deck, and emails',
+  'Social pack — LinkedIn carousel and short clips',
+  'A "how to use it" guide — where each piece does the most damage',
 ];
 
 const offerSchema = {
   '@type': 'ProfessionalService',
   '@id': 'https://bestcasestud.io/#service',
-  name: 'B2B case study production',
+  name: 'The Proof Kit',
   serviceType: 'B2B case study production',
   provider: { '@id': 'https://bestcasestud.io/#org' },
   areaServed: 'Worldwide',
   url: 'https://bestcasestud.io/pricing/',
   description:
-    'Full Citable Case Study build ($1,250 Founding 10 pricing). Optimise an existing case study ($500). 14-day turnaround.',
+    'One recorded customer conversation becomes a complete B2B case study — video, written, testimonials, and a social pack. $2,500, delivered 14 days from the interview.',
   offers: [
     {
       '@type': 'Offer',
-      name: 'Founding 10 — Full Citable Case Study',
-      price: '1250',
-      priceCurrency: 'USD',
-      url: 'https://bestcasestud.io/pricing/',
-      availability: 'https://schema.org/LimitedAvailability',
-      category: 'Marketing services',
-    },
-    {
-      '@type': 'Offer',
-      name: 'Optimise an existing case study',
-      price: '500',
+      name: 'The Proof Kit',
+      price: '2500',
       priceCurrency: 'USD',
       url: 'https://bestcasestud.io/pricing/',
       availability: 'https://schema.org/InStock',
@@ -61,8 +38,8 @@ const offerSchema = {
 ---
 
 <Base
-  title="Pricing · Founding 10 from $1,250 · Best Case Studio"
-  description="Full Citable Case Study build from $1,250 (Founding 10). Optimise an existing case study from $500. 14-day turnaround."
+  title="Pricing · The Proof Kit, $2,500 · Best Case Studio"
+  description="One package, one price: $2,500 for a complete B2B case study — video, written, testimonials, and a social pack, delivered 14 days from the interview."
   schema={[offerSchema]}
   breadcrumbs={[
     { name: 'Home', url: '/' },
@@ -73,66 +50,36 @@ const offerSchema = {
     <div class="wrap">
       <p class="eyebrow mono">Pricing</p>
       <h1>
-        One offer. <em>Two ways in.</em>
+        One package. <em>One price.</em>
       </h1>
-      <p class="lede">
-        A full Citable Case Study — interview, written case study, companion video — delivered in 14 business days.
-      </p>
     </div>
   </section>
 
   <section class="pricing-offers">
     <div class="wrap">
       <div class="pricing-grid">
-
-        <!-- Founding 10: Build (primary) -->
         <div class="pricing-card featured">
           <div class="pricing-inner">
-            <span class="card-eyebrow"><span class="pip" aria-hidden="true"></span>Founding 10</span>
-            <h2><em>Full Citable Case Study</em> build.</h2>
-            <p class="price-lede">10 founding slots. When they're gone, the price returns to $2,500 — permanently.</p>
+            <span class="card-eyebrow"><span class="pip" aria-hidden="true"></span>The Proof Kit</span>
+            <h2>Everything above. <em>One price.</em></h2>
+            <p class="price-lede">One recorded conversation with your best customer, delivered as a complete proof set.</p>
             <div class="price-spacer"></div>
             <div class="price-row">
-              <span class="price-struck">$2,500</span>
-              <span class="price">$1,250</span>
+              <span class="price">$2,500</span>
             </div>
+            <span class="founding-badge">Delivered 14 days from the interview</span>
             <div class="included">
               <h3>What's included</h3>
               <ul>
-                {buildIncluded.map((item: string) => (
+                {included.map((item: string) => (
                   <li><span>{item}</span></li>
                 ))}
               </ul>
             </div>
-            <p class="trade-note">The trade: a testimonial and permission to document the project publicly.</p>
-            <Button href="https://buy.stripe.com/9B66oHeyy5LzdIu7on0VO00" variant="primary">Lock a slot — $625 deposit</Button>
-            <p class="slot-warning">Once the 10 slots are gone, price goes to $2,500 permanently. No exceptions, no extensions.</p>
+            <p class="trade-note">Buy proof anywhere else in pieces and you'll spend $7,000–$10,000 before you've got a fraction of this. We productised the whole thing so you don't have to.</p>
+            <Button href="/contact/" variant="primary">Book a call</Button>
           </div>
         </div>
-
-        <!-- Optimise (secondary) -->
-        <div class="pricing-card">
-          <div class="pricing-inner">
-            <span class="card-eyebrow"><span class="pip" aria-hidden="true"></span>Optimise</span>
-            <h2><em>Optimise</em> an existing case study.</h2>
-            <p class="price-lede">Take a case study you already have and make it the one AI cites.</p>
-            <div class="price-spacer"></div>
-            <div class="price-row">
-              <span class="price-struck">$1,500</span>
-              <span class="price">$500</span>
-            </div>
-            <div class="included">
-              <h3>What's included</h3>
-              <ul>
-                {optimiseIncluded.map((item: string) => (
-                  <li><span>{item}</span></li>
-                ))}
-              </ul>
-            </div>
-            <Button href="https://buy.stripe.com/9B66oHeyy5LzdIu7on0VO00" variant="primary">Start with Optimise</Button>
-          </div>
-        </div>
-
       </div>
 
       <p class="bottom-note">
@@ -168,12 +115,6 @@ const offerSchema = {
   h1 em {
     font-style: italic;
   }
-  .lede {
-    font-size: 22px;
-    line-height: 1.45;
-    max-width: 64ch;
-    margin: 0;
-  }
 
   /* Offers section */
   .pricing-offers {
@@ -183,21 +124,21 @@ const offerSchema = {
   }
 
   .pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    align-items: stretch;
+    display: flex;
+    justify-content: center;
   }
 
   .pricing-card {
     background: var(--bg);
     color: var(--ink);
+    max-width: 640px;
+    width: 100%;
   }
   .pricing-card.featured {
     border: 2px solid var(--pink);
   }
   .pricing-inner {
-    padding: 48px;
+    padding: 56px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -224,15 +165,12 @@ const offerSchema = {
   .pricing-card h2 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: 36px;
+    font-size: clamp(36px, 4vw, 48px);
     line-height: 1.02;
     letter-spacing: -0.02em;
     margin: 0;
     max-width: 18ch;
     color: var(--ink);
-  }
-  .featured h2 {
-    font-size: clamp(36px, 4vw, 48px);
   }
   .pricing-card h2 :global(em) {
     font-style: italic;
@@ -257,17 +195,6 @@ const offerSchema = {
     align-items: baseline;
     gap: 16px;
   }
-  .price-struck {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(28px, 3.5vw, 44px);
-    line-height: 0.85;
-    letter-spacing: -0.03em;
-    font-style: italic;
-    color: var(--ink-soft);
-    text-decoration: line-through;
-    text-decoration-thickness: 2px;
-  }
   .price {
     font-family: var(--serif);
     font-weight: 500;
@@ -279,6 +206,15 @@ const offerSchema = {
     padding: 0 0.14em 0.04em;
     display: inline-block;
     color: var(--ink);
+  }
+  .founding-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pink);
+    font-weight: 500;
+    display: block;
   }
 
   .included h3 {
@@ -335,17 +271,6 @@ const offerSchema = {
     margin-top: 8px;
   }
 
-  .slot-warning {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-weight: 500;
-    margin: 0;
-    line-height: 1.5;
-  }
-
   .bottom-note {
     margin-top: 64px;
     font-family: var(--serif);
@@ -364,9 +289,6 @@ const offerSchema = {
   }
 
   @media (max-width: 900px) {
-    .pricing-grid {
-      grid-template-columns: 1fr;
-    }
     .pricing-inner {
       padding: 36px;
     }

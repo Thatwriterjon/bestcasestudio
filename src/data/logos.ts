@@ -13,6 +13,8 @@ export interface LogoEntry {
 }
 
 export const logos: LogoEntry[] = [
+  { name: 'Extrovert', svgPath: '/examples/extrovert.svg' },
+  { name: 'SaasyDB', svgPath: '/examples/saasydb.svg' },
   { name: 'Google', svgPath: '/logos/google.svg' },
   { name: 'Vivaldi', svgPath: '/logos/vivaldi.svg' },
   { name: 'Rally', svgPath: '/logos/rally.svg' },

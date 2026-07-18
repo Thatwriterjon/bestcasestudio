@@ -2,100 +2,42 @@
 import SectionHead from '../SectionHead.astro';
 import Button from '../Button.astro';
 
-const optimiseIncluded = [
-  'A full rebuild of your existing case study to the Citable standard — the version AI cites and Google ranks',
-  'JSON-LD structured data (Article, Organization, Review)',
-  'Question-shaped H2s, named stakeholders, dated metrics',
-  'Implementation guide built for your exact stack — step-by-step to publish it where your site actually runs',
-  'Scored against all 6 Citable dimensions before it ships',
-  'Written to read human — never flagged as AI',
-  'Support that never expires — got a question in a year? Jon still answers it',
-  '14-day turnaround',
+const included = [
+  'Video case study — the full story, on camera, in your customer\'s own words',
+  'Written case study — built to rank on Google and get cited by AI',
+  'Video testimonial — a short, sharp cut for your homepage and socials',
+  'Written testimonial — a pull-quote for your site, deck, and emails',
+  'Social pack — LinkedIn carousel and short clips',
+  'A "how to use it" guide — where each piece does the most damage',
 ];
-
-const buildIncluded = [
-  'Recorded customer interview, scheduled and run by Jon',
-  'A citable case study written from it — built to get quoted by AI, ranked by Google, and to never read as AI-written',
-  'Companion video, edited from the same interview',
-  'JSON-LD schema and structured data',
-  'Implementation guide built for your exact stack — step-by-step to publish it where your site actually runs',
-  'Scored against all 6 Citable dimensions before it ships',
-  'Support that never expires — got a question in a year? Jon still answers it',
-  '14-day turnaround, one consolidated round of revisions',
-  'Volume pricing on 3+ Builds — ask Jon',
-];
-
 ---
 
 <section id="pricing">
   <div class="wrap">
-    <SectionHead title="Pricing built for <em>B2B</em>." />
-
-    <!-- Free audit CTA — visually separate from paid tiers -->
-    <div class="free-audit-block">
-      <div class="free-audit-inner">
-        <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Citable Audit</span>
-        <h3><em>Citable Audit</em> — free.</h3>
-        <p class="price-lede">5-day turnaround, no call required.</p>
-        <ul class="free-audit-bullets">
-          <li>100-point scored report across 6 dimensions</li>
-          <li>AI-citability score (ChatGPT, Claude, Perplexity, Google AI Overviews)</li>
-          <li>Prioritised list of what's costing you citations</li>
-          <li>Delivered as a markdown report to your inbox</li>
-        </ul>
-        <Button href="/contact/" variant="primary">Get your free audit</Button>
-      </div>
-    </div>
+    <SectionHead title="One package. <em>One price.</em>" />
 
     <div class="pricing-grid">
-      <!-- Build (featured) -->
       <div class="pricing-card featured">
         <div class="pricing-inner">
-          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Build</span>
-          <h3><em>Build</em> a new case study from scratch.</h3>
-          <p class="price-lede">A new case study, engineered for citation, in 14 days.</p>
+          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>The Proof Kit</span>
+          <h3>Everything above. <em>One price.</em></h3>
           <div class="price-spacer"></div>
           <div class="price-row">
-            <span class="price-struck">$2,500</span>
-            <span class="price">$1,250</span>
+            <span class="price">$2,500</span>
           </div>
-          <span class="founding-badge">Founding Customer pricing — first 10 only</span>
+          <span class="founding-badge">Delivered 14 days from the interview</span>
           <div class="included">
             <h4>What's included</h4>
             <ul>
-              {buildIncluded.map((item) => (
+              {included.map((item) => (
                 <li><span>{item}</span></li>
               ))}
             </ul>
           </div>
-          <Button href="https://buy.stripe.com/9B66oHeyy5LzdIu7on0VO00" variant="primary">Commission a Build</Button>
+          <p class="compare">Buy proof anywhere else in pieces and you'll spend $7,000–$10,000 before you've got a fraction of this. We productised the whole thing so you don't have to.</p>
+          <Button href="/contact/" variant="primary">Book a call</Button>
         </div>
       </div>
-
-      <!-- Optimise -->
-      <div class="pricing-card">
-        <div class="pricing-inner">
-          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>Optimise</span>
-          <h3><em>Optimise</em> an existing case study.</h3>
-          <p class="price-lede">Take a case study you already have and make it the one AI cites.</p>
-          <div class="price-spacer"></div>
-          <div class="price-row">
-            <span class="price-struck">$1,500</span>
-            <span class="price">$500</span>
-          </div>
-          <span class="founding-badge">Founding Customer pricing — first 10 only</span>
-          <div class="included">
-            <h4>What's included</h4>
-            <ul>
-              {optimiseIncluded.map((item) => (
-                <li><span>{item}</span></li>
-              ))}
-            </ul>
-          </div>
-          <Button href="https://buy.stripe.com/9B66oHeyy5LzdIu7on0VO00" variant="primary">Start with Optimise</Button>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -115,83 +57,23 @@ const buildIncluded = [
   section :global(.sec-num) {
     color: #8a857a;
   }
-  /* Free audit block — visually separate from paid grid */
-  .free-audit-block {
-    margin-top: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid rgba(207, 202, 189, 0.15);
-  }
-  .free-audit-inner {
-    background: rgba(255, 255, 255, 0.04);
-    padding: 36px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 640px;
-  }
-  .free-audit-inner h3 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin: 0;
-    color: var(--bg);
-  }
-  .free-audit-inner h3 :global(em) {
-    font-style: italic;
-  }
-  .free-audit-inner .price-lede {
-    font-family: var(--serif);
-    font-style: italic;
-    color: #cfcabd;
-    font-size: 16px;
-    line-height: 1.45;
-    margin: 0;
-  }
-  .free-audit-bullets {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .free-audit-bullets li {
-    font-family: var(--serif);
-    font-size: 15px;
-    line-height: 1.45;
-    color: #cfcabd;
-    padding-left: 20px;
-    position: relative;
-  }
-  .free-audit-bullets li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--pink);
-  }
-  .free-audit-inner :global(.btn) {
-    align-self: flex-start;
-    margin-top: 4px;
-  }
-
   .pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
     margin-top: 48px;
+    display: flex;
+    justify-content: center;
   }
 
   .pricing-card {
     background: var(--bg);
     color: var(--ink);
+    max-width: 640px;
+    width: 100%;
   }
   .pricing-card.featured {
     border: 2px solid var(--pink);
   }
   .pricing-inner {
-    padding: 48px;
+    padding: 56px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -206,9 +88,6 @@ const buildIncluded = [
     display: inline-flex;
     align-items: center;
     gap: 10px;
-  }
-  .free-audit-inner .eyebrow {
-    color: #cfcabd;
   }
   .eyebrow .pip {
     width: 8px;
@@ -228,15 +107,6 @@ const buildIncluded = [
   .pricing-card h3 :global(em) {
     font-style: italic;
   }
-  .price-lede {
-    font-family: var(--serif);
-    font-style: italic;
-    color: var(--ink-soft);
-    font-size: 17px;
-    line-height: 1.45;
-    margin: 0;
-    max-width: 36ch;
-  }
   .price-spacer {
     flex: 1;
     min-height: 8px;
@@ -246,17 +116,6 @@ const buildIncluded = [
     display: flex;
     align-items: baseline;
     gap: 16px;
-  }
-  .price-struck {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(28px, 3.5vw, 44px);
-    line-height: 0.85;
-    letter-spacing: -0.03em;
-    font-style: italic;
-    color: var(--ink-soft);
-    text-decoration: line-through;
-    text-decoration-thickness: 2px;
   }
   .price {
     font-family: var(--serif);
@@ -320,23 +179,26 @@ const buildIncluded = [
     font-weight: 500;
   }
 
+  .compare {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
   .pricing-inner :global(.btn) {
     align-self: flex-start;
     margin-top: 8px;
   }
 
   @media (max-width: 900px) {
-    .pricing-grid {
-      grid-template-columns: 1fr;
-    }
     .pricing-inner {
       padding: 36px;
     }
     .price {
       font-size: clamp(52px, 12vw, 80px);
-    }
-    .free-audit-inner {
-      padding: 28px;
     }
   }
 </style>

@@ -91,6 +91,15 @@ html {
      different heights doesn't shift the centered layout sideways (which made the fixed
      nav's wordmark and menu appear to "jump" when switching examples). */
   scrollbar-gutter: stable;
+  /* Offset in-page anchor jumps (e.g. "What you get", "Proof") so the fixed nav doesn't
+     cover the target heading when it scrolls into view. */
+  scroll-padding-top: 96px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 html,
@@ -241,6 +250,27 @@ button {
 .skip-link:focus {
   left: 16px;
   top: 16px;
+}
+
+/* Consistent, on-brand keyboard focus ring across all interactive elements. Kept at zero
+   specificity via :where() so component styles still win — only the ring is standardised.
+   The outline follows each element's own border-radius (pills, cards) automatically. */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Respect users who prefer reduced motion: neutralise transitions, transforms-on-hover,
+   and smooth scrolling site-wide. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media (max-width: 1100px) {
