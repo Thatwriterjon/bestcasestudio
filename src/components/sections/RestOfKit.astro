@@ -1,0 +1,178 @@
+---
+/**
+ * 2B tail — "The rest of your Proof Kit."
+ * Appended beneath the full written case study on an /examples page. Shows the other five
+ * assets cut from the same interview (everything except the written case study), then a
+ * closing CTA. Copy is final (from the design handoff).
+ */
+import { kitAssets, kitPreviewMax, type CaseStudyExample } from '../../data/examples';
+import KitAssetPreview from '../KitAssetPreview.astro';
+
+interface Props {
+  example: CaseStudyExample;
+}
+
+const { example } = Astro.props;
+const rest = kitAssets.filter((a) => a.key !== 'written-case');
+---
+
+<section class="rok">
+  <div class="rok-inner">
+    <p class="rok-eyebrow">FROM THE SAME INTERVIEW</p>
+    <h2 class="rok-title">The rest of your Proof Kit.</h2>
+    <p class="rok-lede">
+      The written case study you just read is one of six formats. Here are the other five — same
+      story, cut for every place a buyer looks.
+    </p>
+
+    <div class="rok-list">
+      {rest.map((a) => (
+        <div class="rok-asset">
+          <div class="rok-asset-head">
+            <span class="rok-asset-n">{a.n}</span>
+            <h3 class="rok-asset-title">{a.title}</h3>
+            <span class="rok-asset-tag">{a.tag}</span>
+          </div>
+          <p class="rok-asset-desc">{a.desc}</p>
+          <div class="rok-asset-preview" style={`max-width:${kitPreviewMax(a.key)}`}>
+            <KitAssetPreview assetKey={a.key} example={example} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="rok-cta">
+  <h3 class="rok-cta-title">Your customers have a story like this.</h3>
+  <p class="rok-cta-sub">We will find it, film it, and hand you the whole kit.</p>
+  <a class="rok-cta-btn" href="/contact/">Book a call →</a>
+</section>
+
+<style>
+  .rok {
+    background: var(--pk-surface-2);
+    border-top: 1px solid var(--pk-line);
+    padding: 72px 0;
+  }
+  .rok-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .rok-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--pk-accent);
+    margin: 0;
+  }
+  .rok-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 34px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 12px 0 0;
+    color: var(--pk-ink);
+  }
+  .rok-lede {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--pk-muted);
+    max-width: 600px;
+    margin: 12px 0 0;
+  }
+
+  .rok-list {
+    margin-top: 20px;
+  }
+  .rok-asset {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--pk-line);
+  }
+  .rok-asset:last-child {
+    border-bottom: none;
+  }
+  .rok-asset-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .rok-asset-n {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #b8ae97;
+  }
+  .rok-asset-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--pk-ink);
+  }
+  .rok-asset-tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    color: var(--pk-accent);
+  }
+  .rok-asset-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--pk-muted);
+    margin: 12px 0 0;
+    max-width: 620px;
+  }
+  .rok-asset-preview {
+    margin: 24px auto 0;
+  }
+
+  /* ---- Closing CTA ---- */
+  .rok-cta {
+    background: var(--bg);
+    text-align: center;
+    padding: 72px 48px;
+  }
+  .rok-cta-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(26px, 3.4vw, 32px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--pk-ink);
+  }
+  .rok-cta-sub {
+    font-size: 16px;
+    color: var(--pk-muted);
+    margin: 12px 0 26px;
+  }
+  .rok-cta-btn {
+    display: inline-block;
+    background: var(--pk-ink);
+    color: var(--pk-panel);
+    padding: 15px 30px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.2s;
+  }
+  .rok-cta-btn:hover {
+    background: #000;
+  }
+
+  @media (max-width: 900px) {
+    .rok {
+      padding: 56px 0;
+    }
+    .rok-inner {
+      padding: 0 24px;
+    }
+    .rok-cta {
+      padding: 56px 24px;
+    }
+  }
+</style>

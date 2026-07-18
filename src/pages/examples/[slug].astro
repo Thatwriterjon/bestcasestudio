@@ -1,15 +1,16 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import Base from '../../layouts/Base.astro';
-import CloseCta from '../../components/sections/CloseCta.astro';
 import CaseStudyExample from '../../components/CaseStudyExample.astro';
-import ExampleTabs from '../../components/ExampleTabs.astro';
+import ExampleSwitcher from '../../components/ExampleSwitcher.astro';
+import RestOfKit from '../../components/sections/RestOfKit.astro';
 import { examples, type CaseStudyExample as CS } from '../../data/examples';
 
-// The strongest example (lowest `order`) is canonical at /examples/, so it is NOT given a
-// /examples/<slug>/ page — that would duplicate it. Every other example gets its own page.
+// The strongest visible example (lowest `order`) is canonical at /examples/, so it is NOT
+// given a /examples/<slug>/ page — that would duplicate it. Every other VISIBLE example gets
+// its own page; hidden examples get none.
 export const getStaticPaths = (() => {
-  const ordered = [...examples].sort((a, b) => a.order - b.order);
+  const ordered = [...examples].filter((e) => !e.hidden).sort((a, b) => a.order - b.order);
   return ordered.slice(1).map((ex) => ({
     params: { slug: ex.slug },
     props: { ex },
@@ -21,11 +22,11 @@ interface Props {
 }
 
 const { ex } = Astro.props;
-const ordered = [...examples].sort((a, b) => a.order - b.order);
+const ordered = [...examples].filter((e) => !e.hidden).sort((a, b) => a.order - b.order);
 ---
 
 <Base
-  title={`Citable Case Study example: ${ex.client} & ${ex.customer} · Best Case Studio`}
+  title={`Proof Kit example: ${ex.client} & ${ex.customer} · Best Case Studio`}
   description={ex.pageDescription}
   ogType="article"
   breadcrumbs={[
@@ -34,53 +35,25 @@ const ordered = [...examples].sort((a, b) => a.order - b.order);
     { name: ex.customer, url: `/examples/${ex.slug}/` },
   ]}
 >
-  <section class="ex-intro">
-    <div class="wrap-tight">
-      <p class="eyebrow mono">Examples</p>
-      <p class="ex-note">
-        A real case study we produced for a client — shown here as an example of the Citable
-        method. Toggle between them below.
-      </p>
-    </div>
-  </section>
-
   <section class="ex-switch">
     <div class="wrap-tight">
-      <ExampleTabs items={ordered} active={ex.slug} />
+      <ExampleSwitcher items={ordered} active={ex.slug} />
       <CaseStudyExample example={ex} eager />
     </div>
   </section>
 
-  <CloseCta />
+  <RestOfKit example={ex} />
 </Base>
 
 <style>
-  .ex-intro {
-    background: var(--bg);
-    padding: 180px 0 40px;
-  }
-  .eyebrow {
-    color: var(--ink-soft);
-    margin: 0 0 20px;
-  }
-  .ex-note {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 20px;
-    line-height: 1.5;
-    max-width: 56ch;
-    margin: 0;
-    color: var(--ink-soft);
-  }
-
   .ex-switch {
-    padding: 0 0 120px;
-    border-top: 1px solid var(--rule);
+    background: var(--bg);
+    padding: 160px 0 72px;
   }
 
   @media (max-width: 900px) {
-    .ex-intro {
-      padding-top: 140px;
+    .ex-switch {
+      padding-top: 120px;
     }
   }
 </style>

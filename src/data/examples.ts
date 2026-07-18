@@ -1,5 +1,5 @@
 /**
- * Worked examples of the Citable method — real case studies produced for clients,
+ * Worked examples of the Proof Kit — real case studies produced for clients,
  * restructured here as portfolio pieces. Each entry drives both the /examples switcher
  * and its own dedicated page at /examples/<slug>/.
  *
@@ -8,9 +8,10 @@
  * content); `type: 'build'` renders "Built from scratch".
  *
  * Prose fields (deck, section body, cta.body) allow inline HTML — use <a>, <em>.
- * `jsonLd` is the real Schema.org @graph; it is shown in the visible "machine layer"
- * panel only (it is NOT injected into the document <head>, so it never collides with
- * Best Case Studio's own site schema).
+ * `jsonLd` is the real Schema.org @graph; it is consumed only by the parked
+ * MachineLayer component (components/MachineLayer.astro), which is not currently rendered.
+ * It is NOT injected into the document <head>, so it never collides with Best Case
+ * Studio's own site schema.
  */
 
 export interface Quote {
@@ -52,6 +53,10 @@ export interface Logo {
 export interface CaseStudyExample {
   slug: string;
   order: number;
+  /** When true, the example is not published: no /examples/<slug>/ page is generated and it
+   *  is omitted from the /examples switcher (and therefore the sitemap). Used to stage
+   *  examples that aren't ready to show. */
+  hidden?: boolean;
   type: 'optimise' | 'build';
   /** The vendor — the company that commissioned the case study (our client). */
   client: string;
@@ -79,6 +84,29 @@ export interface CaseStudyExample {
   video?: { embedUrl: string; label: string };
   sections: Section[];
   cta: { heading: string; body: string; links: CtaLink[] };
+  /** ---- Proof Kit preview fields (2A viewer + 2B "rest of your kit") ----
+   *  All optional. Where a field is omitted, `kitView()` derives a sensible value from the
+   *  existing data (e.g. the interviewee from the first section quote) or falls back to a
+   *  labelled placeholder. Populate as real assets arrive. */
+  kit?: {
+    /** Interviewee shown on video/testimonial previews. Defaults to the first section quote's speaker. */
+    person?: string;
+    role?: string;
+    /** ~120-word plain-text answer for the Atomic Answer block. Defaults to the deck (tags stripped). */
+    atomicAnswer?: string;
+    /** Flagship pull-quote for the written/video testimonial previews. Defaults to the strongest quote. */
+    pullQuote?: string;
+    /** Duration chips on the placeholder video frames. Default '—' until the cut exists. */
+    videoDuration?: string;
+    shortDuration?: string;
+    /** Snapshot grid on the written-case preview. Each field falls back to the profile rows. */
+    organisation?: string;
+    sector?: string;
+    size?: string;
+    engagement?: string;
+    /** LinkedIn-carousel hook slide. Defaults to the hero metric. */
+    socialHook?: { value: string; label: string };
+  };
   /** Search metadata produced for the published case study. Shown in the machine-layer panel. */
   seo: {
     title: string;
@@ -103,12 +131,13 @@ export const examples: CaseStudyExample[] = [
   {
     slug: 'measurable-energy-st-peters-school',
     order: 3,
+    hidden: true,
     type: 'optimise',
     client: 'Measurable Energy',
     customer: 'St Peters Primary School',
     tabLabel: 'Measurable Energy',
     pageDescription:
-      "How Measurable Energy's AI smart sockets cut St Peters School's energy bills by £7,000–£8,000 a year. A Citable Case Study example, built to rank on Google and get cited by AI.",
+      "How Measurable Energy's AI smart sockets cut St Peters School's energy bills by £7,000–£8,000 a year. A Proof Kit case study example, built to rank on Google and get cited by AI.",
     industry: 'Clean energy tech',
     region: 'United Kingdom',
     title:
@@ -292,12 +321,13 @@ export const examples: CaseStudyExample[] = [
   {
     slug: 'taxvalet-stealth-fitness',
     order: 4,
+    hidden: true,
     type: 'optimise',
     client: 'TaxValet',
     customer: 'Stealth Fitness',
     tabLabel: 'TaxValet',
     pageDescription:
-      "How TaxValet took 50-state sales tax compliance off Stealth Fitness's plate at roughly a quarter of the in-house cost. A Citable Case Study example, built to rank on Google and get cited by AI.",
+      "How TaxValet took 50-state sales tax compliance off Stealth Fitness's plate at roughly a quarter of the in-house cost. A Proof Kit case study example, built to rank on Google and get cited by AI.",
     industry: 'Sales tax compliance',
     region: 'United States',
     title: 'How Stealth Fitness offloaded 50-state sales tax compliance to TaxValet',
@@ -458,13 +488,13 @@ export const examples: CaseStudyExample[] = [
   },
   {
     slug: 'extrovert-commit-linkedin-growth',
-    order: 1,
+    order: 2,
     type: 'build',
     client: 'Extrovert',
     customer: 'COMMIT',
     tabLabel: 'Extrovert',
     pageDescription:
-      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT — 4,000+ new connections and 10–15 inbound requests a day. A Citable Case Study example, built to rank on Google and get cited by AI.',
+      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT — 4,000+ new connections and 10–15 inbound requests a day. A Proof Kit case study example, built to rank on Google and get cited by AI.',
     industry: 'AI-powered LinkedIn engagement',
     region: 'EMEA',
     title:
@@ -495,6 +525,11 @@ export const examples: CaseStudyExample[] = [
       height: 37,
     },
     video: { embedUrl: 'https://www.youtube.com/embed/Wrt-DYzDfkY', label: 'Watch the video case study' },
+    kit: {
+      person: 'Mila Tsirelman',
+      role: 'Sales & Business Development Manager, EMEA · COMMIT',
+      pullQuote: 'They are looking for me, but I would never find them if I didn\'t use Extrovert.',
+    },
     sections: [
       {
         heading: "Why wasn't LinkedIn working for Mila before Extrovert?",
@@ -622,13 +657,13 @@ export const examples: CaseStudyExample[] = [
   },
   {
     slug: 'saasydb-leadforce-solutions',
-    order: 2,
+    order: 1,
     type: 'build',
     client: 'SaasyDB',
     customer: 'LeadForce Solutions',
     tabLabel: 'SaasyDB',
     pageDescription:
-      'How SaasyDB gave LeadForce Solutions SaaS leads that appear in no other database, feeding a 3% cold-email reply rate. A Citable Case Study example, built to rank on Google and get cited by AI.',
+      'How SaasyDB gave LeadForce Solutions SaaS leads that appear in no other database, feeding a 3% cold-email reply rate. A Proof Kit case study example, built to rank on Google and get cited by AI.',
     industry: 'SaaS lead database',
     region: 'United States',
     title:
@@ -661,6 +696,13 @@ export const examples: CaseStudyExample[] = [
       height: 170,
     },
     video: { embedUrl: 'https://www.youtube.com/embed/EKD2cHGL5Us', label: 'Watch the video case study' },
+    kit: {
+      person: 'Aaron Gusinov',
+      role: 'Founder · LeadForce Solutions',
+      pullQuote:
+        "It's very satisfying to know that if I email a thousand people here, I'm more likely to reach people who aren't inundated with emails than a thousand over there.",
+      socialHook: { value: '3%', label: 'cold email reply rate' },
+    },
     sections: [
       {
         heading: 'What problem was LeadForce Solutions trying to solve?',
@@ -799,3 +841,154 @@ export const examples: CaseStudyExample[] = [
 
 export const typeLabel = (type: CaseStudyExample['type']): string =>
   type === 'optimise' ? 'Optimised' : 'Built from scratch';
+
+/* ------------------------------------------------------------------ *
+ *  Proof Kit — the six assets cut from one interview.
+ *  Copy is final (from the design handoff); reused verbatim by the 2A
+ *  viewer and the 2B "rest of your Proof Kit" section.
+ * ------------------------------------------------------------------ */
+
+export type KitAssetKey =
+  | 'video-case'
+  | 'written-case'
+  | 'video-testi'
+  | 'written-testi'
+  | 'social'
+  | 'howto';
+
+export interface KitAsset {
+  n: string;
+  key: KitAssetKey;
+  title: string;
+  /** Mono format tag, e.g. "VIDEO · 2–4 MIN". */
+  tag: string;
+  desc: string;
+}
+
+export const kitAssets: KitAsset[] = [
+  {
+    n: '01',
+    key: 'video-case',
+    title: 'Video case study',
+    tag: 'VIDEO · 2–4 MIN',
+    desc: "The full story, in your customer's own words, on camera. The MVP of the Proof Kit.",
+  },
+  {
+    n: '02',
+    key: 'written-case',
+    title: 'Written case study',
+    tag: 'ARTICLE · SEO + AI',
+    desc: 'The deep-dive version, optimised to rank on Google and get cited by AI — so your proof shows up the moment a buyer starts looking.',
+  },
+  {
+    n: '03',
+    key: 'video-testi',
+    title: 'Video testimonial',
+    tag: 'VIDEO · ~30 SEC',
+    desc: 'A short, sharp cut for your homepage and socials.',
+  },
+  {
+    n: '04',
+    key: 'written-testi',
+    title: 'Written testimonial',
+    tag: 'PULL-QUOTE',
+    desc: 'A pull-quote ready to drop straight into your site, your deck, or your next cold email.',
+  },
+  {
+    n: '05',
+    key: 'social',
+    title: 'Social pack',
+    tag: 'CAROUSEL + CLIPS',
+    desc: 'A branded LinkedIn carousel and short clips, all cut from the same conversation.',
+  },
+  {
+    n: '06',
+    key: 'howto',
+    title: 'Launch checklist',
+    tag: 'PLAYBOOK',
+    desc: "A short walkthrough showing exactly where each piece works hardest — so it doesn't just sit in a folder.",
+  },
+];
+
+/** Rows for the Launch checklist preview — maps each asset to where it works hardest. */
+export const kitHowto: { n: string; piece: string; where: string }[] = [
+  { n: '1', piece: 'Video case study', where: 'Sales follow-up and your /customers page — the asset that closes.' },
+  { n: '2', piece: 'Written case study', where: 'Google and AI answers. Where a buyer lands the moment they start looking.' },
+  { n: '3', piece: 'Video testimonial', where: 'Homepage hero and paid social. Proof before they scroll.' },
+  { n: '4', piece: 'Written testimonial', where: 'Pricing page and the P.S. line of your next cold email.' },
+  { n: '5', piece: 'Social pack', where: 'A six-week LinkedIn drip, posted as-is or under your own content.' },
+];
+
+/** Per-asset max preview width when the previews are stacked full-width (2B). */
+export const kitPreviewMax = (key: KitAssetKey): string =>
+  ({ 'video-case': '760px', social: '820px' } as Record<string, string>)[key] || '620px';
+
+/** Normalised view-model the previews render from — derives from the real example data,
+ *  applying `example.kit` overrides and falling back to labelled placeholders. */
+export interface KitView {
+  vendor: string;
+  customer: string;
+  person: string;
+  role: string;
+  build: string;
+  headline: string;
+  atomicAnswer: string;
+  pullQuote: string;
+  videoDuration?: string;
+  shortDuration?: string;
+  organisation: string;
+  sector: string;
+  size: string;
+  engagement: string;
+  metricBig: string;
+  metricLabel: string;
+  socialHook: { value: string; label: string };
+  /** Four headline numbers for the written-case preview + social hook. */
+  stats: { v: string; l: string }[];
+  serpUrl: string;
+  video?: { embedUrl: string; label: string };
+}
+
+const stripTags = (s: string): string => s.replace(/<[^>]+>/g, '');
+
+const profileVal = (ex: CaseStudyExample, needle: string): string | undefined =>
+  ex.profile.find((p) => p.label.toLowerCase().includes(needle))?.value;
+
+export function kitView(ex: CaseStudyExample): KitView {
+  const k = ex.kit ?? {};
+  const firstQuote = ex.sections.find((s) => s.quote)?.quote;
+  const stats = [
+    { v: ex.hero.value, l: ex.hero.label },
+    ...ex.metrics.map((m) => ({ v: m.value, l: m.label })),
+  ].slice(0, 4);
+
+  return {
+    vendor: ex.client,
+    customer: ex.customer,
+    person: k.person ?? firstQuote?.name ?? ex.customer,
+    role: k.role ?? firstQuote?.role ?? '',
+    build: typeLabel(ex.type),
+    headline: ex.title,
+    atomicAnswer: k.atomicAnswer ?? stripTags(ex.deck),
+    pullQuote: k.pullQuote ?? firstQuote?.text ?? '',
+    videoDuration: k.videoDuration,
+    shortDuration: k.shortDuration,
+    organisation: k.organisation ?? ex.customer,
+    sector: k.sector ?? profileVal(ex, 'sector') ?? ex.industry,
+    size: k.size ?? profileVal(ex, 'size') ?? profileVal(ex, 'oversight') ?? '—',
+    engagement: k.engagement ?? profileVal(ex, 'engagement') ?? '—',
+    metricBig: ex.hero.value,
+    metricLabel: ex.hero.label,
+    socialHook: k.socialHook ?? { value: ex.hero.value, label: ex.hero.label },
+    stats,
+    serpUrl: `${ex.seo.domain}${ex.seo.slug}`,
+    video: ex.video,
+  };
+}
+
+/** Root-relative URL of an example's full page. The canonical (lowest-order, visible)
+ *  example lives at /examples/; every other visible example at /examples/<slug>/. */
+export function exampleHref(ex: CaseStudyExample): string {
+  const visible = [...examples].filter((e) => !e.hidden).sort((a, b) => a.order - b.order);
+  return visible[0]?.slug === ex.slug ? '/examples/' : `/examples/${ex.slug}/`;
+}

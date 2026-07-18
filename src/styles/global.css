@@ -78,6 +78,24 @@
   --yellow: #ffe56e;
   --serif: 'Newsreader Variable', Newsreader, Georgia, serif;
   --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---- Proof Kit palette ----
+     Warm cream editorial tokens for the "Your Proof Kit." section (2A) and the
+     /examples case-study page (2B). Scoped by convention to those surfaces only —
+     the rest of the site keeps its pink/yellow accents. From design_handoff_proof_kit. */
+  --pk-surface: #fbf9f3;      /* cards, panels */
+  --pk-surface-2: #f7f4ec;    /* inset sections, rail */
+  --pk-panel: #f4f1e8;        /* viewer / page backdrop */
+  --pk-ink: #201d16;          /* primary text, dark CTA */
+  --pk-ink-body: #4a4436;     /* article body copy */
+  --pk-muted: #6f6857;        /* secondary text */
+  --pk-faint: #938b78;        /* mono labels, captions */
+  --pk-line: #e3dccb;         /* hairline borders */
+  --pk-line-2: #ede7d8;       /* lighter dividers */
+  --pk-line-strong: #ddd5c2;  /* card / frame borders */
+  --pk-accent: #b0492e;       /* eyebrows, active states, italic emphasis, metrics */
+  --pk-accent-hover: #8f3a24; /* link hover */
+  --pk-dark: #1b1913;         /* video / clip frames */
 }
 
 *,

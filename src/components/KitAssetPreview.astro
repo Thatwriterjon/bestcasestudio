@@ -1,0 +1,793 @@
+---
+/**
+ * KitAssetPreview — renders one of the six Proof Kit asset previews for a given example.
+ * Mirrors the design handoff (KitAssetPreview.dc.html): every preview is a labelled
+ * placeholder except where a real asset exists (the video case study embeds the real
+ * YouTube video when the example has one; the written case study renders real copy).
+ *
+ * assetKey:
+ *   video-case    16:9 video — real embed if available, else a dark placeholder frame
+ *   written-case  the article, in a "browser frame" (variant=card, scrolls) — used in 2A
+ *   video-testi   4:5 clip placeholder + explanatory copy
+ *   written-testi surface card, pull-quote + avatar placeholder + stars
+ *   social        LinkedIn carousel row + short-clip row (placeholders)
+ *   howto         "Where each piece works hardest" mapping list
+ */
+import { kitView, kitHowto, type CaseStudyExample, type KitAssetKey } from '../data/examples';
+
+interface Props {
+  assetKey: KitAssetKey;
+  example: CaseStudyExample;
+  /** Written-case card only: destination for the "Read the full case study →" button. */
+  articleHref?: string;
+  /** When true, media (video iframe) loads eagerly. Use for the initially-visible panel. */
+  eager?: boolean;
+}
+
+const { assetKey, example, articleHref, eager = false } = Astro.props;
+const k = kitView(example);
+
+/** First few real sections drive the written-case card body. */
+const cardSections = example.sections.slice(0, 3);
+---
+
+{/* ---------- 01 · Video case study ---------- */}
+{assetKey === 'video-case' && (
+  k.video ? (
+    <figure class="kap-realvideo">
+      <div class="kap-realvideo-frame">
+        <iframe
+          src={k.video.embedUrl}
+          title={k.video.label}
+          loading={eager ? 'eager' : 'lazy'}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </figure>
+  ) : (
+    <div class="kap-video kap-video--case">
+      <span class="kap-stripe" aria-hidden="true"></span>
+      <span class="kap-video-label">VIDEO CASE STUDY</span>
+      <span class="kap-play kap-play--lg" aria-hidden="true"><span class="kap-tri"></span></span>
+      <div class="kap-video-foot">
+        <div>
+          <div class="kap-video-person">{k.person}</div>
+          {k.role && <div class="kap-video-role">{k.role}</div>}
+        </div>
+        {k.videoDuration && <span class="kap-dur">{k.videoDuration}</span>}
+      </div>
+    </div>
+  )
+)}
+
+{/* ---------- 02 · Written case study (browser-frame card) ---------- */}
+{assetKey === 'written-case' && (
+  <div class="kap-doc">
+    <div class="kap-chrome">
+      <div class="kap-dots" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="kap-url">{k.serpUrl}</div>
+      <div class="kap-chrome-tag">FULL ARTICLE ↕</div>
+    </div>
+    <div class="kap-doc-body">
+      <div class="kap-eyebrow">THE WRITTEN CASE STUDY</div>
+      <h1 class="kap-h1">{k.headline}</h1>
+
+      <div class="kap-atomic">
+        <div class="kap-atomic-label">ATOMIC ANSWER · FIRST 120 WORDS</div>
+        <p>{k.atomicAnswer}</p>
+      </div>
+
+      <div class="kap-snapshot">
+        <div><span class="kap-snap-k">ORGANISATION</span><span class="kap-snap-v">{k.organisation}</span></div>
+        <div><span class="kap-snap-k">SECTOR</span><span class="kap-snap-v">{k.sector}</span></div>
+        <div><span class="kap-snap-k">SIZE</span><span class="kap-snap-v">{k.size}</span></div>
+        <div><span class="kap-snap-k">ENGAGEMENT</span><span class="kap-snap-v">{k.engagement}</span></div>
+      </div>
+
+      <div class="kap-nums">
+        {k.stats.map((s) => (
+          <div><span class="kap-num-v">{s.v}</span><span class="kap-num-l">{s.l}</span></div>
+        ))}
+      </div>
+
+      <div class="kap-embed">
+        <span class="kap-play" aria-hidden="true"><span class="kap-tri kap-tri--sm"></span></span>
+        <span class="kap-embed-cap">Watch the video case study{k.videoDuration ? ` · ${k.videoDuration}` : ''}</span>
+      </div>
+
+      {cardSections.map((s, i) => (
+        <>
+          <h2 class="kap-h2">{s.heading}</h2>
+          {s.body?.[0] && <p class="kap-p" set:html={s.body[0]} />}
+          {i === 0 && s.quote && (
+            <div class="kap-pullquote">
+              <div class="kap-pullquote-t">“{s.quote.text}”</div>
+              <div class="kap-pullquote-a">{s.quote.name}{s.quote.role ? ` · ${s.quote.role}` : ''}</div>
+            </div>
+          )}
+        </>
+      ))}
+
+      {articleHref && (
+        <a class="kap-readmore" href={articleHref}>Read the full case study →</a>
+      )}
+    </div>
+  </div>
+)}
+
+{/* ---------- 03 · Video testimonial ---------- */}
+{assetKey === 'video-testi' && (
+  <div class="kap-testi">
+    <div class="kap-video kap-video--clip">
+      <span class="kap-stripe" aria-hidden="true"></span>
+      <span class="kap-video-label">30-SEC CUT</span>
+      <span class="kap-play" aria-hidden="true"><span class="kap-tri kap-tri--sm"></span></span>
+      {k.shortDuration && <span class="kap-dur kap-dur--clip">{k.shortDuration}</span>}
+    </div>
+    <div class="kap-testi-copy">
+      <div class="kap-eyebrow">VIDEO TESTIMONIAL</div>
+      <div class="kap-testi-lead">The single most convincing moment, sharpened for the scroll.</div>
+      <div class="kap-testi-desc">Same interview, cut to thirty seconds. Drops straight onto your homepage hero or a paid-social feed with captions burned in.</div>
+    </div>
+  </div>
+)}
+
+{/* ---------- 04 · Written testimonial ---------- */}
+{assetKey === 'written-testi' && (
+  <figure class="kap-quote">
+    <div class="kap-quote-mark" aria-hidden="true">“</div>
+    <blockquote class="kap-quote-t">{k.pullQuote}</blockquote>
+    <figcaption class="kap-quote-foot">
+      <span class="kap-avatar" aria-hidden="true"></span>
+      <span class="kap-quote-who">
+        <span class="kap-quote-name">{k.person}</span>
+        {k.role && <span class="kap-quote-role">{k.role}</span>}
+      </span>
+      <span class="kap-stars" aria-hidden="true">★★★★★</span>
+    </figcaption>
+  </figure>
+)}
+
+{/* ---------- 05 · Social pack ---------- */}
+{assetKey === 'social' && (
+  <div class="kap-social">
+    <div class="kap-social-label">LINKEDIN CAROUSEL · 6 SLIDES</div>
+    <div class="kap-slides">
+      <div class="kap-slide kap-slide--hook">
+        <span class="kap-slide-n">01 / HOOK</span>
+        <span class="kap-slide-metric">{k.socialHook.value}</span>
+        <span class="kap-slide-metric-l">{k.socialHook.label}</span>
+      </div>
+      <div class="kap-slide kap-slide--body">
+        <span class="kap-slide-n kap-slide-n--dark">02</span>
+        <span class="kap-bar" style="width:80%"></span>
+        <span class="kap-bar" style="width:60%"></span>
+        <span class="kap-bar" style="width:70%"></span>
+      </div>
+      <div class="kap-slide kap-slide--body">
+        <span class="kap-slide-n kap-slide-n--dark">03</span>
+        <span class="kap-bar" style="width:70%"></span>
+        <span class="kap-bar" style="width:85%"></span>
+        <span class="kap-bar" style="width:55%"></span>
+      </div>
+      <div class="kap-slide kap-slide--cta">
+        <span class="kap-slide-n kap-slide-n--cta">06 / CTA</span>
+        <span class="kap-slide-cta-t">Try {k.vendor}</span>
+      </div>
+    </div>
+    <div class="kap-social-label kap-social-label--clips">SHORT CLIPS · 3</div>
+    <div class="kap-clips">
+      <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
+      <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
+      <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
+    </div>
+  </div>
+)}
+
+{/* ---------- 06 · How-to guide ---------- */}
+{assetKey === 'howto' && (
+  <div class="kap-howto">
+    <div class="kap-eyebrow">LAUNCH CHECKLIST</div>
+    <div class="kap-howto-title">Where each piece works hardest</div>
+    <div class="kap-howto-list">
+      {kitHowto.map((h) => (
+        <div class="kap-howto-row">
+          <span class="kap-howto-n">{h.n}</span>
+          <span class="kap-howto-piece">{h.piece}</span>
+          <span class="kap-howto-where">{h.where}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+<style>
+  /* Shared bits */
+  .kap-eyebrow {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.15em;
+    color: var(--pk-faint);
+  }
+  .kap-stripe {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 13px, rgba(255, 255, 255, 0) 13px 26px);
+  }
+  .kap-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kap-play--lg {
+    width: 74px;
+    height: 74px;
+  }
+  .kap-tri {
+    width: 0;
+    height: 0;
+    border-left: 21px solid #fff;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    margin-left: 5px;
+  }
+  .kap-tri--sm {
+    border-left-width: 15px;
+    border-top-width: 9px;
+    border-bottom-width: 9px;
+    margin-left: 3px;
+  }
+
+  /* ---- Real video embed (16:9) ---- */
+  .kap-realvideo {
+    margin: 0;
+  }
+  .kap-realvideo-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--pk-dark);
+    border: 1px solid var(--pk-line-strong);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 44px -30px rgba(30, 26, 18, 0.55);
+  }
+  .kap-realvideo-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* ---- Video placeholder frames ---- */
+  .kap-video {
+    position: relative;
+    width: 100%;
+    background: var(--pk-dark);
+    border: 1px solid var(--pk-line-strong);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 44px -30px rgba(30, 26, 18, 0.55);
+  }
+  .kap-video--case {
+    aspect-ratio: 16 / 9;
+  }
+  .kap-video-label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .kap-video-foot {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .kap-video-person {
+    color: #fff;
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .kap-video-role {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 12.5px;
+    margin-top: 2px;
+  }
+  .kap-dur {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.42);
+    padding: 3px 9px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  /* ---- Written case study card (browser frame) ---- */
+  .kap-doc {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--pk-line-strong);
+    box-shadow: 0 24px 44px -34px rgba(30, 26, 18, 0.5);
+  }
+  .kap-chrome {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 14px;
+    background: #efeadd;
+    border-bottom: 1px solid var(--pk-line);
+  }
+  .kap-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .kap-dots span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .kap-dots span:nth-child(1) { background: #d98b7a; }
+  .kap-dots span:nth-child(2) { background: #e6c07a; }
+  .kap-dots span:nth-child(3) { background: #9ec08a; }
+  .kap-url {
+    flex: 1;
+    background: var(--pk-surface);
+    border: 1px solid var(--pk-line);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--pk-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .kap-chrome-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--pk-accent);
+    white-space: nowrap;
+  }
+  .kap-doc-body {
+    max-height: 520px;
+    overflow: auto;
+    padding: 28px 32px;
+  }
+  .kap-h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.16;
+    margin: 10px 0 0;
+    color: var(--pk-ink);
+  }
+  .kap-atomic {
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--pk-accent);
+    background: var(--pk-surface);
+    border-radius: 0 10px 10px 0;
+  }
+  .kap-atomic-label {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.13em;
+    color: var(--pk-accent);
+  }
+  .kap-atomic p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #3a3427;
+    margin: 8px 0 0;
+  }
+  .kap-snapshot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 18px;
+    background: var(--pk-line);
+    border: 1px solid var(--pk-line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .kap-snapshot > div {
+    background: var(--pk-surface);
+    padding: 12px 14px;
+  }
+  .kap-snap-k {
+    display: block;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    color: var(--pk-faint);
+  }
+  .kap-snap-v {
+    display: block;
+    font-size: 14px;
+    color: var(--pk-ink);
+    margin-top: 3px;
+  }
+  .kap-nums {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+    border-top: 1px solid var(--pk-line-2);
+    border-bottom: 1px solid var(--pk-line-2);
+    padding: 16px 0;
+  }
+  .kap-num-v {
+    display: block;
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--pk-accent);
+    line-height: 1;
+  }
+  .kap-num-l {
+    display: block;
+    font-size: 10.5px;
+    color: var(--pk-muted);
+    line-height: 1.3;
+    margin-top: 4px;
+  }
+  .kap-embed {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 11px;
+    overflow: hidden;
+    background: var(--pk-dark);
+    margin-top: 20px;
+  }
+  .kap-embed-cap {
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .kap-h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 28px 0 0;
+    color: var(--pk-ink);
+  }
+  .kap-p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--pk-ink-body);
+    margin: 12px 0 0;
+  }
+  .kap-p :global(a) {
+    color: var(--pk-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .kap-pullquote {
+    margin: 20px 0 0;
+    padding: 2px 0 2px 18px;
+    border-left: 3px solid var(--pk-line-strong);
+  }
+  .kap-pullquote-t {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.4;
+    color: var(--pk-ink);
+  }
+  .kap-pullquote-a {
+    font-size: 12.5px;
+    color: var(--pk-muted);
+    margin-top: 8px;
+  }
+  .kap-readmore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 13px;
+    background: var(--pk-ink);
+    color: var(--pk-panel);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .kap-readmore:hover {
+    background: #000;
+    color: var(--pk-panel);
+  }
+
+  /* ---- Video testimonial ---- */
+  .kap-testi {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .kap-video--clip {
+    width: 210px;
+    flex: none;
+    aspect-ratio: 4 / 5;
+  }
+  .kap-dur--clip {
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    padding: 2px 8px;
+    font-size: 11px;
+  }
+  .kap-testi-copy {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .kap-testi-lead {
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1.25;
+    color: var(--pk-ink);
+    margin-top: 8px;
+  }
+  .kap-testi-desc {
+    color: var(--pk-muted);
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  /* ---- Written testimonial ---- */
+  .kap-quote {
+    width: 100%;
+    margin: 0;
+    background: var(--pk-surface);
+    border: 1px solid var(--pk-line);
+    border-radius: 14px;
+    padding: 26px 28px;
+  }
+  .kap-quote-mark {
+    font-family: var(--serif);
+    font-size: 52px;
+    line-height: 0.2;
+    color: var(--pk-accent);
+    height: 26px;
+  }
+  .kap-quote-t {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 24px;
+    line-height: 1.42;
+    color: var(--pk-ink);
+    margin: 0;
+  }
+  .kap-quote-foot {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 22px;
+  }
+  .kap-avatar {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border-radius: 50%;
+    background: repeating-linear-gradient(135deg, #ece7db 0 7px, #e2dccb 7px 14px);
+    border: 1px solid var(--pk-line-strong);
+  }
+  .kap-quote-name {
+    display: block;
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--pk-ink);
+  }
+  .kap-quote-role {
+    display: block;
+    font-size: 12.5px;
+    color: var(--pk-muted);
+    margin-top: 1px;
+  }
+  .kap-stars {
+    margin-left: auto;
+    color: var(--pk-accent);
+    letter-spacing: 3px;
+    font-size: 15px;
+  }
+
+  /* ---- Social pack ---- */
+  .kap-social {
+    width: 100%;
+  }
+  .kap-social-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    color: var(--pk-faint);
+  }
+  .kap-social-label--clips {
+    margin-top: 16px;
+  }
+  .kap-slides {
+    display: flex;
+    gap: 12px;
+    margin-top: 11px;
+  }
+  .kap-slide {
+    flex: 1;
+    aspect-ratio: 4 / 5;
+    border-radius: 11px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .kap-slide--hook {
+    background: var(--pk-dark);
+    justify-content: space-between;
+  }
+  .kap-slide--body {
+    background: var(--pk-surface);
+    border: 1px solid var(--pk-line);
+    gap: 8px;
+  }
+  .kap-slide--cta {
+    background: var(--pk-accent);
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .kap-slide-n {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.13em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .kap-slide-n--dark {
+    color: var(--pk-faint);
+  }
+  .kap-slide-n--cta {
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .kap-slide-metric {
+    font-family: var(--serif);
+    font-size: 34px;
+    color: #fff;
+    line-height: 1;
+  }
+  .kap-slide-metric-l {
+    font-size: 10.5px;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.3;
+  }
+  .kap-bar {
+    display: block;
+    height: 7px;
+    background: #e6e0d0;
+    border-radius: 4px;
+  }
+  .kap-slide-cta-t {
+    font-family: var(--serif);
+    font-size: 19px;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .kap-clips {
+    display: flex;
+    gap: 12px;
+    margin-top: 11px;
+  }
+  .kap-clip {
+    flex: 1;
+    aspect-ratio: 1;
+    border-radius: 11px;
+    background: var(--pk-dark);
+    position: relative;
+  }
+  .kap-clip .kap-tri--sm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ---- How-to guide ---- */
+  .kap-howto {
+    width: 100%;
+    background: var(--pk-surface);
+    border: 1px solid var(--pk-line);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .kap-howto-title {
+    font-family: var(--serif);
+    font-size: 23px;
+    color: var(--pk-ink);
+    margin-top: 8px;
+  }
+  .kap-howto-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+  .kap-howto-row {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-top: 1px solid var(--pk-line-2);
+    align-items: baseline;
+  }
+  .kap-howto-n {
+    flex: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--pk-line-strong);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--pk-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kap-howto-piece {
+    flex: none;
+    width: 150px;
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--pk-ink);
+  }
+  .kap-howto-where {
+    flex: 1;
+    font-size: 13px;
+    color: var(--pk-muted);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 560px) {
+    .kap-nums {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 12px;
+    }
+    .kap-howto-row {
+      flex-wrap: wrap;
+    }
+    .kap-howto-piece {
+      width: auto;
+    }
+    .kap-howto-where {
+      flex-basis: 100%;
+      margin-left: 40px;
+    }
+  }
+</style>

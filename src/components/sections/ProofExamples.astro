@@ -1,8 +1,8 @@
 ---
 import SectionHead from '../SectionHead.astro';
-import { examples } from '../../data/examples';
+import { examples, exampleHref } from '../../data/examples';
 
-const featured = ['extrovert-commit-linkedin-growth', 'saasydb-leadforce-solutions']
+const featured = ['saasydb-leadforce-solutions', 'extrovert-commit-linkedin-growth']
   .map((slug) => examples.find((e) => e.slug === slug))
   .filter((e): e is NonNullable<typeof e> => Boolean(e));
 ---
@@ -15,7 +15,7 @@ const featured = ['extrovert-commit-linkedin-growth', 'saasydb-leadforce-solutio
     </p>
     <div class="ex-grid">
       {featured.map((ex) => (
-        <a class="ex-card" href={`/examples/${ex.slug}/`}>
+        <a class="ex-card" href={exampleHref(ex)}>
           <span class="ex-client">{ex.client} × {ex.customer}</span>
           <h3>{ex.title}</h3>
           <span class="ex-cta">Watch the video. Read the study. See the full kit. <span class="arr" aria-hidden="true">→</span></span>

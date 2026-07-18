@@ -1,0 +1,88 @@
+---
+/**
+ * Full-width Proof Kit example toggle (2B). One card per published example, spanning the
+ * content width; the current example is highlighted (ink bg, cream text). In production these
+ * are links to each example's page — no client JS needed.
+ */
+import { exampleHref, type CaseStudyExample } from '../data/examples';
+
+interface Props {
+  /** Visible examples in display order. */
+  items: CaseStudyExample[];
+  /** Slug of the example currently shown. */
+  active: string;
+}
+
+const { items, active } = Astro.props;
+---
+
+<div class="exsw">
+  <p class="exsw-eyebrow">PROOF KIT EXAMPLES: TOGGLE TO SEE THE NEXT ONE</p>
+  <nav class="exsw-grid" aria-label="Proof Kit examples" style={`--exsw-cols:${items.length}`}>
+    {items.map((ex) => (
+      <a
+        href={exampleHref(ex)}
+        class:list={['exsw-card', ex.slug === active && 'is-active']}
+        aria-current={ex.slug === active ? 'page' : undefined}
+      >
+        <span class="exsw-vendor">{ex.client} <span class="exsw-cust">× {ex.customer}</span></span>
+      </a>
+    ))}
+  </nav>
+</div>
+
+<style>
+  .exsw {
+    margin-bottom: 48px;
+  }
+  .exsw-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--pk-faint);
+    margin: 0 0 14px;
+  }
+  .exsw-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--exsw-cols, 2), 1fr);
+    gap: 12px;
+  }
+  .exsw-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: var(--pk-surface);
+    border: 1px solid var(--pk-line-strong);
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  }
+  .exsw-card:hover {
+    border-color: var(--pk-faint);
+    transform: translateY(-2px);
+  }
+  .exsw-vendor {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.15;
+    color: var(--pk-ink);
+  }
+  .exsw-cust {
+    opacity: 0.6;
+  }
+  .exsw-card.is-active {
+    background: var(--pk-ink);
+    border-color: var(--pk-ink);
+    transform: none;
+  }
+  .exsw-card.is-active .exsw-vendor {
+    color: var(--pk-panel);
+  }
+
+  @media (max-width: 640px) {
+    .exsw-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
