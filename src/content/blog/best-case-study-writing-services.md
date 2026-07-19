@@ -19,7 +19,7 @@ updated: 2026-07-18
 
 The best B2B SaaS case study services in 2026 are **Uplift Content** (established written specialist, strong SaaS logos, pricing on request), **Best Case Studio** ($2,500 - one interview becomes a complete proof set: video and written case study, video and written testimonial, and a social pack), **SuccessKit** ($1,750+ per case study, fully managed, sales-library layer), and **Ace Case Studies** (solo written craft, enterprise clients like Oracle). For video-led work, **Testimonial Hero** (which acquired Case Study Buddy in 2024) sells annual credit plans from around $6,510/yr. Cheapest of the lot: **Column** ($649/$799 written-only with PDF design) and **StoryVoice** (an AI voice-interview tool, under $5k/yr, no video). Full-service agencies like **Grow & Convert** and **Ten Speed** produce case studies inside broader content retainers at $5,000–$15,000+ effective cost per study.
 
-I run [Best Case Studio](/), so I'm in this list. I've flagged exactly where my biases sit. I've spent months researching every service here, and every price, turnaround, and capability comes from their own websites (or, where they hide the number behind a sales call, I'll tell you that too). If something's an estimate, I'll say so.
+I run [Best Case Studio](/), so I'm in this list. I've flagged exactly where my biases sit. I've spent months researching every service here, and every price, turnaround, and capability comes from their own websites (or, where they hide the number behind a sales call, I'll tell you that too). If something's an estimate, I'll say so. And if you want the direct head-to-head of us against any one of these, I've put those on the [comparison pages](/compare/).
 
 ## Quick-reference comparison table
 
@@ -54,7 +54,7 @@ They don't publish a price. You get a fixed quote after a discovery call, plus a
 
 Their client list is the real thing. ClickUp, Okta, WalkMe, LeanData, ON24. Those aren't logos you get handed for writing a blog post.
 
-Where it gets interesting is the format gap. Uplift is written-led. Video is an add-on you scope separately, there's no social pack as standard, and they work with SaaS only, so if you sell services you bounce off them. They do offer answer-engine optimisation as a service for content generally, which is more than most, but it isn't baked into the case study deliverable. If all you need is an excellent written case study from a proven SaaS writer, that's exactly what they are.
+Where it gets interesting is the format gap. Uplift is written-led. Video is an add-on you scope separately, there's no social pack as standard, and they focus on SaaS, so if you sell services you're more the exception than the fit. They do offer answer-engine optimisation as a service for content generally, which is more than most, but it isn't baked into the case study deliverable. If all you need is an excellent written case study from a proven SaaS writer, that's exactly what they are.
 
 Best fit: SaaS marketing teams that want a reliable, ongoing writing partner who knows the space.
 

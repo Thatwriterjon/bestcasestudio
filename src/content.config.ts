@@ -13,6 +13,15 @@ const blog = defineCollection({
     faq: z
       .array(z.object({ q: z.string(), a: z.string() }))
       .optional(),
+    /** Present on "X vs Y" comparison posts. Powers the versus hero and comparison styling. */
+    comparison: z
+      .object({
+        competitor: z.string(),
+        us: z.string(),
+        them: z.string(),
+        wedge: z.string(),
+      })
+      .optional(),
   }),
 });
 

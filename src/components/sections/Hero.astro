@@ -11,7 +11,10 @@ const featuredExampleHref = featuredExample ? exampleHref(featuredExample) : '/e
 <section class="hero" aria-label="Introduction">
   <div class="wrap">
     <div class="hero-grid">
-      <h1>You don't need a better pitch.<br />You need <span class="yel">better proof</span>.</h1>
+      <div class="hero-head">
+        <h1 class="hero-kicker">B2B Case Studies</h1>
+        <h2 class="hero-display">You don't need a better pitch.<br />You need <span class="yel">better proof</span>.</h2>
+      </div>
       <div class="hero-right">
         <p class="lede lede-lead">
           Prospects don't stall because your offer's weak, they stall because they can't tell if they can trust you to deliver. <em>Social proof fixes that.</em>
@@ -53,22 +56,34 @@ const featuredExampleHref = featuredExample ? exampleHref(featuredExample) : '/e
        composition stays balanced rather than leaving a void at one corner. */
     align-items: center;
   }
-  .hero h1 {
+  .hero-head {
+    /* Optically align the cap-height of the display heading with the top of the lede,
+       which sits lower because of its larger line-height. */
+    margin-top: 0.12em;
+  }
+  .hero-kicker {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 18px;
+  }
+  .hero-display {
     font-family: var(--serif);
     font-weight: 500;
     font-size: clamp(56px, 7vw, 108px);
     line-height: 0.92;
     letter-spacing: -0.025em;
-    /* Optically align the cap-height of the display heading with the top of the lede,
-       which sits lower because of its larger line-height. */
-    margin: 0.12em 0 0;
+    margin: 0;
     max-width: 16ch;
   }
-  .hero h1 em {
+  .hero-display em {
     font-style: italic;
     font-weight: 500;
   }
-  .hero h1 .yel {
+  .hero-display .yel {
     background: var(--yellow);
     padding: 0 0.12em 0.04em;
     display: inline-block;
@@ -116,7 +131,7 @@ const featuredExampleHref = featuredExample ? exampleHref(featuredExample) : '/e
       gap: 40px;
       align-items: start;
     }
-    .hero h1 {
+    .hero-head {
       margin-top: 0;
     }
     .hero-right {

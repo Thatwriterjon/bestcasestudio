@@ -5,8 +5,8 @@ import PostArticle from '../../components/PostArticle.astro';
 import { getCollection } from 'astro:content';
 
 export const getStaticPaths = (async () => {
-  // Comparison posts live at /compare/ instead — exclude them here.
-  const posts = (await getCollection('blog')).filter((p) => !p.data.comparison);
+  // Only comparison ("X vs Y") posts live here.
+  const posts = (await getCollection('blog')).filter((p) => p.data.comparison);
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -31,7 +31,7 @@ const articleSchema: Record<string, unknown> = {
   publisher: { '@id': 'https://bestcasestud.io/#org' },
   datePublished: isoDate,
   dateModified: post.data.updated ? post.data.updated.toISOString() : isoDate,
-  mainEntityOfPage: `https://bestcasestud.io/blog/${post.id}/`,
+  mainEntityOfPage: `https://bestcasestud.io/compare/${post.id}/`,
 };
 
 /* ---- JSON-LD: FAQPage (if frontmatter has faq items) ---- */
@@ -56,9 +56,9 @@ const schemas = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
   schema={schemas}
   breadcrumbs={[
     { name: 'Home', url: '/' },
-    { name: 'Blog', url: '/blog/' },
-    { name: post.data.title, url: `/blog/${post.id}/` },
+    { name: 'Compare', url: '/compare/' },
+    { name: post.data.title, url: `/compare/${post.id}/` },
   ]}
 >
-  <PostArticle post={post} basePath="/blog" />
+  <PostArticle post={post} basePath="/compare" />
 </Base>

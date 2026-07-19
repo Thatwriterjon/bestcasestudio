@@ -2,6 +2,56 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from 'rehype-external-links';
 
+// Tags the "Best Case Studio" column in any Markdown comparison table so it can be highlighted,
+// and wraps such tables in a horizontally-scrollable container for mobile. Scopes itself: only
+// tables that actually contain a "Best Case Studio" header cell are touched.
+function rehypeComparisonTables() {
+  const getText = (n) =>
+    n.type === 'text' ? n.value : (n.children || []).map(getText).join('');
+  const addClass = (n, cls) => {
+    n.properties = n.properties || {};
+    const e = n.properties.className;
+    n.properties.className = Array.isArray(e) ? [...e, cls] : e ? [e, cls] : [cls];
+  };
+  const findAll = (n, tag, out = []) => {
+    if (n.type === 'element' && n.tagName === tag) out.push(n);
+    (n.children || []).forEach((c) => findAll(c, tag, out));
+    return out;
+  };
+  const markTable = (table) => {
+    const rows = findAll(table, 'tr');
+    if (!rows.length) return false;
+    const headCells = (rows[0].children || []).filter((c) => c.type === 'element');
+    const usIndex = headCells.findIndex((c) => /best case studio/i.test(getText(c)));
+    if (usIndex === -1) return false;
+    addClass(table, 'comparison-table');
+    for (const row of rows) {
+      const cells = (row.children || []).filter((c) => c.type === 'element');
+      if (cells[usIndex]) addClass(cells[usIndex], 'col-us');
+    }
+    return true;
+  };
+  const walk = (node) => {
+    if (!node.children) return;
+    for (let i = 0; i < node.children.length; i++) {
+      const child = node.children[i];
+      if (child.type === 'element' && child.tagName === 'table') {
+        if (markTable(child)) {
+          node.children[i] = {
+            type: 'element',
+            tagName: 'div',
+            properties: { className: ['comparison-scroll'] },
+            children: [child],
+          };
+        }
+      } else {
+        walk(child);
+      }
+    }
+  };
+  return (tree) => walk(tree);
+}
+
 // Stable per-URL <lastmod>. A fixed date per page (instead of new Date()) keeps the signal
 // honest: unchanged pages keep the same lastmod across rebuilds, so Google doesn't learn to
 // discount it. Bump a page's date here when its content materially changes.
@@ -38,6 +88,7 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [
       [rehypeExternalLinks, { target: '_blank', rel: ['noopener'] }],
+      rehypeComparisonTables,
     ],
   },
   build: {

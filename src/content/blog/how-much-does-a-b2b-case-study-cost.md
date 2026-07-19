@@ -7,7 +7,7 @@ faq:
   - q: How much does a B2B case study cost on average?
     a: The average cost of a professionally written B2B case study is $1,500–$3,000 when produced by a specialist. Freelancers charge $1,000–$2,500, specialist boutiques charge $1,500–$3,000, and full-service agencies charge $5,000–$15,000+ (usually as part of a monthly retainer).
   - q: Can I write a B2B case study myself using AI?
-    a: "You can, but AI-generated case studies face three problems: AI cannot interview your customer or verify real metrics, AI content ranks roughly 23% lower on competitive queries, and B2B buyers can often tell when proof content is machine-generated, which undermines the trust a case study is supposed to build."
+    a: "You can, but AI-generated case studies face three problems: AI cannot interview your customer or verify real metrics, AI content ranks roughly 23% lower on average (and further on competitive queries), and B2B buyers can often tell when proof content is machine-generated, which undermines the trust a case study is supposed to build."
   - q: What's included in a professionally written B2B case study?
     a: A professionally written B2B case study typically includes a customer interview, narrative writing, and one or two revision rounds. Higher-end services also include SEO metadata, JSON-LD schema markup, Open Graph tags, AI-citation engineering, and a publishing guide for your CMS. A few studios now deliver a complete proof set from the same interview (a video case study, video and written testimonials, and a social pack) rather than the written piece alone (Best Case Studio's $2,500 Proof Kit is one).
   - q: How long does it take to produce a B2B case study?
@@ -108,7 +108,7 @@ But it's almost always a generic story, with no personality, no emotion, and no 
 
 The problem is that AI can't interview your customer. That means no real quotes, no numbers the customer actually verified, no story that a buyer reads and thinks "that sounds like my problem." AI either invents metrics (which is a credibility and legal problem) or falls back on filler like "significant improvement in efficiency." Neither of those convinces anyone to spend money.
 
-There's the ranking issue too. Pure AI content performs measurably worse on competitive search queries ([roughly 23% lower, according to Digital Applied](https://www.digitalapplied.com/blog/ai-generated-vs-human-content-16-month-google-ranking-study)). Google's helpful content system is built to spot and demote pages that exist to game search rather than help a person.
+There's the ranking issue too. Pure AI content performs measurably worse in search ([roughly 23% lower on average, according to Digital Applied](https://www.digitalapplied.com/blog/ai-generated-vs-human-content-16-month-google-ranking-study)), and the gap widens on competitive queries. Google's helpful content system is built to spot and demote pages that exist to game search rather than help a person.
 
 And then there's the irony nobody talks about: a case study is supposed to prove that real humans use your product and get real results. If the case study *itself* was clearly written by a machine…what exactly are you proving?
 

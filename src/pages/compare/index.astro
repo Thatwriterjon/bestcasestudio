@@ -1,0 +1,599 @@
+---
+import Base from '../../layouts/Base.astro';
+
+/* Deep-dive cards + matrix rows. Facts here mirror the fact-checked figures used on the
+   individual comparison pages — keep them in sync if a competitor's pricing changes. */
+const comparisons = [
+  {
+    slug: 'best-case-studio-vs-testimonial-hero',
+    name: 'Testimonial Hero',
+    wedge: 'Accessible',
+    blurb:
+      'The premium video incumbent, sold on annual credits. We win on price, speed, and getting the whole set from one interview.',
+  },
+  {
+    slug: 'best-case-studio-vs-uplift-content',
+    name: 'Uplift Content',
+    wedge: 'Complete',
+    blurb:
+      'Excellent SaaS case-study writers. We add video, both testimonials, and social from the same conversation, for SaaS or services.',
+  },
+  {
+    slug: 'best-case-studio-vs-successkit',
+    name: 'SuccessKit',
+    wedge: 'Complete',
+    blurb:
+      'Managed case studies priced per asset. We hand you six formats from one interview instead of buying them one at a time.',
+  },
+  {
+    slug: 'best-case-studio-vs-storyvoice',
+    name: 'StoryVoice',
+    wedge: 'Real',
+    blurb:
+      'An AI voice interview that drafts a written case study you finish yourself. We send a real human and produce video too.',
+  },
+  {
+    slug: 'best-case-studio-vs-content-agencies',
+    name: 'Content & SEO agencies',
+    wedge: 'Focused',
+    blurb:
+      'Case studies as one line on a broad retainer. Proof is the only thing we do, productised and fixed-price.',
+  },
+  {
+    slug: 'best-case-studio-vs-freelancers-and-chatgpt',
+    name: 'Freelancers & ChatGPT',
+    wedge: 'Real',
+    blurb:
+      'The cheap DIY floor. We are the real, produced, done-for-you version, built to survive a sceptical buyer.',
+  },
+];
+
+const matrix = [
+  {
+    name: 'Best Case Studio',
+    us: true,
+    get: 'Video + written case study, video + written testimonial, social pack, from one interview',
+    price: '$2,500 fixed, one-off',
+    time: '14 days',
+    who: 'The founder (SaaS or services)',
+  },
+  {
+    name: 'Testimonial Hero',
+    href: '/compare/best-case-studio-vs-testimonial-hero/',
+    get: 'Video testimonials (flagship) + written case studies',
+    price: 'Annual credit tiers, $6,510–$54,000/yr',
+    time: 'Weeks',
+    who: 'Funded marketing teams',
+  },
+  {
+    name: 'Uplift Content',
+    href: '/compare/best-case-studio-vs-uplift-content/',
+    get: 'Written case studies (video as an add-on)',
+    price: 'From ~$750/study; quote after a call',
+    time: 'Weeks; prefers ongoing',
+    who: 'SaaS marketing teams',
+  },
+  {
+    name: 'SuccessKit',
+    href: '/compare/best-case-studio-vs-successkit/',
+    get: 'Written case study + short video testimonial, sales library',
+    price: 'Per asset from $1,750',
+    time: '~4–6 weeks',
+    who: 'Sales & marketing teams',
+  },
+  {
+    name: 'StoryVoice',
+    href: '/compare/best-case-studio-vs-storyvoice/',
+    get: 'AI-drafted written case study only',
+    price: 'Cheap; free tier, low one-off/monthly',
+    time: '1–3 days',
+    who: 'DIY / volume',
+  },
+  {
+    name: 'Content & SEO agencies',
+    href: '/compare/best-case-studio-vs-content-agencies/',
+    get: 'Case study = one line on a broad content menu',
+    price: 'Retainer, ~$8k–$15k+/mo',
+    time: 'Weeks, retainer-paced',
+    who: 'CMOs / content teams',
+  },
+  {
+    name: 'Freelancer / ChatGPT',
+    href: '/compare/best-case-studio-vs-freelancers-and-chatgpt/',
+    get: 'One written case study, variable quality',
+    price: '$0–$1,500',
+    time: 'Days',
+    who: 'Bootstrapped / DIY',
+  },
+];
+
+const wedges = [
+  {
+    word: 'Real',
+    against: 'vs AI tools & DIY',
+    line: 'StoryVoice, ChatGPT, Fiverr. A real recorded human interview, fully produced, beats a machine-spun draft you finish yourself.',
+  },
+  {
+    word: 'Complete',
+    against: 'vs written specialists',
+    line: 'Uplift, SuccessKit, Concurate. The full multi-format suite from one interview, not a single written asset or a subscription.',
+  },
+  {
+    word: 'Accessible',
+    against: 'vs premium video',
+    line: 'Testimonial Hero. Enterprise-grade proof at founder scale: one fixed price, two weeks, no annual credits or committee.',
+  },
+  {
+    word: 'Focused',
+    against: 'vs content & SEO agencies',
+    line: 'Animalz, Brafton, Siege and co. Proof is the only thing we do, not line seven on a retainer.',
+  },
+];
+
+const itemListSchema = {
+  '@type': 'ItemList',
+  itemListElement: comparisons.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `Best Case Studio vs ${c.name}`,
+    url: `https://bestcasestud.io/compare/${c.slug}/`,
+  })),
+};
+---
+
+<Base
+  title="How Best Case Studio compares · Best Case Studio"
+  description="How the $2,500 Proof Kit compares to Testimonial Hero, Uplift Content, SuccessKit, StoryVoice, content agencies, and DIY. Honest head-to-heads, real pricing."
+  schema={[itemListSchema]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Compare', url: '/compare/' },
+  ]}
+>
+  <section class="hub-hero">
+    <div class="wrap-tight">
+      <p class="eyebrow mono">Compare</p>
+      <h1>How Best Case Studio compares</h1>
+      <p class="lede">
+        Six honest head-to-heads. Where each alternative is genuinely good, where it makes you
+        trade something, and which job the Proof Kit is actually built for.
+      </p>
+    </div>
+  </section>
+
+  <section class="hub-intro">
+    <div class="wrap-article">
+      <p>
+        I run Best Case Studio, so I'm not a neutral referee and I won't pretend to be. Here's the
+        honest version anyway. Most of the options below are good at what they do. The catch is that
+        each one is built for a slightly different job than yours, and nearly all of them make you
+        trade something for it. The video. The speed. The price. Or whether a real human ever
+        actually sat down with your customer.
+      </p>
+      <p>
+        Buy the whole proof set à la carte from the specialists and you're looking at $7,000 to
+        $10,000-plus across three or four vendors. The <a href="/pricing/">Proof Kit</a> turns one
+        recorded conversation with your happiest customer into the complete set, for a fixed $2,500,
+        in 14 days. One customer, one hour of their time, every format your buyer checks.
+      </p>
+      <p class="hub-note">
+        Want the neutral rundown of the whole market, us included as one option among many? That
+        lives in the <a href="/blog/best-case-study-writing-services/">case study services guide</a>.
+        This page is the biased one: how we stack up against each alternative, and why.
+      </p>
+    </div>
+  </section>
+
+  <section class="hub-matrix">
+    <div class="wrap-tight">
+      <h2>The whole field, side by side</h2>
+      <div class="matrix-scroll">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>What you get back</th>
+              <th>Price</th>
+              <th>Turnaround</th>
+              <th>Built for</th>
+            </tr>
+          </thead>
+          <tbody>
+            {matrix.map((row) => (
+              <tr class:list={[{ 'row-us': row.us }]}>
+                <td class="matrix-name">
+                  {row.us ? (
+                    <span class="us-stack">Best Case Studio<span class="us-chip mono">That's us!</span></span>
+                  ) : (
+                    <a href={row.href}>{row.name}</a>
+                  )}
+                </td>
+                <td>{row.get}</td>
+                <td>{row.price}</td>
+                <td>{row.time}</td>
+                <td>{row.who}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="matrix-foot mono">
+        Competitor pricing and timelines are their published or reported figures at the time of
+        writing. Tap any name for the full breakdown.
+      </p>
+    </div>
+  </section>
+
+  <section class="hub-wedges">
+    <div class="wrap-tight">
+      <h2>There's no single reason we win</h2>
+      <p class="wedges-sub">The right answer flexes by who you're comparing us to.</p>
+      <div class="wedge-grid">
+        {wedges.map((w) => (
+          <div class="wedge-card">
+            <span class="wedge-word">{w.word}</span>
+            <span class="wedge-against mono">{w.against}</span>
+            <p>{w.line}</p>
+          </div>
+        ))}
+      </div>
+      <p class="throughline">
+        The one line that holds against all of them at once: nobody else turns one conversation into
+        a complete proof set at a fixed founder price.
+      </p>
+    </div>
+  </section>
+
+  <section class="hub-cards">
+    <div class="wrap-tight">
+      <h2>The head-to-heads</h2>
+      <div class="card-grid">
+        {comparisons.map((c) => (
+          <a class="cmp-card" href={`/compare/${c.slug}/`}>
+            <span class="cmp-card-word mono">Our edge · {c.wedge}</span>
+            <h3>vs {c.name}</h3>
+            <p>{c.blurb}</p>
+            <span class="cmp-card-link mono">Read the full comparison →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="hub-cta">
+    <div class="wrap-article">
+      <div class="cta-box">
+        <h3>See what one conversation turns&nbsp;into.</h3>
+        <p>
+          A Proof Kit is a real customer, on the record: video and written case study, both
+          testimonials, and a social pack, all from one interview. $2,500, delivered 14 days from
+          the interview.
+        </p>
+        <div class="cta-actions">
+          <a href="/examples/" class="cta-btn">See a real example →</a>
+          <a href="/pricing/" class="cta-btn cta-btn--ghost">See pricing &amp; book a call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ---- Hero ---- */
+  .hub-hero {
+    padding: 160px 0 40px;
+  }
+  .eyebrow {
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  .hub-hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(36px, 5.5vw, 60px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 16ch;
+  }
+  .hub-hero .lede {
+    font-family: var(--serif);
+    font-size: clamp(19px, 2.2vw, 23px);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 40ch;
+  }
+
+  /* ---- Intro ---- */
+  .hub-intro {
+    padding: 0 0 24px;
+  }
+  .hub-intro p {
+    font-size: 19px;
+    line-height: 1.62;
+    margin: 0 0 18px;
+  }
+  .hub-intro a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--ink-faint);
+  }
+  .hub-intro a:hover {
+    text-decoration-color: var(--ink);
+  }
+  .hub-note {
+    font-size: 16px !important;
+    color: var(--ink-soft);
+    border-left: 3px solid var(--pink);
+    padding: 2px 0 2px 18px;
+    margin-top: 24px !important;
+  }
+
+  /* ---- Section headers ---- */
+  .hub-matrix h2,
+  .hub-wedges h2,
+  .hub-cards h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(26px, 3.2vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+  }
+
+  /* ---- Matrix ---- */
+  .hub-matrix {
+    padding: 40px 0;
+  }
+  .matrix-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .matrix {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .matrix th {
+    background: var(--ink);
+    color: var(--bg);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 13px 16px;
+    white-space: nowrap;
+  }
+  .matrix td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .matrix tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .matrix tbody tr:nth-child(even):not(.row-us) td {
+    background: color-mix(in srgb, var(--bg-2) 55%, var(--bg));
+  }
+  .matrix-name {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .matrix-name a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--ink-faint);
+  }
+  .matrix-name a:hover {
+    text-decoration-color: var(--ink);
+  }
+  .row-us td {
+    background: color-mix(in srgb, var(--pink) 15%, var(--bg)) !important;
+    color: var(--ink);
+  }
+  .row-us .matrix-name {
+    font-weight: 700;
+  }
+  .us-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .us-chip {
+    display: inline-block;
+    background: var(--pink);
+    color: var(--ink);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .matrix-foot {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin: 14px 0 0;
+  }
+
+  /* ---- Wedges ---- */
+  .hub-wedges {
+    padding: 40px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .wedges-sub {
+    font-size: 18px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: -12px 0 28px;
+  }
+  .wedge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .wedge-card {
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 24px;
+    background: var(--bg-2);
+  }
+  .wedge-word {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .wedge-against {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pk-accent, #b0492e);
+    margin: 4px 0 12px;
+  }
+  .wedge-card p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .throughline {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin: 32px 0 0;
+    max-width: 44ch;
+  }
+
+  /* ---- Deep-dive cards ---- */
+  .hub-cards {
+    padding: 40px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .cmp-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 26px;
+    background: var(--bg);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .cmp-card:hover {
+    border-color: color-mix(in srgb, var(--pink) 55%, var(--rule));
+    transform: translateY(-2px);
+  }
+  .cmp-card-word {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pk-accent, #b0492e);
+  }
+  .cmp-card h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .cmp-card p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+    flex: 1;
+  }
+  .cmp-card-link {
+    font-size: 12px;
+    color: var(--ink);
+    margin-top: 4px;
+  }
+
+  /* ---- CTA ---- */
+  .hub-cta {
+    padding: 32px 0 120px;
+  }
+  .cta-box {
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 8px;
+    padding: 48px;
+    text-align: center;
+  }
+  .cta-box h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 0 0 16px;
+    color: var(--bg);
+  }
+  .cta-box p {
+    font-size: 17px;
+    line-height: 1.55;
+    color: #c8c3b6;
+    margin: 0 auto 28px;
+    max-width: 48ch;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-btn {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .cta-btn:hover {
+    background: var(--pink);
+  }
+  .cta-btn--ghost {
+    background: transparent;
+    color: var(--bg);
+    box-shadow: inset 0 0 0 1px rgba(246, 243, 236, 0.4);
+  }
+  .cta-btn--ghost:hover {
+    background: rgba(246, 243, 236, 0.1);
+  }
+
+  @media (max-width: 820px) {
+    .hub-hero {
+      padding-top: 120px;
+    }
+    .wedge-grid,
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+    .cta-box {
+      padding: 32px 24px;
+    }
+  }
+</style>
