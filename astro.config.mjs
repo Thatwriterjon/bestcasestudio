@@ -58,7 +58,7 @@ function rehypeComparisonTables() {
 // NOTE: '/examples/' is the featured example (lowest `order` in src/data/examples.ts); keep
 // its date in sync with that example.
 const lastmodByPath = {
-  '/': '2026-07-01',
+  '/': '2026-07-19',
   '/pricing/': '2026-07-01',
   '/contact/': '2026-07-01',
   '/privacy/': '2026-07-01',
@@ -67,8 +67,15 @@ const lastmodByPath = {
   '/examples/measurable-energy-st-peters-school/': '2026-05-27',
   '/examples/taxvalet-stealth-fitness/': '2026-05-26',
   '/blog/': '2026-07-02',
-  '/blog/how-much-does-a-b2b-case-study-cost/': '2026-07-01',
-  '/blog/best-case-study-writing-services/': '2026-07-02',
+  '/blog/how-much-does-a-b2b-case-study-cost/': '2026-07-19',
+  '/blog/best-case-study-writing-services/': '2026-07-19',
+  '/compare/': '2026-07-19',
+  '/compare/best-case-studio-vs-testimonial-hero/': '2026-07-19',
+  '/compare/best-case-studio-vs-uplift-content/': '2026-07-19',
+  '/compare/best-case-studio-vs-successkit/': '2026-07-19',
+  '/compare/best-case-studio-vs-storyvoice/': '2026-07-19',
+  '/compare/best-case-studio-vs-content-agencies/': '2026-07-19',
+  '/compare/best-case-studio-vs-freelancers-and-chatgpt/': '2026-07-19',
 };
 
 export default defineConfig({
