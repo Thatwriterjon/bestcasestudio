@@ -1,5 +1,11 @@
 ---
 import Button from '../Button.astro';
+import { examples, exampleHref } from '../../data/examples';
+
+// "See a real example" points at a specific finished case study (SaasyDB), not the hub —
+// a concrete example converts better than a directory.
+const featuredExample = examples.find((e) => e.slug === 'saasydb-leadforce-solutions');
+const featuredExampleHref = featuredExample ? exampleHref(featuredExample) : '/examples/';
 ---
 
 <section class="hero" aria-label="Introduction">
@@ -15,7 +21,7 @@ import Button from '../Button.astro';
         </p>
         <div class="ctas">
           <Button href="/contact/" variant="primary" class="hero-cta">Book a call</Button>
-          <Button href="/examples/" variant="secondary">See a real example</Button>
+          <Button href={featuredExampleHref} variant="secondary">See a real example</Button>
         </div>
       </div>
     </div>

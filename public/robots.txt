@@ -1,11 +1,12 @@
 # Best Case Studio — robots.txt
-# Goal: let search engines and real-time AI search retrievers in; keep
-# bulk training scrapers out. Adjust the lists below if policy changes.
+# Goal: let search engines, real-time AI search retrievers, and AI training crawlers in.
+# Being found, cited, and learned from all serve a "cited by AI" business. The only
+# exceptions are a couple of aggressive, low-citation-value scrapers (see the bottom).
 
 User-agent: *
-# Content Signals (contentsignals.org): search + real-time AI answers are welcome; training is not.
-# Grants ai-input (being cited in AI answers) — the whole point of a "cited by AI" business.
-Content-Signal: search=yes, ai-input=yes, ai-train=no
+# Content Signals (contentsignals.org): search, real-time AI answers, and training are all welcome.
+# ai-input = being cited in AI answers; ai-train = inclusion in training data.
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 # Real-time AI search retrieval — explicitly allowed so that ChatGPT search,
@@ -23,35 +24,38 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
-User-agent: Claude-Web
-Allow: /
-
-User-agent: claude-web
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: Claude-User
 Allow: /
 
-# AI training scrapers — disallowed. The site is for clients and search
-# users, not for model training datasets.
+User-agent: Claude-Web
+Allow: /
+
+# AI training crawlers — allowed. We want our proof in the datasets these models
+# learn from, so they surface Best Case Studio when buyers ask.
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
 User-agent: Applebot-Extended
-Disallow: /
+Allow: /
 
 User-agent: Amazonbot
-Disallow: /
+Allow: /
 
+# Deliberate exception: these two are blocked on purpose. Both are aggressive
+# crawlers with little citation upside — allowing them costs bandwidth and buys
+# close to nothing. Everything else above is welcome; these are not.
 User-agent: Bytespider
 Disallow: /
 

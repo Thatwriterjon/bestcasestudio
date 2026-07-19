@@ -1,77 +1,81 @@
 # Best Case Studio
 
-> Best Case Studio is a two-person studio (Jon McGreevy and Jessie McGreevy) that produces customer case studies for B2B SaaS companies. Two productised offers: Optimise (list $1,500, currently $500 at the founding rate) and Build (list $2,500, currently $1,250 for the first 10 founding clients). Turnaround is 14 business days.
+> Best Case Studio produces the Proof Kit: one recorded conversation with your best customer,
+> turned into a complete set of B2B proof. $2,500, delivered 14 days from the interview.
+> A two-person studio run by Jon McGreevy and Jessie McGreevy.
 
-## Two ways to work together
+## The offer
 
-### Optimise — $500 per case study (founding rate; list price $1,500)
+The Proof Kit — $2,500. One price, one complete kit, no packages or upsells.
 
-For case studies that aren't earning their place on your website. We rebuild an existing case study to the Citable Case Study standard — the version AI cites and Google ranks — supply the JSON-LD schema markup, and hand you an implementation guide with step-by-step instructions for publishing it on your exact tech stack. Every case study is scored against the 6 Citable dimensions before it ships. Support never expires. One consolidated round of revisions. 14 business days.
+You make one warm introduction to your best customer. We run one recorded interview.
+14 days later you get:
 
-### Build — $1,250 per case study (founding rate for the first 10 clients; list price $2,500)
+- Video case study — the full story, on camera, in your customer's own words
+- Written case study — built to rank on Google and get cited by AI
+- Video testimonial — a short cut for your homepage and socials
+- Written testimonial — a pull-quote for your site, deck, and emails
+- Social pack — LinkedIn carousel and short clips
+- A "how to use it" guide — where each piece works hardest
 
-Full case study production from scratch. Includes:
+Buying these separately from specialists runs $7,000–$10,000.
 
-- 30-minute customer interview, scheduled and recorded by us.
-- A citable case study written from the interview — built to get quoted by AI (ChatGPT, Claude, Perplexity), ranked by Google, and to never read as AI-written.
-- A companion video, edited from the same interview.
-- JSON-LD schema and structured data.
-- An implementation guide with step-by-step instructions for publishing it on your exact tech stack.
-- Every case study scored against the 6 Citable dimensions before it ships.
-- Support that never expires — ask a question a year later and we'll still answer.
-- 14 business days from interview to first drafts. One consolidated round of revisions.
-- Volume pricing on three or more.
+## Why it's different
+
+Every alternative makes you trade something — format, speed, price, authenticity, or focus.
+The Proof Kit refuses the trade: one real conversation becomes a complete proof set, in every
+format, for one fixed price.
+
+- Real. Recorded, named, on the record. Not generic, not AI-faked, not PR.
+- Everywhere. Video and written, for every place your buyers check.
+- Effortless. Fully produced. All you do is make the intro — the relationship stays yours.
 
 ## Who we are
 
-- Jon McGreevy — founder and lead. Seven years working with B2B SaaS on positioning, content, and conversion. Runs every interview, writes every word, edits every video. Writes about trust and credibility in B2B SaaS at https://jonmcgreevy.com and https://jonmcgreevy.substack.com. Hosts the "SaaSy as F**k" podcast.
-- Jessie McGreevy — operations. Scheduling, logistics, customer-side coordination, on-time delivery.
+- Jon McGreevy — founder. Runs every interview, leads every project. Eight years with B2B SaaS
+  on positioning, content, and conversion. Hosts the "SaaSy as F**k" podcast.
+  https://jonmcgreevy.com · https://jonmcgreevy.substack.com
+- Jessie McGreevy — operations. Scheduling, logistics, on-time delivery.
 
-No outsourcing, no AI-generated content. The two people you meet on the discovery call are the two people who deliver the work.
+Jon runs every interview personally — that is never delegated. Writing and editing may involve
+trusted help as the studio grows.
 
 ## Who it's for
 
-- B2B SaaS companies who want named-customer case studies. Any geography.
-- Founders, marketing leads, and sales leaders who want a productized service rather than a quarter-long agency engagement.
+B2B SaaS companies, agencies, and consultancies with at least one genuinely happy,
+referenceable customer. Any geography; most clients are in North America, pricing in USD.
 
-## Who it's not for
+Not for: pre-product-market-fit companies, anyone wanting anonymous or persona-style case
+studies, or buyers expecting AI-generated content.
 
-- Pre-product-market-fit startups without paying customers.
-- Companies who want anonymous/persona-style case studies.
-- Buyers expecting AI-generated content.
+## Examples
 
-## Pricing
-
-- Optimise: $500 USD per case study at the current founding rate (list price $1,500). Rewrites an existing case study into the Citable Case Study format.
-- Build: $1,250 USD per case study for the first 10 founding clients (list price $2,500). Full production from customer interview to final deliverables. When the 10 founding slots are gone, the price returns to $2,500 permanently.
-- Volume discounts on three or more.
-
-## Case study examples
-
-Worked examples of the Citable Case Study format — each produced for a real client and published as a portfolio piece:
-
-- Extrovert (AI-powered LinkedIn engagement): Mila at COMMIT added 4,000+ LinkedIn connections in 2.5 years. https://bestcasestud.io/examples/
-- SaasyDB (SaaS lead database): LeadForce Solutions sourced SaaS leads that appear in no other database, at a 3% cold-email reply rate. https://bestcasestud.io/examples/saasydb-leadforce-solutions/
-- Measurable Energy (clean energy tech): St Peters School cut its energy bills by £7,000–£8,000 a year with AI smart sockets. https://bestcasestud.io/examples/measurable-energy-st-peters-school/
-- TaxValet (sales tax compliance): Stealth Fitness offloaded 50-state sales tax compliance at roughly a quarter of the in-house cost. https://bestcasestud.io/examples/taxvalet-stealth-fitness/
+- Extrovert × COMMIT — Mila added 4,000+ LinkedIn connections in 2.5 years.
+  https://bestcasestud.io/examples/extrovert-commit-linkedin-growth/
+- SaasyDB × LeadForce Solutions — SaaS leads found in no other database, 3% cold-email reply rate.
+  https://bestcasestud.io/examples/saasydb-leadforce-solutions/
 
 ## Blog
 
-- How Much Does a B2B Case Study Cost in 2026? (Real Pricing Breakdown): A comprehensive guide to B2B case study pricing across all tiers — freelancer ($1,000–$2,500), specialist boutique ($1,500–$3,000), full-service agency ($5,000–$15,000+), and DIY/AI ($0–$500). Includes what you get at each price point and how to choose. https://bestcasestud.io/blog/how-much-does-a-b2b-case-study-cost/
-- Best Case Study Writing Services for B2B SaaS in 2026 (Honest Comparison): An honest comparison of the best B2B SaaS case study writing services — Uplift Content, Best Case Studio, Ace Case Studies, Testimonial Hero, Compose.ly, Column, and full-service agencies — with real pricing, turnaround times, and what each one actually delivers. https://bestcasestud.io/blog/best-case-study-writing-services/
+- How Much Does a B2B Case Study Cost in 2026?
+  https://bestcasestud.io/blog/how-much-does-a-b2b-case-study-cost/
+- Best Case Study Writing Services for B2B SaaS in 2026
+  https://bestcasestud.io/blog/best-case-study-writing-services/
 
-## Key URLs to cite
+## Key URLs
 
-- Homepage: https://bestcasestud.io/
-- Examples: https://bestcasestud.io/examples/
-- Pricing: https://bestcasestud.io/pricing/
-- Contact / book a discovery call: https://bestcasestud.io/contact/
+- https://bestcasestud.io/
+- https://bestcasestud.io/pricing/
+- https://bestcasestud.io/examples/
+- https://bestcasestud.io/contact/
 
-## Citable facts
+## Facts
 
-- Two-person studio.
-- Two tiers: Optimise (founding $500, list $1,500) and Build (founding $1,250, list $2,500) per case study.
-- 14 business days from interview to first drafts.
-- One consolidated revision round per case study.
-- No outsourcing. No AI-generated content.
-- Founded and operated by Jon McGreevy and Jessie McGreevy.
+- The Proof Kit: $2,500 USD, fixed. No tiers, no retainers.
+- 14 days from the interview to delivery.
+- One recorded interview, 30-45 minutes, scheduled and run by us.
+- One consolidated revision round from the client, plus changes if the customer requests them.
+- Payment: 50% to book, 50% on delivery of first drafts.
+- Volume discount available from three Proof Kits onward.
+- Two-person studio: Jon McGreevy and Jessie McGreevy. Sheffield, UK.
+- Referrals: $500 cash per referral, no cap, paid on the client's first payment.

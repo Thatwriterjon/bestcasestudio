@@ -6,12 +6,11 @@ import ExampleSwitcher from '../../components/ExampleSwitcher.astro';
 import RestOfKit from '../../components/sections/RestOfKit.astro';
 import { examples, type CaseStudyExample as CS } from '../../data/examples';
 
-// The strongest visible example (lowest `order`) is canonical at /examples/, so it is NOT
-// given a /examples/<slug>/ page — that would duplicate it. Every other VISIBLE example gets
-// its own page; hidden examples get none.
+// Every VISIBLE example gets its own canonical page at /examples/<slug>/; /examples/ itself is
+// the index/hub. Hidden examples get no page.
 export const getStaticPaths = (() => {
   const ordered = [...examples].filter((e) => !e.hidden).sort((a, b) => a.order - b.order);
-  return ordered.slice(1).map((ex) => ({
+  return ordered.map((ex) => ({
     params: { slug: ex.slug },
     props: { ex },
   }));

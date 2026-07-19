@@ -986,9 +986,8 @@ export function kitView(ex: CaseStudyExample): KitView {
   };
 }
 
-/** Root-relative URL of an example's full page. The canonical (lowest-order, visible)
- *  example lives at /examples/; every other visible example at /examples/<slug>/. */
+/** Root-relative URL of an example's full page. Every visible example has its own canonical
+ *  page at /examples/<slug>/; /examples/ itself is the index/hub that links to them. */
 export function exampleHref(ex: CaseStudyExample): string {
-  const visible = [...examples].filter((e) => !e.hidden).sort((a, b) => a.order - b.order);
-  return visible[0]?.slug === ex.slug ? '/examples/' : `/examples/${ex.slug}/`;
+  return `/examples/${ex.slug}/`;
 }

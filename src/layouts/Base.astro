@@ -52,9 +52,15 @@ const organization = {
   '@type': 'Organization',
   '@id': 'https://bestcasestud.io/#org',
   name: 'Best Case Studio',
+  alternateName: 'Best Case Studio (bestcasestud.io)',
   url: 'https://bestcasestud.io/',
   logo: 'https://bestcasestud.io/favicon.svg',
   description: 'Two-person studio producing the Proof Kit — one recorded customer conversation turned into a complete B2B case study: video, written, and everywhere your buyers look.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Sheffield',
+    addressCountry: 'GB',
+  },
   founder: [
     {
       '@type': 'Person',
@@ -64,7 +70,7 @@ const organization = {
       worksFor: { '@id': 'https://bestcasestud.io/#org' },
       sameAs: [
         'https://jonmcgreevy.com',
-        'https://www.linkedin.com/in/jonmcgreevy/',
+        'https://www.linkedin.com/in/thatwriterjon/',
         'https://jonmcgreevy.substack.com',
         'https://open.spotify.com/show/6mH42FJY0OA3CNiMAIj4cN',
         'https://podcasts.apple.com/us/podcast/saasy-as-f-k-podcast/id1573388272',
@@ -88,7 +94,8 @@ const organization = {
     },
   ],
   sameAs: [
-    'https://www.linkedin.com/in/jonmcgreevy/',
+    'https://jonmcgreevy.com',
+    'https://www.linkedin.com/in/thatwriterjon/',
     'https://jonmcgreevy.substack.com',
     'https://www.youtube.com/@thebestcasestudio',
   ],

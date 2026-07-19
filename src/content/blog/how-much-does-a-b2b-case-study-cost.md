@@ -36,7 +36,7 @@ That's the short answer. I run [Best Case Studio](/), so I'll be upfront about w
 | **Video component** | No | Sometimes | Often | No |
 | **Revision rounds** | 1–2 | 1–2 | 2–3 | N/A |
 
-These are 2026 market rates based on published pricing and what I've seen over seven years working with B2B SaaS. They'll shift a bit by geography and scope, but the tiers are real.
+These are 2026 market rates based on published pricing and what I've seen over eight years working with B2B SaaS. They'll shift a bit by geography and scope, but the tiers are real.
 
 ## What does a freelance case study writer charge?
 
@@ -58,7 +58,7 @@ So if you already know what you want, you've got the customer interview sorted, 
 
 **$1,500–$3,000 per case study.**
 
-*Full disclosure: this is where we sit. Best Case Studio's [Proof Kit is $2,500](/pricing/), so take everything in this section with a healthy pinch of salt.*
+*Full disclosure: this is where we sit. [The Proof Kit](/pricing/) is $2,500, so take everything in this section with a healthy pinch of salt.*
 
 But here's why this tier exists.
 
@@ -150,6 +150,6 @@ I'll keep this short and sweet...
 
 **A freelancer** makes sense if you've got the interview done (or can handle it yourself) and you know what the case study should say. You're buying a pair of writing hands, not a strategy. Fine if your team already has an opinion on what good proof looks like.
 
-**A specialist** is where I'd point most growing B2B companies. You get the interview, the narrative, the technical optimisation, and proof that's built to actually generate pipeline rather than sit in a sales folder. The best of them hand you every format from one conversation, not just a written PDF. ([Go and look at a finished example](/examples/) if you want to see the difference.) Sure, I'm biased. But the pricing data across the market puts it squarely in the sweet spot between "doing it all yourself" and "signing a retainer you don't need."
+**A specialist** is where I'd point most growing B2B companies. You get the interview, the narrative, the technical optimisation, and proof that's built to actually generate pipeline rather than sit in a sales folder. The best of them hand you every format from one conversation, not just a written PDF. ([Go and look at a finished example](/examples/saasydb-leadforce-solutions/) if you want to see the difference.) Sure, I'm biased. But the pricing data across the market puts it squarely in the sweet spot between "doing it all yourself" and "signing a retainer you don't need."
 
 **An agency** is the right call if you already run a content programme and want case studies as *part* of the package. Just make sure they have a real case study methodology and aren't treating yours as a bolt-on afterthought with a template from three years ago.

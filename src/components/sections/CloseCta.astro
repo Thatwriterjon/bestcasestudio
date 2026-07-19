@@ -1,5 +1,10 @@
 ---
 import Button from '../Button.astro';
+import { examples, exampleHref } from '../../data/examples';
+
+// "See a real example first" points at a specific finished case study (SaasyDB), not the hub.
+const featuredExample = examples.find((e) => e.slug === 'saasydb-leadforce-solutions');
+const featuredExampleHref = featuredExample ? exampleHref(featuredExample) : '/examples/';
 ---
 
 <section id="contact-bottom" class="close">
@@ -11,7 +16,7 @@ import Button from '../Button.astro';
     </p>
     <div class="ctas">
       <Button href="/contact/" variant="primary">Book a call</Button>
-      <Button href="/examples/" variant="secondary">See a real example first</Button>
+      <Button href={featuredExampleHref} variant="secondary">See a real example first</Button>
     </div>
     <p class="soft-note">Or send us a case study you've already got and we'll tell you, free, what's letting it down. <a href="mailto:jon@bestcasestud.io">Email Jon →</a></p>
   </div>

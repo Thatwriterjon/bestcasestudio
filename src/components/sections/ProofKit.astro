@@ -54,7 +54,7 @@ const DEFAULT_FILE = 'video-case';
             <div class="pk-rail-head">
               <span class="pk-folder" aria-hidden="true"></span>
               <span class="pk-rail-name">{ex.client} — Proof Kit</span>
-              <span class="pk-rail-count">6 files</span>
+              <a class="pk-rail-cta" href={exampleHref(ex)}>See full case study →</a>
             </div>
             {kitAssets.map((a) => (
               <button
@@ -229,7 +229,8 @@ const DEFAULT_FILE = 'video-case';
     border-bottom: 1px solid var(--pk-line);
     display: flex;
     align-items: center;
-    gap: 9px;
+    flex-wrap: wrap;
+    gap: 8px 9px;
   }
   .pk-folder {
     width: 16px;
@@ -243,12 +244,22 @@ const DEFAULT_FILE = 'video-case';
     font-size: 11px;
     letter-spacing: 0.1em;
     color: var(--pk-muted);
+    white-space: nowrap;
   }
-  .pk-rail-count {
+  .pk-rail-cta {
     margin-left: auto;
     font-family: var(--mono);
     font-size: 11px;
-    color: #b8ae97;
+    letter-spacing: 0.04em;
+    color: var(--pk-accent);
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .pk-rail-cta:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
   .pk-file {
     text-align: left;

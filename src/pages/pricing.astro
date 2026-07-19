@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import Button from '../components/Button.astro';
-import Faq from '../components/sections/Faq.astro';
 import CloseCta from '../components/sections/CloseCta.astro';
 
 const included = [
@@ -11,6 +10,45 @@ const included = [
   'Written testimonial — a pull-quote for your site, deck, and emails',
   'Social pack — LinkedIn carousel and short clips',
   'A "how to use it" guide — where each piece does the most damage',
+];
+
+const comparison = [
+  { option: 'DIY / AI tools', cost: '$0–$500', get: 'Written only, no interview', highlight: false },
+  { option: 'Freelance writer', cost: '$1,000–$2,500', get: 'Written only', highlight: false },
+  { option: 'Written specialist', cost: '$1,500–$3,000', get: 'Written, video as paid add-on', highlight: false },
+  { option: 'The Proof Kit', cost: '$2,500', get: 'Video + written + both testimonials + social pack', highlight: true },
+  { option: 'Premium video production', cost: '$6,000+', get: 'Video, often annual commitment', highlight: false },
+  { option: 'Full-service agency', cost: '$5,000–$15,000+', get: 'Video, long engagement', highlight: false },
+];
+
+/* Commercial-mechanics FAQ — distinct from the homepage's objection-handling set. Single source
+ * of truth: the visible <details> and the FAQPage JSON-LD below are both built from this array,
+ * so they always match verbatim. */
+const faq = [
+  {
+    q: 'Is $2,500 really everything? No upsells?',
+    a: 'Everything. One price, one complete kit — video case study, written case study, both testimonials, social pack, and the guide. The only thing you\'ll spend after is the ten minutes it takes to post it.',
+  },
+  {
+    q: 'How long does it take?',
+    a: '14 days from the interview. The clock starts when your customer\'s in the chair, so the only variable is how fast you make the intro.',
+  },
+  {
+    q: 'How many rounds of revisions?',
+    a: 'One consolidated round from you — and if your customer wants changes after they review it, we make those too. Your customer\'s comfort matters more than our process. Nobody ends up published saying something they\'d rather they hadn\'t.',
+  },
+  {
+    q: 'What are the payment terms?',
+    a: 'Half up front to book the slot, half when your first drafts land. The second payment is triggered by our delivery, not your sign-off — so you\'re never paying for work you haven\'t seen, and we\'re never chasing you for feedback before we can invoice.',
+  },
+  {
+    q: 'Do you do volume pricing?',
+    a: 'Yes — there\'s a discount from three Proof Kits onward. Most founders start with one, see how it lands, then line up the next two. Ask on the call.',
+  },
+  {
+    q: 'Why $2,500 and not $6,000?',
+    a: 'Premium video studios price for enterprise marketing teams and usually want an annual commitment. The Proof Kit is one fixed price, one conversation, no contract — built for founders who want proof this quarter, not a procurement cycle.',
+  },
 ];
 
 const offerSchema = {
@@ -34,13 +72,34 @@ const offerSchema = {
       category: 'Marketing services',
     },
   ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'What\'s included in the Proof Kit',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Video case study', description: 'The full story, on camera, in your customer\'s own words.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Written case study', description: 'The deep-dive version, built to rank on Google and get cited by AI.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Video testimonial', description: 'A short cut for your homepage and socials.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Written testimonial', description: 'A pull-quote for your site, deck, and emails.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Social pack', description: 'LinkedIn carousel and short clips.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Launch checklist', description: 'Where each piece works hardest.' } },
+    ],
+  },
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
 };
 ---
 
 <Base
   title="Pricing · The Proof Kit, $2,500 · Best Case Studio"
   description="One package, one price: $2,500 for a complete B2B case study — video, written, testimonials, and a social pack, delivered 14 days from the interview."
-  schema={[offerSchema]}
+  schema={[offerSchema, faqSchema]}
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Pricing', url: '/pricing/' },
@@ -50,7 +109,7 @@ const offerSchema = {
     <div class="wrap">
       <p class="eyebrow mono">Pricing</p>
       <h1>
-        One package. <em>One price.</em>
+        The Proof Kit: a complete B2B case study for <em>$2,500.</em>
       </h1>
     </div>
   </section>
@@ -61,13 +120,14 @@ const offerSchema = {
         <div class="pricing-card featured">
           <div class="pricing-inner">
             <span class="card-eyebrow"><span class="pip" aria-hidden="true"></span>The Proof Kit</span>
-            <h2>Everything above. <em>One price.</em></h2>
+            <h2>Everything, <em>from one conversation.</em></h2>
             <p class="price-lede">One recorded conversation with your best customer, delivered as a complete proof set.</p>
             <div class="price-spacer"></div>
             <div class="price-row">
               <span class="price">$2,500</span>
             </div>
             <span class="founding-badge">Delivered 14 days from the interview</span>
+            <p class="frame-note">One complete kit, cut from one conversation. Here's every piece.</p>
             <div class="included">
               <h3>What's included</h3>
               <ul>
@@ -88,7 +148,55 @@ const offerSchema = {
     </div>
   </section>
 
-  <Faq />
+  <section class="cost-compare">
+    <div class="wrap">
+      <h2>What a B2B case study costs in 2026</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Option</th>
+              <th scope="col">Typical cost</th>
+              <th scope="col">What you get</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((row) => (
+              <tr class:list={[row.highlight && 'is-kit']}>
+                <th scope="row">{row.option}</th>
+                <td>{row.cost}</td>
+                <td>{row.get}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">
+        Want the detail behind these numbers? Read <a href="/blog/how-much-does-a-b2b-case-study-cost/">the full breakdown of what a B2B case study costs</a>.
+      </p>
+    </div>
+  </section>
+
+  <section id="faq" class="pricing-faq">
+    <div class="wrap-tight">
+      <h2 class="faq-head">Frequently asked <em>questions</em>.</h2>
+      <p class="faq-lede">Everything you need to know before you book.</p>
+      <div class="faq-list">
+        {faq.map((item) => (
+          <details class="q">
+            <summary>
+              <span>{item.q}</span>
+              <span class="marker" aria-hidden="true">+</span>
+            </summary>
+            <div class="a">
+              <p>{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <CloseCta />
 </Base>
 
@@ -106,11 +214,11 @@ const offerSchema = {
   h1 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(48px, 6.5vw, 104px);
+    font-size: clamp(44px, 6vw, 92px);
     line-height: 0.98;
     letter-spacing: -0.025em;
     margin: 0 0 28px;
-    max-width: 18ch;
+    max-width: 20ch;
   }
   h1 em {
     font-style: italic;
@@ -216,6 +324,14 @@ const offerSchema = {
     font-weight: 500;
     display: block;
   }
+  .frame-note {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0;
+    max-width: 44ch;
+  }
 
   .included h3 {
     font-family: var(--mono);
@@ -286,6 +402,155 @@ const offerSchema = {
   }
   .bottom-note a:hover {
     color: var(--pink);
+  }
+
+  /* Cost comparison */
+  .cost-compare {
+    background: var(--bg);
+    padding: 120px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cost-compare h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 40px;
+    max-width: 20ch;
+  }
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cost-compare table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+  }
+  .cost-compare thead {
+    border-bottom: 2px solid var(--ink);
+  }
+  .cost-compare th[scope='col'] {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-align: left;
+    padding: 0 20px 14px 0;
+  }
+  .cost-compare tbody th[scope='row'] {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 17px;
+    text-align: left;
+  }
+  .cost-compare td,
+  .cost-compare tbody th {
+    padding: 18px 20px 18px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .cost-compare tr.is-kit th,
+  .cost-compare tr.is-kit td {
+    background: var(--yellow);
+    font-weight: 600;
+  }
+  .cost-compare tr.is-kit th[scope='row'] {
+    font-weight: 700;
+  }
+  .table-note {
+    margin: 32px 0 0;
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+  .table-note a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  /* FAQ */
+  .pricing-faq {
+    padding: 120px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .faq-head {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+  .faq-head :global(em) {
+    font-style: italic;
+  }
+  .faq-lede {
+    font-size: 19px;
+    line-height: 1.45;
+    max-width: 60ch;
+    margin: 0 0 40px;
+    color: var(--ink-soft);
+  }
+  .faq-list {
+    border-top: 1px solid var(--ink);
+  }
+  details.q {
+    border-bottom: 1px solid var(--rule);
+    padding: 0;
+  }
+  details.q summary {
+    list-style: none;
+    padding: 28px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    transition: color 0.15s;
+  }
+  details.q summary::-webkit-details-marker {
+    display: none;
+  }
+  details.q .marker {
+    flex: 0 0 32px;
+    text-align: right;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--ink);
+    transition: transform 0.2s;
+    font-style: italic;
+  }
+  details.q[open] .marker {
+    transform: rotate(45deg);
+  }
+  details.q .a {
+    padding: 0 0 32px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 72ch;
+  }
+  details.q .a p {
+    margin: 0;
   }
 
   @media (max-width: 900px) {
