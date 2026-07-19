@@ -64,8 +64,7 @@ const lastmodByPath = {
   '/privacy/': '2026-07-01',
   '/examples/': '2026-06-22',
   '/examples/saasydb-leadforce-solutions/': '2026-06-02',
-  '/examples/measurable-energy-st-peters-school/': '2026-05-27',
-  '/examples/taxvalet-stealth-fitness/': '2026-05-26',
+  '/examples/extrovert-commit-linkedin-growth/': '2026-06-22',
   '/blog/': '2026-07-02',
   '/blog/how-much-does-a-b2b-case-study-cost/': '2026-07-19',
   '/blog/best-case-study-writing-services/': '2026-07-19',
@@ -78,6 +77,26 @@ const lastmodByPath = {
   '/compare/best-case-studio-vs-freelancers-and-chatgpt/': '2026-07-19',
 };
 
+// <video:video> sitemap entries for the example pages that embed a real customer-story YouTube
+// video. Mirrors the `video` field on the matching entry in src/data/examples.ts — add here
+// when a new example ships with video.
+const videoByPath = {
+  '/examples/saasydb-leadforce-solutions/': {
+    id: 'EKD2cHGL5Us',
+    title: "How LeadForce Solutions found SaaS leads that don't exist in other databases with SaasyDB",
+    description:
+      'How SaasyDB gave LeadForce Solutions SaaS leads that appear in no other database, feeding a 3% cold-email reply rate.',
+    tag: ['B2B case study', 'SaaS lead generation'],
+  },
+  '/examples/extrovert-commit-linkedin-growth/': {
+    id: 'Wrt-DYzDfkY',
+    title: 'How Mila added 4,000+ LinkedIn connections in 2.5 years with Extrovert',
+    description:
+      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT — 4,000+ new connections and 10-15 inbound requests a day.',
+    tag: ['B2B case study', 'LinkedIn growth'],
+  },
+};
+
 export default defineConfig({
   site: 'https://bestcasestud.io',
   trailingSlash: 'always',
@@ -88,6 +107,19 @@ export default defineConfig({
         const lastmod = lastmodByPath[path];
         if (lastmod) item.lastmod = new Date(lastmod).toISOString();
         else delete item.lastmod;
+
+        const v = videoByPath[path];
+        if (v) {
+          item.video = [
+            {
+              thumbnail_loc: `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`,
+              title: v.title,
+              description: v.description,
+              player_loc: `https://www.youtube.com/embed/${v.id}`,
+              tag: v.tag,
+            },
+          ];
+        }
         return item;
       },
     }),

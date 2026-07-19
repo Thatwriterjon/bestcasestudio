@@ -6,7 +6,9 @@
  */
 export interface LogoEntry {
   name: string;
-  /** Path under /public, e.g. "/logos/google.svg". Falls back to a serif wordmark when omitted. */
+  /** Path under /public, e.g. "/logos/google.webp" or "/logos/rally.svg" — real vectors stay
+   *  SVG, logos sourced from rasters are right-sized WebP. Falls back to a serif wordmark when
+   *  omitted. */
   svgPath?: string;
   /** Optional href to the brand site, opens in new tab if set. */
   href?: string;
@@ -15,18 +17,18 @@ export interface LogoEntry {
 export const logos: LogoEntry[] = [
   { name: 'Extrovert', svgPath: '/examples/extrovert.svg' },
   { name: 'SaasyDB', svgPath: '/examples/saasydb.svg' },
-  { name: 'Google', svgPath: '/logos/google.svg' },
-  { name: 'Vivaldi', svgPath: '/logos/vivaldi.svg' },
+  { name: 'Google', svgPath: '/logos/google.webp' },
+  { name: 'Vivaldi', svgPath: '/logos/vivaldi.webp' },
   { name: 'Rally', svgPath: '/logos/rally.svg' },
   { name: 'Engine Yard', svgPath: '/logos/engine-yard.svg' },
-  { name: 'TagTeam AI', svgPath: '/logos/tagteam-ai.svg' },
+  { name: 'TagTeam AI', svgPath: '/logos/tagteam-ai.webp' },
   { name: 'Projul', svgPath: '/logos/projul.svg' },
-  { name: 'Scoro', svgPath: '/logos/scoro.svg' },
-  { name: 'BabelForce', svgPath: '/logos/babelforce.svg' },
-  { name: 'Bullet', svgPath: '/logos/bullet.svg' },
-  { name: 'Elastic', svgPath: '/logos/elastic.svg' },
-  { name: 'Float', svgPath: '/logos/float.svg' },
-  { name: 'isms.online', svgPath: '/logos/isms-online.svg' },
+  { name: 'Scoro', svgPath: '/logos/scoro.webp' },
+  { name: 'BabelForce', svgPath: '/logos/babelforce.webp' },
+  { name: 'Bullet', svgPath: '/logos/bullet.webp' },
+  { name: 'Elastic', svgPath: '/logos/elastic.webp' },
+  { name: 'Float', svgPath: '/logos/float.webp' },
+  { name: 'isms.online', svgPath: '/logos/isms-online.webp' },
 ];
 
 export const LOGOS_FINAL = true;

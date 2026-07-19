@@ -1,5 +1,5 @@
 ---
-title: "Best Case Studio vs Testimonial Hero: which proof partner fits a founder in 2026?"
+title: "Best Case Studio vs Testimonial Hero"
 description: Testimonial Hero sells broadcast video on annual plans (reported ~$6,510/yr). Best Case Studio gives founders the complete proof set for $2,500 in 14 days.
 date: 2026-07-08
 author: Jon McGreevy

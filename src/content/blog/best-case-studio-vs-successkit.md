@@ -1,5 +1,5 @@
 ---
-title: "Best Case Studio vs SuccessKit: per-asset case studies or a complete proof set?"
+title: "Best Case Studio vs SuccessKit"
 description: SuccessKit sells written case studies and video testimonials per asset from $1,750. Best Case Studio turns one interview into a complete proof set for $2,500.
 date: 2026-07-12
 author: Jon McGreevy

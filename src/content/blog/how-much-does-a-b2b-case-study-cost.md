@@ -88,7 +88,7 @@ I have two problems with this tier for case studies specifically.
 
 **Second:** case studies aren't the agency's *thing*. They're a line item or upsell. The blog posts get the strategic attention. The SEO audits get the senior person. Your case study gets written by whoever's free that week, using whatever template they've had since 2021.
 
-And I'm speaking from experience here. The first case study I ever wrote was for a SaaS marketing agency (not naming names) who dropped it on my desk with very little guidance. I had no idea what I was doing, so guessed my way through it. Was it an awful case study? Not at all. But was it worth the $4,500 they were billed for it? Absolutely fucking not. 
+I'm speaking from experience here — my first case study was written exactly this way, for exactly this kind of agency bill. [More on why that model breaks down for case studies specifically →](/compare/best-case-studio-vs-content-agencies/)
 
 There are exceptions, of course. Ten Speed, for one, actually productises case studies as a specific offering alongside their SEO work. But they're the outlier.
 
@@ -138,7 +138,7 @@ When nobody reads it.
 
 I'm not being glib. Most B2B companies *already have* case studies. They're a PDF on the site somewhere. Sales attaches them to emails. Or they're just stuck on the website like they're another blog post. *Nobody*  can find them through search, and no AI tool can cite them. 
 
-The money you spent producing that case study isn't the real cost. It's the deals you didn't close because your proof was invisible. [94% of buyers are using LLMs in their buying process](https://6sense.com/science-of-b2b/buyer-experience-report-2025/). So if your case study isn't findable during that research phase (especially through ChatGPT, Claude, Gemini, etc), it's doing nothing for you.
+The money you spent producing that case study isn't the real cost. It's the deals you didn't close because your proof was invisible where buyers actually look. [6sense puts 94% of B2B buyers as using LLMs somewhere in their buying process](https://6sense.com/science-of-b2b/buyer-experience-report-2025/) — so if your case study isn't findable during that research phase (ChatGPT, Claude, Gemini, and the rest), it's doing nothing for you.
 
 **Quick maths:** a $2,500 case study that ranks for a buying-intent query and brings in even *two* qualified leads a year has paid for itself many times over. A $500 case study that never ranks, never gets cited, and only gets seen by people who already had the link? That cost you $500 plus every opportunity it failed to create.
 

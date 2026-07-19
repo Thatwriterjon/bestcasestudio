@@ -1,5 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+
+const calendlyUrl = 'https://calendly.com/thatwriterjon/best-case-studio';
 
 const contactSchema = {
   '@type': 'ContactPage',
@@ -22,6 +25,7 @@ const contactSchema = {
 >
   <link slot="head" rel="preconnect" href="https://assets.calendly.com" />
   <link slot="head" rel="dns-prefetch" href="https://assets.calendly.com" />
+  <link slot="head" rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
   <section class="contact">
     <div class="wrap">
       <div class="head">
@@ -46,14 +50,21 @@ const contactSchema = {
           <div class="row last"><span class="k">Or email</span><span class="v"><a href="mailto:jon@bestcasestud.io?subject=Discovery%20call">jon@bestcasestud.io</a></span></div>
         </div>
 
-        <div
-          class="calendly-inline-widget"
-          data-url="https://calendly.com/thatwriterjon/best-case-studio"
-          aria-label="Calendly scheduling widget"
-        ></div>
+        <div class="booking-launch">
+          <p class="booking-launch-lede">Pick a time that works for you — the calendar opens in a pop-up window, so it always fits your screen.</p>
+          <Button
+            href={calendlyUrl}
+            variant="primary"
+            class="booking-launch-btn"
+            external
+            onclick={`Calendly.initPopupWidget({url:'${calendlyUrl}'});return false;`}
+          >
+            Open the booking calendar
+          </Button>
+        </div>
         <noscript>
           <p class="noscript-fallback">
-            JavaScript is needed to load the booking widget. <a href="https://calendly.com/thatwriterjon/best-case-studio">Open the Calendly page directly</a> or email <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a>.
+            JavaScript is needed to load the booking calendar. <a href="https://calendly.com/thatwriterjon/best-case-studio">Open the Calendly page directly</a> or email <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a>.
           </p>
         </noscript>
       </div>
@@ -190,19 +201,22 @@ const contactSchema = {
     text-underline-offset: 3px;
   }
 
-  .calendly-inline-widget {
+  .booking-launch {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
     min-width: 320px;
-    /* Calendly's inline widget renders to whatever height the container gives it (the iframe
-       doesn't auto-resize), so size it generously enough that the date picker, time slots,
-       and confirmation step all fit without an inner scrollbar on a typical desktop. */
-    height: 1080px;
     border: 1px solid var(--ink);
     background: var(--bg);
+    padding: 48px;
   }
-  @media (max-width: 700px) {
-    .calendly-inline-widget {
-      height: 1240px;
-    }
+  .booking-launch-lede {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 40ch;
+    margin: 0;
   }
   .noscript-fallback {
     padding: 24px;

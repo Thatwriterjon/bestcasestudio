@@ -1,0 +1,28 @@
+---
+/**
+ * A "Book a call" button shown only on mobile, above the fold, on pages whose desktop CTA
+ * (the nav bar) collapses into the hamburger menu below ~820px. Drop into a page's hero/intro
+ * section, right after the heading/lede.
+ */
+import Button from './Button.astro';
+---
+
+<div class="mobile-cta">
+  <Button href="/contact/" variant="primary">Book a call</Button>
+</div>
+
+<style>
+  .mobile-cta {
+    display: none;
+  }
+  @media (max-width: 820px) {
+    .mobile-cta {
+      display: flex;
+      margin-top: 28px;
+    }
+    .mobile-cta :global(.btn) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

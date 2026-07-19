@@ -1,6 +1,6 @@
 ---
 title: Best case study writing services for B2B SaaS in 2026
-description: The best B2B SaaS case study services compared. Real pricing, turnaround, and exactly what each one hands you. From single written case studies to complete proof sets with video, testimonials, and social.
+description: The best B2B SaaS case study services compared — real pricing, turnaround, and exactly what each one hands you back.
 date: 2026-07-02
 author: Jon McGreevy
 faq:

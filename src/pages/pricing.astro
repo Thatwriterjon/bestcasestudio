@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Button from '../components/Button.astro';
+import MobileCta from '../components/MobileCta.astro';
 import CloseCta from '../components/sections/CloseCta.astro';
 
 const included = [
@@ -52,7 +53,7 @@ const faq = [
 ];
 
 const offerSchema = {
-  '@type': 'ProfessionalService',
+  '@type': 'Service',
   '@id': 'https://bestcasestud.io/#service',
   name: 'The Proof Kit',
   serviceType: 'B2B case study production',
@@ -111,6 +112,7 @@ const faqSchema = {
       <h1>
         The Proof Kit: a complete B2B case study for <em>$2,500.</em>
       </h1>
+      <MobileCta />
     </div>
   </section>
 
@@ -126,7 +128,7 @@ const faqSchema = {
             <div class="price-row">
               <span class="price">$2,500</span>
             </div>
-            <span class="founding-badge">Delivered 14 days from the interview</span>
+            <span class="delivery-badge">Delivered 14 days from the interview</span>
             <p class="frame-note">One complete kit, cut from one conversation. Here's every piece.</p>
             <div class="included">
               <h3>What's included</h3>
@@ -315,7 +317,7 @@ const faqSchema = {
     display: inline-block;
     color: var(--ink);
   }
-  .founding-badge {
+  .delivery-badge {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.08em;

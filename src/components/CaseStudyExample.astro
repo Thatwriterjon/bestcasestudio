@@ -8,6 +8,9 @@ interface Props {
 }
 
 const { example: ex, eager = false } = Astro.props;
+
+const youtubeId = ex.video?.embedUrl.match(/embed\/([\w-]+)/)?.[1];
+const videoThumb = youtubeId ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg` : undefined;
 ---
 
 <article class="cs">
@@ -82,14 +85,22 @@ const { example: ex, eager = false } = Astro.props;
   {ex.video && (
     <figure class="cs-video">
       <div class="cs-video-frame">
-        <iframe
-          src={ex.video.embedUrl}
-          title={ex.video.label}
-          loading={eager ? 'eager' : 'lazy'}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <button
+          type="button"
+          class="cs-video-facade"
+          data-embed-url={ex.video.embedUrl}
+          aria-label={`Play video: ${ex.video.label}`}
+        >
+          {videoThumb && (
+            <img
+              src={videoThumb}
+              alt=""
+              loading={eager ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          )}
+          <span class="cs-video-play" aria-hidden="true">▶</span>
+        </button>
       </div>
       <figcaption class="cs-kicker">{ex.video.label}</figcaption>
     </figure>
@@ -137,6 +148,34 @@ const { example: ex, eager = false } = Astro.props;
   {/* "Behind the page · The Machine Layer" panel parked in components/MachineLayer.astro —
       pulled for now, kept as reference for a future blog post. */}
 </article>
+
+<script>
+  // Click-to-load YouTube facade: swaps the poster button for a real iframe only once a
+  // visitor actually wants to watch, instead of loading the full YouTube player on every
+  // case-study page view. Both this component and KitAssetPreview.astro render this same
+  // button pattern and each carry an identical copy of this script (Astro doesn't dedupe
+  // per-component inline scripts) — the :not([data-bound]) guard stops whichever copy runs
+  // second from double-binding the buttons the first copy already wired up.
+  document.querySelectorAll('.cs-video-facade:not([data-bound])').forEach((btn) => {
+    btn.setAttribute('data-bound', '');
+    btn.addEventListener('click', () => {
+      const url = btn.getAttribute('data-embed-url');
+      if (!url) return;
+      const iframe = document.createElement('iframe');
+      const separator = url.includes('?') ? '&' : '?';
+      iframe.src = `${url}${separator}autoplay=1`;
+      iframe.title = btn.getAttribute('aria-label') || 'Video';
+      iframe.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      // Astro's scoped CSS can't reach an element created client-side, so size/position it
+      // inline — it needs to fill the same 16:9 frame the facade button occupied.
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+      btn.replaceWith(iframe);
+    });
+  });
+</script>
 
 <style>
   .cs {
@@ -337,6 +376,49 @@ const { example: ex, eager = false } = Astro.props;
     width: 100%;
     height: 100%;
     border: 0;
+  }
+  .cs-video-facade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: var(--ink);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-video-facade img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+  }
+  .cs-video-facade:hover img {
+    opacity: 1;
+  }
+  .cs-video-play {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 20px;
+    padding-left: 4px;
+    transition: transform 0.15s;
+  }
+  .cs-video-facade:hover .cs-video-play {
+    transform: scale(1.08);
   }
   .cs-video figcaption {
     margin: 16px 0 0;

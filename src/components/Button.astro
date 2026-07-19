@@ -5,13 +5,16 @@ interface Props {
   /** Whether to mark the link as opening externally (rel + target). */
   external?: boolean;
   class?: string;
+  /** Optional inline JS handler, e.g. to trigger a third-party popup widget. `href` still
+   *  serves as the no-JS fallback destination. */
+  onclick?: string;
 }
 
-const { href, variant = 'secondary', external = false, class: className } = Astro.props;
+const { href, variant = 'secondary', external = false, class: className, onclick } = Astro.props;
 const externalAttrs = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 ---
 
-<a href={href} class:list={['btn', variant, className]} {...externalAttrs}>
+<a href={href} class:list={['btn', variant, className]} {...externalAttrs} onclick={onclick}>
   <slot /> <span class="arr" aria-hidden="true">→</span>
 </a>
 

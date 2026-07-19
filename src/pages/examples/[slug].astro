@@ -22,12 +22,51 @@ interface Props {
 
 const { ex } = Astro.props;
 const ordered = [...examples].filter((e) => !e.hidden).sort((a, b) => a.order - b.order);
+const pageUrl = `https://bestcasestud.io/examples/${ex.slug}/`;
+
+/* ---- JSON-LD: Article + VideoObject ----
+ * `ex.jsonLd` (data/examples.ts) is the CLIENT's own schema, attributed to the client as
+ * publisher — it's only for the parked MachineLayer panel and must never be injected here.
+ * This page's schema is attributed to Best Case Studio instead; we just borrow the date values
+ * already curated per example. */
+const clientArticle = (ex.jsonLd['@graph'] as Record<string, unknown>[] | undefined)?.find(
+  (n) => n['@type'] === 'Article'
+) as { datePublished?: string; dateModified?: string } | undefined;
+const datePublished = clientArticle?.datePublished ?? '2026-01-01';
+const dateModified = clientArticle?.dateModified ?? datePublished;
+
+const articleSchema: Record<string, unknown> = {
+  '@type': 'Article',
+  headline: ex.title,
+  description: ex.pageDescription,
+  image: 'https://bestcasestud.io/og.jpg',
+  author: { '@id': 'https://bestcasestud.io/#jon' },
+  publisher: { '@id': 'https://bestcasestud.io/#org' },
+  datePublished: new Date(datePublished).toISOString(),
+  dateModified: new Date(dateModified).toISOString(),
+  mainEntityOfPage: pageUrl,
+};
+
+const youtubeId = ex.video?.embedUrl.match(/embed\/([\w-]+)/)?.[1];
+const videoSchema: Record<string, unknown> | null = ex.video
+  ? {
+      '@type': 'VideoObject',
+      name: ex.video.label,
+      description: ex.pageDescription,
+      embedUrl: ex.video.embedUrl,
+      uploadDate: new Date(datePublished).toISOString(),
+      ...(youtubeId ? { thumbnailUrl: [`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`] } : {}),
+    }
+  : null;
+
+const schemas = [articleSchema, ...(videoSchema ? [videoSchema] : [])];
 ---
 
 <Base
   title={`Proof Kit example: ${ex.client} & ${ex.customer} · Best Case Studio`}
   description={ex.pageDescription}
   ogType="article"
+  schema={schemas}
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Examples', url: '/examples/' },

@@ -1,5 +1,5 @@
 ---
-title: "Best Case Studio vs StoryVoice: AI-drafted case studies vs a real recorded proof set"
+title: "Best Case Studio vs StoryVoice"
 description: StoryVoice auto-drafts written case studies from a 5-min AI voice interview. Best Case Studio delivers a real, produced proof set with video for $2,500.
 date: 2026-07-15
 author: Jon McGreevy
@@ -16,7 +16,7 @@ faq:
   - q: Does StoryVoice include video?
     a: No. StoryVoice produces a written case study only, generated from a short AI voice interview. There's no video case study and no video testimonial. If you want video, you'd buy it separately from another vendor. Best Case Studio includes a full video case study and a short video testimonial in the standard $2,500 Proof Kit, cut from the same interview as the written pieces.
   - q: Are AI-generated case studies worth it?
-    a: For internal drafts and volume, they can be useful. For proof aimed at a sceptical buyer in 2026, they carry a real risk. One study (Digital Applied) found pure AI content ranks around 23% lower on average in Google, and the gap widens on competitive queries; meanwhile 94% of buyers now use LLMs in their buying process (6sense) and trust obviously-AI output least. A case study's whole job is to survive scrutiny, and a machine-spun draft invites it.
+    a: "For internal drafts and volume, they can be useful. For proof aimed at a sceptical buyer in 2026, they carry a real risk. Digital Applied's ranking study found pure AI content sits roughly 23% behind human content in Google on average, a gap that widens on competitive queries — and the buyers reading it aren't fooled either: 6sense puts LLM usage at 94% of B2B buyers somewhere in their process, and that same group trusts obviously-AI output least. A case study's whole job is to survive scrutiny, and a machine-spun draft invites it."
 ---
 
 Here's the quick version. [**StoryVoice**](https://storyvoice.io/) is an AI tool that turns a five-minute voice interview into a written case study draft, cheap and fast, that you then edit and publish yourself. **Best Case Studio** sends a real human to run a real recorded interview and produces the whole proof set, including video, done for you, for a fixed $2,500. It comes down to one word: **real**. StoryVoice gives you a machine's version of your customer's story. We give you your customer, on camera, in their own words. If you want ten written drafts a year on a small budget, StoryVoice. If you want proof a doubtful VP can't wave away, that's me.

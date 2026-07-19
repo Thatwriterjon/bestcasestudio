@@ -6,13 +6,17 @@ interface Props {
   num?: string;
   /** Tighter bottom margin variant. */
   compact?: boolean;
+  /** Heading level to render. Defaults to h2 (the component's normal use as a sub-section
+   *  header under a page's own h1). Pass 'h1' on pages where this is the only heading. */
+  level?: 'h1' | 'h2';
 }
 
-const { title, num, compact = false } = Astro.props;
+const { title, num, compact = false, level = 'h2' } = Astro.props;
+const Tag = level;
 ---
 
 <div class:list={['sec-head', compact && 'compact']}>
-  <h2 set:html={title} />
+  <Tag set:html={title} />
   {num && <span class="sec-num">{num}</span>}
 </div>
 

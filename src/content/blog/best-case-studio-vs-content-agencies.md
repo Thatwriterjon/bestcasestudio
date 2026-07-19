@@ -1,5 +1,5 @@
 ---
-title: "Best Case Studio vs a content agency: should your case study be someone's side project?"
+title: "Best Case Studio vs Content Agencies"
 description: A content or SEO agency does everything, which is the problem when you just need proof. Here's when to pick a full-service agency and when to pick a specialist.
 date: 2026-07-17
 author: Jon McGreevy

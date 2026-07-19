@@ -1,17 +1,29 @@
 ---
 import Base from '../../layouts/Base.astro';
 import SectionHead from '../../components/SectionHead.astro';
+import MobileCta from '../../components/MobileCta.astro';
 import { examples, exampleHref } from '../../data/examples';
 
 // /examples/ is the hub: it lists every VISIBLE example and links to its own canonical page at
 // /examples/<slug>/. Reorder via the `order` field in data/examples.ts. Hidden examples are
 // excluded (and get no page of their own).
 const ordered = [...examples].filter((e) => !e.hidden).sort((a, b) => a.order - b.order);
+
+const itemListSchema = {
+  '@type': 'ItemList',
+  itemListElement: ordered.map((ex, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${ex.client} × ${ex.customer}`,
+    url: `https://bestcasestud.io${exampleHref(ex)}`,
+  })),
+};
 ---
 
 <Base
   title="Proof Kit examples: real B2B case studies · Best Case Studio"
   description="Real Proof Kits we've produced for B2B clients — video and written case studies, testimonials, and social packs, all cut from a single customer interview."
+  schema={[itemListSchema]}
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Examples', url: '/examples/' },
@@ -19,12 +31,13 @@ const ordered = [...examples].filter((e) => !e.hidden).sort((a, b) => a.order - 
 >
   <section class="ex-index">
     <div class="wrap">
-      <SectionHead title="Real <em>Proof Kit</em>s we've produced." />
+      <SectionHead title="Real <em>Proof Kit</em>s we've produced." level="h1" />
       <p class="lede">
         Every kit below started as one recorded conversation with a real customer. Video case
         study, written case study, both testimonials, and a social pack — cut from that single
         interview. Open one to see the whole thing.
       </p>
+      <MobileCta />
       <div class="ex-grid">
         {ordered.map((ex) => (
           <a class="ex-card" href={exampleHref(ex)}>

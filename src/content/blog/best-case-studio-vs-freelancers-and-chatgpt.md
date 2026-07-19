@@ -1,5 +1,5 @@
 ---
-title: "Best Case Studio vs DIY: should you write your case study yourself, hire a freelancer, or use ChatGPT?"
+title: "Best Case Studio vs Freelancers & ChatGPT"
 description: A freelancer or ChatGPT is cheaper and faster than the $2,500 Proof Kit. Here's when the cheap route is the right call, and when it quietly costs you the deal.
 date: 2026-07-19
 author: Jon McGreevy
@@ -59,7 +59,7 @@ Here's the thing AI physically cannot do. It can't get on a call with your custo
 
 Which means it has no real quotes. No numbers your customer actually said out loud and stood behind. No moment where the customer describes the exact problem they had before they found you, in their words, in a way your next buyer reads and thinks "that's me". AI either invents the metrics, which is a credibility problem and potentially a legal one, or it reaches for filler like "streamlined their workflow and saw significant improvement in efficiency". You've read a thousand of those sentences. So has your buyer. They mean nothing.
 
-And 2026 buyers have their radar up. [94% of buyers now use LLMs somewhere in their buying process](https://6sense.com/science-of-b2b/buyer-experience-report-2025/), which means they're staring at AI-generated text all day and they've got very good at spotting it. There's a real irony here that nobody talks about. A case study exists to prove that real humans use your product and get real results. If the case study itself was obviously written by a machine, what exactly have you proved?
+And 2026 buyers have their radar up. Nine in ten of them ([94%, per 6sense](https://6sense.com/science-of-b2b/buyer-experience-report-2025/)) now lean on LLMs somewhere in their buying process, which means they're staring at AI-generated text all day — they've gotten very good at spotting it. There's a real irony here nobody talks about: a case study exists to prove that real humans use your product and get real results. If the case study itself reads like a machine wrote it, what exactly have you proved?
 
 There's a search cost too. Pure AI content ranks measurably worse in Google, [roughly 23% lower on average according to Digital Applied](https://www.digitalapplied.com/blog/ai-generated-vs-human-content-16-month-google-ranking-study), and the gap widens on competitive queries. Google's helpful content system is built to spot and bury pages that exist to game search rather than help a person. So the free option can end up invisible, which is its own kind of expensive.
 

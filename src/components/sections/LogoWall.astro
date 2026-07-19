@@ -9,10 +9,16 @@ import { logos, LOGOS_FINAL } from '../../data/logos';
       <span class="rule" aria-hidden="true"></span>
     </div>
     <ul class="logo-grid">
-      {logos.map((logo) => (
+      {logos.map((logo, i) => (
         <li class:list={['logo', logo.svgPath && 'has-image']}>
           {logo.svgPath ? (
-            <img src={logo.svgPath} alt={logo.name} loading="lazy" width="130" height="36" />
+            <img
+              src={logo.svgPath}
+              alt={logo.name}
+              loading={i < 7 ? 'eager' : 'lazy'}
+              width="130"
+              height="36"
+            />
           ) : (
             <span class="wordmark-fallback">{logo.name}</span>
           )}

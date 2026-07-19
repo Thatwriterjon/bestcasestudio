@@ -347,10 +347,10 @@ export const examples: CaseStudyExample[] = [
       { label: 'Engagement', value: 'Managed sales tax compliance (all 50 states)' },
     ],
     logo: {
-      src: '/examples/taxvalet.png',
+      src: '/examples/taxvalet.webp',
       alt: 'TaxValet',
-      width: 1615,
-      height: 508,
+      width: 242,
+      height: 76,
     },
     customerLogo: {
       src: '/examples/stealth-fitness.svg',
@@ -519,7 +519,7 @@ export const examples: CaseStudyExample[] = [
       height: 40,
     },
     customerLogo: {
-      src: '/examples/commit.png',
+      src: '/examples/commit.webp',
       alt: 'COMMIT',
       width: 142,
       height: 37,

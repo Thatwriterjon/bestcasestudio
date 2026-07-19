@@ -1,5 +1,5 @@
 ---
-title: "Best Case Studio vs Uplift Content: written specialist or complete proof set?"
+title: "Best Case Studio vs Uplift Content"
 description: "Uplift Content writes excellent SaaS case studies, quote after a call. Best Case Studio turns one interview into a complete proof set for $2,500 in 14 days."
 date: 2026-07-10
 author: Jon McGreevy

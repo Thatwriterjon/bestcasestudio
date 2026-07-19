@@ -9,6 +9,9 @@ const blog = defineCollection({
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     author: z.string().default('Jon McGreevy'),
+    /** Root-relative path to a post-specific social/Article image, e.g. "/blog/my-post.jpg".
+     *  Falls back to the sitewide og.jpg when omitted. */
+    image: z.string().optional(),
     /** Optional FAQ items rendered at the bottom and emitted as FAQPage JSON-LD. */
     faq: z
       .array(z.object({ q: z.string(), a: z.string() }))
