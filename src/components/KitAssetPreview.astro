@@ -127,12 +127,21 @@ const cardSections = example.sections.slice(0, 3);
 {/* ---------- 03 · Video testimonial ---------- */}
 {assetKey === 'video-testi' && (
   <div class="kap-testi">
-    <div class="kap-video kap-video--clip">
-      <span class="kap-stripe" aria-hidden="true"></span>
-      <span class="kap-video-label">30-SEC CUT</span>
-      <span class="kap-play" aria-hidden="true"><span class="kap-tri kap-tri--sm"></span></span>
-      {k.shortDuration && <span class="kap-dur kap-dur--clip">{k.shortDuration}</span>}
-    </div>
+    {k.testimonialVideo ? (
+      <div class="kap-video kap-video--clip kap-video--real">
+        <video controls preload="none" playsinline poster={k.testimonialVideo.poster}>
+          <source src={k.testimonialVideo.src} type="video/mp4" />
+        </video>
+        {k.shortDuration && <span class="kap-dur kap-dur--clip">{k.shortDuration}</span>}
+      </div>
+    ) : (
+      <div class="kap-video kap-video--clip">
+        <span class="kap-stripe" aria-hidden="true"></span>
+        <span class="kap-video-label">30-SEC CUT</span>
+        <span class="kap-play" aria-hidden="true"><span class="kap-tri kap-tri--sm"></span></span>
+        {k.shortDuration && <span class="kap-dur kap-dur--clip">{k.shortDuration}</span>}
+      </div>
+    )}
     <div class="kap-testi-copy">
       <div class="kap-eyebrow">VIDEO TESTIMONIAL</div>
       <div class="kap-testi-lead">The single most convincing moment, sharpened for the scroll.</div>
@@ -160,36 +169,67 @@ const cardSections = example.sections.slice(0, 3);
 {/* ---------- 05 · Social pack ---------- */}
 {assetKey === 'social' && (
   <div class="kap-social">
-    <div class="kap-social-label">LINKEDIN CAROUSEL · 6 SLIDES</div>
-    <div class="kap-slides">
-      <div class="kap-slide kap-slide--hook">
-        <span class="kap-slide-n">01 / HOOK</span>
-        <span class="kap-slide-metric">{k.socialHook.value}</span>
-        <span class="kap-slide-metric-l">{k.socialHook.label}</span>
-      </div>
-      <div class="kap-slide kap-slide--body">
-        <span class="kap-slide-n kap-slide-n--dark">02</span>
-        <span class="kap-bar" style="width:80%"></span>
-        <span class="kap-bar" style="width:60%"></span>
-        <span class="kap-bar" style="width:70%"></span>
-      </div>
-      <div class="kap-slide kap-slide--body">
-        <span class="kap-slide-n kap-slide-n--dark">03</span>
-        <span class="kap-bar" style="width:70%"></span>
-        <span class="kap-bar" style="width:85%"></span>
-        <span class="kap-bar" style="width:55%"></span>
-      </div>
-      <div class="kap-slide kap-slide--cta">
-        <span class="kap-slide-n kap-slide-n--cta">06 / CTA</span>
-        <span class="kap-slide-cta-t">Try {k.vendor}</span>
-      </div>
-    </div>
-    <div class="kap-social-label kap-social-label--clips">SHORT CLIPS · 3</div>
-    <div class="kap-clips">
-      <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
-      <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
-      <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
-    </div>
+    {k.carouselSlides && k.carouselSlides.length > 0 ? (
+      <>
+        <div class="kap-social-label">LINKEDIN CAROUSEL · {k.carouselSlides.length} SLIDES</div>
+        <div class="kap-real-slides">
+          {k.carouselSlides.map((s) => (
+            <img class="kap-real-slide" src={s.src} alt={s.alt} loading="lazy" decoding="async" />
+          ))}
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="kap-social-label">LINKEDIN CAROUSEL · 6 SLIDES</div>
+        <div class="kap-slides">
+          <div class="kap-slide kap-slide--hook">
+            <span class="kap-slide-n">01 / HOOK</span>
+            <span class="kap-slide-metric">{k.socialHook.value}</span>
+            <span class="kap-slide-metric-l">{k.socialHook.label}</span>
+          </div>
+          <div class="kap-slide kap-slide--body">
+            <span class="kap-slide-n kap-slide-n--dark">02</span>
+            <span class="kap-bar" style="width:80%"></span>
+            <span class="kap-bar" style="width:60%"></span>
+            <span class="kap-bar" style="width:70%"></span>
+          </div>
+          <div class="kap-slide kap-slide--body">
+            <span class="kap-slide-n kap-slide-n--dark">03</span>
+            <span class="kap-bar" style="width:70%"></span>
+            <span class="kap-bar" style="width:85%"></span>
+            <span class="kap-bar" style="width:55%"></span>
+          </div>
+          <div class="kap-slide kap-slide--cta">
+            <span class="kap-slide-n kap-slide-n--cta">06 / CTA</span>
+            <span class="kap-slide-cta-t">Try {k.vendor}</span>
+          </div>
+        </div>
+      </>
+    )}
+
+    {k.clips && k.clips.length > 0 ? (
+      <>
+        <div class="kap-social-label kap-social-label--clips">SHORT CLIPS · {k.clips.length}</div>
+        <div class="kap-real-clips">
+          {k.clips.map((c) => (
+            <div class="kap-real-clip">
+              <video controls preload="none" playsinline poster={c.poster}>
+                <source src={c.src} type="video/mp4" />
+              </video>
+            </div>
+          ))}
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="kap-social-label kap-social-label--clips">SHORT CLIPS · 3</div>
+        <div class="kap-clips">
+          <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
+          <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
+          <div class="kap-clip"><span class="kap-tri kap-tri--sm" aria-hidden="true"></span></div>
+        </div>
+      </>
+    )}
   </div>
 )}
 
@@ -617,6 +657,14 @@ const cardSections = example.sections.slice(0, 3);
     flex: none;
     aspect-ratio: 4 / 5;
   }
+  .kap-video--real video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--pk-dark);
+  }
   .kap-dur--clip {
     position: absolute;
     left: 14px;
@@ -795,6 +843,45 @@ const cardSections = example.sections.slice(0, 3);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  /* ---- Real carousel + clips (when the example ships real assets) ---- */
+  .kap-real-slides {
+    display: flex;
+    gap: 10px;
+    margin-top: 11px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+  }
+  .kap-real-slide {
+    flex: 0 0 auto;
+    width: 112px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--pk-line-strong);
+    scroll-snap-align: start;
+  }
+  .kap-real-clips {
+    display: flex;
+    gap: 12px;
+    margin-top: 11px;
+    flex-wrap: wrap;
+  }
+  .kap-real-clip {
+    flex: 1;
+    min-width: 100px;
+    aspect-ratio: 4 / 5;
+    border-radius: 11px;
+    overflow: hidden;
+    background: var(--pk-dark);
+  }
+  .kap-real-clip video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   /* ---- How-to guide ---- */

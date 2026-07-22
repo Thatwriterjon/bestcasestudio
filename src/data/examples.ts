@@ -106,6 +106,15 @@ export interface CaseStudyExample {
     engagement?: string;
     /** LinkedIn-carousel hook slide. Defaults to the hero metric. */
     socialHook?: { value: string; label: string };
+    /** Real, self-hosted 4:5 testimonial cut. When set, the video-testi preview embeds this
+     *  instead of the labelled placeholder — mirrors how `video` does the same for video-case. */
+    testimonialVideo?: { src: string; poster: string };
+    /** Real, self-hosted 4:5 social clips. When set, the social preview shows these instead of
+     *  the generic clip-icon placeholders. */
+    clips?: { src: string; poster: string; caption: string }[];
+    /** Real carousel slide images (exported from the client-facing PDF). When set, the social
+     *  preview shows these instead of the abstract slide mockup. */
+    carouselSlides?: { src: string; alt: string }[];
   };
   /** Search metadata produced for the published case study. Shown in the machine-layer panel. */
   seo: {
@@ -668,7 +677,7 @@ export const examples: CaseStudyExample[] = [
     region: 'United States',
     title:
       "How LeadForce Solutions found SaaS leads that don't exist in other databases with SaasyDB",
-    deck: `<a href="https://www.leadforce.solutions/" target="_blank" rel="noopener noreferrer">LeadForce Solutions</a>, a go-to-market engineering firm for AI and software companies, needed a lead source with contacts that weren't already saturated with outreach from competing agencies. Founder Aaron Gusinov discovered <a href="https://www.saasydb.com/" target="_blank" rel="noopener noreferrer">SaasyDB</a> through a recommendation from go-to-market practitioner Taylor Haren, tested the data with a monthly subscription, and found that most contacts <strong>did not appear in any other database</strong> he checked. When scored against his target persona criteria, the majority of SaasyDB leads landed in <strong>"perfect fit" or "good fit"</strong> — a hit rate he had not seen from broader platforms. Aaron purchased a lifetime deal for $1,500, calling it his best investment in lead sourcing. Cold email campaigns using SaasyDB leads produce a <strong>3% overall reply rate</strong> with 10–15% positive responses.`,
+    deck: `<a href="https://www.leadforce.solutions/" target="_blank" rel="noopener noreferrer">LeadForce Solutions</a>, a go-to-market engineering firm for AI and software companies, needed a lead source with contacts that weren't already saturated with outreach from competing agencies. Founder Aaron Gusinov discovered <a href="https://www.saasydb.com/" target="_blank" rel="noopener noreferrer">SaasyDB</a> through a recommendation from go-to-market practitioner Taylor Heron, tested the data with a monthly subscription, and found that most contacts <strong>did not appear in any other database</strong> he checked. When scored against his target persona criteria, the majority of SaasyDB leads landed in <strong>"perfect fit" or "good fit"</strong> — a hit rate he had not seen from broader platforms. Aaron purchased a lifetime deal for $1,500, calling it his best investment in lead sourcing. Cold email campaigns using SaasyDB leads produce a <strong>3% overall reply rate</strong> with 10–15% positive responses.`,
     hero: { value: 'Not found elsewhere', label: 'most SaasyDB contacts don\'t appear anywhere else' },
     metrics: [
       { value: 'Majority', label: 'scored "perfect fit" against B2B and decision-maker criteria' },
@@ -700,8 +709,46 @@ export const examples: CaseStudyExample[] = [
       person: 'Aaron Gusinov',
       role: 'Founder · LeadForce Solutions',
       pullQuote:
-        "It's very satisfying to know that if I email a thousand people here, I'm more likely to reach people who aren't inundated with emails than a thousand over there.",
+        "The value prop is very simple: if you want niche data that is not as present in other databases, this is the place to go.",
+      videoDuration: '~1:20',
+      shortDuration: '~50s',
       socialHook: { value: '3%', label: 'cold email reply rate' },
+      testimonialVideo: {
+        src: '/examples/saasydb-leadforce-solutions/testimonial.mp4',
+        poster: '/examples/saasydb-leadforce-solutions/testimonial-poster.jpg',
+      },
+      clips: [
+        {
+          src: '/examples/saasydb-leadforce-solutions/clip-1.mp4',
+          poster: '/examples/saasydb-leadforce-solutions/clip-1-poster.jpg',
+          caption: `What SaasyDB wasn't at first — and why the data quality outweighed all of it.`,
+        },
+        {
+          src: '/examples/saasydb-leadforce-solutions/clip-2.mp4',
+          poster: '/examples/saasydb-leadforce-solutions/clip-2-poster.jpg',
+          caption: `Why reaching people who aren't inundated beats sheer volume.`,
+        },
+        {
+          src: '/examples/saasydb-leadforce-solutions/clip-3.mp4',
+          poster: '/examples/saasydb-leadforce-solutions/clip-3-poster.jpg',
+          caption: `Aaron flagged slow exports — Stuart fixed them. Proof the vendor listens.`,
+        },
+        {
+          src: '/examples/saasydb-leadforce-solutions/clip-4.mp4',
+          poster: '/examples/saasydb-leadforce-solutions/clip-4-poster.jpg',
+          caption: `Why joining before a product is big and proven still pays off.`,
+        },
+      ],
+      carouselSlides: [
+        { src: '/examples/saasydb-leadforce-solutions/carousel/slide-1.jpg', alt: `"Cold email doesn't have a copy problem. It has a list problem." — Aaron Gusinov, Founder at LeadForce Solutions` },
+        { src: '/examples/saasydb-leadforce-solutions/carousel/slide-2.jpg', alt: `The problem: You don't know whether the leads you just bought are already getting fifty other pitches this week.` },
+        { src: '/examples/saasydb-leadforce-solutions/carousel/slide-3.jpg', alt: `Why it exists: General databases sort companies by the label the company picked for itself on LinkedIn.` },
+        { src: '/examples/saasydb-leadforce-solutions/carousel/slide-4.jpg', alt: `Why the usual solutions fail: you export 100,000 and prune it down to 10,000 — you've paid to evaluate 90,000 people you never wanted.` },
+        { src: '/examples/saasydb-leadforce-solutions/carousel/slide-5.jpg', alt: `The test: Aaron scored a sample against his own criteria — B2B, vertical, decision-makers present.` },
+        { src: '/examples/saasydb-leadforce-solutions/carousel/slide-6.jpg', alt: `What happened: "the majority, obviously, of the leads that came from SaasyDB fell into the perfect and good fit." — Aaron Gusinov` },
+        { src: '/examples/saasydb-leadforce-solutions/carousel/slide-7.jpg', alt: `Verdict: "if you want niche data that is not as present in other databases, this is the place to go." — Aaron Gusinov` },
+        { src: '/examples/saasydb-leadforce-solutions/carousel/slide-8.jpg', alt: `Advice to future customers: take a month, score a sample against your own criteria — "the risk to reward trade-off is very asymmetrical in your favor."` },
+      ],
     },
     sections: [
       {
@@ -717,9 +764,15 @@ export const examples: CaseStudyExample[] = [
         },
       },
       {
+        heading: 'What was the hidden cost of an unreliable lead source?',
+        body: [
+          `Beyond the filtering problem, Aaron describes a "mental cost" in not knowing whether the leads in his database were current, relevant to his niche, or already receiving dozens of competing pitches each week. For someone whose business depends on standing out in an inbox, that doubt hung over every campaign. <em>"If they're already in a public database that everyone has access to, you are competing, even if your offer is amazing, by virtue of having 50 other offers that are not good."</em>`,
+        ],
+      },
+      {
         heading: 'How did Aaron discover SaasyDB?',
         body: [
-          `While building LeadForce Solutions alongside a position at J.P. Morgan, Aaron was studying go-to-market engineering from practitioners who had already built outbound agencies. One of them was Taylor Haren, a prominent figure in the field.`,
+          `While building LeadForce Solutions alongside a position at J.P. Morgan, Aaron was studying go-to-market engineering from practitioners who had already built outbound agencies. One of them was Taylor Heron, a prominent figure in the field.`,
           `He contacted Stuart, SaasyDB's founder, started a month-to-month subscription to sample the data, and ran his own scoring process. His framework looked at whether leads were B2B, what vertical they operated in, and whether the right decision-makers were present. The majority of SaasyDB contacts scored as "perfect fit" or "good fit," validating that the database matched his target persona.`,
         ],
         quote: {
@@ -739,6 +792,12 @@ export const examples: CaseStudyExample[] = [
         },
       },
       {
+        heading: 'Does SaasyDB act on customer feedback?',
+        body: [
+          `Stuart, SaasyDB's founder, also proved responsive to feedback. When Aaron flagged slow export times, Stuart fixed them. When he asked for the ability to exclude previously exported contacts, Stuart added an "export only net new" toggle.`,
+        ],
+      },
+      {
         heading: 'What results has LeadForce Solutions seen?',
         body: [
           `Aaron uses SaasyDB primarily to source leads for his own client acquisition, running cold email campaigns to AI and software company founders. His outreach is deliberately unscalable — custom video research for each prospect — trading volume for relevance.`,
@@ -756,16 +815,16 @@ export const examples: CaseStudyExample[] = [
           `The risk is low, Aaron says: "the risk to reward trade-off is very asymmetrical in your favor." Start with a monthly subscription — approximately $90–$100 at the time of the interview — test a sample of leads against your own scoring criteria, and decide from results.`,
         ],
         quote: {
-          text: `this is the worst it gets. Like right now, it's good enough that Taylor Haren, who's like a big boy, called him out. And this is the worst that it will ever be because it's only going to improve.`,
+          text: `Right now, it's good enough that Taylor Heron, who's like a big boy, called him out. And this is the worst that it will ever be because it's only going to improve.`,
           name: 'Aaron Gusinov',
         },
       },
     ],
     cta: {
-      heading: 'Need SaaS leads your competitors can\'t find?',
-      body: `LeadForce Solutions found that most SaasyDB contacts don't appear in any other database. If your outbound campaigns are hitting saturated inboxes, SaasyDB can give you an edge.`,
+      heading: 'Ready to reach founders who aren\'t already buried in outreach?',
+      body: `The hardest part of cold email isn't the offer — it's landing in an inbox that isn't already full of the same pitch. LeadForce Solutions sources SaaS contacts through SaasyDB that most competing databases don't carry, and the majority score as a genuine fit against a real persona.`,
       links: [
-        { label: 'Try SaasyDB', href: 'https://www.saasydb.com/' },
+        { label: 'See what\'s in the database', href: 'https://www.saasydb.com/' },
       ],
     },
     seo: {
@@ -773,9 +832,9 @@ export const examples: CaseStudyExample[] = [
       metaDescription:
         'LeadForce Solutions sources SaaS leads through SaasyDB that don\'t appear in mainstream databases. Majority scored "perfect fit." Founder calls it "my best $1,500 I spent."',
       targetQuery: 'LeadForce Solutions SaasyDB case study',
-      slug: '/case-studies/leadforce-solutions-saasydb-case-study',
+      slug: '/leadforce-solutions-saasydb-case-study',
       imageAlt:
-        'Aaron Gusinov, Founder of LeadForce Solutions, on sourcing exclusive SaaS leads through SaasyDB that don\'t appear in mainstream databases',
+        'Aaron Gusinov, Founder of LeadForce Solutions, speaking on camera about sourcing exclusive SaaS leads through SaasyDB that don\'t appear in mainstream databases',
       domain: 'www.saasydb.com',
     },
     openGraph: {
@@ -799,6 +858,7 @@ export const examples: CaseStudyExample[] = [
         },
         {
           '@type': 'Review',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
           author: {
             '@type': 'Person',
             name: 'Aaron Gusinov',
@@ -806,7 +866,7 @@ export const examples: CaseStudyExample[] = [
             worksFor: { '@type': 'Organization', name: 'LeadForce Solutions' },
           },
           reviewBody:
-            "it's very satisfying to know that if I email a thousand people here, I'm more likely going to get in touch with people who aren't inundated with emails than a thousand over here.",
+            'The value prop is very simple: if you want niche data that is not as present in other databases, this is the place to go.',
         },
         { '@type': 'Organization', name: 'SaasyDB', url: 'https://www.saasydb.com/' },
         {
@@ -947,6 +1007,9 @@ export interface KitView {
   stats: { v: string; l: string }[];
   serpUrl: string;
   video?: { embedUrl: string; label: string };
+  testimonialVideo?: { src: string; poster: string };
+  clips?: { src: string; poster: string; caption: string }[];
+  carouselSlides?: { src: string; alt: string }[];
 }
 
 const stripTags = (s: string): string => s.replace(/<[^>]+>/g, '');
@@ -983,6 +1046,9 @@ export function kitView(ex: CaseStudyExample): KitView {
     stats,
     serpUrl: `${ex.seo.domain}${ex.seo.slug}`,
     video: ex.video,
+    testimonialVideo: k.testimonialVideo,
+    clips: k.clips,
+    carouselSlides: k.carouselSlides,
   };
 }
 
