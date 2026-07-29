@@ -45,7 +45,7 @@ const cardSections = example.sections.slice(0, 3);
           aria-label={`Play video: ${k.video.label}`}
         >
           {videoThumb && (
-            <img src={videoThumb} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" />
+            <img src={videoThumb} width="480" height="360" alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" />
           )}
           <span class="cs-video-play" aria-hidden="true">▶</span>
         </button>

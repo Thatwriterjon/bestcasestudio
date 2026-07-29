@@ -153,26 +153,29 @@ const faqSchema = {
   <section class="cost-compare">
     <div class="wrap">
       <h2>What a B2B case study costs in 2026</h2>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Option</th>
-              <th scope="col">Typical cost</th>
-              <th scope="col">What you get</th>
-            </tr>
-          </thead>
-          <tbody>
-            {comparison.map((row) => (
-              <tr class:list={[row.highlight && 'is-kit']}>
-                <th scope="row">{row.option}</th>
-                <td>{row.cost}</td>
-                <td>{row.get}</td>
+      <div class="table-wrap">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Option</th>
+                <th scope="col">Typical cost</th>
+                <th scope="col">What you get</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {comparison.map((row) => (
+                <tr class:list={[row.highlight && 'is-kit']}>
+                  <th scope="row">{row.option}</th>
+                  <td>{row.cost}</td>
+                  <td>{row.get}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+      <p class="table-hint" aria-hidden="true">Swipe to see all columns →</p>
       <p class="table-note">
         Want the detail behind these numbers? Read <a href="/blog/how-much-does-a-b2b-case-study-cost/">the full breakdown of what a B2B case study costs</a>.
       </p>
@@ -421,6 +424,9 @@ const faqSchema = {
     margin: 0 0 40px;
     max-width: 20ch;
   }
+  .table-wrap {
+    position: relative;
+  }
   .table-scroll {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -429,6 +435,32 @@ const faqSchema = {
     width: 100%;
     border-collapse: collapse;
     min-width: 560px;
+  }
+  .table-hint {
+    display: none;
+  }
+  @media (max-width: 700px) {
+    /* The table scrolls horizontally past this width — signal it, since a plain
+       overflow:auto container gives no visual cue that content continues offscreen. */
+    .table-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 32px;
+      background: linear-gradient(to right, transparent, var(--bg) 80%);
+      pointer-events: none;
+    }
+    .table-hint {
+      display: block;
+      margin: 10px 0 0;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
   }
   .cost-compare thead {
     border-bottom: 2px solid var(--ink);

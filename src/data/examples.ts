@@ -503,7 +503,7 @@ export const examples: CaseStudyExample[] = [
     customer: 'COMMIT',
     tabLabel: 'Extrovert',
     pageDescription:
-      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT — 4,000+ new connections and 10–15 inbound requests a day. A Proof Kit case study example, built to rank on Google and get cited by AI.',
+      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT — 4,000+ new connections, 10–15 inbound requests a day. A Proof Kit example.',
     industry: 'AI-powered LinkedIn engagement',
     region: 'EMEA',
     title:
@@ -672,7 +672,7 @@ export const examples: CaseStudyExample[] = [
     customer: 'LeadForce Solutions',
     tabLabel: 'SaasyDB',
     pageDescription:
-      'How SaasyDB gave LeadForce Solutions SaaS leads that appear in no other database, feeding a 3% cold-email reply rate. A Proof Kit case study example, built to rank on Google and get cited by AI.',
+      'How SaasyDB gave LeadForce Solutions SaaS leads no other database has, feeding a 3% cold-email reply rate. A Proof Kit case study example.',
     industry: 'SaaS lead database',
     region: 'United States',
     title:

@@ -34,7 +34,7 @@ interface Props {
 
 const {
   title = 'Best Case Studio — The Proof Kit: a complete B2B case study, $2,500',
-  description = 'One conversation with your best customer becomes a complete B2B case study — video, written, and ready for everywhere your buyers look. $2,500, delivered 14 days from the interview.',
+  description = 'One conversation with your best customer becomes a complete B2B case study — video and written, ready everywhere buyers look. $2,500, 14-day delivery.',
   transparentNav = false,
   noindex = false,
   schema = [],
@@ -54,7 +54,7 @@ const organization = {
   name: 'Best Case Studio',
   alternateName: 'Best Case Studio (bestcasestud.io)',
   url: 'https://bestcasestud.io/',
-  logo: 'https://bestcasestud.io/favicon.svg',
+  logo: 'https://bestcasestud.io/apple-touch-icon.png',
   description: 'Two-person studio producing the Proof Kit — one recorded customer conversation turned into a complete B2B case study: video, written, and everywhere your buyers look.',
   address: {
     '@type': 'PostalAddress',
@@ -122,8 +122,18 @@ const twDescription = twitterDescription ?? description;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Google tag (gtag.js) -->
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-RQTLRXMYNV"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RQTLRXMYNV');
+    </script>
     <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader-latin-wght-normal.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/ibm-plex-mono-latin-500-normal.woff2" crossorigin />
+    <link rel="preconnect" href="https://img.youtube.com" />
     <title>{title}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}

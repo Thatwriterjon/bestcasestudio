@@ -94,6 +94,8 @@ const videoThumb = youtubeId ? `https://img.youtube.com/vi/${youtubeId}/hqdefaul
           {videoThumb && (
             <img
               src={videoThumb}
+              width="480"
+              height="360"
               alt=""
               loading={eager ? 'eager' : 'lazy'}
               decoding="async"
