@@ -7,3 +7,9 @@
 
 # Every visible example now has its own canonical page at /examples/<slug>/, and
 # /examples/ is the hub that links to them — so no example slug should be redirected.
+
+# SuccessKit ceased trading and successkit.io was re-registered by an unrelated
+# gambling site, so the comparison page was removed rather than left pointing at it.
+# The URL was indexed, so send it to the compare hub instead of returning a 404.
+/compare/best-case-studio-vs-successkit  /compare/  301
+/compare/best-case-studio-vs-successkit/  /compare/  301

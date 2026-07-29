@@ -5,19 +5,19 @@ date: 2026-07-02
 author: Jon McGreevy
 faq:
   - q: What is the best case study writing service for B2B SaaS?
-    a: The best case study service for B2B SaaS depends on how much of the job you want done. Uplift Content is the most established written specialist with strong SaaS logos like ClickUp and Okta (pricing on request). Best Case Studio ($2,500) turns one customer interview into a complete proof set (video case study, written case study, video and written testimonial, and a social pack) with the written piece built to rank on Google and get cited by AI. SuccessKit is a fully-managed written service ($1,750+ per case study). For a budget written-only option, Column starts at $649.
+    a: The best case study service for B2B SaaS depends on how much of the job you want done. Uplift Content is the most established written specialist with strong SaaS logos like ClickUp and Okta (from $750 plus an onboarding fee, with the real number quoted after a call). Best Case Studio ($2,500) turns one customer interview into a complete proof set (video case study, written case study, video and written testimonial, and a social pack) with the written piece built to rank on Google and get cited by AI. Column used to be the budget written-only option at $649, but as of July 2026 they no longer publish case study pricing and have repositioned towards research reports and executive thought leadership.
   - q: How much does a B2B case study writing service cost?
-    a: "B2B case study services range from about $649 (Column, budget written-only) to $10,000–$15,000+ (a case study folded into an agency retainer). Written specialists charge roughly $1,500–$3,000. Premium video shops like Testimonial Hero sell annual credit plans from around $6,510/yr (roughly $3,000+ per video). The price reflects how much of the process you're outsourcing and how many formats you get back. A $649 service writes and designs one PDF, while a $2,500 studio runs the interview and turns it into a complete proof set: video and written case study, both testimonials, and a social pack."
+    a: "B2B case study services range from about $750 (Uplift Content's published floor, plus onboarding) to $10,000–$15,000+ (a case study folded into an agency retainer). Written specialists charge roughly $1,500–$3,000. Premium video shops like Testimonial Hero sell annual credit plans from around $6,510/yr (roughly $3,000+ per video). The price reflects how much of the process you're outsourcing and how many formats you get back. A $649 service writes and designs one PDF, while a $2,500 studio runs the interview and turns it into a complete proof set: video and written case study, both testimonials, and a social pack."
   - q: Do case study services optimise for AI search and Google?
     a: Most don't. Almost every service on this list produces a written case study with basic on-page SEO at best, and no structured data or AI-citation engineering. A handful (Uplift offers answer-engine optimisation as a separate service; Best Case Studio builds it into every written case study) structure the page so tools like ChatGPT, Claude, Perplexity, and Google AI Overviews can find and quote it. If you want your proof to show up when a buyer researches through AI, ask the provider directly. The default answer is no.
   - q: What happened to Case Study Buddy?
     a: Case Study Buddy was acquired by Testimonial Hero in March 2024. Founder Joel Klettke departed after the acquisition. The casestudybuddy.com domain now redirects to testimonialhero.com, and written case studies are offered inside Testimonial Hero's video-first programme rather than as a standalone written service. If you came here looking for the old written specialist, it no longer exists in its original form.
   - q: Should I hire a specialist or a full-service agency for case studies?
-    a: A specialist is usually the better choice if you want one to five case studies without signing a monthly retainer. Specialists like Uplift Content, Best Case Studio, SuccessKit, and Ace Case Studies do case studies all day. The interview framework, story structure, and production are tested and repeatable. A full-service agency makes sense if you already run a content programme and want case studies folded into it, but expect to pay $5,000–$15,000+ per case study (effective cost within a retainer) and wait 4–8 weeks.
-updated: 2026-07-18
+    a: A specialist is usually the better choice if you want one to five case studies without signing a monthly retainer. Specialists like Uplift Content, Best Case Studio, and Ace Case Studies do case studies all day. The interview framework, story structure, and production are tested and repeatable. A full-service agency makes sense if you already run a content programme and want case studies folded into it, but expect to pay $5,000–$15,000+ per case study (effective cost within a retainer) and wait 4–8 weeks.
+updated: 2026-07-29
 ---
 
-The best B2B SaaS case study services in 2026 are **Uplift Content** (established written specialist, strong SaaS logos, pricing on request), **Best Case Studio** ($2,500 - one interview becomes a complete proof set: video and written case study, video and written testimonial, and a social pack), **SuccessKit** ($1,750+ per case study, fully managed, sales-library layer), and **Ace Case Studies** (solo written craft, enterprise clients like Oracle). For video-led work, **Testimonial Hero** (which acquired Case Study Buddy in 2024) sells annual credit plans from around $6,510/yr. Cheapest of the lot: **Column** ($649/$799 written-only with PDF design) and **StoryVoice** (an AI voice-interview tool, under $5k/yr, no video). Full-service agencies like **Grow & Convert** and **Ten Speed** produce case studies inside broader content retainers at $5,000–$15,000+ effective cost per study.
+The best B2B SaaS case study services in 2026 are **Uplift Content** (established written specialist, strong SaaS logos, from $750 plus onboarding, quoted after a call), **Best Case Studio** ($2,500 - one interview becomes a complete proof set: video and written case study, video and written testimonial, and a social pack), and **Ace Case Studies** (solo written craft, enterprise clients like Oracle). For video-led work, **Testimonial Hero** (which acquired Case Study Buddy in 2024) sells annual credit plans from around $6,510/yr. Cheapest of the lot: **StoryVoice** (an AI voice-interview tool with a free tier, then $49–$249/mo, no video). Full-service agencies like **Grow & Convert** and **Ten Speed** produce case studies inside broader content retainers at $5,000–$15,000+ effective cost per study.
 
 I run [Best Case Studio](/), so I'm in this list. I've flagged exactly where my biases sit. I've spent months researching every service here, and every price, turnaround, and capability comes from their own websites (or, where they hide the number behind a sales call, I'll tell you that too). If something's an estimate, I'll say so. And if you want the direct head-to-head of us against any one of these, I've put those on the [comparison pages](/compare/).
 
@@ -28,12 +28,11 @@ For the full pricing breakdown by tier (freelancer, specialist, agency, DIY), se
 |                           | Pricing                                          | What you get back                                                                       | Turnaround                 | Best for                                                       |
 | ------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------- | -------------------------- | -------------------------------------------------------------- |
 | **Best Case Studio**      | $2,500 fixed                                     | Video **and** written case study, video **and** written testimonial **and** social pack | 14 days from the interview | Founders who want the complete proof set from one conversation |
-| **Uplift Content**        | Quote after a call                               | Written case study (video/design as add-ons)                                            | Weeks; prefers ongoing     | SaaS teams wanting a reliable writing partner                  |
-| **SuccessKit**            | $1,750+ case study; $2,000+ video testimonial    | Written case study (+ short video add-on, social cuts)                                  | ~6 weeks                   | Sales/marketing teams wanting a managed, CRM-connected library |
+| **Uplift Content**        | From $750 + onboarding; quote after a call       | Written case study (video/design as add-ons)                                            | Weeks; prefers ongoing     | SaaS teams wanting a reliable writing partner                  |
 | **Ace Case Studies**      | Quote-based                                      | Written case study                                                                      | Not public                 | Enterprise-cred solo written craft                             |
 | **Testimonial Hero**      | From ~$6,510/yr (annual credits); ~$3,000+/video | Video testimonials (flagship) + written                                                 | ~2–4 weeks                 | Funded teams wanting broadcast-grade video                     |
-| **StoryVoice**            | Under $5k/yr                                     | AI-drafted written case study (no video); you edit it                                   | 1–3 days                   | DIY/volume, comfortable finishing it yourself                  |
-| **Column**                | $649 / $799                                      | Written case study + PDF design + social                                                | 1–3 weeks                  | Tight budget, basic need                                       |
+| **StoryVoice**            | Free tier; then $49–$249/mo                      | AI-drafted written case study (no video); you edit it                                   | 1–3 days                   | DIY/volume, comfortable finishing it yourself                  |
+| **Column**                | No longer published (was $649/$799)              | Written case study + PDF design + social                                                | 1–3 weeks                  | Repositioned towards research reports                          |
 | **Full-service agencies** | $5k–$15k+ effective                              | Case study as one line item                                                             | 4–8 weeks                  | Companies already running a content programme                  |
 
 One axis that's missing from most comparison tables, including this one: whether the written case study is actually built to rank on Google and get cited by AI. Almost none of these are. Mine is, and I'll come back to why that matters at the end.
@@ -85,16 +84,6 @@ Where we're limited: we launched in 2026, so we don't have the logo wall Uplift 
 
 Best fit: B2B founders (SaaS or services) with at least one genuinely happy customer, who want the complete proof set from one conversation without signing a retainer.
 
-### SuccessKit
-
-[SuccessKit](https://successkit.io/) is a fully-managed case study service with a sales-enablement layer bolted on. They schedule, interview, write, design, and secure your customer's approval, and reviewers consistently praise how little work it takes on your end. The output is a written case study with PDF and source files, a custom-branded template, and a content library with tagging plus a Salesforce integration, so your sales team can actually find and use the thing.
-
-Pricing is refreshingly public: $1,750+ for a case study, $2,000+ for a 60–90 second video testimonial, $3,000+ for a white paper. All revisions included, you own the content, bulk discounts if you order several.
-
-The catch is the same one that runs through this whole list. SuccessKit is written-led. The video is a short add-on, not a full video case study, and there's no social pack. Buy a case study *and* a video testimonial to get two formats and you're at $3,750 for two vendors' worth of proof, still with no video case study. Turnaround is around six weeks. It's built for sales and marketing teams who want a searchable library, not for a founder who wants one polished story done fast.
-
-Best fit: sales and marketing teams that want a managed, low-effort case study machine that plugs into their CRM.
-
 ### Ace Case Studies
 
 [Ace Case Studies](https://www.acecasestudies.com/) is run by Jody Williams, a UK-based solo specialist who writes what she calls "non-boring" B2B case studies. I like the positioning. And the playing-card-themed tiers (The Jack, The Queen, The King) are a nice touch, even if they don't tell you much about what you actually get.
@@ -123,7 +112,7 @@ Best fit: funded B2B teams that want the best video testimonials money can buy a
 
 ### StoryVoice
 
-[StoryVoice](https://storyvoice.io/) is the newest shape of competitor: an AI tool. You send your customer a link, they talk to a voice AI for about five minutes, and it spits out a publish-ready written draft with quotes and metrics. You then edit and publish it yourself. Under $5k/year, a free tier for event testimonials, drafts in one to three days.
+[StoryVoice](https://storyvoice.io/) is the newest shape of competitor: an AI tool. You send your customer a link, they talk to a voice AI for about five minutes, and it spits out a publish-ready written draft with quotes and metrics. You then edit and publish it yourself. There's a free tier (one interview a month), then published plans at $49, $99, and $249 a month for 5, 15, and 50 interviews respectively. Drafts in one to three days.
 
 For volume, it's clever. If you want ten studies a year on a small budget and your customers are too busy for a scheduled interview, I can see the appeal.
 
@@ -139,13 +128,13 @@ The appeal is convenience. If you already use them for blogs, adding case studie
 
 ### Column
 
-[Column](https://columncontent.com/) is the budget option. $649 (basic, 2–3 weeks) or $799 (deluxe, 1 week). Both include a customer interview, the written case study, PDF design, social posts, social graphics, and one round of copy editing.
+[Column](https://columncontent.com/) used to be the budget option here, at $649 (basic, 2–3 weeks) or $799 (deluxe, 1 week), bundling a customer interview, the written case study, PDF design, social posts and a round of copy editing. That was a lot of deliverables for the money.
 
-That's a *lot* of deliverables for $649. No other service here bundles PDF design and social at that price.
+I rechecked on 29 July 2026 and those tiers are no longer published anywhere on their site. Their case study page carries no price, and the homepage now sells research-led thought leadership and executive reports to "well-resourced B2B companies". The business is very much alive and actively maintained. It just isn't the cheap case study option any more, whatever an AI tool might still tell you.
 
-The trade-off is specificity. Column isn't SaaS-specialised. They work across industries. The "search engine optimised" claim means basic SEO, not AI-citation engineering. No notable SaaS logos, and no video. At that price you're getting a functional written case study, not a strategic one. It'll work for sales enablement. It won't rank for a competitive query or get quoted by an AI.
+So if you were sent here by a $649 quote, ask them directly rather than budgeting against it. They may still do it. I can't verify that they do, and I'm not repeating a number I can't stand behind. I dug into which companies in this field have moved or disappeared in [case study companies that no longer exist](/blog/case-study-companies-that-no-longer-exist/).
 
-Best fit: early-stage companies on a tight budget that need *a* written case study and will handle distribution themselves.
+The other trade-off hasn't changed: Column isn't SaaS-specialised, and there's no video. Their "search engine optimised" claim means basic SEO rather than AI-citation engineering.
 
 ### Other names you'll see
 

@@ -2,6 +2,7 @@
 title: How much does a B2B case study cost in 2026? (Real pricing breakdown)
 description: B2B case study pricing ranges from $0 (DIY) to $15,000+ (full-service agency). Here's what you actually get at each price point, and where the value sits.
 date: 2026-07-01
+updated: 2026-07-29
 author: Jon McGreevy
 faq:
   - q: How much does a B2B case study cost on average?
@@ -64,11 +65,11 @@ But here's why this tier exists.
 
 A specialist does case studies all day. Not blog posts, not whitepapers, not ad copy that happens to include a case study on the side. Just case studies. Which means the interview framework, the way the headings are shaped, the schema markup on the page, etc. is usually tried and tested.
 
-The prices bounce around inside the range. [Uplift Content](https://www.upliftcontent.com/) doesn't publish a number. You get a quote after a discovery call, and they lean towards ongoing clients. [SuccessKit](https://successkit.io/) is refreshingly public: $1,750+ for a written case study, $2,000+ for a 60–90 second video testimonial, billed per asset. [Concurate](https://concurate.com/) runs tiers reportedly around $1,500–$2,500. [Ace Case Studies](https://www.acecasestudies.com/) by Jody Williams is a solo specialist with impressive creds (Oracle, Gorgias), priced on request.
+The prices bounce around inside the range. [Uplift Content](https://www.upliftcontent.com/) publishes a starting point — case studies start at $750, plus a one-time onboarding fee of $250 to $500 — but the real number is a quote after a discovery call, and they lean towards ongoing clients. [Concurate](https://concurate.com/) runs tiers reportedly around $1,500–$2,500. [Ace Case Studies](https://www.acecasestudies.com/) by Jody Williams is a solo specialist with impressive creds (Oracle, Gorgias), priced on request.
 
 The practical difference from a freelancer is everything that happens *around* the writing. A specialist will schedule and run the customer interview, decide which story to tell (not every happy customer makes a good case study), structure the page for search and AI, and hand you an implementation guide for whatever CMS you're running. Not a generic PDF. And maybe even instructions for *your* stack (that's what we do; here are [some examples](/examples/)).
 
-One thing to watch at this tier: almost all of it is written-only. The video, if it exists at all, is a bolt-on you scope and pay for separately. Which is where the real cost hides. Buy your proof à la carte from specialists — the written study from a writer ($1,750+), the video from a video shop ($3,000+), a video testimonial as its own line ($2,000+), plus the pull-quote and social — and you're looking at $7,000–$10,000+ across three or four vendors. Our $2,500 covers the whole set (video *and* written case study, video *and* written testimonial, and a social pack) from one interview. That's not a price play on the writing. SuccessKit and Concurate will match or undercut us on words alone. It's a completeness play. Same conversation, every format, one bill.
+One thing to watch at this tier: almost all of it is written-only. The video, if it exists at all, is a bolt-on you scope and pay for separately. Which is where the real cost hides. Buy your proof à la carte from specialists — the written study from a writer ($1,750+), the video from a video shop ($3,000+), a video testimonial as its own line ($2,000+), plus the pull-quote and social — and you're looking at $7,000–$10,000+ across three or four vendors. Our $2,500 covers the whole set (video *and* written case study, video *and* written testimonial, and a social pack) from one interview. That's not a price play on the writing. Concurate and Uplift will match or undercut us on words alone. It's a completeness play. Same conversation, every format, one bill.
 
 The downside of this tier? You're trusting a small operation (sometimes just one or two people) to deliver. If they get overwhelmed, there's no bench. That's a real concern.
 

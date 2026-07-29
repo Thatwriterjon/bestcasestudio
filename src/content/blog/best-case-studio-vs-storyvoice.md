@@ -2,6 +2,7 @@
 title: "Best Case Studio vs StoryVoice"
 description: StoryVoice auto-drafts written case studies from a 5-min AI voice interview. Best Case Studio delivers a real, produced proof set with video for $2,500.
 date: 2026-07-15
+updated: 2026-07-29
 author: Jon McGreevy
 comparison:
   competitor: StoryVoice
@@ -10,9 +11,9 @@ comparison:
   wedge: Real
 faq:
   - q: Is StoryVoice or Best Case Studio better for B2B case studies?
-    a: It depends on what you're optimising for. StoryVoice is better if you want volume on a tight budget and don't mind editing an AI draft yourself. Your customer talks to a voice AI for about five minutes and you get a written draft in one to three days, under $5,000 a year. Best Case Studio is better if you want a real, produced proof set from one recorded human interview, including a video case study, for a fixed $2,500. Pick StoryVoice for cheap volume, pick Best Case Studio for proof that holds up to a sceptical buyer.
+    a: It depends on what you're optimising for. StoryVoice is better if you want volume on a tight budget and don't mind editing an AI draft yourself. Your customer talks to a voice AI for about five minutes and you get a written draft in one to three days, on a free tier or a published plan between $49 and $249 a month. Best Case Studio is better if you want a real, produced proof set from one recorded human interview, including a video case study, for a fixed $2,500. Pick StoryVoice for cheap volume, pick Best Case Studio for proof that holds up to a sceptical buyer.
   - q: How much does StoryVoice cost?
-    a: StoryVoice is cheap. There's a free tier aimed at event testimonials, and paid plans that currently run as low one-off deals, well under $5,000 a year however you count it (self-reported, and their pricing model shifts). That buys you AI-drafted written case studies you edit and publish yourself. Best Case Studio is a fixed $2,500 per Proof Kit, which is a done-for-you set of video and written case study, video and written testimonial, and a social pack from one recorded interview.
+    a: StoryVoice is cheap, and they publish the numbers. There's a free tier (one AI voice interview a month), then Starter at $49/mo for 5 interviews, Growth at $99/mo for 15, and Agency at $249/mo for 50. That buys you AI-drafted written case studies you edit and publish yourself. Their pricing model has shifted before, so check the live figure. Best Case Studio is a fixed $2,500 per Proof Kit, which is a done-for-you set of video and written case study, video and written testimonial, and a social pack from one recorded interview.
   - q: Does StoryVoice include video?
     a: No. StoryVoice produces a written case study only, generated from a short AI voice interview. There's no video case study and no video testimonial. If you want video, you'd buy it separately from another vendor. Best Case Studio includes a full video case study and a short video testimonial in the standard $2,500 Proof Kit, cut from the same interview as the written pieces.
   - q: Are AI-generated case studies worth it?
@@ -21,7 +22,7 @@ faq:
 
 Here's the quick version. [**StoryVoice**](https://storyvoice.io/) is an AI tool that turns a five-minute voice interview into a written case study draft, cheap and fast, that you then edit and publish yourself. **Best Case Studio** sends a real human to run a real recorded interview and produces the whole proof set, including video, done for you, for a fixed $2,500. It comes down to one word: **real**. StoryVoice gives you a machine's version of your customer's story. We give you your customer, on camera, in their own words. If you want ten written drafts a year on a small budget, StoryVoice. If you want proof a doubtful VP can't wave away, that's me.
 
-I run [Best Case Studio](/), so you know which side I'm on before you read a word. Everything I say about StoryVoice comes from what the tool publicly describes doing (the voice-interview flow, the written output, the price band). I've marked their pricing as self-reported because it isn't a published rate card you can point at. Where I'm estimating, I'll say so.
+I run [Best Case Studio](/), so you know which side I'm on before you read a word. Everything I say about StoryVoice comes from what the tool publicly describes doing (the voice-interview flow, the written output, the published rate card). They do publish their tiers, so the numbers below are theirs rather than my guesses. Where I'm estimating, I'll say so.
 
 ## StoryVoice vs Best Case Studio at a glance
 
@@ -67,7 +68,7 @@ With StoryVoice, you send a link and then you're the editor. With us, you make a
 
 ## "But we're a fraction of the price and you get it in a day"
 
-That's the pitch, and I'll concede both halves without a fight. StoryVoice is cheaper than me. StoryVoice is faster than me. A day versus a fortnight, a few thousand a year versus $2,500 a study. If price and speed are the only two axes you care about, they win. Genuinely.
+That's the pitch, and I'll concede both halves without a fight. StoryVoice is cheaper than me. StoryVoice is faster than me. A day versus a fortnight, a few hundred a year on their entry plan versus $2,500 a study. If price and speed are the only two axes you care about, they win. Genuinely.
 
 But price and speed aren't why you're reading a page about case studies. You're reading it because you need proof that works. And here's where I'd gently point out something: if you've been burned before, the thing that burned you was probably cheap-and-fast in the first place.
 
