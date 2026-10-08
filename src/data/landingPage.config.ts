@@ -26,18 +26,19 @@ export const landingPage = {
     h1: 'B2B case studies for SaaS, written and on video',
     subhead: 'One customer interview. $2,500 fixed price, delivered 14 days after the interview.',
     primaryCta: 'Book a 20-minute call',
-    secondaryLinkLabel: 'See a real Proof Kit',
+    secondaryLinkLabel: 'See a real example',
   },
 
-  /** Verbatim from the homepage / pricing page "What's included" list (Pricing.astro,
-   *  pages/pricing.astro). Do not add or remove items here without updating both. */
+  /** Wording matches the homepage / pricing page "What's included" list (Pricing.astro,
+   *  pages/pricing.astro) except for punctuation: those use em dashes, this page uses colons
+   *  per this page's style rules. Do not add or remove items here without updating both. */
   whatYouGet: [
-    'Video case study — the full story, on camera, in your customer\'s own words',
-    'Written case study — built to rank on Google and get cited by AI',
-    'Video testimonial — a short, sharp cut for your homepage and socials',
-    'Written testimonial — a pull-quote for your site, deck, and emails',
-    'Social pack — LinkedIn carousel and short clips',
-    'A "how to use it" guide — where each piece does the most damage',
+    'Video case study: the full story, on camera, in your customer\'s own words',
+    'Written case study: built to rank on Google and get cited by AI',
+    'Video testimonial: a short, sharp cut for your homepage and socials',
+    'Written testimonial: a pull-quote for your site, deck, and emails',
+    'Social pack: LinkedIn carousel and short clips',
+    'A "how to use it" guide: where each piece does the most damage',
   ],
 
   /** Which worked examples (src/data/examples.ts) to embed. The featured slug is embedded
@@ -72,9 +73,12 @@ export const landingPage = {
     deliveryNote: 'Delivered 14 days after the interview',
     /** Empty by default. Fill in later, e.g. "Excluding VAT". */
     priceNote: '',
-    /** Sourced from pages/pricing.astro's commercial-mechanics FAQ, which already states these
-     *  terms on the live site. */
-    paymentTerms: 'Half up front to book the slot, half when your first drafts land. The second payment is triggered by our delivery, not your sign-off.',
+    /** Deliberately worded differently from pages/pricing.astro's payment FAQ (which ties the
+     *  second payment to drafts landing). This page names a single, later trigger: client
+     *  approval of the finished kit, ahead of the interview subject's own sign-off. See the
+     *  summary this was introduced in for the reasoning and the resulting difference from
+     *  /pricing/. */
+    paymentTerms: 'Half up front to book the slot. Half when you approve the delivered Proof Kit, ahead of your customer\'s final sign-off on the published piece.',
     revisions: 'One consolidated round from you. If your customer wants changes after they review it, we make those too.',
     notIncludedNote: 'One price, no upsells. The only thing you\'ll spend after is the time it takes to post it.',
   },
@@ -85,8 +89,10 @@ export const landingPage = {
     studioNote: 'Best Case Studio is a brand new company. We don\'t have Proof Kit testimonials yet, we\'ll add them here as real clients deliver results.',
   },
 
-  /** Order numbers from src/content/faq/*.yaml to show on this page, in that order. */
-  faqOrders: [1, 2, 7, 8],
+  /** Order numbers from src/content/faq/*.yaml to show on this page, in that order. Order 9
+   *  ("Do you work with clients outside the UK?") covers the ads' "Remote interviews" callout
+   *  and is reused verbatim from the same shared file the homepage FAQ draws from. */
+  faqOrders: [1, 2, 7, 8, 9],
 
   /** Proof-Kit-specific testimonials. Empty until Jon has delivered kits and cleared quotes
    *  for paid campaigns. The section renders nothing at all while this is empty. */
@@ -106,6 +112,10 @@ export const landingPage = {
    *  Calendly) without touching the booking component. */
   bookingProvider: 'calendly' as 'calendly' | 'cal.com' | 'none',
   bookingUrl: 'https://calendly.com/thatwriterjon/best-case-studio',
+
+  /** Shown instead of a calendar when bookingUrl is empty, or if the embed fails to load.
+   *  Edit the reply-time line here, it is not hardcoded in the component. */
+  bookingFallbackMessage: 'Thanks, that\'s through. We\'ll reply within one business day.',
 
   leadFormEndpoint: '/api/lead',
 

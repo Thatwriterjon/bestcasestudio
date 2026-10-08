@@ -36,6 +36,11 @@ interface Props {
   /** CTA href/label for the minimal nav. Only used when minimalChrome is true. */
   minimalCtaHref?: string;
   minimalCtaLabel?: string;
+  /** When true, Base does not load the Google tag itself — it only emits a
+   * <meta name="ga-measurement-id"> carrying the ID, so the page can load the tag itself once
+   * a visitor has given cookie consent. Used by pages with their own consent banner. Every
+   * other page is unaffected: the tag keeps loading unconditionally as before. */
+  deferGoogleTag?: boolean;
 }
 
 const {
@@ -51,7 +56,10 @@ const {
   minimalChrome = false,
   minimalCtaHref,
   minimalCtaLabel,
+  deferGoogleTag = false,
 } = Astro.props;
+
+const GA_MEASUREMENT_ID = 'G-RQTLRXMYNV';
 
 const siteOrigin = Astro.site ?? new URL('https://bestcasestud.io');
 const canonical = new URL(Astro.url.pathname, siteOrigin).toString();
@@ -131,15 +139,21 @@ const twDescription = twitterDescription ?? description;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- Google tag (gtag.js) -->
-    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-RQTLRXMYNV"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    {deferGoogleTag ? (
+      <meta name="ga-measurement-id" content={GA_MEASUREMENT_ID} />
+    ) : (
+      <Fragment>
+        {/* Google tag (gtag.js) */}
+        <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+        <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-      gtag('config', 'G-RQTLRXMYNV');
-    </script>
+          gtag('config', GA_MEASUREMENT_ID);
+        </script>
+      </Fragment>
+    )}
     <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader-latin-wght-normal.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/ibm-plex-mono-latin-500-normal.woff2" crossorigin />
     <link rel="preconnect" href="https://img.youtube.com" />

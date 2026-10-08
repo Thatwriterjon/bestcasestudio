@@ -40,7 +40,20 @@ const faqSchema = {
   minimalCtaHref="#lead"
   minimalCtaLabel={landingPage.header.ctaLabel}
   schema={[faqSchema]}
+  deferGoogleTag
 >
+  <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie choice" hidden>
+    <div class="cookie-inner">
+      <p class="cookie-text">
+        We use cookies for analytics and ad measurement. <a href="/privacy/">Read our privacy policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" id="cookie-reject" class="cookie-btn">Reject</button>
+        <button type="button" id="cookie-accept" class="cookie-btn cookie-btn--accept">Accept</button>
+      </div>
+    </div>
+  </div>
+
   <section class="hero" aria-label="Introduction">
     <div class="wrap-tight">
       <h1>{landingPage.hero.h1}</h1>
@@ -80,7 +93,7 @@ const faqSchema = {
     <div class="wrap-tight">
       <SectionHead title="A real <em>Proof Kit</em>." compact />
       <p class="lede">
-        No email required. This is the actual video, written case study, and social pack from one real interview.
+        The Proof Kit: a video case study, a written case study, testimonials and a social pack, all from one interview. No email required to see it.
       </p>
 
       <div class="sample-block">
@@ -301,11 +314,97 @@ const faqSchema = {
   </section>
 </Base>
 
+<script is:inline>
+  // ---- Cookie consent (Google Consent Mode v2) ----
+  // Must run, and set consent defaults, before any Google tag is ever loaded. Base.astro is
+  // told (via the deferGoogleTag prop) not to load the tag itself on this page, loading it
+  // here, only after accept, is what keeps no cookie or ad-platform call firing beforehand.
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  window.gtag = window.gtag || gtag;
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500,
+  });
+
+  const CONSENT_KEY = 'bcs_cookie_consent';
+
+  function readConsent() {
+    try {
+      return window.localStorage.getItem(CONSENT_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeConsent(value) {
+    try {
+      window.localStorage.setItem(CONSENT_KEY, value);
+    } catch (e) {
+      // No persistence available (private mode, disabled storage). The choice still applies
+      // for the rest of this page view, it just won't be remembered on the next visit.
+    }
+  }
+
+  function loadGoogleTag() {
+    const meta = document.querySelector('meta[name="ga-measurement-id"]');
+    const id = meta && meta.content;
+    if (!id || document.querySelector('script[data-ga-tag]')) return;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    script.setAttribute('data-ga-tag', '');
+    document.head.appendChild(script);
+    gtag('js', new Date());
+    gtag('config', id);
+  }
+
+  function grantConsent() {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted',
+    });
+    loadGoogleTag();
+  }
+
+  const cookieBanner = document.getElementById('cookie-banner');
+  const storedConsent = readConsent();
+  if (storedConsent === 'granted') {
+    grantConsent();
+  } else if (storedConsent !== 'denied' && cookieBanner) {
+    cookieBanner.hidden = false;
+  }
+
+  const cookieAccept = document.getElementById('cookie-accept');
+  const cookieReject = document.getElementById('cookie-reject');
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+      writeConsent('granted');
+      grantConsent();
+      if (cookieBanner) cookieBanner.hidden = true;
+    });
+  }
+  if (cookieReject) {
+    cookieReject.addEventListener('click', () => {
+      writeConsent('denied');
+      if (cookieBanner) cookieBanner.hidden = true;
+    });
+  }
+</script>
+
 <script
   define:vars={{
     LEAD_ENDPOINT: landingPage.leadFormEndpoint,
     BOOKING_PROVIDER: landingPage.bookingProvider,
     BOOKING_URL: landingPage.bookingUrl,
+    BOOKING_FALLBACK_MESSAGE: landingPage.bookingFallbackMessage,
     TRACKING: landingPage.tracking,
   }}
 >
@@ -334,7 +433,7 @@ const faqSchema = {
   });
 
   // Video-case facade and "read the full case study" links live inside the reused
-  // KitAssetPreview component — tag their plays/clicks without modifying that shared component.
+  // KitAssetPreview component: tag their plays/clicks without modifying that shared component.
   document.querySelectorAll('#proof-kit-sample .cs-video-facade').forEach((btn) => {
     btn.addEventListener('click', () => window.bcsTrack('sample_video_play', { location: 'proof-kit-sample' }));
   });
@@ -359,7 +458,7 @@ const faqSchema = {
     try {
       window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     } catch (e) {
-      // sessionStorage unavailable (private mode, disabled storage) — attribution still
+      // sessionStorage unavailable (private mode, disabled storage): attribution still
       // fills the hidden fields for this page view, it just won't persist a reload.
     }
   }
@@ -423,7 +522,7 @@ const faqSchema = {
   async function showBooking(name, email) {
     if (!bookingEl) return;
     bookingEl.hidden = false;
-    if (statusEl) statusEl.textContent = 'Thanks — pick a time below.';
+    if (statusEl) statusEl.textContent = 'Thanks. Pick a time below.';
 
     if (BOOKING_PROVIDER === 'calendly' && BOOKING_URL) {
       bookingEl.innerHTML = '<p class="booking-loading">Loading the calendar…</p>';
@@ -443,11 +542,12 @@ const faqSchema = {
         });
       } catch (err) {
         bookingEl.innerHTML =
-          '<p class="booking-fallback">We could not load the calendar. Email us at <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a> and we will reply within one business day.</p>';
+          '<p class="booking-fallback">We could not load the calendar. ' +
+          BOOKING_FALLBACK_MESSAGE +
+          ' Or email <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a> directly.</p>';
       }
     } else {
-      bookingEl.innerHTML =
-        '<p class="booking-fallback">Thanks, that is through. We will reply within one business day.</p>';
+      bookingEl.innerHTML = '<p class="booking-fallback">' + BOOKING_FALLBACK_MESSAGE + '</p>';
       window.bcsTrack('booking_confirmed', { location: 'closing' });
     }
   }
@@ -996,5 +1096,72 @@ const faqSchema = {
     height: 1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
+  }
+
+  /* ---- Cookie consent banner ---- */
+  .cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    background: var(--ink);
+    color: var(--bg);
+    border-top: 1px solid var(--bg);
+  }
+  .cookie-banner[hidden] {
+    display: none;
+  }
+  .cookie-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cookie-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 60ch;
+  }
+  .cookie-text a {
+    color: var(--bg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .cookie-actions {
+    display: flex;
+    gap: 12px;
+    flex: none;
+  }
+  .cookie-btn {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding: 12px 20px;
+    min-height: 44px;
+    border: 1px solid var(--bg);
+    background: transparent;
+    color: var(--bg);
+    border-radius: 999px;
+  }
+  .cookie-btn--accept {
+    background: var(--bg);
+    color: var(--ink);
+  }
+  @media (max-width: 600px) {
+    .cookie-inner {
+      padding: 16px 20px;
+    }
+    .cookie-actions {
+      width: 100%;
+    }
+    .cookie-btn {
+      flex: 1;
+    }
   }
 </style>
