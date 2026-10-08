@@ -1,0 +1,61 @@
+---
+/**
+ * Fallback destination for the /b2b-case-study-writer/ lead form when JavaScript doesn't run
+ * (functions/api/lead.ts 303-redirects a native, no-JS form POST here). With JS, the form
+ * swaps to an inline booking calendar instead and this page is never visited.
+ */
+import Base from '../../layouts/Base.astro';
+import { landingPage } from '../../data/landingPage.config';
+---
+
+<Base
+  title="Thanks — Best Case Studio"
+  description="Thanks for getting in touch about the Proof Kit."
+  noindex
+  minimalChrome
+  minimalCtaHref="/b2b-case-study-writer/"
+  minimalCtaLabel="Back"
+>
+  <section class="thanks">
+    <div class="wrap-tight">
+      <h1>Thanks, that's through.</h1>
+      <p class="lede">We'll reply within one business day.</p>
+      <p class="sub">
+        Want to pick a time now instead of waiting? <a href={landingPage.bookingUrl}>Open the booking calendar</a>, or
+        email <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .thanks {
+    padding: 180px 0 120px;
+    background: var(--yellow);
+    min-height: 60vh;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+  }
+  .lede {
+    font-size: 20px;
+    line-height: 1.45;
+    margin: 0 0 24px;
+  }
+  .sub {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 56ch;
+  }
+  .sub a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--ink);
+  }
+</style>

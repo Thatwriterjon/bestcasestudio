@@ -5,36 +5,53 @@ interface Props {
   /** When true, the nav starts transparent and is upgraded to the solid state once the user
    * scrolls past the first <section>. Used on the home page over the pink hero. */
   transparent?: boolean;
+  /** When true, renders just the wordmark and a single CTA — no site links, no burger menu.
+   * Used on standalone paid-landing pages that intentionally have one job. */
+  minimal?: boolean;
+  /** CTA href + label, used only when minimal is true. */
+  minimalCtaHref?: string;
+  minimalCtaLabel?: string;
 }
 
-const { transparent = false } = Astro.props;
+const {
+  transparent = false,
+  minimal = false,
+  minimalCtaHref = '/contact/',
+  minimalCtaLabel = 'Book a call',
+} = Astro.props;
 ---
 
 <header class:list={['nav', !transparent && 'scrolled', transparent && 'is-transparent']} id="nav">
   <div class="wrap nav-inner">
-    <Wordmark href="/" />
-    <nav aria-label="Primary">
-      <ul class="desktop-links">
+    <Wordmark asLink={!minimal} />
+    {minimal ? (
+      <a href={minimalCtaHref} class="cta" data-track="cta_click" data-track-location="header">{minimalCtaLabel} →</a>
+    ) : (
+      <nav aria-label="Primary">
+        <ul class="desktop-links">
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/examples/">Examples</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/" class="cta">Book a call →</a></li>
+        </ul>
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </nav>
+    )}
+  </div>
+  {!minimal && (
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/examples/">Examples</a></li>
         <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
         <li><a href="/contact/" class="cta">Book a call →</a></li>
       </ul>
-      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-      </button>
-    </nav>
-  </div>
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <ul>
-      <li><a href="/pricing/">Pricing</a></li>
-      <li><a href="/examples/">Examples</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/contact/" class="cta">Book a call →</a></li>
-    </ul>
-  </div>
+    </div>
+  )}
 </header>
 
 <script>
@@ -133,20 +150,26 @@ const { transparent = false } = Astro.props;
     margin: 0;
     align-items: center;
   }
-  nav a {
+  nav a,
+  .nav-inner > a.cta {
     font-family: var(--mono);
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-weight: 500;
   }
-  nav a.cta {
+  nav a.cta,
+  .nav-inner > a.cta {
     background: var(--ink);
     color: var(--bg);
     padding: 10px 16px;
     border-radius: 999px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
-  nav a.cta:hover {
+  nav a.cta:hover,
+  .nav-inner > a.cta:hover {
     background: #000;
   }
   nav a:not(.cta):hover {

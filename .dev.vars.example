@@ -1,0 +1,13 @@
+# Cloudflare Pages Function env vars for functions/api/lead.ts (the /b2b-case-study-writer/
+# lead form). Copy to .dev.vars for local `wrangler pages dev`, and set the real values as
+# environment variables on the Pages project in the Cloudflare dashboard before this goes live.
+#
+# Without RESEND_API_KEY set, the form still works end to end (it captures the lead and shows
+# the booking calendar) but no email is sent — the lead is only visible in the Function's logs.
+
+# Create an account at https://resend.com, verify a sending domain, then paste its API key here.
+RESEND_API_KEY=
+
+# Defaults to jon@bestcasestud.io / leads@bestcasestud.io if left unset.
+LEAD_TO_EMAIL=jon@bestcasestud.io
+LEAD_FROM_EMAIL=leads@bestcasestud.io

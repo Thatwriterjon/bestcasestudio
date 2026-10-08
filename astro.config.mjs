@@ -102,6 +102,9 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
+      // Paid-search landing pages are noindex and shouldn't compete with the homepage in
+      // organic search — keep them out of the sitemap entirely.
+      filter: (page) => !new URL(page).pathname.startsWith('/b2b-case-study-writer'),
       serialize(item) {
         const path = new URL(item.url).pathname;
         const lastmod = lastmodByPath[path];

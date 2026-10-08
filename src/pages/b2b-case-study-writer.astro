@@ -1,0 +1,1000 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+import SectionHead from '../components/SectionHead.astro';
+import KitAssetPreview from '../components/KitAssetPreview.astro';
+import { examples, exampleHref } from '../data/examples';
+import { logos } from '../data/logos';
+import { landingPage } from '../data/landingPage.config';
+
+const featuredExample = examples.find((e) => e.slug === landingPage.proofSample.featuredSlug)!;
+const secondExample = examples.find((e) => e.slug === landingPage.proofSample.secondSlug)!;
+
+const allFaq = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.order);
+const faqItems = landingPage.faqOrders
+  .map((order) => allFaq.find((f) => f.data.order === order))
+  .filter((f): f is NonNullable<typeof f> => Boolean(f));
+
+const freelanceTestimonials = landingPage.showFreelanceTestimonials
+  ? (await getCollection('testimonials'))
+      .sort((a, b) => a.data.order - b.data.order)
+      .slice(0, landingPage.freelanceTestimonialsMax)
+  : [];
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(({ data: q }) => ({
+    '@type': 'Question',
+    name: q.question.replace(/<[^>]*>/g, ''),
+    acceptedAnswer: { '@type': 'Answer', text: q.answer.map((p) => p.replace(/<[^>]*>/g, '')).join('\n\n') },
+  })),
+};
+---
+
+<Base
+  title="B2B case studies for SaaS, written and on video · Best Case Studio"
+  description="One customer interview. $2,500 fixed price, delivered 14 days after the interview."
+  noindex={landingPage.noindex}
+  minimalChrome
+  minimalCtaHref="#lead"
+  minimalCtaLabel={landingPage.header.ctaLabel}
+  schema={[faqSchema]}
+>
+  <section class="hero" aria-label="Introduction">
+    <div class="wrap-tight">
+      <h1>{landingPage.hero.h1}</h1>
+      <p class="subhead">{landingPage.hero.subhead}</p>
+      <div class="hero-ctas">
+        <Button
+          href="#lead"
+          variant="primary"
+          onclick="window.bcsTrack && window.bcsTrack('cta_click', { location: 'hero' })"
+        >
+          {landingPage.hero.primaryCta}
+        </Button>
+        <a
+          href="#proof-kit-sample"
+          class="quiet-link"
+          data-track="sample_link_click"
+          data-track-location="hero-secondary"
+        >
+          {landingPage.hero.secondaryLinkLabel}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-you-get" class="what-you-get">
+    <div class="wrap-tight">
+      <SectionHead title="What you get." compact />
+      <ul class="inclusions">
+        {landingPage.whatYouGet.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="proof-kit-sample" class="proof-sample">
+    <div class="wrap-tight">
+      <SectionHead title="A real <em>Proof Kit</em>." compact />
+      <p class="lede">
+        No email required. This is the actual video, written case study, and social pack from one real interview.
+      </p>
+
+      <div class="sample-block">
+        <KitAssetPreview assetKey="video-case" example={featuredExample} />
+      </div>
+      <div class="sample-block">
+        <KitAssetPreview assetKey="written-case" example={featuredExample} articleHref={exampleHref(featuredExample)} />
+      </div>
+      <div class="sample-block">
+        <KitAssetPreview assetKey="social" example={featuredExample} />
+      </div>
+
+      <p class="second-sample">
+        <a
+          href={exampleHref(secondExample)}
+          data-track="sample_link_click"
+          data-track-location="second-sample"
+        >
+          See a second sample: {secondExample.client} &amp; {secondExample.customer} →
+        </a>
+      </p>
+
+      {landingPage.showWorkedWithLogos && (
+        <div class="mini-logos">
+          <p class="mono mini-logos-head">Brands Jon has worked with as a writer</p>
+          <ul class="mini-logo-grid">
+            {logos.map((logo) => (
+              <li>
+                {logo.svgPath ? (
+                  <img src={logo.svgPath} alt={logo.name} loading="lazy" width="90" height="26" />
+                ) : (
+                  <span>{logo.name}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section id="how-it-works" class="how-it-works">
+    <div class="wrap-tight">
+      <SectionHead title="Three steps." compact />
+      <div class="steps">
+        {landingPage.steps.map((s) => (
+          <div class="step">
+            <span class="num">{s.num}</span>
+            <h3 set:html={s.title} />
+            <p>{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="price" class="price-section">
+    <div class="wrap-tight">
+      <SectionHead title={`${landingPage.price.amount}, fixed.`} compact />
+      <div class="price-card">
+        <span class="delivery-badge">{landingPage.price.deliveryNote}</span>
+        {landingPage.price.priceNote && <p class="price-note">{landingPage.price.priceNote}</p>}
+
+        <div class="included">
+          <h3 class="mono">What's included</h3>
+          <ul>
+            {landingPage.whatYouGet.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <dl class="price-terms">
+          <div>
+            <dt>What's not included</dt>
+            <dd>{landingPage.price.notIncludedNote}</dd>
+          </div>
+          <div>
+            <dt>Payment terms</dt>
+            <dd>{landingPage.price.paymentTerms}</dd>
+          </div>
+          <div>
+            <dt>Revisions</dt>
+            <dd>{landingPage.price.revisions}</dd>
+          </div>
+        </dl>
+
+        <a
+          href="#lead"
+          class="btn primary price-cta"
+          data-track="cta_click"
+          data-track-location="price"
+        >
+          {landingPage.hero.primaryCta} <span class="arr" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="who" class="who">
+    <div class="wrap-tight">
+      <SectionHead title="Who's doing <em>the work</em>." compact />
+      <p class="who-intro">{landingPage.who.intro}</p>
+      <p class="who-bio">{landingPage.who.jonBio}</p>
+      <p class="who-note">{landingPage.who.studioNote}</p>
+
+      {landingPage.testimonials.length > 0 && (
+        <div class="proof-testimonials">
+          {landingPage.testimonials.map((t) => (
+            <article class="t-card">
+              <p class="quote">{t.quote}</p>
+              <div class="author">
+                {t.photo && <img src={t.photo} alt={t.name} loading="lazy" width="44" height="44" />}
+                <div>
+                  <div class="name">{t.name}</div>
+                  <div class="role">{t.title} · {t.company}</div>
+                </div>
+              </div>
+              {t.caseStudyHref && <a href={t.caseStudyHref}>Read the full case study →</a>}
+            </article>
+          ))}
+        </div>
+      )}
+
+      {landingPage.showFreelanceTestimonials && freelanceTestimonials.length > 0 && (
+        <div class="freelance-testimonials">
+          <p class="mono freelance-head">{landingPage.freelanceTestimonialsLabel}</p>
+          <div class="t-grid">
+            {freelanceTestimonials.map(({ data: t }) => (
+              <article class="t-card">
+                <p class="quote" set:html={t.quote} />
+                <div class="author">
+                  {t.avatar ? (
+                    <img class="avatar" src={t.avatar} alt={t.name} loading="lazy" width="40" height="40" />
+                  ) : (
+                    <span class="avatar" aria-hidden="true">{t.initials}</span>
+                  )}
+                  <div>
+                    <div class="name">{t.name}</div>
+                    <div class="role">{t.role} · {t.company}</div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap-tight">
+      <SectionHead title="Frequently asked <em>questions</em>." compact />
+      <div class="faq-list">
+        {faqItems.map(({ data: q }) => (
+          <details class="q">
+            <summary>
+              <span set:html={q.question} />
+              <span class="marker" aria-hidden="true">+</span>
+            </summary>
+            <div class="a">
+              {q.answer.map((p) => <p set:html={p} />)}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="lead" class="lead-section">
+    <div class="wrap-tight">
+      <SectionHead title="Ready to see what your best customer would say?" compact />
+      <p class="lede">Tell us a bit about you and we'll get a call on the calendar.</p>
+
+      <div class="lead-panel">
+        <form id="lead-form" method="post" action={landingPage.leadFormEndpoint}>
+          <div class="field">
+            <label for="lf-name">Name</label>
+            <input id="lf-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="lf-email">Work email</label>
+            <input id="lf-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="lf-company">Company website</label>
+            <input id="lf-company" name="company" type="url" autocomplete="url" placeholder="https://" />
+          </div>
+          <fieldset class="field">
+            <legend>Do you have a customer in mind who would do a 30 to 45 minute interview?</legend>
+            <label class="radio"><input type="radio" name="hasCustomer" value="Yes" required /> Yes</label>
+            <label class="radio"><input type="radio" name="hasCustomer" value="Not sure yet" /> Not sure yet</label>
+            <label class="radio"><input type="radio" name="hasCustomer" value="No" /> No</label>
+          </fieldset>
+
+          <input type="hidden" name="gclid" />
+          <input type="hidden" name="gbraid" />
+          <input type="hidden" name="wbraid" />
+          <input type="hidden" name="utm_source" />
+          <input type="hidden" name="utm_medium" />
+          <input type="hidden" name="utm_campaign" />
+          <input type="hidden" name="utm_term" />
+          <input type="hidden" name="utm_content" />
+          <input type="hidden" name="landingPageUrl" />
+          <input type="hidden" name="referrer" />
+
+          <p class="form-error" id="lf-error" role="alert" hidden></p>
+
+          <button type="submit" class="btn primary" id="lf-submit" data-track="cta_click" data-track-location="closing">
+            {landingPage.hero.primaryCta} <span class="arr" aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div id="lead-booking" hidden></div>
+        <p id="lf-status" class="sr-only" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script
+  define:vars={{
+    LEAD_ENDPOINT: landingPage.leadFormEndpoint,
+    BOOKING_PROVIDER: landingPage.bookingProvider,
+    BOOKING_URL: landingPage.bookingUrl,
+    TRACKING: landingPage.tracking,
+  }}
+>
+  // ---- Tracking: dataLayer + existing gtag, never allowed to block a real user action ----
+  window.dataLayer = window.dataLayer || [];
+  window.bcsTrack = function bcsTrack(event, params) {
+    params = params || {};
+    try {
+      window.dataLayer.push(Object.assign({ event: event }, params));
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', event, params);
+        const label = TRACKING.conversionLabels[event];
+        if (TRACKING.googleAdsId && label) {
+          window.gtag('event', 'conversion', Object.assign({ send_to: TRACKING.googleAdsId + '/' + label }, params));
+        }
+      }
+    } catch (e) {
+      // Tracking must never block navigation, submission, or booking.
+    }
+  };
+
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-track]');
+    if (!el) return;
+    window.bcsTrack(el.getAttribute('data-track'), { location: el.getAttribute('data-track-location') || '' });
+  });
+
+  // Video-case facade and "read the full case study" links live inside the reused
+  // KitAssetPreview component — tag their plays/clicks without modifying that shared component.
+  document.querySelectorAll('#proof-kit-sample .cs-video-facade').forEach((btn) => {
+    btn.addEventListener('click', () => window.bcsTrack('sample_video_play', { location: 'proof-kit-sample' }));
+  });
+  document.querySelectorAll('#proof-kit-sample .kap-readmore').forEach((link) => {
+    link.addEventListener('click', () => window.bcsTrack('sample_link_click', { location: 'proof-kit-sample-read-more' }));
+  });
+
+  // ---- Attribution capture: URL params -> sessionStorage (first-touch persisted per session) ----
+  const ATTR_KEYS = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  const STORAGE_KEY = 'bcs_attribution';
+
+  function readStoredAttribution() {
+    try {
+      const raw = window.sessionStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function writeStoredAttribution(data) {
+    try {
+      window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    } catch (e) {
+      // sessionStorage unavailable (private mode, disabled storage) — attribution still
+      // fills the hidden fields for this page view, it just won't persist a reload.
+    }
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const attribution = readStoredAttribution();
+  ATTR_KEYS.forEach((key) => {
+    const value = params.get(key);
+    if (value) attribution[key] = value;
+  });
+  writeStoredAttribution(attribution);
+
+  const form = document.getElementById('lead-form');
+  if (form) {
+    ATTR_KEYS.forEach((key) => {
+      const input = form.querySelector(`input[name="${key}"]`);
+      if (input && attribution[key]) input.value = attribution[key];
+    });
+    const landingPageUrlInput = form.querySelector('input[name="landingPageUrl"]');
+    if (landingPageUrlInput) landingPageUrlInput.value = window.location.href;
+    const referrerInput = form.querySelector('input[name="referrer"]');
+    if (referrerInput) referrerInput.value = document.referrer || '';
+  }
+
+  // ---- Submit: POST the lead, then swap the form for the booking calendar ----
+  const errorEl = document.getElementById('lf-error');
+  const statusEl = document.getElementById('lf-status');
+  const bookingEl = document.getElementById('lead-booking');
+  const submitBtn = document.getElementById('lf-submit');
+
+  function showError(message) {
+    if (!errorEl) return;
+    errorEl.textContent = message;
+    errorEl.hidden = false;
+  }
+
+  function loadScriptOnce(src) {
+    return new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[src="${src}"]`);
+      if (existing) {
+        resolve();
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Failed to load ' + src));
+      document.head.appendChild(script);
+    });
+  }
+
+  function loadStylesheetOnce(href) {
+    if (document.querySelector(`link[href="${href}"]`)) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }
+
+  async function showBooking(name, email) {
+    if (!bookingEl) return;
+    bookingEl.hidden = false;
+    if (statusEl) statusEl.textContent = 'Thanks — pick a time below.';
+
+    if (BOOKING_PROVIDER === 'calendly' && BOOKING_URL) {
+      bookingEl.innerHTML = '<p class="booking-loading">Loading the calendar…</p>';
+      try {
+        loadStylesheetOnce('https://assets.calendly.com/assets/external/widget.css');
+        await loadScriptOnce('https://assets.calendly.com/assets/external/widget.js');
+        bookingEl.innerHTML = '';
+        window.Calendly.initInlineWidget({
+          url: BOOKING_URL,
+          parentElement: bookingEl,
+          prefill: { name: name, email: email },
+        });
+        window.addEventListener('message', (e) => {
+          if (e.data && e.data.event === 'calendly.event_scheduled') {
+            window.bcsTrack('booking_confirmed', { location: 'closing' });
+          }
+        });
+      } catch (err) {
+        bookingEl.innerHTML =
+          '<p class="booking-fallback">We could not load the calendar. Email us at <a href="mailto:jon@bestcasestud.io">jon@bestcasestud.io</a> and we will reply within one business day.</p>';
+      }
+    } else {
+      bookingEl.innerHTML =
+        '<p class="booking-fallback">Thanks, that is through. We will reply within one business day.</p>';
+      window.bcsTrack('booking_confirmed', { location: 'closing' });
+    }
+  }
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      if (errorEl) errorEl.hidden = true;
+      if (submitBtn) submitBtn.setAttribute('aria-busy', 'true');
+
+      const data = new FormData(form);
+      const name = String(data.get('name') || '');
+      const email = String(data.get('email') || '');
+
+      try {
+        const res = await fetch(LEAD_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(data.entries())),
+        });
+        if (!res.ok) throw new Error('Submit failed');
+
+        window.bcsTrack('lead_form_submit', { location: 'closing' });
+        form.hidden = true;
+        await showBooking(name, email);
+      } catch (err) {
+        showError('Something went wrong sending that. Please try again, or email jon@bestcasestud.io directly.');
+      } finally {
+        if (submitBtn) submitBtn.removeAttribute('aria-busy');
+      }
+    });
+  }
+</script>
+
+<style>
+  /* ---- Hero ---- */
+  .hero {
+    background: var(--pink);
+    color: var(--ink);
+    padding: 140px 0 72px;
+    border-bottom: 1px solid var(--ink);
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 18ch;
+  }
+  .subhead {
+    font-family: var(--serif);
+    font-size: clamp(18px, 2.4vw, 22px);
+    line-height: 1.45;
+    max-width: 48ch;
+    margin: 0 0 32px;
+  }
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-ctas :global(.btn) {
+    width: auto;
+  }
+  .quiet-link {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    padding: 10px 2px;
+  }
+  @media (max-width: 600px) {
+    .hero {
+      padding: 112px 0 56px;
+    }
+    .hero-ctas {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .hero-ctas :global(.btn) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* ---- What you get ---- */
+  .what-you-get {
+    padding: 80px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .inclusions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .inclusions li {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ---- Proof sample ---- */
+  .proof-sample {
+    padding: 80px 0;
+    background: var(--pk-panel);
+    border-bottom: 1px solid var(--ink);
+  }
+  .proof-sample .lede {
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--pk-muted);
+    max-width: 60ch;
+    margin: 0 0 40px;
+  }
+  .sample-block {
+    margin-bottom: 40px;
+  }
+  .sample-block:last-of-type {
+    margin-bottom: 32px;
+  }
+  .second-sample {
+    margin: 0;
+  }
+  .second-sample a {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--pk-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .mini-logos {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--pk-line);
+  }
+  .mini-logos-head {
+    color: var(--pk-faint);
+    margin: 0 0 20px;
+  }
+  .mini-logo-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+    align-items: center;
+  }
+  .mini-logo-grid img {
+    max-height: 26px;
+    width: auto;
+    filter: brightness(0);
+    opacity: 0.5;
+  }
+  .mini-logo-grid span {
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--pk-muted);
+  }
+
+  /* ---- How it works ---- */
+  .how-it-works {
+    padding: 80px 0;
+    background: var(--yellow);
+    border-bottom: 1px solid var(--ink);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    border-top: 1px solid var(--ink);
+    padding-top: 32px;
+  }
+  .step .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .step h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+  .step h3 :global(em) {
+    font-style: italic;
+  }
+  .step p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  @media (max-width: 800px) {
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  /* ---- Price ---- */
+  .price-section {
+    padding: 80px 0;
+    background: var(--ink);
+    color: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .price-section :global(.sec-head h2) {
+    color: var(--bg);
+  }
+  .price-section :global(.sec-head h2 em) {
+    color: var(--pink);
+  }
+  .price-card {
+    max-width: 640px;
+    background: var(--bg);
+    color: var(--ink);
+    border: 2px solid var(--pink);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .delivery-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    /* A darkened pink, not the brand --pink token: --pink fails contrast at this size on the
+       card's cream background (~2:1). This passes WCAG AA (~6.3:1) while staying in the same
+       hue. */
+    color: #a6197e;
+    font-weight: 500;
+  }
+  .price-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .included h3 {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .included ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .included li {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.4;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .included li:last-child {
+    border-bottom: none;
+  }
+  .price-terms {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+  }
+  .price-terms dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+  .price-terms dd {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .price-cta {
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+
+  /* ---- Who ---- */
+  .who {
+    padding: 80px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .who-intro {
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 60ch;
+    margin: 0 0 20px;
+  }
+  .who-bio,
+  .who-note {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: 0 0 16px;
+  }
+  .proof-testimonials,
+  .freelance-testimonials {
+    margin-top: 40px;
+  }
+  .freelance-head {
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  .t-grid,
+  .proof-testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .t-card {
+    padding: 24px;
+    border: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .t-card .quote {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0;
+    flex: 1;
+  }
+  .t-card .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .t-card .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .t-card .name {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .t-card .role {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 900px) {
+    .t-grid,
+    .proof-testimonials {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---- FAQ ---- */
+  .faq {
+    padding: 80px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .faq-list {
+    border-top: 1px solid var(--ink);
+  }
+  details.q {
+    border-bottom: 1px solid var(--rule);
+  }
+  details.q summary {
+    list-style: none;
+    padding: 24px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.25;
+  }
+  details.q summary::-webkit-details-marker {
+    display: none;
+  }
+  details.q .marker {
+    flex: 0 0 28px;
+    text-align: right;
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1;
+    transition: transform 0.2s;
+    font-style: italic;
+  }
+  details.q[open] .marker {
+    transform: rotate(45deg);
+  }
+  details.q .a {
+    padding: 0 0 28px;
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 68ch;
+  }
+  details.q .a p {
+    margin: 0 0 12px;
+  }
+  details.q .a p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---- Lead form ---- */
+  .lead-section {
+    padding: 80px 0 120px;
+    background: var(--yellow);
+  }
+  .lead-section .lede {
+    font-size: 18px;
+    margin: 0 0 32px;
+  }
+  .lead-panel {
+    max-width: 560px;
+  }
+  #lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  #lead-form[hidden] {
+    display: none;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .field label,
+  .field legend {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding: 0;
+  }
+  .field input[type='text'],
+  .field input[type='email'],
+  .field input[type='url'] {
+    font-family: var(--serif);
+    font-size: 17px;
+    padding: 14px 16px;
+    min-height: 44px;
+    border: 1px solid var(--ink);
+    background: var(--bg);
+    color: var(--ink);
+    border-radius: 4px;
+  }
+  .field input:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--serif);
+    font-size: 16px;
+    min-height: 44px;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .radio input {
+    width: 20px;
+    height: 20px;
+  }
+  .form-error {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: #9c2b1f;
+    background: #fff;
+    border: 1px solid #9c2b1f;
+    padding: 12px 16px;
+    margin: 0;
+    border-radius: 4px;
+  }
+  #lead-form .btn {
+    min-height: 44px;
+    justify-content: center;
+    width: 100%;
+  }
+  #lead-form .btn[aria-busy='true'] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  #lead-booking {
+    margin-top: 32px;
+  }
+  .booking-loading,
+  .booking-fallback {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.5;
+    background: var(--bg);
+    border: 1px solid var(--ink);
+    padding: 24px;
+    margin: 0;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+</style>

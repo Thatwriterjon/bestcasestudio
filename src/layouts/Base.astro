@@ -30,6 +30,12 @@ interface Props {
   /** Optional Twitter-specific overrides. When omitted, falls back to title/description. */
   twitterTitle?: string;
   twitterDescription?: string;
+  /** When true, the nav collapses to logo + one CTA and the footer collapses to wordmark +
+   * privacy link, with no other site links. Used on standalone paid-landing pages. */
+  minimalChrome?: boolean;
+  /** CTA href/label for the minimal nav. Only used when minimalChrome is true. */
+  minimalCtaHref?: string;
+  minimalCtaLabel?: string;
 }
 
 const {
@@ -42,6 +48,9 @@ const {
   ogType = 'website',
   twitterTitle,
   twitterDescription,
+  minimalChrome = false,
+  minimalCtaHref,
+  minimalCtaLabel,
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? new URL('https://bestcasestud.io');
@@ -178,10 +187,15 @@ const twDescription = twitterDescription ?? description;
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <Nav transparent={transparentNav} />
+    <Nav
+      transparent={transparentNav}
+      minimal={minimalChrome}
+      minimalCtaHref={minimalCtaHref}
+      minimalCtaLabel={minimalCtaLabel}
+    />
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer minimal={minimalChrome} />
   </body>
 </html>
