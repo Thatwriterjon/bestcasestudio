@@ -1,5 +1,9 @@
 ---
 import Wordmark from './Wordmark.astro';
+import { examples, exampleHref } from '../data/examples';
+
+const featuredExample = examples.find((e) => e.slug === 'saasydb-leadforce-solutions')!;
+const exampleNavHref = exampleHref(featuredExample);
 
 interface Props {
   /** When true, the nav starts transparent and is upgraded to the solid state once the user
@@ -31,7 +35,7 @@ const {
         <ul class="desktop-links">
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/examples/">Examples</a></li>
+          <li><a href={exampleNavHref}>Example</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/contact/" class="cta">Book a call →</a></li>
         </ul>

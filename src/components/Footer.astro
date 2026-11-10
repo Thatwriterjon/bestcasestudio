@@ -1,5 +1,9 @@
 ---
 import Wordmark from './Wordmark.astro';
+import { examples, exampleHref } from '../data/examples';
+
+const featuredExample = examples.find((e) => e.slug === 'saasydb-leadforce-solutions')!;
+const exampleNavHref = exampleHref(featuredExample);
 
 interface Props {
   /** When true, renders just the wordmark, copyright line, and a privacy link — no link farm.
@@ -32,7 +36,7 @@ const year = new Date().getFullYear();
         <ul>
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/examples/">Examples</a></li>
+          <li><a href={exampleNavHref}>Example</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/#proof">Proof</a></li>
           <li><a href="/#faq">FAQ</a></li>
