@@ -1,102 +1,84 @@
 ---
 title: "Best Case Studio vs Uplift Content"
-description: "Uplift Content writes excellent SaaS case studies, quote after a call. Best Case Studio turns one interview into a complete proof set for $2,500 in 14 days."
+description: "Uplift Content writes excellent SaaS case studies, from $750, quote after a call. Best Case Studio is done for you: written from $2,500, or written plus video from $5,000."
 date: 2026-07-10
+updated: 2026-11-10
 author: Jon McGreevy
 comparison:
   competitor: Uplift Content
-  us: "$2,500 fixed · video + written + social · 14 days"
-  them: "From ~$750/case study · written-led · quote after a call"
+  us: "From $2,500 written, $5,000 written + video · 14 days"
+  them: "From $750/case study · written-led · quote after a call"
   wedge: Complete
 faq:
   - q: Is Uplift Content or Best Case Studio better for B2B case studies?
-    a: It depends on what you want back and who you sell to. Uplift Content is the stronger pick if you're a SaaS marketing team wanting a reliable, ongoing writing partner with enterprise logos and deep written craft, and you're happy to scope video separately. Best Case Studio ($2,500, 14 days from the interview) is the better fit if you want a complete proof set from one interview (video and written case study, video and written testimonial, and a social pack), you want one fixed price with no retainer, or you sell services rather than SaaS (Uplift focuses on SaaS).
+    a: It depends on what you want back and who you sell to. Uplift Content is the stronger pick if you're a SaaS marketing team wanting a reliable, ongoing writing partner with enterprise logos and deep written craft, and you're happy to scope video separately. Best Case Studio is the better fit if you want a done-for-you answer to "why them?" from one interview, written for $2,500 or written plus video for $5,000, delivered 14 days from the interview, no retainer, and you sell services as well as SaaS.
   - q: How much does Uplift Content cost?
-    a: Uplift Content publishes a starting point (case studies start around $750, plus an onboarding fee), but the real number comes as a fixed quote after a discovery call, tailored to your scope and scale. Ignore any random dollar figure attached to Uplift in old roundup listicles; some of those belong to other services, not to them. Best Case Studio publishes a flat $2,500 for the whole Proof Kit, no call needed to see the price.
+    a: Uplift Content publishes a starting point on their own site, case studies start at $750, plus a one-time onboarding fee of $250 to $500, with the full price quoted after a discovery call. Best Case Studio publishes two fixed prices, $2,500 for a written case study and $5,000 for written plus video, no call needed to see them.
   - q: Does Uplift Content include video case studies?
-    a: Not as standard. Uplift is a written-led case study specialist. Video testimonials and interviews are offered as strategic add-ons on top of the written deliverable, not part of the base package. If video matters to you, factor that into the quote. Best Case Studio includes a video case study and a video testimonial in every Proof Kit as standard, cut from the same interview.
+    a: Not as standard. Uplift is a written-led case study specialist, and video is offered as a strategic add-on on top of the written deliverable, priced separately. Best Case Studio's video case study ($5,000) includes a customer video, social cuts and a carousel alongside the written story, all from the same interview.
   - q: Does Uplift Content work with non-SaaS companies?
-    a: Uplift specialises in B2B SaaS, and that's the space their whole portfolio sits in. They say they'll consider the occasional project outside SaaS if you get in touch, but it's the exception, not the norm. Best Case Studio works with B2B founders in both SaaS and services as standard, so a professional services firm or a productised agency can book a Proof Kit just the same.
+    a: Uplift specialises in B2B SaaS, and that's the space their whole portfolio sits in. They say they'll consider the occasional project outside SaaS if you get in touch, but it's the exception, not the norm. Best Case Studio works with B2B companies in SaaS and services as standard, wherever a deal involves more than one person deciding.
   - q: Which is faster, Uplift Content or Best Case Studio?
-    a: Best Case Studio is faster on a single project. The Proof Kit is delivered 14 days from the interview, at a fixed price. Uplift Content works over a longer timeline (weeks) and leans towards ongoing relationships rather than one-off jobs, taking a limited number of new ongoing clients each year. If you want one polished story done quickly, Best Case Studio is built for that. If you want a steady writing partner over months, Uplift is built for that.
+    a: Best Case Studio is faster on a single project, delivered 14 days from the interview, at a fixed price. Uplift Content works over a longer timeline and leans towards ongoing relationships rather than one-off jobs. If you want one polished story done quickly, Best Case Studio is built for that. If you want a steady writing partner over months, Uplift is built for that.
 ---
 
-If you want a genuinely excellent written B2B SaaS case study from a proven specialist, and you're happy to scope any video separately, **Uplift Content** is one of the best in the business. If you want the whole set from a single interview (video and written case study, both testimonials, and a social pack) at a fixed price with no retainer, that's what I built **Best Case Studio** to do. The difference is **completeness**. Uplift gives you a superb asset; the Proof Kit gives you the full suite from one conversation.
+**Uplift Content is best for a SaaS marketing team that wants an ongoing written specialist. Best Case Studio is best for a founder who wants the whole answer to "why them?", written or written plus video, from one conversation, one-off.**
 
-I run [Best Case Studio](/), so I'm not a neutral referee here and I won't pretend to be. What I'll do instead is be straight about where Uplift is genuinely better than us, and where I think we win. Every fact about Uplift below comes from their own website. They publish a starting price but quote the real number after a call, so I'll be clear about what's public and what isn't.
+If you want a genuinely excellent written B2B SaaS case study from a proven specialist, and you're happy to scope any video separately, **Uplift Content** is one of the best in the business. If you want a done-for-you answer to "why them?" from a single interview, written or written plus video and social, that's what **Best Case Studio** does. The difference is who handles the ask, and how many formats come out of the one conversation.
 
-Uplift Content is a boutique B2B SaaS content team. They write case studies, and they write them well, alongside ebooks, white papers, and blog posts. Video is an add-on. They focus on B2B SaaS, they prefer ongoing relationships, and you get a fixed quote after a discovery call.
-
-Best Case Studio does one thing: proof. One recorded interview with your happiest customer becomes a [complete Proof Kit](/pricing/) for $2,500, delivered 14 days from that interview. Video and written case study, video and written testimonial, and a ready-to-post social pack. SaaS or services.
-
-Here's the two of us side by side.
+I run [Best Case Studio](/), so I'm not a neutral referee here and I won't pretend to be. What I'll do instead is be straight about where Uplift is genuinely better than us, and where I think we win. Every fact about Uplift below links to their own website.
 
 ## Best Case Studio vs Uplift Content
 
-|                      | Best Case Studio                                                                        | Uplift Content                                             |
-| -------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| **Pricing**          | $2,500 fixed, published                                                                 | From ~$750/case study; full price quoted after a call     |
-| **What you get back** | Video **and** written case study, video **and** written testimonial, and a social pack | Written case study (video as an add-on)                   |
-| **Turnaround**       | 14 days from the interview                                                               | Weeks; leans towards ongoing engagements                  |
-| **Video**            | Included as standard                                                                     | Add-on, scoped separately                                 |
-| **Who it's built for** | B2B founders, SaaS **and** services                                                   | B2B SaaS marketing teams, ideally ongoing                 |
-| **Commitment**       | One-off, no retainer, no lock-in                                                         | Prefers long-term; limited new ongoing clients per year   |
+*Last checked: 10 November 2026.*
 
-One row does most of the work there: what you get back. Uplift hands you a written case study, and video is a separate line you scope on top. We hand you the written case study plus video plus both testimonials plus social, all cut from the same sitting.
+| | Best Case Studio | Uplift Content |
+| --- | --- | --- |
+| **What you get** | A written case study, or written plus a customer video, social cuts and a carousel | A written case study; video and social as scoped add-ons |
+| **Who does the work** | Jessie gets the customer's yes and handles approvals; Jon runs the interview | A dedicated Uplift writer, assigned per engagement |
+| **How much work for your team** | One warm intro, then nothing to chase | One intro, plus a discovery call to scope the quote |
+| **Format** | Written, or written + video | Written-led; video scoped separately |
+| **Price** | $2,500 written · $5,000 written + video | [From $750/case study](https://www.upliftcontent.com/content-writing-services/case-study-writing-service/), plus a $250–$500 onboarding fee, full quote after a call |
+| **Best for** | B2B founders, SaaS or services, one story at a time | SaaS marketing teams wanting an ongoing writing partner |
+
+One row does most of the work there: who does the ask. Uplift hands you a written case study once you've supplied the customer. We make the ask for you, and hand back written, or written plus video, from the same conversation.
 
 ## What Uplift Content is genuinely good at
 
 I'm not going to damn them with faint praise, because they don't deserve it. [Uplift Content](https://www.upliftcontent.com/) is probably the most established name in SaaS case study writing right now, and there are real reasons for that.
 
-The writing craft is the main one. They run a small, hand-picked team of writers who specialise in SaaS, and it shows in the work. Their process is proper: background research, a recorded customer interview with questions tailored to the story, then the written case study with revisions. This is deep-research writing, not a freelancer knocking out 800 words from a form.
+The writing craft is the main one. They run a small, hand-picked team of writers who specialise in SaaS, and it shows in the work. Their process is proper: background research, a recorded customer interview with questions tailored to the story, then the written case study with two rounds of revisions.
 
-The client list backs it up. ClickUp, Okta, WalkMe, LeanData, ON24. Those aren't logos you get handed for writing a couple of blog posts. An enterprise SaaS company trusting you with its customer stories is a hard thing to earn, and Uplift has earned it repeatedly.
+The client list backs it up. ClickUp, Okta, WalkMe, LeanData, ON24. Those aren't logos you get handed for writing a couple of blog posts.
 
-I also rate how they handle money. They publish a starting price (case studies start around $750), then run a discovery call and give you a fixed quote with a detailed scope of work. No hourly billing, no surprise invoices, no "that revision falls outside the estimate" nonsense. You know the number before you commit. For a marketing lead who's been burned by an agency's creative accounting, that predictability is worth a lot.
+I also rate how they handle money. They publish a starting price on their own site, then run a discovery call and give you a fixed quote. No hourly billing, no surprise invoices. You know the shape of the number before you commit.
 
-So if what you need is an outstanding written case study from a team that knows SaaS inside out, Uplift is a completely defensible choice. I'd never tell you otherwise.
+So if what you need is an outstanding written case study from a team that knows SaaS inside out, Uplift is a completely defensible choice.
 
-## Where the Proof Kit wins
+## Where we win: the ask is handled, and you can buy video from the same interview
 
-Here's the thing Uplift's model asks you to accept: you're buying one format.
+Here's the thing Uplift's model asks you to accept: you still have to find the customer, make the ask, and manage the approvals before their process even starts.
 
-You get a brilliant written case study. Then your buyer clicks onto your homepage and wants a 60-second video of that customer saying it out loud, because a face on camera is the proof that's hardest to argue with. So you scope video separately, as an add-on, possibly with a different production timeline. Then you want the pull-quote for your deck, and the LinkedIn carousel for launch day, and the short clips for social. Every one of those is another line, another decision, another wait.
+We start one step earlier. You tell us which customer. Jessie makes the ask, books the call and handles approvals, so nobody on your team has to chase your own customer. Jon runs the one interview. Then you choose the format: a written case study for $2,500, or written plus a 2 to 3 minute customer video, a short cut for your homepage, social videos, a LinkedIn carousel and a pull-quote for $5,000. All of it from one sitting. You can [see what a finished one looks like](/examples/saasydb-leadforce-solutions/) if you'd rather not take my word for it.
 
-I refuse to make founders do that. One conversation with your happiest customer becomes the whole set. For [$2,500](/pricing/), the Proof Kit gives you:
-
-- A video case study: the full story, in your customer's own words, on camera.
-- A written case study built to rank on Google and get cited by ChatGPT, Claude, Perplexity, and Google AI Overviews, so your proof shows up the moment a buyer starts researching.
-- A video testimonial: a short, sharp cut for your homepage and socials.
-- A written testimonial you can drop straight into a deck or a cold email.
-- A social pack: a branded LinkedIn carousel and short clips, all from the same interview.
-- A launch checklist telling you where to put each piece so it does actual work.
-
-All of it from one recorded interview. You make one warm intro to your customer, and you're done. We take the booking, the interview and the edit off your plate. Fourteen days later everything lands, ready to publish, and the customer relationship never leaves your hands. You can [see what a finished one looks like](/examples/saasydb-leadforce-solutions/) if you'd rather not take my word for it.
-
-That's the completeness argument. Bought à la carte from separate specialists, this suite runs $7,000 to $10,000-plus (video alone is usually $3,000+, the written study $1,750+, the video testimonial another $2,000+, then the rest). I go through that maths properly in the [pricing guide](/blog/how-much-does-a-b2b-case-study-cost/). The Proof Kit does the lot from one sitting for $2,500.
-
-There's a second win, and it's the one people forget. Uplift is built around B2B SaaS. They'll look at the odd project outside it if you ask, but SaaS is their specialism and their whole portfolio, so if you run a services business, a consultancy, or a productised agency, you're the exception rather than the fit. We're built for B2B founders full stop, SaaS or services. Same interview, same Proof Kit, whoever you sell to.
+There's a second difference, and it's the one people forget. Uplift is built around B2B SaaS. They'll look at the odd project outside it if you ask, but SaaS is their whole portfolio, so a services business or a consultancy is the exception rather than the fit. We're built for B2B companies in SaaS or services as standard, wherever a deal involves more than one person deciding.
 
 ## "But they're the SaaS specialists with the enterprise logos"
 
 They are. That's a fair thing for Uplift to say, and I'd say it too if I had the ClickUp and Okta logos on my wall. Deep SaaS writing craft and named enterprise clients are real advantages, and I've already conceded both.
 
-Here's where it doesn't settle the decision. Craft on the written asset is one axis. It's not the only one your buyer cares about. A sceptical VP checking you out in 2026 wants the video, wants the proof on a search results page, wants the quote they can forward internally. Uplift is superb at the words. I'm giving you the words plus every other format that same buyer is going to look for, from a single conversation, for a fixed price a founder can actually sign off without a committee meeting.
+Here's where it doesn't settle the decision. Craft on the written asset is one axis. A buying committee checking you out in 2026 wants the video too, and wants the whole thing arranged without your sales team having to chase the customer themselves. That's a different job. It's the one we do.
 
-And on the founder point specifically: Uplift is built for marketing teams with an ongoing content need. That's the right customer for them. But a lot of the people who come to me are founders who don't have a marketing team, don't want a retainer, and just want one great customer story turned into everything, once, done properly. That's a different job. It's the one I do.
+## Choose Uplift Content if
 
-## Who should pick which
+You're a SaaS marketing team with a steady pipeline of stories to tell, you want a long-term writing partner who'll also handle your ebooks and white papers, and written case studies are your priority with video as a nice-to-have.
 
-Let me actually send some of you to Uplift, because that's how you know I mean the rest of it.
+## Choose Best Case Studio if
 
-Go with **Uplift Content** if you're a SaaS marketing team with a steady pipeline of stories to tell, you want a long-term writing partner who'll also handle your ebooks and white papers, and written case studies are your priority with video as a nice-to-have. If you value the deepest SaaS-specific writing craft on this list above format breadth, they're your call. Just go in knowing pricing comes after a discovery call, and video is a separate scope.
-
-Go with **Best Case Studio** if you want the complete proof set from one interview rather than one asset, you want a fixed $2,500 with no retainer and no lock-in, you want it back in 14 days, or you sell services and want a studio built for that rather than a SaaS specialist making an exception. If your buyer checks video, your website, and their AI assistant before they trust you, that's exactly the gap the Proof Kit fills.
-
-One honest caveat on my side: we launched in 2026, so I don't have Uplift's logo wall yet, and we're a small team, so our capacity is genuinely limited. If you need a partner to produce a dozen written assets a quarter, they're better set up for that than I am. I'm not.
+You want the ask, the interview and the write-up handled from one conversation, you want a fixed price with no retainer, you want it back in 14 days, or you sell services and want a studio built for that rather than a SaaS specialist making an exception.
 
 ## See the work, then decide
 
-If you're weighing this up, do two things. Have a look at [a finished Proof Kit](/examples/extrovert-commit-linkedin-growth/) so you can see what "complete" actually means in practice, rather than trusting my description of it. Then, if it looks like the right shape for you, [book a call or check the pricing](/pricing/) and we'll talk about whether your customer story is a good fit.
+Have a look at [a finished example](/examples/saasydb-leadforce-solutions/) so you can see what "done for you" actually means in practice. Then, if it looks like the right shape for you, [book a call or check the pricing](/pricing/).
 
-No committee required. Just you, one happy customer, and 14 days.
+One introduction. We handle the rest.
