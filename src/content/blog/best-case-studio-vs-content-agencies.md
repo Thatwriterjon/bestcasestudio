@@ -13,7 +13,7 @@ faq:
   - q: Is a content agency or Best Case Studio better for case studies?
     a: Pick a full-service content agency (Animalz, Brafton, Siege Media, The Blogsmith) if you already run an ongoing content and SEO programme and want case studies folded into it. Pick Best Case Studio if you want one thing done brilliantly, a done-for-you answer to "why them?" from one interview, written for $2,500 or written plus video for $5,000, delivered in 14 days, with no retainer.
   - q: How much does a case study cost at a content agency?
-    a: "[TODO: verify] Most broad content and SEO agencies don't publish a flat rate for a single case study. It's bundled into a bespoke retainer, and we have not been able to confirm a current published figure for the named agencies below. Ask your agency directly what share of the retainer the case study work represents."
+    a: Most broad content and SEO agencies don't publish a flat rate for a single case study. It's bundled into a bespoke retainer, so the true cost depends on how many other deliverables share that retainer. Ask your agency directly what share of it the case study work represents.
   - q: Do content agencies include video with a case study?
     a: Some do, some don't, and it's almost always scoped and priced as a separate line item on top of the written piece. Best Case Studio's video case study ($5,000) includes a customer video, social videos and a LinkedIn carousel alongside the written case study, from the same interview.
   - q: Are content agencies worth it for case studies?
@@ -36,7 +36,7 @@ I run [Best Case Studio](/), so you should know where my bias sits before you re
 | **Who does the work** | Jessie gets the customer's yes; Jon runs the interview | Whichever writer on the team has capacity that week |
 | **How much work for your team** | One warm intro, then nothing to chase | One intro, plus ongoing retainer management |
 | **Format** | Written, or written + video | Written-led; video and social usually separate |
-| **Price** | $2,500 written · $5,000 written + video | Bundled into a retainer [TODO: verify] |
+| **Price** | $2,500 written · $5,000 written + video | Bundled into a retainer; not published per case study |
 | **Best for** | A founder who wants proof handled, and nothing else | A company running a broad content operation |
 
 ## What a content agency is actually good at

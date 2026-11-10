@@ -7,6 +7,9 @@ import KitAssetPreview from '../components/KitAssetPreview.astro';
 import { examples, exampleHref } from '../data/examples';
 import { logos } from '../data/logos';
 import { landingPage } from '../data/landingPage.config';
+import { pricingConfig } from '../data/pricing.config';
+
+const { written, video } = pricingConfig;
 
 const featuredExample = examples.find((e) => e.slug === landingPage.proofSample.featuredSlug)!;
 const secondExample = landingPage.proofSample.secondSlug
@@ -36,7 +39,7 @@ const faqSchema = {
 
 <Base
   title="B2B case studies for SaaS, written and on video · Best Case Studio"
-  description="One customer interview. $2,500 fixed price, delivered 14 days after the interview."
+  description="One customer interview. Written from $2,500, written plus video from $5,000, delivered 14 days after the interview."
   noindex={landingPage.noindex}
   minimalChrome
   minimalCtaHref="#lead"
@@ -84,9 +87,8 @@ const faqSchema = {
     <div class="wrap-tight">
       <SectionHead title="What you get." compact />
       <ul class="inclusions">
-        {landingPage.whatYouGet.map((item) => (
-          <li>{item}</li>
-        ))}
+        <li><strong>{written.name}:</strong> {written.whatYouGet}</li>
+        <li><strong>{video.name}:</strong> {video.whatYouGet}</li>
       </ul>
     </div>
   </section>
@@ -156,44 +158,71 @@ const faqSchema = {
 
   <section id="price" class="price-section">
     <div class="wrap-tight">
-      <SectionHead title={`${landingPage.price.amount}, fixed.`} compact />
-      <div class="price-card">
-        <span class="delivery-badge">{landingPage.price.deliveryNote}</span>
-        {landingPage.price.priceNote && <p class="price-note">{landingPage.price.priceNote}</p>}
+      <SectionHead title="Two ways to buy." compact />
+      <div class="price-cards">
+        <div class="price-card">
+          <span class="card-name mono">{written.name}</span>
+          <div class="price-amount">{written.price}</div>
+          <span class="delivery-badge">Delivered {written.deliveryTime}</span>
 
-        <div class="included">
-          <h3 class="mono">What's included</h3>
-          <ul>
-            {landingPage.whatYouGet.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
+          <div class="included">
+            <h3 class="mono">What's included</h3>
+            <ul>
+              {written.features.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          <a
+            href="#lead"
+            class="btn primary price-cta"
+            data-track="cta_click"
+            data-track-location="price-written"
+          >
+            {landingPage.hero.primaryCta} <span class="arr" aria-hidden="true">→</span>
+          </a>
         </div>
 
-        <dl class="price-terms">
-          <div>
-            <dt>What's not included</dt>
-            <dd>{landingPage.price.notIncludedNote}</dd>
-          </div>
-          <div>
-            <dt>Payment terms</dt>
-            <dd>{landingPage.price.paymentTerms}</dd>
-          </div>
-          <div>
-            <dt>Revisions</dt>
-            <dd>{landingPage.price.revisions}</dd>
-          </div>
-        </dl>
+        <div class="price-card featured">
+          <span class="card-name mono">{video.name}</span>
+          <div class="price-amount">{video.price}</div>
+          <span class="delivery-badge">Delivered {video.deliveryTime}</span>
 
-        <a
-          href="#lead"
-          class="btn primary price-cta"
-          data-track="cta_click"
-          data-track-location="price"
-        >
-          {landingPage.hero.primaryCta} <span class="arr" aria-hidden="true">→</span>
-        </a>
+          <div class="included">
+            <h3 class="mono">What's included</h3>
+            <ul>
+              {video.features.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          <a
+            href="#lead"
+            class="btn primary price-cta"
+            data-track="cta_click"
+            data-track-location="price-video"
+          >
+            {landingPage.hero.primaryCta} <span class="arr" aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
+
+      <dl class="price-terms">
+        <div>
+          <dt>What's not included</dt>
+          <dd>{landingPage.terms.notIncludedNote}</dd>
+        </div>
+        <div>
+          <dt>Payment terms</dt>
+          <dd>{landingPage.terms.paymentTerms}</dd>
+        </div>
+        <div>
+          <dt>Revisions</dt>
+          <dd>{landingPage.terms.revisions}</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
@@ -783,15 +812,39 @@ const faqSchema = {
   .price-section :global(.sec-head h2 em) {
     color: var(--pink);
   }
+  .price-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
   .price-card {
-    max-width: 640px;
     background: var(--bg);
     color: var(--ink);
-    border: 2px solid var(--pink);
-    padding: 40px;
+    border: 2px solid var(--rule);
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+  }
+  .price-card.featured {
+    border-color: var(--pink);
+  }
+  .card-name {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .price-amount {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 48px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    background: var(--yellow);
+    padding: 0 0.14em 0.04em;
+    display: inline-block;
   }
   .delivery-badge {
     font-family: var(--mono);
@@ -804,12 +857,8 @@ const faqSchema = {
     color: #a6197e;
     font-weight: 500;
   }
-  .price-note {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 14px;
-    color: var(--ink-soft);
-    margin: 0;
+  .price-card .price-cta {
+    margin-top: auto;
   }
   .included h3 {
     font-size: 11px;
@@ -833,19 +882,20 @@ const faqSchema = {
     border-bottom: none;
   }
   .price-terms {
-    margin: 0;
+    margin: 32px 0 0;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    border-top: 1px solid var(--rule);
-    padding-top: 20px;
+    border-top: 1px solid rgba(246, 243, 236, 0.2);
+    padding-top: 24px;
+    color: var(--bg);
   }
   .price-terms dt {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink-soft);
+    color: #cfcabd;
     margin-bottom: 4px;
   }
   .price-terms dd {
@@ -938,6 +988,11 @@ const faqSchema = {
   @media (max-width: 900px) {
     .t-grid,
     .proof-testimonials {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 800px) {
+    .price-cards {
       grid-template-columns: 1fr;
     }
   }
