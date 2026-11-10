@@ -45,7 +45,7 @@ export const landingPage = {
    *  directly and ungated; the second slug is linked underneath as "see another sample". */
   proofSample: {
     featuredSlug: 'saasydb-leadforce-solutions',
-    secondSlug: 'extrovert-commit-linkedin-growth',
+    secondSlug: undefined as string | undefined,
   },
 
   /** Mirrors HowItWorks.astro's three steps, with step 3 reworded to always say "14 days
@@ -63,7 +63,7 @@ export const landingPage = {
     },
     {
       num: '03',
-      title: 'You get your <em>Proof Kit</em>.',
+      title: 'You get your <em>case study package</em>.',
       body: 'Everything above, delivered 14 days after the interview, ready to publish.',
     },
   ],
@@ -78,7 +78,7 @@ export const landingPage = {
      *  approval of the finished kit, ahead of the interview subject's own sign-off. See the
      *  summary this was introduced in for the reasoning and the resulting difference from
      *  /pricing/. */
-    paymentTerms: 'Half up front to book the slot. Half when you approve the delivered Proof Kit, ahead of your customer\'s final sign-off on the published piece.',
+    paymentTerms: 'Half up front to book the slot. Half when you approve the delivered package, ahead of your customer\'s final sign-off on the published piece.',
     revisions: 'One consolidated round from you. If your customer wants changes after they review it, we make those too.',
     notIncludedNote: 'One price, no upsells. The only thing you\'ll spend after is the time it takes to post it.',
   },
@@ -86,7 +86,7 @@ export const landingPage = {
   who: {
     intro: 'Best Case Studio is a two-person, husband-and-wife studio. Jon runs every interview personally, that part is never delegated.',
     jonBio: 'Jon McGreevy leads every project end to end, using his eight years experience working with B2B companies on positioning, content, and conversion. Co-host of the SaaSy as F**k podcast.',
-    studioNote: 'Best Case Studio is a brand new company. We don\'t have Proof Kit testimonials yet, we\'ll add them here as real clients deliver results.',
+    studioNote: 'Best Case Studio is a brand new company. We don\'t have testimonials for this package yet, we\'ll add them here as real clients deliver results.',
   },
 
   /** Order numbers from src/content/faq/*.yaml to show on this page, in that order. Order 9
@@ -94,12 +94,12 @@ export const landingPage = {
    *  and is reused verbatim from the same shared file the homepage FAQ draws from. */
   faqOrders: [1, 2, 7, 8, 9],
 
-  /** Proof-Kit-specific testimonials. Empty until Jon has delivered kits and cleared quotes
+  /** Package-specific testimonials. Empty until Jon has delivered packages and cleared quotes
    *  for paid campaigns. The section renders nothing at all while this is empty. */
   testimonials: [] as LandingTestimonial[],
 
   /** The testimonials in src/content/testimonials/ are about Jon's freelance copywriting, not
-   *  the Proof Kit. Off by default — flip on once specific ones are cleared for paid traffic. */
+   *  this package. Off by default — flip on once specific ones are cleared for paid traffic. */
   showFreelanceTestimonials: false,
   freelanceTestimonialsLabel: 'From my freelance copywriting work',
   freelanceTestimonialsMax: 3,

@@ -9,7 +9,9 @@ import { logos } from '../data/logos';
 import { landingPage } from '../data/landingPage.config';
 
 const featuredExample = examples.find((e) => e.slug === landingPage.proofSample.featuredSlug)!;
-const secondExample = examples.find((e) => e.slug === landingPage.proofSample.secondSlug)!;
+const secondExample = landingPage.proofSample.secondSlug
+  ? examples.find((e) => e.slug === landingPage.proofSample.secondSlug)
+  : undefined;
 
 const allFaq = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.order);
 const faqItems = landingPage.faqOrders
@@ -91,9 +93,9 @@ const faqSchema = {
 
   <section id="proof-kit-sample" class="proof-sample">
     <div class="wrap-tight">
-      <SectionHead title="A real <em>Proof Kit</em>." compact />
+      <SectionHead title="A real <em>case study package</em>." compact />
       <p class="lede">
-        The Proof Kit: a video case study, a written case study, testimonials and a social pack, all from one interview. No email required to see it.
+        A video case study, a written case study, testimonials and a social pack, all from one interview. No email required to see it.
       </p>
 
       <div class="sample-block">
@@ -106,15 +108,17 @@ const faqSchema = {
         <KitAssetPreview assetKey="social" example={featuredExample} />
       </div>
 
-      <p class="second-sample">
-        <a
-          href={exampleHref(secondExample)}
-          data-track="sample_link_click"
-          data-track-location="second-sample"
-        >
-          See a second sample: {secondExample.client} &amp; {secondExample.customer} →
-        </a>
-      </p>
+      {secondExample && (
+        <p class="second-sample">
+          <a
+            href={exampleHref(secondExample)}
+            data-track="sample_link_click"
+            data-track-location="second-sample"
+          >
+            See a second sample: {secondExample.client} &amp; {secondExample.customer} →
+          </a>
+        </p>
+      )}
 
       {landingPage.showWorkedWithLogos && (
         <div class="mini-logos">
