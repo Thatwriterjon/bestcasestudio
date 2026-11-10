@@ -498,6 +498,7 @@ export const examples: CaseStudyExample[] = [
   {
     slug: 'extrovert-commit-linkedin-growth',
     order: 2,
+    hidden: true,
     type: 'build',
     client: 'Extrovert',
     customer: 'COMMIT',

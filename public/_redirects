@@ -8,6 +8,11 @@
 # Every visible example now has its own canonical page at /examples/<slug>/, and
 # /examples/ is the hub that links to them — so no example slug should be redirected.
 
+# Extrovert x COMMIT (Mila) was pulled from the site and hidden in examples.ts.
+# The URL was live, so send it to the examples hub instead of a 404.
+/examples/extrovert-commit-linkedin-growth  /examples/  301
+/examples/extrovert-commit-linkedin-growth/  /examples/  301
+
 # SuccessKit ceased trading and successkit.io was re-registered by an unrelated
 # gambling site, so the comparison page was removed rather than left pointing at it.
 # The URL was indexed, so send it to the compare hub instead of returning a 404.

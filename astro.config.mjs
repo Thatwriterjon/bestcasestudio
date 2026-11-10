@@ -64,7 +64,6 @@ const lastmodByPath = {
   '/privacy/': '2026-07-01',
   '/examples/': '2026-06-22',
   '/examples/saasydb-leadforce-solutions/': '2026-06-02',
-  '/examples/extrovert-commit-linkedin-growth/': '2026-06-22',
   '/blog/': '2026-07-02',
   '/blog/how-much-does-a-b2b-case-study-cost/': '2026-07-19',
   '/blog/best-case-study-writing-services/': '2026-07-19',
@@ -87,13 +86,6 @@ const videoByPath = {
     description:
       'How SaasyDB gave LeadForce Solutions SaaS leads that appear in no other database, feeding a 3% cold-email reply rate.',
     tag: ['B2B case study', 'SaaS lead generation'],
-  },
-  '/examples/extrovert-commit-linkedin-growth/': {
-    id: 'Wrt-DYzDfkY',
-    title: 'How Mila added 4,000+ LinkedIn connections in 2.5 years with Extrovert',
-    description:
-      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT: 4,000+ new connections and 10-15 inbound requests a day.',
-    tag: ['B2B case study', 'LinkedIn growth'],
   },
 };
 
