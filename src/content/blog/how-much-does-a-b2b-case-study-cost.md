@@ -10,7 +10,7 @@ faq:
   - q: Can I write a B2B case study myself using AI?
     a: "You can, but AI-generated case studies face three problems: AI cannot interview your customer or verify real metrics, AI content ranks roughly 23% lower on average (and further on competitive queries), and B2B buyers can often tell when proof content is machine-generated, which undermines the trust a case study is supposed to build."
   - q: What's included in a professionally written B2B case study?
-    a: A professionally written B2B case study typically includes a customer interview, narrative writing, and one or two revision rounds. Higher-end services also include SEO metadata, JSON-LD schema markup, Open Graph tags, AI-citation engineering, and a publishing guide for your CMS. A few studios now deliver a complete proof set from the same interview (a video case study, video and written testimonials, and a social pack) rather than the written piece alone (Best Case Studio's $2,500 Proof Kit is one).
+    a: A professionally written B2B case study typically includes a customer interview, narrative writing, and one or two revision rounds. Higher-end services also include SEO metadata, JSON-LD schema markup, Open Graph tags, AI-citation engineering, and a publishing guide for your CMS. A few studios now deliver a complete proof set from the same interview (a video case study, video and written testimonials, and a social pack) rather than the written piece alone (Best Case Studio's video case study, from $5,000, is one).
   - q: How long does it take to produce a B2B case study?
     a: Turnaround depends on the provider. Freelancers typically take 2–4 weeks, specialist boutiques 2–3 weeks (Best Case Studio delivers 14 days from the interview), and full-service agencies 4–8 weeks due to more layers of review and approval.
 ---
@@ -59,7 +59,7 @@ So if you already know what you want, you've got the customer interview sorted, 
 
 **$1,500–$3,000 per case study.**
 
-*Full disclosure: this is where we sit. [The Proof Kit](/pricing/) is $2,500, so take everything in this section with a healthy pinch of salt.*
+*Full disclosure: this is where we sit. [Our case studies](/pricing/) start at $2,500, so take everything in this section with a healthy pinch of salt.*
 
 But here's why this tier exists.
 

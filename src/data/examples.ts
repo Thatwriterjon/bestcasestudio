@@ -1,5 +1,5 @@
 /**
- * Worked examples of the Proof Kit — real case studies produced for clients,
+ * Worked examples of real case studies produced for clients,
  * restructured here as portfolio pieces. Each entry drives both the /examples switcher
  * and its own dedicated page at /examples/<slug>/.
  *
@@ -84,7 +84,7 @@ export interface CaseStudyExample {
   video?: { embedUrl: string; label: string };
   sections: Section[];
   cta: { heading: string; body: string; links: CtaLink[] };
-  /** ---- Proof Kit preview fields (2A viewer + 2B "rest of your kit") ----
+  /** ---- Case study preview fields (2A viewer + 2B "rest of the example") ----
    *  All optional. Where a field is omitted, `kitView()` derives a sensible value from the
    *  existing data (e.g. the interviewee from the first section quote) or falls back to a
    *  labelled placeholder. Populate as real assets arrive. */
@@ -146,7 +146,7 @@ export const examples: CaseStudyExample[] = [
     customer: 'St Peters Primary School',
     tabLabel: 'Measurable Energy',
     pageDescription:
-      "How Measurable Energy's AI smart sockets cut St Peters School's energy bills by £7,000–£8,000 a year. A Proof Kit case study example, built to rank on Google and get cited by AI.",
+      "How Measurable Energy's AI smart sockets cut St Peters School's energy bills by £7,000–£8,000 a year. A real B2B case study example, built to rank on Google and get cited by AI.",
     industry: 'Clean energy tech',
     region: 'United Kingdom',
     title:
@@ -336,7 +336,7 @@ export const examples: CaseStudyExample[] = [
     customer: 'Stealth Fitness',
     tabLabel: 'TaxValet',
     pageDescription:
-      "How TaxValet took 50-state sales tax compliance off Stealth Fitness's plate at roughly a quarter of the in-house cost. A Proof Kit case study example, built to rank on Google and get cited by AI.",
+      "How TaxValet took 50-state sales tax compliance off Stealth Fitness's plate at roughly a quarter of the in-house cost. A real B2B case study example, built to rank on Google and get cited by AI.",
     industry: 'Sales tax compliance',
     region: 'United States',
     title: 'How Stealth Fitness offloaded 50-state sales tax compliance to TaxValet',
@@ -503,7 +503,7 @@ export const examples: CaseStudyExample[] = [
     customer: 'COMMIT',
     tabLabel: 'Extrovert',
     pageDescription:
-      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT — 4,000+ new connections, 10–15 inbound requests a day. A Proof Kit example.',
+      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT: 4,000+ new connections, 10 to 15 inbound requests a day. A real B2B case study example.',
     industry: 'AI-powered LinkedIn engagement',
     region: 'EMEA',
     title:
@@ -672,7 +672,7 @@ export const examples: CaseStudyExample[] = [
     customer: 'LeadForce Solutions',
     tabLabel: 'SaasyDB',
     pageDescription:
-      'How SaasyDB gave LeadForce Solutions SaaS leads no other database has, feeding a 3% cold-email reply rate. A Proof Kit case study example.',
+      'How SaasyDB gave LeadForce Solutions SaaS leads no other database has, feeding a 3% cold-email reply rate. A real B2B case study example.',
     industry: 'SaaS lead database',
     region: 'United States',
     title:
@@ -903,9 +903,9 @@ export const typeLabel = (type: CaseStudyExample['type']): string =>
   type === 'optimise' ? 'Optimised' : 'Built from scratch';
 
 /* ------------------------------------------------------------------ *
- *  Proof Kit — the six assets cut from one interview.
+ *  Case study package — the six assets cut from one interview.
  *  Copy is final (from the design handoff); reused verbatim by the 2A
- *  viewer and the 2B "rest of your Proof Kit" section.
+ *  viewer and the 2B "rest of the example" section.
  * ------------------------------------------------------------------ */
 
 export type KitAssetKey =
@@ -931,14 +931,14 @@ export const kitAssets: KitAsset[] = [
     key: 'video-case',
     title: 'Video case study',
     tag: 'VIDEO · 2–4 MIN',
-    desc: "The full story, in your customer's own words, on camera. The MVP of the Proof Kit.",
+    desc: "The full story, in your customer's own words, on camera.",
   },
   {
     n: '02',
     key: 'written-case',
     title: 'Written case study',
     tag: 'ARTICLE · SEO + AI',
-    desc: 'The deep-dive version, optimised to rank on Google and get cited by AI — so your proof shows up the moment a buyer starts looking.',
+    desc: 'The deep-dive version, optimised to rank on Google and get cited by AI so your proof shows up the moment a buyer starts looking.',
   },
   {
     n: '03',
@@ -966,13 +966,13 @@ export const kitAssets: KitAsset[] = [
     key: 'howto',
     title: 'Launch checklist',
     tag: 'PLAYBOOK',
-    desc: "A short walkthrough showing exactly where each piece works hardest — so it doesn't just sit in a folder.",
+    desc: "A short walkthrough showing exactly where each piece works hardest so it doesn't just sit in a folder.",
   },
 ];
 
-/** Rows for the Launch checklist preview — maps each asset to where it works hardest. */
+/** Rows for the Launch checklist preview. Maps each asset to where it works hardest. */
 export const kitHowto: { n: string; piece: string; where: string }[] = [
-  { n: '1', piece: 'Video case study', where: 'Sales follow-up and your /customers page — the asset that closes.' },
+  { n: '1', piece: 'Video case study', where: 'Sales follow-up and your /customers page: the asset that closes.' },
   { n: '2', piece: 'Written case study', where: 'Google and AI answers. Where a buyer lands the moment they start looking.' },
   { n: '3', piece: 'Video testimonial', where: 'Homepage hero and paid social. Proof before they scroll.' },
   { n: '4', piece: 'Written testimonial', where: 'Pricing page and the P.S. line of your next cold email.' },

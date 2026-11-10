@@ -135,7 +135,7 @@ Book them once and you've spent a bit of goodwill. Book them twice, first for a 
 
 Worse, you're now on their calendar as a company that generates work. That's a bad thing to be to your best customer, and a very bad thing to be right before a renewal conversation.
 
-Nobody quotes for this because nobody can. It doesn't have a price. But it's why I built [the Proof Kit](/pricing/) around a single interview: one conversation, one ask, and both the video and the written case study fall out of the same recording. Not because one interview is marginally cheaper to produce, but because your customer's willingness to help is the resource you can't top up with budget.
+Nobody quotes for this because nobody can. It doesn't have a price. But it's why I built [our case study offer](/pricing/) around a single interview: one conversation, one ask, and both the video and the written case study fall out of the same recording. Not because one interview is marginally cheaper to produce, but because your customer's willingness to help is the resource you can't top up with budget.
 
 When you're comparing quotes, count how many times each option puts your customer on a call.
 

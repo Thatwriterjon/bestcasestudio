@@ -13,3 +13,5 @@
 # The URL was indexed, so send it to the compare hub instead of returning a 404.
 /compare/best-case-studio-vs-successkit  /compare/  301
 /compare/best-case-studio-vs-successkit/  /compare/  301
+
+

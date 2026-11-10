@@ -21,8 +21,8 @@ const itemListSchema = {
 ---
 
 <Base
-  title="Proof Kit examples: real B2B case studies · Best Case Studio"
-  description="Real Proof Kits we've produced for B2B clients — video and written case studies, testimonials, and social packs, all cut from a single customer interview."
+  title="Case study examples: real B2B stories | Best Case Studio"
+  description="Real B2B case studies we have produced for clients. Video and written case studies, testimonials, and social content, all from a single customer interview."
   schema={[itemListSchema]}
   breadcrumbs={[
     { name: 'Home', url: '/' },
@@ -31,11 +31,11 @@ const itemListSchema = {
 >
   <section class="ex-index">
     <div class="wrap">
-      <SectionHead title="Real <em>Proof Kit</em>s we've produced." level="h1" />
+      <SectionHead title="Real <em>case studies</em> we have produced." level="h1" />
       <p class="lede">
-        Every kit below started as one recorded conversation with a real customer. Video case
-        study, written case study, both testimonials, and a social pack — cut from that single
-        interview. Open one to see the whole thing.
+        Every case study below started as one recorded conversation with a real customer. Video,
+        written story, and social content cut from that single interview. Open one to see the
+        full story.
       </p>
       <MobileCta />
       <div class="ex-grid">
@@ -47,7 +47,7 @@ const itemListSchema = {
               <span class="ex-metric-v">{ex.hero.value}</span>
               <span class="ex-metric-l">{ex.hero.label}</span>
             </div>
-            <span class="ex-cta">Watch the video. Read the study. See the full kit. <span class="arr" aria-hidden="true">→</span></span>
+            <span class="ex-cta">Watch the video. Read the study. See the full example. <span class="arr" aria-hidden="true">→</span></span>
           </a>
         ))}
       </div>
@@ -70,7 +70,7 @@ const itemListSchema = {
   }
   .ex-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 560px));
     gap: 32px;
   }
   .ex-card {

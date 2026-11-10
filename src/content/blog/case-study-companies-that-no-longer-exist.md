@@ -75,7 +75,7 @@ I checked each of these directly. Domain resolves to the business it claims to b
 | Ace Case Studies | Live | 200 on acecasestudies.com, Jody Williams running it, Oracle and Gorgias in the portfolio, pricing quote-based |
 | Concurate | Live | 200 on concurate.com, actively publishing, now marketing generative engine optimisation alongside SaaS SEO |
 | CaseLeap | Live, but a Levitate Media brand | 200 on caseleap.com, footer reads Levitate Media LLC, pricing quote-based |
-| StoryVoice | Live | 200 on storyvoice.io, published rate card at $0 / $49 / $99 / $249 per month, currently sold as lifetime deals |
+| StoryVoice | Live | 200 on storyvoice.io, published rate card at $0 / $49 / $99 / $249 per month when checked in July 2026; since moved to pay-per-story at $39 / $99 for 3 / $149 for 5, plus $249/mo for 50 |
 | Column | Live, repositioned | 200 on columncontent.com, sitemap regenerated 29 July 2026, no published case study pricing |
 | Testimonial Hero | Live | 200, absorbed Case Study Buddy in 2024, annual credit tiers from around $6,510/yr |
 

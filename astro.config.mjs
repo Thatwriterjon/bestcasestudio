@@ -92,7 +92,7 @@ const videoByPath = {
     id: 'Wrt-DYzDfkY',
     title: 'How Mila added 4,000+ LinkedIn connections in 2.5 years with Extrovert',
     description:
-      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT — 4,000+ new connections and 10-15 inbound requests a day.',
+      'How Extrovert turned LinkedIn into a warm inbound channel for COMMIT: 4,000+ new connections and 10-15 inbound requests a day.',
     tag: ['B2B case study', 'LinkedIn growth'],
   },
 };

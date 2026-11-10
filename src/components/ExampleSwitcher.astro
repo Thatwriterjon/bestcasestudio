@@ -1,6 +1,6 @@
 ---
 /**
- * Full-width Proof Kit example toggle (2B). One card per published example, spanning the
+ * Full-width example toggle (2B). One card per published example, spanning the
  * content width; the current example is highlighted (ink bg, cream text). In production these
  * are links to each example's page — no client JS needed.
  */
@@ -16,20 +16,22 @@ interface Props {
 const { items, active } = Astro.props;
 ---
 
-<div class="exsw">
-  <p class="exsw-eyebrow">PROOF KIT EXAMPLES: TOGGLE TO SEE THE NEXT ONE</p>
-  <nav class="exsw-grid" aria-label="Proof Kit examples" style={`--exsw-cols:${items.length}`}>
-    {items.map((ex) => (
-      <a
-        href={exampleHref(ex)}
-        class:list={['exsw-card', ex.slug === active && 'is-active']}
-        aria-current={ex.slug === active ? 'page' : undefined}
-      >
-        <span class="exsw-vendor">{ex.client} <span class="exsw-cust">× {ex.customer}</span></span>
-      </a>
-    ))}
-  </nav>
-</div>
+{items.length > 1 && (
+  <div class="exsw">
+    <p class="exsw-eyebrow">CASE STUDY EXAMPLES: TOGGLE TO SEE THE NEXT ONE</p>
+    <nav class="exsw-grid" aria-label="Case study examples" style={`--exsw-cols:${items.length}`}>
+      {items.map((ex) => (
+        <a
+          href={exampleHref(ex)}
+          class:list={['exsw-card', ex.slug === active && 'is-active']}
+          aria-current={ex.slug === active ? 'page' : undefined}
+        >
+          <span class="exsw-vendor">{ex.client} <span class="exsw-cust">× {ex.customer}</span></span>
+        </a>
+      ))}
+    </nav>
+  </div>
+)}
 
 <style>
   .exsw {

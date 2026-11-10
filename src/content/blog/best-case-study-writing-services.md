@@ -14,10 +14,10 @@ faq:
     a: Case Study Buddy was acquired by Testimonial Hero in March 2024. Founder Joel Klettke departed after the acquisition. The casestudybuddy.com domain now redirects to testimonialhero.com, and written case studies are offered inside Testimonial Hero's video-first programme rather than as a standalone written service. If you came here looking for the old written specialist, it no longer exists in its original form.
   - q: Should I hire a specialist or a full-service agency for case studies?
     a: A specialist is usually the better choice if you want one to five case studies without signing a monthly retainer. Specialists like Uplift Content, Best Case Studio, and Ace Case Studies do case studies all day. The interview framework, story structure, and production are tested and repeatable. A full-service agency makes sense if you already run a content programme and want case studies folded into it, but expect to pay $5,000–$15,000+ per case study (effective cost within a retainer) and wait 4–8 weeks.
-updated: 2026-07-29
+updated: 2026-10-12
 ---
 
-The best B2B SaaS case study services in 2026 are **Uplift Content** (established written specialist, strong SaaS logos, from $750 plus onboarding, quoted after a call), **Best Case Studio** ($2,500 - one interview becomes a complete proof set: video and written case study, video and written testimonial, and a social pack), and **Ace Case Studies** (solo written craft, enterprise clients like Oracle). For video-led work, **Testimonial Hero** (which acquired Case Study Buddy in 2024) sells annual credit plans from around $6,510/yr. Cheapest of the lot: **StoryVoice** (an AI voice-interview tool with a free tier, then $49–$249/mo, no video). Full-service agencies like **Grow & Convert** and **Ten Speed** produce case studies inside broader content retainers at $5,000–$15,000+ effective cost per study.
+The best B2B SaaS case study services in 2026 are **Uplift Content** (established written specialist, strong SaaS logos, from $750 plus onboarding, quoted after a call), **Best Case Studio** ($2,500 - one interview becomes a complete proof set: video and written case study, video and written testimonial, and a social pack), and **Ace Case Studies** (solo written craft, enterprise clients like Oracle). For video-led work, **Testimonial Hero** (which acquired Case Study Buddy in 2024) sells annual credit plans from around $6,510/yr. Cheapest of the lot: **StoryVoice** (an AI voice-interview tool from $39 a story, or $249/mo for 50, no video). Full-service agencies like **Grow & Convert** and **Ten Speed** produce case studies inside broader content retainers at $5,000–$15,000+ effective cost per study.
 
 I run [Best Case Studio](/), so I'm in this list. I've flagged exactly where my biases sit. I've spent months researching every service here, and every price, turnaround, and capability comes from their own websites (or, where they hide the number behind a sales call, I'll tell you that too). If something's an estimate, I'll say so. And if you want the direct head-to-head of us against any one of these, I've put those on the [comparison pages](/compare/).
 
@@ -31,7 +31,7 @@ For the full pricing breakdown by tier (freelancer, specialist, agency, DIY), se
 | **Uplift Content**        | From $750 + onboarding; quote after a call       | Written case study (video/design as add-ons)                                            | Weeks; prefers ongoing     | SaaS teams wanting a reliable writing partner                  |
 | **Ace Case Studies**      | Quote-based                                      | Written case study                                                                      | Not public                 | Enterprise-cred solo written craft                             |
 | **Testimonial Hero**      | From ~$6,510/yr (annual credits); ~$3,000+/video | Video testimonials (flagship) + written                                                 | ~2–4 weeks                 | Funded teams wanting broadcast-grade video                     |
-| **StoryVoice**            | Free tier; then $49–$249/mo                      | AI-drafted written case study (no video); you edit it                                   | 1–3 days                   | DIY/volume, comfortable finishing it yourself                  |
+| **StoryVoice**            | From $39 a story; $249/mo for 50                | AI-drafted written case study (no video); you edit it                                   | 1–3 days                   | DIY/volume, comfortable finishing it yourself                  |
 | **Column**                | No longer published (was $649/$799)              | Written case study + PDF design + social                                                | 1–3 weeks                  | Repositioned towards research reports                          |
 | **Full-service agencies** | $5k–$15k+ effective                              | Case study as one line item                                                             | 4–8 weeks                  | Companies already running a content programme                  |
 
@@ -65,7 +65,7 @@ Best fit: SaaS marketing teams that want a reliable, ongoing writing partner who
 
 Here's the thing that makes us different, and it's not a feature. Every other service on this list makes you pick a format. The writing shops give you words. The video shops give you video. You end up buying your proof in pieces from three different vendors, at three different prices, on three different timelines.
 
-We refuse to make that trade. One conversation with your happiest customer becomes the whole set. We call it a **Proof Kit**, and for [$2,500](/pricing/) you get:
+We refuse to make that trade. One conversation with your happiest customer becomes the whole set. Buy the [written case study on its own](/pricing/), or add video and you get:
 
 - **Video case study**: the full story, in your customer's own words, on camera. The proof you physically cannot fake.
 - **Written case study:** the deep-dive version, built to rank on Google *and* get cited by ChatGPT, Claude, Perplexity, and Google AI Overviews, so your proof shows up the second a buyer starts researching.
@@ -80,7 +80,7 @@ This all came from chatting with founders I know, and seeing a repeated pattern 
 
 Our offer is designed to remedy that. Whether your prospects come to you from social media, your website, or direct.
 
-Where we're limited: we launched in 2026, so we don't have the logo wall Uplift or Ace have. Small team means capacity is tight. We can't do ten of these next month. And if you want someone to write your blog posts and ebooks too, we're not that shop. Proof is the only thing we do. You can see [what a finished Proof Kit looks like](/examples/).
+Where we're limited: we launched in 2026, so we don't have the logo wall Uplift or Ace have. Small team means capacity is tight. We can't do ten of these next month. And if you want someone to write your blog posts and ebooks too, we're not that shop. Proof is the only thing we do. You can see [what a finished example looks like](/examples/).
 
 Best fit: B2B founders (SaaS or services) with at least one genuinely happy customer, who want the complete proof set from one conversation without signing a retainer.
 
@@ -112,7 +112,7 @@ Best fit: funded B2B teams that want the best video testimonials money can buy a
 
 ### StoryVoice
 
-[StoryVoice](https://storyvoice.io/) is the newest shape of competitor: an AI tool. You send your customer a link, they talk to a voice AI for about five minutes, and it spits out a publish-ready written draft with quotes and metrics. You then edit and publish it yourself. There's a free tier (one interview a month), then published plans at $49, $99, and $249 a month for 5, 15, and 50 interviews respectively. Drafts in one to three days.
+[StoryVoice](https://storyvoice.io/) is the newest shape of competitor: an AI tool. You send your customer a link, they talk to a voice AI for about five minutes, and it spits out a publish-ready written draft with quotes and metrics. You then edit and publish it yourself. The free part is a trial where you interview yourself; paid stories are $39 for one, $99 for 3, or $149 for 5, or $249 a month for 50 on the Agency plan. Drafts in one to three days.
 
 For volume, it's clever. If you want ten studies a year on a small budget and your customers are too busy for a scheduled interview, I can see the appeal.
 
