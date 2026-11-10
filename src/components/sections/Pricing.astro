@@ -1,43 +1,67 @@
 ---
 import SectionHead from '../SectionHead.astro';
 import Button from '../Button.astro';
+import { pricingConfig } from '../../data/pricing.config';
 
-const included = [
-  'Video case study — the full story, on camera, in your customer\'s own words',
-  'Written case study — built to rank on Google and get cited by AI',
-  'Video testimonial — a short, sharp cut for your homepage and socials',
-  'Written testimonial — a pull-quote for your site, deck, and emails',
-  'Social pack — LinkedIn carousel and short clips',
-  'A "how to use it" guide — where each piece does the most damage',
-];
+const { written, video, monthly, guideNote } = pricingConfig;
 ---
 
 <section id="pricing">
   <div class="wrap">
-    <SectionHead title="One package. <em>One price.</em>" />
+    <SectionHead title="Two things we make. <em>One way to buy more.</em>" />
 
     <div class="pricing-grid">
-      <div class="pricing-card featured">
+      <div class="pricing-card">
         <div class="pricing-inner">
-          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>The Proof Kit</span>
-          <h3>Everything above. <em>One price.</em></h3>
+          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>{written.name}</span>
+          <h3>From the ask to your <em>approval</em>.</h3>
           <div class="price-spacer"></div>
           <div class="price-row">
-            <span class="price">$2,500</span>
+            <span class="price">{written.price}</span>
           </div>
-          <span class="delivery-badge">Delivered 14 days from the interview</span>
+          <span class="delivery-badge">Delivered {written.deliveryTime}</span>
           <div class="included">
-            <h4>What's included</h4>
+            <h4>What you get</h4>
             <ul>
-              {included.map((item) => (
+              {written.features.map((item) => (
                 <li><span>{item}</span></li>
               ))}
             </ul>
           </div>
-          <p class="compare">Buy proof anywhere else in pieces and you'll spend $7,000–$10,000 before you've got a fraction of this. We productised the whole thing so you don't have to.</p>
           <Button href="/contact/" variant="primary">Book a call</Button>
         </div>
       </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-inner">
+          <span class="eyebrow"><span class="pip" aria-hidden="true"></span>{video.name}</span>
+          <h3>Written, video <em>and social</em>.</h3>
+          <div class="price-spacer"></div>
+          <div class="price-row">
+            <span class="price">{video.price}</span>
+          </div>
+          <span class="delivery-badge">Delivered {video.deliveryTime}</span>
+          <div class="included">
+            <h4>What you get</h4>
+            <ul>
+              {video.features.map((item) => (
+                <li><span>{item}</span></li>
+              ))}
+            </ul>
+          </div>
+          <Button href="/contact/" variant="primary">Book a call</Button>
+        </div>
+      </div>
+    </div>
+
+    <p class="guide-note">{guideNote}</p>
+
+    <div class="monthly-band">
+      <span class="monthly-label">Buying more than one?</span>
+      <p>
+        The monthly plan: {monthly.storiesPerMonth} stories a month, either type, {monthly.discountPercent}% off.
+        {monthly.rollover} <strong>{monthly.writtenPrice}</strong> for two written, or <strong>{monthly.videoPrice}</strong> for two video.
+      </p>
     </div>
   </div>
 </section>
@@ -59,24 +83,25 @@ const included = [
   }
   .pricing-grid {
     margin-top: 48px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 
   .pricing-card {
     background: var(--bg);
     color: var(--ink);
-    max-width: 640px;
     width: 100%;
   }
   .pricing-card.featured {
     border: 2px solid var(--pink);
   }
   .pricing-inner {
-    padding: 56px;
+    padding: 48px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    height: 100%;
   }
   .eyebrow {
     font-family: var(--mono);
@@ -98,8 +123,8 @@ const included = [
   .pricing-card h3 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: 36px;
-    line-height: 1.02;
+    font-size: 32px;
+    line-height: 1.05;
     letter-spacing: -0.02em;
     margin: 0;
     max-width: 18ch;
@@ -109,7 +134,7 @@ const included = [
   }
   .price-spacer {
     flex: 1;
-    min-height: 8px;
+    min-height: 4px;
   }
 
   .price-row {
@@ -120,7 +145,7 @@ const included = [
   .price {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(60px, 7.5vw, 96px);
+    font-size: clamp(48px, 6vw, 72px);
     line-height: 0.85;
     letter-spacing: -0.04em;
     font-style: italic;
@@ -158,12 +183,12 @@ const included = [
   }
   .included li {
     font-family: var(--serif);
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.45;
     display: grid;
-    grid-template-columns: 36px 1fr;
+    grid-template-columns: 30px 1fr;
     align-items: baseline;
-    padding: 10px 0;
+    padding: 9px 0;
     border-bottom: 1px solid var(--rule);
   }
   .included li:last-child {
@@ -179,26 +204,56 @@ const included = [
     font-weight: 500;
   }
 
-  .compare {
+  .pricing-inner :global(.btn) {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .guide-note {
+    margin: 32px 0 0;
     font-family: var(--serif);
     font-style: italic;
     font-size: 15px;
     line-height: 1.5;
-    color: var(--ink-soft);
-    margin: 0;
+    color: #cfcabd;
+    max-width: 60ch;
   }
 
-  .pricing-inner :global(.btn) {
-    align-self: flex-start;
-    margin-top: 8px;
+  .monthly-band {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(246, 243, 236, 0.2);
+  }
+  .monthly-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pink);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .monthly-band p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 60ch;
+    color: var(--bg);
+  }
+  .monthly-band p strong {
+    font-weight: 600;
   }
 
   @media (max-width: 900px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
     .pricing-inner {
       padding: 36px;
     }
     .price {
-      font-size: clamp(52px, 12vw, 80px);
+      font-size: clamp(44px, 10vw, 64px);
     }
   }
 </style>
