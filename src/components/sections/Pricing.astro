@@ -15,7 +15,6 @@ const { written, video, monthly, guideNote } = pricingConfig;
         <div class="pricing-inner">
           <span class="eyebrow"><span class="pip" aria-hidden="true"></span>{written.name}</span>
           <h3>From the ask to your <em>approval</em>.</h3>
-          <div class="price-spacer"></div>
           <div class="price-row">
             <span class="price">{written.price}</span>
           </div>
@@ -36,7 +35,6 @@ const { written, video, monthly, guideNote } = pricingConfig;
         <div class="pricing-inner">
           <span class="eyebrow"><span class="pip" aria-hidden="true"></span>{video.name}</span>
           <h3>Written, video <em>and social</em>.</h3>
-          <div class="price-spacer"></div>
           <div class="price-row">
             <span class="price">{video.price}</span>
           </div>
@@ -128,15 +126,13 @@ const { written, video, monthly, guideNote } = pricingConfig;
     letter-spacing: -0.02em;
     margin: 0;
     max-width: 18ch;
+    /* Reserves space for two lines so the price badge below lines up across both cards
+       regardless of how many lines this specific headline wraps to. */
+    min-height: 68px;
   }
   .pricing-card h3 :global(em) {
     font-style: italic;
   }
-  .price-spacer {
-    flex: 1;
-    min-height: 4px;
-  }
-
   .price-row {
     display: flex;
     align-items: baseline;

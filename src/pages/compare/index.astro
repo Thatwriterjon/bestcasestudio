@@ -176,6 +176,7 @@ const itemListSchema = {
   <section class="hub-matrix">
     <div class="wrap-tight">
       <h2>The whole field, side by side</h2>
+      <div class="matrix-wrap">
       <div class="matrix-scroll">
         <table class="matrix">
           <thead>
@@ -206,6 +207,8 @@ const itemListSchema = {
           </tbody>
         </table>
       </div>
+      </div>
+      <p class="matrix-hint mono" aria-hidden="true">Swipe to see all columns →</p>
       <p class="matrix-foot mono">
         Competitor pricing links to their own public pricing pages. Last checked: 10 November 2026.
         Tap any name for the full breakdown.
@@ -334,9 +337,35 @@ const itemListSchema = {
   .hub-matrix {
     padding: 40px 0;
   }
+  .matrix-wrap {
+    position: relative;
+  }
   .matrix-scroll {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  .matrix-hint {
+    display: none;
+  }
+  @media (max-width: 820px) {
+    .matrix-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 32px;
+      background: linear-gradient(to right, transparent, var(--bg) 80%);
+      pointer-events: none;
+    }
+    .matrix-hint {
+      display: block;
+      margin: 10px 0 0;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
   }
   .matrix {
     width: 100%;
