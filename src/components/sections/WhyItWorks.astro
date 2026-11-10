@@ -1,0 +1,70 @@
+---
+import SectionHead from '../SectionHead.astro';
+
+const points = [
+  {
+    title: 'Buyers believe other customers more than they believe you.',
+    body: 'You can say anything about your own product. A customer saying it is proof.',
+  },
+  {
+    title: 'Proof is what lets a champion defend the choice to everyone else.',
+    body: "Your champion wants you. They still need something to show finance, IT, or the rest of the committee.",
+  },
+  {
+    title: 'It keeps working in sales calls, on your site and in search and AI answers.',
+    body: 'One story, built once, doing the job every time someone asks "why them?"',
+  },
+];
+---
+
+<section id="why-it-works" aria-label="Why case studies work">
+  <div class="wrap">
+    <SectionHead title="Why case studies <em>work</em>." />
+    <div class="points">
+      {points.map((p) => (
+        <div class="point">
+          <h3>{p.title}</h3>
+          <p>{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 120px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    border-top: 1px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .point h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    max-width: 28ch;
+  }
+  .point p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 32ch;
+  }
+  @media (max-width: 900px) {
+    .points {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

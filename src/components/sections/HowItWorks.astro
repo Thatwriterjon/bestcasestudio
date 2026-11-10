@@ -10,25 +10,30 @@ interface Step {
 const steps: Step[] = [
   {
     num: '01',
-    title: 'You make the <em>intro</em>.',
-    body: 'One warm email to your best customer. That\'s your entire job in this process.',
+    title: 'You tell us which <em>customer</em>.',
+    body: 'One short form or email. No briefing document.',
   },
   {
     num: '02',
-    title: 'We run the <em>interview</em>.',
-    body: 'One recorded conversation. We handle the scheduling, the questions, the awkward bits. Your customer gives us 30-45 minutes, and we guide them to the good bits.',
+    title: 'Jessie gets the <em>yes</em>.',
+    body: 'She makes the ask, books the call and handles approvals.',
   },
   {
     num: '03',
-    title: 'You get your <em>Proof Kit</em>.',
-    body: 'Everything above, delivered 14 days from the interview, ready to publish.',
+    title: 'Jon runs the <em>interview</em>.',
+    body: 'One conversation, led by the person who writes the story.',
+  },
+  {
+    num: '04',
+    title: 'You get your <em>case study</em>.',
+    body: 'Written, or written plus video, ready to use.',
   },
 ];
 ---
 
 <section id="how-it-works">
   <div class="wrap">
-    <SectionHead title="Three steps." />
+    <SectionHead title="Four steps." />
     <div class="steps">
       {steps.map((s) => (
         <div class="step">
@@ -49,8 +54,8 @@ const steps: Step[] = [
   }
   .steps {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
     border-top: 1px solid var(--ink);
     padding-top: 40px;
     margin-top: 56px;

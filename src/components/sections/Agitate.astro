@@ -1,0 +1,65 @@
+---
+const costs = [
+  'Deals that go quiet',
+  'Shortlists you never reach',
+  'Sales calls spent defending claims instead of proving them',
+  'A good customer story sitting unused',
+];
+---
+
+<!-- [TODO: add one sourced stat here if the owner supplies it] -->
+<section id="cost" aria-label="What this costs you">
+  <div class="wrap">
+    <p class="lede">That's not a one-off awkward call. It's a pattern, and it has a cost.</p>
+    <ul>
+      {costs.map((c) => (
+        <li>{c}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 72px 0;
+    background: var(--ink);
+    color: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .lede {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 48ch;
+    margin: 0 0 32px;
+    color: #cfcabd;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid rgba(246, 243, 236, 0.2);
+    padding-top: 28px;
+  }
+  li {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.35;
+    color: var(--bg);
+  }
+  @media (max-width: 900px) {
+    ul {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    ul {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

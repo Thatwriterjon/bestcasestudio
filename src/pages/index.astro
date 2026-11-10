@@ -3,7 +3,8 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/sections/Hero.astro';
 import LogoWall from '../components/sections/LogoWall.astro';
 import WhyCaseStudies from '../components/sections/WhyCaseStudies.astro';
-import ProofKit from '../components/sections/ProofKit.astro';
+import Agitate from '../components/sections/Agitate.astro';
+import WhyItWorks from '../components/sections/WhyItWorks.astro';
 import HowItWorks from '../components/sections/HowItWorks.astro';
 import ProofExamples from '../components/sections/ProofExamples.astro';
 import Pricing from '../components/sections/Pricing.astro';
@@ -11,6 +12,7 @@ import Testimonials from '../components/sections/Testimonials.astro';
 import About from '../components/sections/About.astro';
 import Faq from '../components/sections/Faq.astro';
 import CloseCta from '../components/sections/CloseCta.astro';
+import { pricingConfig } from '../data/pricing.config';
 
 const homepageSchema = [
   {
@@ -24,18 +26,27 @@ const homepageSchema = [
   {
     '@type': 'Service',
     '@id': 'https://bestcasestud.io/#service',
-    name: 'The Proof Kit',
+    name: 'Done-for-you B2B case studies',
     serviceType: 'B2B case study production',
     provider: { '@id': 'https://bestcasestud.io/#org' },
     areaServed: 'Worldwide',
     url: 'https://bestcasestud.io/',
     description:
-      'One recorded customer conversation becomes a complete B2B case study — video, written, testimonials, and a social pack. $2,500, delivered 14 days from the interview.',
+      'We find the customer, run the interview and write the story, so your team has an answer when a prospect asks "why them?".',
     offers: [
       {
         '@type': 'Offer',
-        name: 'The Proof Kit',
-        price: '2500',
+        name: pricingConfig.written.name,
+        price: String(pricingConfig.written.priceNumeric),
+        priceCurrency: 'USD',
+        url: 'https://bestcasestud.io/pricing/',
+        availability: 'https://schema.org/InStock',
+        category: 'Marketing services',
+      },
+      {
+        '@type': 'Offer',
+        name: pricingConfig.video.name,
+        price: String(pricingConfig.video.priceNumeric),
         priceCurrency: 'USD',
         url: 'https://bestcasestud.io/pricing/',
         availability: 'https://schema.org/InStock',
@@ -47,18 +58,19 @@ const homepageSchema = [
 ---
 
 <Base
-  title="Best Case Studio — The Proof Kit: a complete B2B case study, $2,500"
-  description="One conversation with your best customer becomes a complete B2B case study — video and written, ready everywhere buyers look. $2,500, 14-day delivery."
+  title="Done-for-you B2B case studies | Best Case Studio"
+  description={`We find the customer, run the interview and write the story, so your team has an answer when a prospect asks "why them?".`}
   transparentNav
   schema={homepageSchema}
 >
   <Hero />
   <LogoWall />
   <WhyCaseStudies />
-  <ProofKit />
+  <Agitate />
+  <WhyItWorks />
   <HowItWorks />
-  <ProofExamples />
   <Pricing />
+  <ProofExamples />
   <Testimonials />
   <About />
   <Faq />
